@@ -4,6 +4,183 @@
   
     
     <entry>
+      <title>you-get下载</title>
+      <link href="2021/03/20/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/you-get%E4%B8%8B%E8%BD%BD/"/>
+      <url>2021/03/20/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/you-get%E4%B8%8B%E8%BD%BD/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>之前在国外的时候想要批量下载YouTube的内容，因此了解到了you-get这个下载插件；</p><p>貌似还有个youtube-get这个插件，比you-get更适合批量下载YouTube视频</p></blockquote><p>直接在github上就可以安装，有多种选项。我是用的Anaconda3的powershell prompt 进行安装，注意这里执行的指令是</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install you-get</span><br></pre></td></tr></table></figure><p>结果也能成功安装。之后就是使用简单的指令进行下载</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">you-get -i &#39;videoLink&#39;</span><br></pre></td></tr></table></figure><blockquote><p>注意不一定要双引号</p></blockquote><p>更为具体的操作见连接：</p><p><a href="https://github.com/soimort/you-get">https://github.com/soimort/you-get</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活记录 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>博客美化_待办</title>
+      <link href="2021/03/20/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96-%E5%BE%85%E5%8A%9E/"/>
+      <url>2021/03/20/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96-%E5%BE%85%E5%8A%9E/</url>
+      
+        <content type="html"><![CDATA[<p>FDA </p><blockquote><p>技术更新的比较快，有些方法在一些技术贴并没有及时的更新。比如说字数统计功能n</p></blockquote><p><a href="https://blog.csdn.net/senupp/article/details/103986447">https://blog.csdn.net/senupp/article/details/103986447</a></p><p>好的博客主页</p><p><a href="https://co5.me/">https://co5.me/</a></p><h2 id="字数统计功能"><a href="#字数统计功能" class="headerlink" title="字数统计功能"></a>字数统计功能</h2><blockquote><p>google了一下，大部分的技术贴都是过时的，使用<code>hexo-wordcount</code>, 然后next v6.3 用的插件是<code>hexo-symbols-count-time</code>，所以按老板方法设置是完全没有用的</p><p>应该参考官网的更新介绍: <a href="https://github.com/theme-next/hexo-symbols-count-time">https://github.com/theme-next/hexo-symbols-count-time</a></p><p>或者这个博主大神的帖子：<a href="https://co5.me/2018/180613-wordcount.html#comments">https://co5.me/2018/180613-wordcount.html#comments</a> （以下内容基于该帖子）</p></blockquote><p>然后安装新插件， <code>npm i hexo-symbols-count-time --save</code> (i 就是 install 的简写)</p><p>然后有两个地方需要修改：一个是你 hexo 文件夹下的配置文件<code>_config.yml</code>，另一个是你主题文件夹里的同名文件。<br>首先是你 hexo 文件夹下的配置文件，拉到最后添加如下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">symbols: true</span><br><span class="line">time: true</span><br><span class="line">total_symbols: true</span><br><span class="line">total_time: true</span><br></pre></td></tr></table></figure><p>然后是主题文件夹里的配置文件，NexT 主题其实已经自带了相关代码，搜索<code>wordcount</code>或者插件名可以看到如下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-symbols-count-time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true   # 是否另起一行（true的话不和发表时间等同一行）</span><br><span class="line">  item_text_post: true   # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）</span><br><span class="line">  item_text_total: false  # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br></pre></td></tr></table></figure><p>　　其中<code>awl</code>（Average Word Length）的数值是设定多少字符统计为一个字（word），中文博客需要设置为 2。<br>　　<code>wpm</code>（Words Per Minute）是你的阅读速度，多少字（word）统计为阅读时长一分钟。以下是官方文档里的一些阅读速度参考数据：</p><ul><li>慢速：200</li><li>中速：275（默认）</li><li>快速：350</li></ul><p>　　还有给中文用户的贴心提示：因为在中文中一个词语的平均长度在 1.5 字左右，所以一般建议设置为<code>awl=2</code>，<code>wpm=300</code>。<br>　　附上原文：</p><ul><li><strong>Note for Chinese users</strong>: because in Chinese language average word length about ~1.5 and if you at most cases write posts in Chinese (without mixed English), recommended to set awl to 2 and wpm to 300.</li><li>But if you usualy mix your posts with English, awl to 4 and wpm to 275 will be nice.</li></ul><p>　　然后注意<code>_config.yml</code>文件里的更改一般是不能直接作用在本地浏览里的，请先 ctrl+C 终止预览，再<code>hexo clean</code>→<code>hexo s --debug</code>重新开一遍，不出意外你的文章标题底下就会有和本站一样的字数统计了，末尾的版权信息里也会出现全站字数统计。</p><blockquote><p>这点很重要，hexo clean 主要是在重新配置根目录<code>_config.yml</code>文件时使用</p></blockquote><p>如何将显示文字改为中文；</p><blockquote><p>网络搜寻的技术贴貌似都没提到这个问题，貌似都显示中文（即最终结果），而刚开始我的博客里面，显示的是英文，非常奇怪。</p></blockquote><img src="/2021/03/20/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96-%E5%BE%85%E5%8A%9E/image-20210320130606175.png" class title="image-20210320130606175"><img src="/2021/03/20/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96-%E5%BE%85%E5%8A%9E/image-20210320130207138.png" class title="image-20210320130207138"><p>将<code>symbols_count_time.count</code>改为<code>本文字数</code>，同理也是将<code>symbols_count_time.time</code>改为<code>阅读时间</code></p><p>参考文献： </p><p><a href="https://co5.me/2018/180613-wordcount.html#comments">Hexo NexT v6.3.0 字数统计</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 待办 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>matlab_常用函数_绘图1</title>
+      <link href="2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-%E7%BB%98%E5%9B%BE1/"/>
+      <url>2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-%E7%BB%98%E5%9B%BE1/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>d 最方便的是方法3，默认figure大小为屏幕大小，然后写代码时直接保存</p></blockquote><p>全屏+保存</p><p>set(gcf,’outerposition’,get(0,’ScreenSize’));</p><p>text(-0.1,1.05,[‘script: ‘,pwd,’&#39;,mfilename],’Units’,’normalized’,’Interpreter’,’none’)</p><p>print(gcf,’-djpeg’,’-r150’,’-opengl’,[‘Fig_’,savename,’.jpg’]);</p><p>第二种方式，全屏保存</p><p>% scrsz = get(0,’ScreenSize’);</p><p>% set(gcf,’Position’,scrsz);</p><p>% % print(gcf,’-r300’,’-dpng’,’GRIPNEEM’);</p><p>方法3： </p><p>设置图片的</p><p>保存出图 (注意这种情况下，输出的仍为栅格，不是适量）</p><p>print(gcf,’-djpeg’,’-r150’,’-opengl’,[‘Fig_’,savename,’.jpg’]);</p><p>如果是横向的，事先设定为横向</p><p>orient(gcf,’landscape’) </p><p>如果想要矢量保存图片</p><p>方法1： saveas (gcf,’Fig4’,’pdf’)， 适合小图</p><p>方法2： 适合小图和大图</p><p>set(gcf,’outerposition’,get(0,’ScreenSize’),’Units’,’Inches’)</p><p>pos = get(gcf,’Position’);</p><p>set(gcf,’PaperPositionMode’,’Auto’,’PaperUnits’,’Inches’,’PaperSize’,[pos(3), pos(4)])</p><p>print(gcf,savename,’-dpdf’,’-r0’)</p><p>一些常用的属性值，<a href="https://zhuanlan.zhihu.com/p/348822567">https://zhuanlan.zhihu.com/p/348822567</a></p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 定义线型、标记符号、线宽和颜色</span></span><br><span class="line">set(Line1, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C1)</span><br><span class="line">set(Line2, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;o&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C2)</span><br><span class="line">set(Line3, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;^&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C3)</span><br><span class="line">set(Line4, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;v&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C4)</span><br><span class="line">set(Line5, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C5)</span><br><span class="line"><span class="comment">% 坐标区调整</span></span><br><span class="line">set(gca, <span class="string">&#x27;Box&#x27;</span>, <span class="string">&#x27;off&#x27;</span>, ...                                <span class="comment">% 边框</span></span><br><span class="line">         <span class="string">&#x27;XGrid&#x27;</span>, <span class="string">&#x27;off&#x27;</span>, <span class="string">&#x27;YGrid&#x27;</span>, <span class="string">&#x27;on&#x27;</span>, ...               <span class="comment">% 网格</span></span><br><span class="line">         <span class="string">&#x27;TickDir&#x27;</span>, <span class="string">&#x27;out&#x27;</span>, <span class="string">&#x27;TickLength&#x27;</span>, [<span class="number">.01</span> <span class="number">.01</span>], ...   <span class="comment">% 刻度</span></span><br><span class="line">         <span class="string">&#x27;XMinorTick&#x27;</span>, <span class="string">&#x27;off&#x27;</span>, <span class="string">&#x27;YMinorTick&#x27;</span>, <span class="string">&#x27;off&#x27;</span>, ...    <span class="comment">% 小刻度</span></span><br><span class="line">         <span class="string">&#x27;XColor&#x27;</span>, [<span class="number">.1</span> <span class="number">.1</span> <span class="number">.1</span>],  <span class="string">&#x27;YColor&#x27;</span>, [<span class="number">.1</span> <span class="number">.1</span> <span class="number">.1</span>],...  <span class="comment">% 坐标轴颜色</span></span><br><span class="line">         <span class="string">&#x27;XTick&#x27;</span>, <span class="number">0</span>:<span class="number">0.1</span>:<span class="number">1.2</span>,  <span class="string">&#x27;YTick&#x27;</span>, <span class="number">0</span>:<span class="number">0.05</span>:<span class="number">0.5</span>,...     <span class="comment">% 刻度位置、间隔</span></span><br><span class="line">         <span class="string">&#x27;Xlim&#x27;</span> ,[<span class="number">0</span> <span class="number">1.1</span>],<span class="string">&#x27;Ylim&#x27;</span> ,[<span class="number">0.1</span> <span class="number">0.35</span>], ...          <span class="comment">% 坐标轴范围</span></span><br><span class="line">         <span class="string">&#x27;Xticklabel&#x27;</span>,&#123;[<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">1.2</span>]&#125;,...                   <span class="comment">% X坐标轴刻度标签</span></span><br><span class="line">         <span class="string">&#x27;Yticklabel&#x27;</span>,&#123;[<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">0.5</span>]&#125;)                     <span class="comment">% Y坐标轴刻度标签</span></span><br><span class="line"><span class="comment">% X、Y轴标签及Legend</span></span><br><span class="line">hXLabel = xlabel(<span class="string">&#x27;Point spacing (m)&#x27;</span>);</span><br><span class="line">hYLabel = ylabel(<span class="string">&#x27;MAE (m)&#x27;</span>);</span><br><span class="line">hLegend = <span class="built_in">legend</span>([Line1,Line2,Line3,Line4,Line5], ...</span><br><span class="line">                 <span class="string">&#x27;samp1&#x27;</span>, <span class="string">&#x27;samp2&#x27;</span>,<span class="string">&#x27;samp3&#x27;</span>,<span class="string">&#x27;samp4&#x27;</span>,<span class="string">&#x27;samp5&#x27;</span>, ...</span><br><span class="line">                 <span class="string">&#x27;Location&#x27;</span>, <span class="string">&#x27;northwest&#x27;</span>);</span><br><span class="line"><span class="comment">% 刻度标签字体和字号</span></span><br><span class="line">set(gca, <span class="string">&#x27;FontName&#x27;</span>, <span class="string">&#x27;Times&#x27;</span>, <span class="string">&#x27;FontSize&#x27;</span>, <span class="number">9</span>)</span><br><span class="line"><span class="comment">% X、Y轴标签及Legend的字体字号 </span></span><br><span class="line">set([hXLabel, hYLabel,hLegend], <span class="string">&#x27;FontName&#x27;</span>,  <span class="string">&#x27;Helvetica&#x27;</span>)</span><br><span class="line">set([hXLabel, hYLabel,hLegend], <span class="string">&#x27;FontSize&#x27;</span>, <span class="number">10</span>)</span><br><span class="line"><span class="comment">% 背景颜色</span></span><br><span class="line">set(gca,<span class="string">&#x27;Color&#x27;</span>,[<span class="number">1</span> <span class="number">1</span> <span class="number">1</span>])</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> matlab学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> matlab </tag>
+            
+            <tag> matlab常用函数 </tag>
+            
+            <tag> matlab绘图plot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>matlab_figure留白问题</title>
+      <link href="2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-figure%E7%95%99%E7%99%BD%E9%97%AE%E9%A2%98/"/>
+      <url>2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-figure%E7%95%99%E7%99%BD%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>目的是能一劳永逸的解决matlab画图的留白问题。</p></blockquote><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>figure如同一张画布，axes是坐标轴用来控制所画图的位置和大小。</p><p>关于画布位置的属性主要有：Position; TightInset; OuterPosition。</p><p>下图是三者的关系，OuterPosition是外边框（红色虚线），Position是内边框（绿色实线），TightInset是有效边界（蓝色）与Position之间的部分（理解它才能自定义axes）。</p><img src="/2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-figure%E7%95%99%E7%99%BD%E9%97%AE%E9%A2%98/20180926130138310" class title="在这里插入图片描述"><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><h2 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h2><p><strong>LooseInset</strong>, 在Matlab中默认设置为[0.13, 0.11, 0.095, 0.075]，从而为刻度标记留出一定的空间。 便捷的方法时，修改matlab默认的属性值（详情可见博客中的另一文章“matlab_模板设定”）</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(<span class="number">0</span>,<span class="string">&#x27;DefaultAxesLooseInset&#x27;</span>,[<span class="number">0.03</span>,<span class="number">0.03</span>,<span class="number">0.03</span>,<span class="number">0.03</span>])</span><br></pre></td></tr></table></figure><h2 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h2><blockquote><p>效果等于方法1中当 <strong>looseinset</strong> 取值都为0的时候</p></blockquote><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(gca,<span class="string">&#x27;LooseInset&#x27;</span>,get(gca,<span class="string">&#x27;TightInset&#x27;</span>))</span><br></pre></td></tr></table></figure><h2 id="方法3-窗口长宽比失衡问题"><a href="#方法3-窗口长宽比失衡问题" class="headerlink" title="方法3 窗口长宽比失衡问题"></a>方法3 窗口长宽比失衡问题</h2><p>有一种可能窗口长宽比失衡的问题，如下图：</p><img src="/2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-figure%E7%95%99%E7%99%BD%E9%97%AE%E9%A2%98/v2-77678e0599bd2c7141065727cf9db4a3_1440w.jpg" class title="img"><p>一种方法是，计算坐标区长度与宽度的比例，通过改变figure窗口尺寸以使坐标区填充画布：</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axis tight </span><br><span class="line">pos=get(gcf,<span class="string">&#x27;Position&#x27;</span>); <span class="comment">% 获取窗口尺寸信息</span></span><br><span class="line">pos(<span class="number">3</span>)=pos(<span class="number">4</span>)/<span class="number">3</span>; <span class="comment">% 改变窗口宽度（倍数根据长宽比自己确定）</span></span><br><span class="line">set(gcf,<span class="string">&#x27;Position&#x27;</span>,pos) <span class="comment">% 更新窗口尺寸</span></span><br></pre></td></tr></table></figure><h1 id="方法4-针对多图subplot的解决方法"><a href="#方法4-针对多图subplot的解决方法" class="headerlink" title="方法4 针对多图subplot的解决方法"></a>方法4 针对多图subplot的解决方法</h1><blockquote><p>以上的方法对于单一图片比较有效，但是如果有多个图片的话（e.g., subplot)，并不能有效去除空白。进行了google，发现一般都要写个脚本script进行处理。</p><p>我之前在处理相关数据的时候写了一个简单的脚本，放在这里</p></blockquote><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> k==<span class="number">1</span></span><br><span class="line">    pos1=get(fig(<span class="number">1</span>),<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    pos1(<span class="number">1</span>)=<span class="number">0</span>;</span><br><span class="line">    pos1(<span class="number">4</span>)=<span class="number">0.35</span>;</span><br><span class="line">    pos1(<span class="number">3</span>)=<span class="number">0.25</span>;</span><br><span class="line">    set(fig(<span class="number">1</span>),<span class="string">&#x27;position&#x27;</span>,pos1)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    pos=get(fig(k),<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    pos(<span class="number">1</span>)=pos1(<span class="number">1</span>)+<span class="number">0.23</span>*(k<span class="number">-1</span>);</span><br><span class="line">    pos(<span class="number">4</span>)=<span class="number">0.35</span>;</span><br><span class="line">    pos(<span class="number">3</span>)=<span class="number">0.25</span>;</span><br><span class="line">    set(fig(k),<span class="string">&#x27;position&#x27;</span>,pos)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% put the title closer and figure closer</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">j</span>==<span class="number">4</span></span><br><span class="line">    title([<span class="string">&#x27;1998-2018 Madrid &#x27;</span>,name&#123;k&#125;])</span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">j</span>==<span class="number">3</span></span><br><span class="line">    title([<span class="string">&#x27;1984-2018 Vienna &#x27;</span>,name&#123;k&#125;])</span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">j</span>==<span class="number">2</span></span><br><span class="line">    a=title([<span class="string">&#x27;1975-2018 Ljungbyhed &#x27;</span>,name&#123;k&#125;],<span class="string">&#x27;units&#x27;</span>,<span class="string">&#x27;norm&#x27;</span>);</span><br><span class="line">    p=get(a,<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    p(<span class="number">2</span>)=p(<span class="number">2</span>)<span class="number">-0.1</span>;</span><br><span class="line">    set(a,<span class="string">&#x27;position&#x27;</span>,p,<span class="string">&#x27;units&#x27;</span>,<span class="string">&#x27;norm&#x27;</span>);</span><br><span class="line">    pos=get(fig(k),<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    pos(<span class="number">2</span>)=pos(<span class="number">2</span>)+<span class="number">0.07</span>;</span><br><span class="line">    set(fig(k),<span class="string">&#x27;position&#x27;</span>,pos)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    a=title([<span class="string">&#x27;1975-2018 Kiruna &#x27;</span>,name&#123;k&#125;],<span class="string">&#x27;units&#x27;</span>,<span class="string">&#x27;norm&#x27;</span>);</span><br><span class="line">    p=get(a,<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    p(<span class="number">2</span>)=p(<span class="number">2</span>)<span class="number">-0.1</span>;</span><br><span class="line">    set(a,<span class="string">&#x27;position&#x27;</span>,p,<span class="string">&#x27;units&#x27;</span>,<span class="string">&#x27;norm&#x27;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><p>参考文献：</p><p><a href="https://blog.csdn.net/u011650143/article/details/79469991?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242">Matlab绘图去白边技巧(plot 、subplot)</a></p><p><a href="https://blog.csdn.net/robot301/article/details/82852006?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control">MATLAB：通过m文件去除图片空白区域（plot、subplot），设置大小并保存清晰图片</a></p><p><a href="https://zhuanlan.zhihu.com/p/131602083">Matlab论文插图消除白边的5种方法</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> matlab学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> matlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>matlab_常用函数1</title>
+      <link href="2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B01/"/>
+      <url>2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B01/</url>
+      
+        <content type="html"><![CDATA[<p>  % strrep函数，e.g. 从f中找到’Time’，替换为date;</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = strrep(f,<span class="string">&#x27;Time&#x27;</span>,date); </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> matlab学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> matlab </tag>
+            
+            <tag> matlab常用函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>matlab_模板设定</title>
+      <link href="2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-%E6%A8%A1%E6%9D%BF%E8%AE%BE%E5%AE%9A/"/>
+      <url>2021/03/19/matlab%E5%AD%A6%E4%B9%A0/matlab-%E6%A8%A1%E6%9D%BF%E8%AE%BE%E5%AE%9A/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>起因是每当创建新的脚本时，我总要重复输入一些固定的代码，因此想说能不能使用特定的模板；</p><p>一来能省下一定的时间，二来避免敲代码时出现各种各样的格式。</p></blockquote><h1 id="Matlab脚本的模板"><a href="#Matlab脚本的模板" class="headerlink" title="Matlab脚本的模板"></a>Matlab脚本的模板</h1><h2 id="创建一个make-fun函数进行创建模板"><a href="#创建一个make-fun函数进行创建模板" class="headerlink" title="创建一个make_fun函数进行创建模板"></a>创建一个make_fun函数进行创建模板</h2><ol><li><p>Create a script “my_template.m” that has the layout of your code<br>For example:</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%   Description: </span></span><br><span class="line"><span class="comment">%   Author: Foo</span></span><br><span class="line"><span class="comment">%   Comment: </span></span><br><span class="line">close all; clear; clc</span><br></pre></td></tr></table></figure></li><li><p>Create a function “make_fun.m” that utilizes “copyfile” function to copy the template to a new m-file</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[]</span> = <span class="title">make_fun</span><span class="params">(V)</span></span></span><br><span class="line">copyfile(<span class="string">&#x27;my_template.m&#x27;</span>,V)</span><br><span class="line">edit(V)</span><br></pre></td></tr></table></figure></li><li><p>From the command line, you can call “make_fun” function to create a new function/script with the name of your choice</p></li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make_fun(<span class="string">&#x27;newScript.m&#x27;</span>);</span><br></pre></td></tr></table></figure><h2 id="一个改进版本的make-fun-script，可以参照该思路进行改进"><a href="#一个改进版本的make-fun-script，可以参照该思路进行改进" class="headerlink" title="一个改进版本的make_fun script，可以参照该思路进行改进"></a>一个改进版本的make_fun script，可以参照该思路进行改进</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[]</span> = <span class="title">make_fun</span><span class="params">(V)</span></span></span><br><span class="line">[status,message,messageid] = copyfile(<span class="string">&#x27;my_template.m&#x27;</span>,V);</span><br><span class="line"><span class="keyword">if</span> (status &gt; <span class="number">0</span>)</span><br><span class="line">    fid  = fopen(V,<span class="string">&#x27;r+&#x27;</span>);</span><br><span class="line">    f=fread(fid,<span class="string">&#x27;*char&#x27;</span>)&#x27;;</span><br><span class="line">    fclose(fid);</span><br><span class="line">    f = strrep(f,<span class="string">&#x27;#my_template#&#x27;</span>,strrep(V,<span class="string">&#x27;.m&#x27;</span>,<span class="string">&#x27;&#x27;</span>));</span><br><span class="line">    f = strrep(f,<span class="string">&#x27;#date#&#x27;</span>,date);</span><br><span class="line">    fid  = fopen(V,<span class="string">&#x27;w+&#x27;</span>);</span><br><span class="line">    fprintf(fid,<span class="string">&#x27;%s&#x27;</span>,f);</span><br><span class="line">    fclose(fid);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">edit(V)</span><br></pre></td></tr></table></figure><blockquote><p>#号之间的为可修改字段</p></blockquote><h1 id="Matlab默认属性设置（对图片绘制特别有效）"><a href="#Matlab默认属性设置（对图片绘制特别有效）" class="headerlink" title="Matlab默认属性设置（对图片绘制特别有效）"></a>Matlab默认属性设置（对图片绘制特别有效）</h1><blockquote><p>可以创建个startup函数，里面可以修改Matlab的默认属性，这样每次启动Matlab，就会读取startup函数里面提前设定好属性值。（不过这样刚开始启动Matlab的时候，可能会有点时间）</p></blockquote><p>下面是我常用的属性设置，主要是利用Matlab绘制图片</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">startup</span></span></span><br><span class="line"><span class="comment">% change the defaut setting</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% ^^^ setting the plot ^^^</span></span><br><span class="line">set(groot,<span class="string">&#x27;DefaultLegendAutoUpdate&#x27;</span>,<span class="string">&#x27;off&#x27;</span>,<span class="string">&#x27;DefaultLegendorientation&#x27;</span>,<span class="string">&#x27;horizontal&#x27;</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;DefaultLegendbox&#x27;</span>,<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;defaultLineLineWidth&#x27;</span>,<span class="number">1.5</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;DefaultAxesFontsize&#x27;</span>,<span class="number">16</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;DefaultTextfontsize&#x27;</span>,<span class="number">16</span>,<span class="string">&#x27;DefaultTextUnits&#x27;</span>,<span class="string">&#x27;normalized&#x27;</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;DefaultAxesFontweight&#x27;</span>,<span class="string">&#x27;bold&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">% ^^^ setting the figure ^^^</span></span><br><span class="line"><span class="comment">% make the figure size as window size</span></span><br><span class="line">set(groot, <span class="string">&#x27;defaultFigureUnits&#x27;</span>,<span class="string">&#x27;normalized&#x27;</span>,<span class="string">&#x27;defaultfigureposition&#x27;</span>,[<span class="number">0</span> <span class="number">0.05</span> <span class="number">1</span> <span class="number">0.85</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> matlab学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> matlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>milankovitch_cycle</title>
+      <link href="2021/03/18/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/milankovitch-cycle/"/>
+      <url>2021/03/18/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/milankovitch-cycle/</url>
+      
+        <content type="html"><![CDATA[<p>m问题： 米兰科维奇(Milankovitch cycle)如何影响地球气候</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文献阅读笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Milankovitch paper </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PDF解锁_去水印</title>
       <link href="2021/03/16/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/PDF%E8%A7%A3%E9%94%81-%E5%8E%BB%E6%B0%B4%E5%8D%B0/"/>
       <url>2021/03/16/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/PDF%E8%A7%A3%E9%94%81-%E5%8E%BB%E6%B0%B4%E5%8D%B0/</url>
@@ -106,9 +283,9 @@
       
         <tags>
             
-            <tag> 博客 </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> 博客 </tag>
             
         </tags>
       
@@ -121,7 +298,7 @@
       <link href="2021/03/09/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/hexo-%E5%AD%A6%E4%B9%A0/"/>
       <url>2021/03/09/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/hexo-%E5%AD%A6%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[<p>更为详细的教程见<a href="https://hexo.io/zh-cn/docs/">Hexo官网教程</a></p><p>Hexo 主题的修改</p><p>hexo 主页显示出tags和categories</p><p>在主题的<em>_config</em>文件中修改</p><p><a href="https://blog.csdn.net/Wonz5130/article/details/84666519">https://blog.csdn.net/Wonz5130/article/details/84666519</a></p><p>分类和标签的写法，一共有两种</p><p>分类具有层次性和顺序性，标签没有</p><blockquote><p>注意空格，如果没有空格，则不能正确显示。 </p><p>如果标签tags后面没有空格，即使categories后面填写正确，也不能正确显示（目测编码有顺序性）。</p></blockquote><p>模板的修改，scaffolds</p><p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p><p>NEXT 主题，</p><p>有很多插件和布局的修改，在<em>next</em>文件夹下面的<em>_config</em>文件中修改，非常方便</p><p>Hexo常用的几个操作</p><ul><li><p>hexo clean, 清空博客内容（一般操作之后进行）</p></li><li><p>hexo g，生成博客</p></li><li><p>hexo s，打开静态博客</p></li><li><p>hexo debug，可以看出问题所在</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>更为详细的教程见<a href="https://hexo.io/zh-cn/docs/">Hexo官网教程</a></p><p>Hexo 主题的修改</p><p>hexo 主页显示出tags和categories</p><p>在主题的<em>_config</em>文件中修改</p><p><a href="https://blog.csdn.net/Wonz5130/article/details/84666519">https://blog.csdn.net/Wonz5130/article/details/84666519</a></p><p>分类和标签的写法，一共有两种</p><p>分类具有层次性和顺序性，标签没有</p><blockquote><p>注意空格，如果没有空格，则不能正确显示。 </p><p>如果标签tags后面没有空格，即使categories后面填写正确，也不能正确显示（目测编码有顺序性）。</p></blockquote><p>模板的修改，scaffolds</p><p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p><p>NEXT 主题，</p><p>有很多插件和布局的修改，在<em>next</em>文件夹下面的<em>_config</em>文件中修改，非常方便</p><p>Hexo常用的几个操作</p><ul><li><p>hexo clean, 清空博客内容，主要是在重新配置根目录<code>_config.yml</code>文件时使用</p></li><li><p>hexo g，生成博客</p></li><li><p>hexo s，打开静态博客</p></li><li><p>hexo debug，可以看出问题所在</p></li></ul>]]></content>
       
       
       <categories>
@@ -133,9 +310,9 @@
       
         <tags>
             
-            <tag> 博客 </tag>
+            <tag> Hexo </tag>
             
-            <tag> hexo </tag>
+            <tag> 博客 </tag>
             
         </tags>
       
@@ -160,9 +337,9 @@
       
         <tags>
             
-            <tag> 博客 </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> 博客 </tag>
             
         </tags>
       
@@ -200,7 +377,7 @@
       
         <tags>
             
-            <tag> hexo </tag>
+            <tag> Hexo </tag>
             
             <tag> markdown </tag>
             
