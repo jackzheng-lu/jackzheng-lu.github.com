@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Linux 写在前面 作为博客的第一篇，我写写整个博客搭建的过程，主要使用Github+HEXO的结合。网络上已经又非常多的教程。由于我的搭建过程参考了众多教程，因此我这里做一个记录，以便之后的快速回顾。引用的教程也附上了链接。每个人的搭建都有自己的独特性。 没有特殊说明，主要来源于这篇博客：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;26625249 Anaconda cmd 中可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JackZHENG_blog">
-<meta property="og:url" content="http://example.com/2021/03/03/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:url" content="http://jackzheng-lu.github.io/2021/03/03/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="JackZHENG_blog">
 <meta property="og:description" content="Linux 写在前面 作为博客的第一篇，我写写整个博客搭建的过程，主要使用Github+HEXO的结合。网络上已经又非常多的教程。由于我的搭建过程参考了众多教程，因此我这里做一个记录，以便之后的快速回顾。引用的教程也附上了链接。每个人的搭建都有自己的独特性。 没有特殊说明，主要来源于这篇博客：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;26625249 Anaconda cmd 中可">
 <meta property="og:locale" content="en_US">
@@ -41,7 +41,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-76ea38e9545e606f975781e47933b010_720w.jpg">
 
-<link rel="canonical" href="http://example.com/2021/03/03/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
+<link rel="canonical" href="http://jackzheng-lu.github.io/2021/03/03/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
 
 
 <script id="page-configurations">
@@ -203,7 +203,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/03/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/03/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -416,7 +416,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -429,7 +429,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -465,12 +465,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">19k</span>
+    <span title="Symbols count total">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">17 mins.</span>
+    <span title="Reading time total">18 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
