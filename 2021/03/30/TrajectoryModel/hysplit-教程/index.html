@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="依据最新的Hysplit 5以及更新的2020年4月份的tutorial（教程）整理的以下内容 blibli上面有官网英语教程 有个Hysplit论坛上面可以问问题，也可以看下别人是否有相同的问题。 文件详情也可以看hysplit_user_guide（网上可以下载到pdf的版本），有对相关文件（如CONTROL file）进行详细说明。  在GUI的advance setting中，也可以调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HySPLIT_教程">
+<meta property="og:url" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="JackZHENG_blog">
+<meta property="og:description" content="依据最新的Hysplit 5以及更新的2020年4月份的tutorial（教程）整理的以下内容 blibli上面有官网英语教程 有个Hysplit论坛上面可以问问题，也可以看下别人是否有相同的问题。 文件详情也可以看hysplit_user_guide（网上可以下载到pdf的版本），有对相关文件（如CONTROL file）进行详细说明。  在GUI的advance setting中，也可以调用">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330103724354.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330105101974.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330111215556.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330111734050.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/terr005.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/terr006.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/vert004.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tisob008.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tensem004.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tensem003.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/freq010.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/clus004.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/cbase003.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210403162223986.png">
+<meta property="article:published_time" content="2021-03-30T01:20:43.000Z">
+<meta property="article:modified_time" content="2021-04-08T02:21:54.059Z">
+<meta property="article:author" content="JackZheng">
+<meta property="article:tag" content="Hysplit">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330103724354.png">
+
+<link rel="canonical" href="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>HySPLIT_教程 | JackZHENG_blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JackZHENG_blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HySPLIT_教程
+        </h1>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-30 09:20:43" itemprop="dateCreated datePublished" datetime="2021-03-30T09:20:43+08:00">2021-03-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-08 10:21:54" itemprop="dateModified" datetime="2021-04-08T10:21:54+08:00">2021-04-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>8.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>8 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+        <blockquote>
+<p>依据最新的Hysplit 5以及更新的2020年4月份的tutorial（教程）整理的以下内容</p>
+<p>blibli上面有官网英语教程</p>
+<p>有个<a target="_blank" rel="noopener" href="https://hysplitbbs.arl.noaa.gov/viewforum.php?f=10&sid=2a13ba958cd9c4800bada947085476c3">Hysplit论坛</a>上面可以问问题，也可以看下别人是否有相同的问题。</p>
+<p>文件详情也可以看hysplit_user_guide（网上可以下载到pdf的版本），有对相关文件（如CONTROL file）进行详细说明。</p>
+</blockquote>
+<p>在GUI的advance setting中，也可以调用帮助文档，查看详情。</p>
+<p>在官网的<a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/">frequent asked question</a>里面也有些有用信息</p>
+<p>多看看官网上面的信息，有很多现成的东西可以直接用。</p>
+<blockquote>
+<p><strong>captex2_wrf27uw.bin</strong>和<strong>captex2_wrf27mc.bin</strong>并没有在tutoril的文件中，可以在<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/html/meteo_data.html">Tutorial Meteorological Data</a>数据右键复制链接下载。</p>
+</blockquote>
+<p>如何对shell文件进行check</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Enter to continue ...&quot;; read x</span><br></pre></td></tr></table></figure>
+
+<p>1°大约是100km，不过这也要看纬度</p>
+<blockquote>
+<p>我最后是学习hysplit bash的文件。主要是之后方便对大型数据进行操作，也顺便学习了linux的相关操作，学习性价比高。</p>
+</blockquote>
+<h1 id="Hysplit-前言"><a href="#Hysplit-前言" class="headerlink" title="Hysplit 前言"></a>Hysplit 前言</h1><p>安装的一些信息</p>
+<p><a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/hysplitusersguide/S000.htm">https://www.ready.noaa.gov/hysplitusersguide/S000.htm</a></p>
+<h1 id="Hysplit-5-安装须知"><a href="#Hysplit-5-安装须知" class="headerlink" title="Hysplit 5 安装须知"></a>Hysplit 5 安装须知</h1><p>trial版本和register版本没什么不同，register版本可以额外使用预报功能。Hysplit 5 教程使用的是unregister (trial)版本。</p>
+<p>Hysplit 安装的网址[]</p>
+<p>需要预安装两个软件：</p>
+<ul>
+<li><p>Tcl/TK，打开软件的打开方式。Tk是一開放原始碼的圖形化使用者介面開發工具，提供許多常用的圖形介面元件，具有跨平台、輕量化等特色。官网下载地址：<a target="_blank" rel="noopener" href="https://www.tcl.tk/software/tcltk/download.html">https://www.tcl.tk/software/tcltk/download.html</a></p>
+<blockquote>
+<p>官网上有个叫source file，需要自己结合电脑进行compile。</p>
+</blockquote>
+</li>
+<li><p>Ghostview，成图要用的。</p>
+</li>
+</ul>
+<blockquote>
+<p>两者最好要跟Hysplit安装在同一个drive磁盘中，否则要对Hysplit中的绘图道路进行设置</p>
+<blockquote>
+<p>Installation to directories different from their suggested defaults may require editing the HYSPLIT GUI launch script: \guicode\hysplit.tcl. </p>
+</blockquote>
+<p>NOAA官网有提供现在的两个软件的<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/HYSPLIT_util.php">下载链接</a></p>
+</blockquote>
+<p>安装Hysplit 5， 然后修改打开方式为tcl/bin路径下的wish86t.exe文件即可，安装好的使用界面</p>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330103724354.png" alt="image-20210330103724354" style="zoom:50%;">
+
+<p>忘记了电脑是否安装了Ghostview和Ghostscript，先简单运行个example看看。在concentration栏目下有个quick start可以运行个样例：</p>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330105101974.png" alt="image-20210330105101974" style="zoom:50%;">
+
+<blockquote>
+<p>ok, 基本上电脑可以运行Hysplit。</p>
+<p>此外还有四种看图方式（python，Google Earth View 等），之后有需要的时候在了解。</p>
+</blockquote>
+<p>安装的建议：</p>
+<ul>
+<li><p>安装路径推荐默认路径</p>
+<blockquote>
+<blockquote>
+<p>  Installing to the default directory will make it easier to use preconfigured input files during the Tutorial as well as running example scripts without editing the directory pointer.</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>不要打开多个Hysplit窗口</p>
+</li>
+<li><p>将文件打开方式设为notepad，这样比较好看结果</p>
+</li>
+</ul>
+<p>更多详细安装建议：<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html">https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html</a></p>
+<blockquote>
+<p>可以使用cmd 调用batch文件进行，可以达到类似windows GUI操作的效果。通过batch代码可以实现批量操作的效果。</p>
+<p>注意路径问题，我的tutorial安装在D盘，Hysplit是安装在C盘。然后我下载的是19年的tutorial材料（因为20年的下载速度太慢），所以内部的.sh脚本的搜索是Hysplit4，需要修改为对应的Hysplit才能成功运行。</p>
+</blockquote>
+<p>将代码保存下来，先保存到txt文档中，然后改后缀名为.bat文件。</p>
+<blockquote>
+<p>.bat</p>
+</blockquote>
+<h1 id="Hysplit-trajectory-concentrations-运行实例"><a href="#Hysplit-trajectory-concentrations-运行实例" class="headerlink" title="Hysplit trajectory/concentrations 运行实例"></a>Hysplit trajectory/concentrations 运行实例</h1><p>运行主要包括三个步骤</p>
+<ol>
+<li>先在<code>setup run</code>设定运行设置包括（开始时间，开始地点，运移时间，垂直运移方法，气象数据等）</li>
+</ol>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330111215556.png" alt="image-20210330111215556" style="zoom:50%;">
+
+<ol start="2">
+<li>然后点<code>run model</code>运行模型</li>
+<li>最后在<code>display</code>里面设置成图。注意Hysplit5增加了python成图的一个选项。</li>
+</ol>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330111734050.png" alt="image-20210330111734050" style="zoom:50%;">
+
+
+
+<p>接下来是Hysplit的运行</p>
+<p>这里主要是使用官网提供的shell/bash文件，GUI界面的操作仅了解下就好。</p>
+<blockquote>
+<p> 前期准备，因为我用的是windows系统（后期会改用linux)，所以我想在windows系统上运行bash文件。我使用Anaconda</p>
+</blockquote>
+<p>在anaconda中执行以下命令即可（要先activation 想用的环境）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install m2-base</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>  将教程的shell脚本中，画图的部分改为如下，这样可以成功绘制出图片</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">法1：这样可以成功显示图片</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> gswin64 trajplot.ps</span> </span><br><span class="line">法2： 这样可以保存图片（推荐）</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> ps2pdf trajplot.ps 4_4_traj_mixd_1.pdf</span></span><br></pre></td></tr></table></figure>
+
+<p>  接下来，每个章节不再细分，只记录重点</p>
+</blockquote>
+<h1 id="4-Trajectory-的计算"><a href="#4-Trajectory-的计算" class="headerlink" title="4. Trajectory 的计算"></a>4. Trajectory 的计算</h1><p>高度的设置，这样做的目的是为了节省计算时间。如果trajectory超过这一个界限高度会被反弹回来。另一种做法就是设置阈值，只有当达到这一高度的时候才进行计算。</p>
+<blockquote>
+<p>4.2 The default internal scaling height is set to 25 km. This value is used in conjunction with the default model top setting (10 km for most PBL applications) in the <em>CONTROL</em> file which sets the vertical limit of the internal meteorological grid.Trajectories will terminate when they reach this level and mass particles will reflect back into the domain. </p>
+<p>A secondary use of the model top parameter in the <em>CONTROL</em> file is to set the model’s internal scaling height to a different value but only if the entry exceeds 25 km.</p>
+</blockquote>
+<blockquote>
+<p>4.3  The PBL height can be estimated assuming that in a standard atmosphere the height changes by about 9 m per hPa. In this case the estimated pressure for HPBL=1222 would be about 852 hPa (988-1222/9).</p>
+<p>At this point all we need to know is the Height of the Planetary Boundary Layer (<strong>HPBL</strong>) which is shown to be <strong>1222</strong> meters (<strong>AGL</strong>). &gt; 可是页面显示PBLH?</p>
+<p>Both turbulent kinetic energy (<strong>TKEN</strong>) and the specific humidity (<strong>SPHU</strong>) drop sharply at the first level above the boundary layer (843 hPa), while the potential temperature (<strong>TPOT</strong>) starts to increase at that level.  &gt;可以通过其他参数也来判断PBL</p>
+</blockquote>
+<p>不同的时间精度（time step）会导致不同的结果。不能过分解释一个trajectory，而是要是结合多个来判断。单一的trajectory也不能反应一些情况的真实情况，如污染物的扩散。</p>
+<p>分开运行，一起绘制</p>
+<p>4.5 发现测试误差，forward和backward的结果造成的误差大概为水平4km，垂直40m左右。</p>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/terr005.png" alt="img" style="zoom: 50%;">
+
+<p>4.6 从图可以看出气象数据可能是造成的trajectory model 误差的主要来源</p>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/terr006.png" class title="img">
+
+
+
+<h1 id="5-Trajectory-options"><a href="#5-Trajectory-options" class="headerlink" title="5 Trajectory options"></a>5 <strong>Trajectory options</strong></h1><p> 5.1 纵向运动</p>
+<p>一般气象数据包含了纵向运动的数据（pressure units)，hysplit根据这些数据进行计算。如果气象数据没有这些信息，hysplit会通过一些假设进行计算（近似计算）。</p>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/vert004.png" class title="img">
+
+<p>使用的6种vertical运动的方法计算的trajectories，只有data/divg这两种方法结果还比较ok。</p>
+<blockquote>
+<ul>
+<li>data - uses the vertical velocity field in the meteorological data file （推荐）</li>
+<li>isob - isobaric maintains the trajectory on a constant pressure surface</li>
+<li>isen - isentropic maintains the trajectory on surfaces of constant potential temperature</li>
+<li>dens - trajectories stay on constant density surfaces</li>
+<li>sigma - vertical motion is zero and the trajectory stays on the same internal sigma</li>
+<li>divg - the vertical motion is computed by vertical integration of the velocity divergence （默认）</li>
+</ul>
+</blockquote>
+<p>注意，默认使用的是divg方法如果气象数据中没有垂直运动的数据。其他的方法只有在特定的时候使用。</p>
+<p>每一种方法都有各自的缺点，正常情况下，如果有气象数据，就应该使用。</p>
+<blockquote>
+<p>Each of the computational approaches has its own limitations, isentropic in diabatic conditions (through clouds), isobaric over large terrain variations, and the divergence is sensitive to small differences in velocity gradients. Even the data method can become unreliable when meteorological grid sizes decrease but the data time interval remains unchanged, resulting in under-sampling a field that may change direction multiple times between output intervals。</p>
+</blockquote>
+<p>5.2 还可以通过看气象数据的pressure（一般850mb)来解释结果。</p>
+<p>5.3 地形的影响</p>
+<p>以下exercise表明（红色和蓝色表明forward 和backward trajectory)，back-trajectory 对地形判断的存在误差，因为无法判断路径何时收到地形的影响。</p>
+<blockquote>
+<p>In this particular case the backward trajectory is not reversible because there is no way for the backward model calculation to know which point along the forward calculation first intersected the terrain.</p>
+</blockquote>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tisob008.png" class title="img">
+
+
+
+<h2 id="5-4-初始条件的影响"><a href="#5-4-初始条件的影响" class="headerlink" title="5.4 初始条件的影响"></a>5.4 初始条件的影响</h2><img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tensem004.png" class title="img">
+
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tensem003.png" class title="img">
+
+<p>backforward，初始位置稍微不同，会产生不同的结果。主要是由于backward在一个不稳定的区域，稍微不同一点的位置会有很大差别的结果。forward结果相对一致。</p>
+<blockquote>
+<p>The difference between the forward and backward results show a dramatic difference in the “trajectory dispersion”, the forward trajectory results are quite constrained while the backward pattern is quite disperse. This is consistent with the weather pattern associated with release #2, where the tracer flowed along the northern side of a high pressure system. The backward equivalent starts in a divergent region where small changes in position resulted in very different trajectories.</p>
+</blockquote>
+<h1 id="6-Trajectory-statistics"><a href="#6-Trajectory-statistics" class="headerlink" title="6 Trajectory statistics"></a>6 <strong>Trajectory statistics</strong></h1><h2 id="6-1-Frequency的计算"><a href="#6-1-Frequency的计算" class="headerlink" title="6.1 Frequency的计算"></a>6.1 Frequency的计算</h2><p>所谓的百分比，表示的是网格中经过的trajectory的数量除以总的trajecory的数量。default setting是考虑所有高度。但是也有选项能将一些特定高度的trajectories去除。</p>
+<blockquote>
+<p> The trajectory frequency (F) is just the sum of the number of trajectories (T) that passed through each (i,j) grid cell divided by the total number (N) of trajectories analyzed:</p>
+<ul>
+<li>Fi,j = 100 Σ Ti,j / N</li>
+</ul>
+</blockquote>
+<p>还可以计算residence time weighted frequency，根据trajectory在网格grid中的时间确定。</p>
+<blockquote>
+<p>For instance, counting a trajectory more than once in a grid cell because multiple points along the trajectory may stay within the same grid cell is a residence time weighted frequency. This type of particle trajectory analysis is the basis of the concentration calculation.</p>
+</blockquote>
+ <img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/freq010.png" class title="img">
+
+
+
+
+
+<h2 id="6-2-Cluster-Analysis（主成分分析法）"><a href="#6-2-Cluster-Analysis（主成分分析法）" class="headerlink" title="6.2 Cluster  Analysis（主成分分析法）"></a>6.2 Cluster  Analysis（主成分分析法）</h2><p>同一组的轨迹距离最短，不同组的轨迹最长。</p>
+<blockquote>
+<p>Differences between trajectories within a cluster are minimized while differences between clusters are maximized. </p>
+<p>Computationally, trajectories are combined until the total variance of the individual trajectories about their cluster mean starts to increase.</p>
+</blockquote>
+<p>cluster的选取是根据<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/images/clus004.png">Total Spatial Variance</a> (TSV) ，总空间方差。cluster 5 到cluster 4时TSV出现明显的改变，因此选择cluster 5，否则给TSV设置个阈值，当高于20%或者30%的时候选取。</p>
+<blockquote>
+<p>In this particular case there is a large jump in TSV when going from 5 to 4 clusters, suggesting that perhaps 5 clusters would be an appropriate solution. Another possibility is to use an objective percentage change criterion of either 20% or 30%.</p>
+</blockquote>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/clus004.png" class title="img">
+
+
+
+<h2 id="6-4-Source-Geolocation"><a href="#6-4-Source-Geolocation" class="headerlink" title="6.4 Source Geolocation"></a>6.4 Source Geolocation</h2><p>hysplit 还提供了一种source geolocation计算，通过计算back trajectorys，然后结合frequency study 来推断污染源的。</p>
+<h1 id="7-Air-Concentration-Calculations-（重点）"><a href="#7-Air-Concentration-Calculations-（重点）" class="headerlink" title="7. Air Concentration Calculations （重点）"></a>7. <strong>Air Concentration Calculations</strong> （重点）</h1><p>Cocentrations和trajectory的重要区别，主要是air concentration 还考虑了turbulent influence</p>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/cbase003.png" alt="img" style="zoom:50%;">
+
+<blockquote>
+<p>The results shown here illustrate the first step in changing the configuration of the test case simulation to match the details of the CAPTEX experiment. In the test calculation, one unit of mass was divided over 2500 pollutant particles released over a one hour duration. The concentration pattern represents the average particle mass in each grid cell divided by the cell volume. For instance, if one particle (mass = 1/2500) were contained in a grid cell of volume 5x5x1 km (2.5E+10 m3), then the air concentration would be about 1E-14 units m-3, a number comparable to the lower end of the range shown in the calculations.</p>
+</blockquote>
+<p>concentration的计算跟我们如何设置concentration grid有关，例如，设置grid的高度为影响particle的高度</p>
+<p>partcile 的设置，release的particle越多，对模拟的效果越好，但是需要的运行时间也就越多</p>
+<h1 id="14-火山爆发模拟"><a href="#14-火山爆发模拟" class="headerlink" title="14. 火山爆发模拟"></a>14. 火山爆发模拟</h1><p>输入两个统一纬度的不同的高度，这样表明source的input</p>
+<blockquote>
+<p>Open the <a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/images/volc002.png">starting locations</a> menu and note how the two locations are identical in horizontal position (63.63N 19.62W) but with different height. The model interprets this as a vertical line source and will distribute particles uniformly through the layer 100 to 6000 meters AGL.</p>
+</blockquote>
+<p>运行了一个时段（e.g., 12小时之后），继续上一次的运行的结果（作为边界条件），同时对setup/control等文件进行修改都是可能的。</p>
+<p>模型结果要跟实测进行对比。因为火山灰可以反射阳光，所以可以利用卫星观测的产品作为观测结果。</p>
+<h1 id="额外内容"><a href="#额外内容" class="headerlink" title="额外内容"></a>额外内容</h1><h1 id="MSL和AGL的区别"><a href="#MSL和AGL的区别" class="headerlink" title="MSL和AGL的区别"></a>MSL和AGL的区别</h1><p>MSL为 Median sea level，高于海平面的高度。比较适用于航天器，飞行高度不随地面高度而变。</p>
+<p>AGL (above ground level)，高于地面的高度</p>
+<h2 id="使用Hysplit-python-插件"><a href="#使用Hysplit-python-插件" class="headerlink" title="使用Hysplit python 插件"></a>使用Hysplit python 插件</h2><p>使用Hysplit python 插件，在C：/hysplit/python文件夹中有详细的介绍文件（如我的情况就是install_win10.txt)，按照上面的步骤安装相关的文件包。</p>
+<blockquote>
+<p>我安装时出现了个错误，进行hysplitplot验证的时候弹出error。还好网上有<a target="_blank" rel="noopener" href="https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=2175">前人的经验</a>，是文件”pkgs_win10.txt”里面少了个跟pands相关的链接，在该文件中添加链接：<a target="_blank" rel="noopener" href="https://repo.anaconda.com/pkgs/main/win-64/pandas-1.0.1-py37h47e9c7a_0.conda%E3%80%82%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E5%8D%B3%E5%8F%AF%E3%80%82">https://repo.anaconda.com/pkgs/main/win-64/pandas-1.0.1-py37h47e9c7a_0.conda。重新安装即可。</a></p>
+<p>在hysplitplot/test，运行pytest，成功pass(出现如下界面)，</p>
+</blockquote>
+<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210403162223986.png" alt="image-20210403162223986" style="zoom: 33%;">
+
+<p>要使用是，应将库换为hysplit，在prompt中输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate hysplite</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>捣鼓了半天，感觉没什么用，就是能用python成图罢了，但是我更偏向于拿到数据自己画图。这个最多是能快速check下结果罢了。总结就是鸡肋，食之无味。</p>
+</blockquote>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hysplit/" rel="tag"># Hysplit</a>
+          </div>
+    
+        
+
+    
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/30/TrajectoryModel/hysplit-%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/" rel="prev" title="HSPLIT_教程">
+      <i class="fa fa-chevron-left"></i> HSPLIT_教程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/30/TrajectoryModel/NCL_%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/" rel="next" title="NCL_气象数据下载">
+      NCL_气象数据下载 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hysplit-%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">Hysplit 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hysplit-5-%E5%AE%89%E8%A3%85%E9%A1%BB%E7%9F%A5"><span class="nav-number">2.</span> <span class="nav-text">Hysplit 5 安装须知</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hysplit-trajectory-concentrations-%E8%BF%90%E8%A1%8C%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">Hysplit trajectory&#x2F;concentrations 运行实例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Trajectory-%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">4.</span> <span class="nav-text">4. Trajectory 的计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Trajectory-options"><span class="nav-number">5.</span> <span class="nav-text">5 Trajectory options</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-%E5%88%9D%E5%A7%8B%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-number">5.1.</span> <span class="nav-text">5.4 初始条件的影响</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Trajectory-statistics"><span class="nav-number">6.</span> <span class="nav-text">6 Trajectory statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-Frequency%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 Frequency的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-Cluster-Analysis%EF%BC%88%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E6%B3%95%EF%BC%89"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 Cluster  Analysis（主成分分析法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-Source-Geolocation"><span class="nav-number">6.3.</span> <span class="nav-text">6.4 Source Geolocation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Air-Concentration-Calculations-%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">7. Air Concentration Calculations （重点）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-%E7%81%AB%E5%B1%B1%E7%88%86%E5%8F%91%E6%A8%A1%E6%8B%9F"><span class="nav-number">8.</span> <span class="nav-text">14. 火山爆发模拟</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%9D%E5%A4%96%E5%86%85%E5%AE%B9"><span class="nav-number">9.</span> <span class="nav-text">额外内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MSL%E5%92%8CAGL%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">10.</span> <span class="nav-text">MSL和AGL的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Hysplit-python-%E6%8F%92%E4%BB%B6"><span class="nav-number">10.1.</span> <span class="nav-text">使用Hysplit python 插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">11.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JackZheng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackZheng</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">61k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">56 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

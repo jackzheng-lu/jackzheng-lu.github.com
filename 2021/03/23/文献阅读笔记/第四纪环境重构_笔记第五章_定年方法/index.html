@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="总结： C14 定年的软件（softwar): https:&#x2F;&#x2F;c14.arch.ox.ac.uk&#x2F;oxcal.html   C14的步骤  显示利用半衰期计算C14的年龄 由于C14年份和实际年份具有差异性，因此需要根据calibrated curve进行校对 将同一地区不同时间段的C14数据进行整合（利用波动匹配wiggle match或者Bayesian-based statistical">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第四纪环境重构_笔记第五章_定年方法">
+<meta property="og:url" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="JackZHENG_blog">
+<meta property="og:description" content="总结： C14 定年的软件（softwar): https:&#x2F;&#x2F;c14.arch.ox.ac.uk&#x2F;oxcal.html   C14的步骤  显示利用半衰期计算C14的年龄 由于C14年份和实际年份具有差异性，因此需要根据calibrated curve进行校对 将同一地区不同时间段的C14数据进行整合（利用波动匹配wiggle match或者Bayesian-based statistical">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324194500673.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324194843449.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324195131246.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324200351491.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324215238987.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324220636023.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210326083433744.png">
+<meta property="article:published_time" content="2021-03-23T12:56:50.000Z">
+<meta property="article:modified_time" content="2021-03-26T00:38:44.812Z">
+<meta property="article:author" content="JackZheng">
+<meta property="article:tag" content="第四纪环境">
+<meta property="article:tag" content="书籍笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324194500673.png">
+
+<link rel="canonical" href="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>第四纪环境重构_笔记第五章_定年方法 | JackZHENG_blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JackZHENG_blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第四纪环境重构_笔记第五章_定年方法
+        </h1>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-23 20:56:50" itemprop="dateCreated datePublished" datetime="2021-03-23T20:56:50+08:00">2021-03-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-26 08:38:44" itemprop="dateModified" datetime="2021-03-26T08:38:44+08:00">2021-03-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">文献阅读笔记</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>2.9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+        <blockquote>
+<p>总结：</p>
+<p>C14 定年的软件（softwar): <a target="_blank" rel="noopener" href="https://c14.arch.ox.ac.uk/oxcal.html">https://c14.arch.ox.ac.uk/oxcal.html</a></p>
+</blockquote>
+<blockquote>
+<p>C14的步骤</p>
+<ul>
+<li>显示利用半衰期计算C14的年龄</li>
+<li>由于C14年份和实际年份具有差异性，因此需要根据calibrated curve进行校对</li>
+<li>将同一地区不同时间段的C14数据进行整合（利用波动匹配wiggle match或者Bayesian-based statistical method)</li>
+</ul>
+<p>wiggle-match/Bayesian mehtod （待补充学习）</p>
+</blockquote>
+<h2 id="下图整理了所有的第四纪定年方法"><a href="#下图整理了所有的第四纪定年方法" class="headerlink" title="下图整理了所有的第四纪定年方法"></a>下图整理了所有的第四纪定年方法</h2><img src="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324194500673.png" alt="image-20210324194500673" style="zoom:67%;">
+
+<h2 id="正确度（accurate）和精确度（precise）的区别"><a href="#正确度（accurate）和精确度（precise）的区别" class="headerlink" title="正确度（accurate）和精确度（precise）的区别"></a>正确度（accurate）和精确度（precise）的区别</h2><img src="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324194843449.png" alt="image-20210324194843449" style="zoom:50%;">
+
+
+
+<h2 id="半衰期和衰变常数的关系"><a href="#半衰期和衰变常数的关系" class="headerlink" title="半衰期和衰变常数的关系"></a>半衰期和衰变常数的关系</h2><img src="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324195131246.png" class title="image-20210324195131246">
+
+
+
+<h1 id="C14-定年"><a href="#C14-定年" class="headerlink" title="C14 定年"></a>C14 定年</h1><h2 id="C14定年原理"><a href="#C14定年原理" class="headerlink" title="C14定年原理"></a>C14定年原理</h2><p>生物死去之后，稳定碳（C12）和放射性碳（C14)会成比例递减，递减规律符合放射性衰变定律：</p>
+<blockquote>
+<p>Once an organism dies the carbon is no longer replaced. Because the radiocarbon is radioactive, it will slowly decay away. Obviously there will usually be a loss of stable carbon too but the proportion of radiocarbon to stable carbon will reduce according to the exponential decay law:<br>    R = A exp(-T/8033)</p>
+<p>where R is 14C/12C ratio in the sample, A is the original 14C/12C ratio of the living organism and T is the amount of time that has passed since the death of the organism. 1/8033是衰减常数（ln(2)/半衰期）<br>By measuring the ratio, R, in a sample we can then calculate the age of the sample:<br>    T = -8033 ln(R/A)</p>
+</blockquote>
+<p>定年的不确定性</p>
+<ul>
+<li><p>半衰期问题</p>
+</li>
+<li><p>大气C14浓度的变化（IntCal curve)</p>
+</li>
+<li><p>污染问题：采样地点周边的污染，预处理有可能引入污染</p>
+</li>
+</ul>
+<p>因为14C的<a target="_blank" rel="noopener" href="https://zh.wikipedia.iwiki.eu.org/wiki/%E5%8D%8A%E8%A1%B0%E6%9C%9F">半衰期</a>（一个样本的一半衰变的时间周期）大约是5730年，所以这种方法可以可靠地测量的最古老的样本大约是五万年左右，不过特殊的制备方法有时可以准确分析更古老的样本。</p>
+<h2 id="半衰期问题"><a href="#半衰期问题" class="headerlink" title="半衰期问题"></a>半衰期问题</h2><p>刚开始C14的半衰期为5568年左右，后面研究发现C14的半衰期应为5730年左右。</p>
+<p>但是由于之前已经有大量发表数据使用就的半衰期（5568年）进行计算，因此为了保持一致，现在根据C14计算年份还是使用5568年，BP还是表示before1950 AD。</p>
+<p>注意，C14年龄并不是监测得出的，而是通过衰变定律计算得到的。根据衰变曲线，C14浓度中相同的标准差有可能变为不同的年龄误差（如下图）。</p>
+<img src="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324200351491.png" class title="image-20210324200351491">
+
+
+
+<h2 id="C14年龄的校对（IntCal-calibration-curve"><a href="#C14年龄的校对（IntCal-calibration-curve" class="headerlink" title="C14年龄的校对（IntCal calibration curve)"></a>C14年龄的校对（IntCal calibration curve)</h2><p>大气中C14浓度的变化，导致计算得出的C14年份跟实际年份有偏差，见图5.8。</p>
+<img src="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324215238987.png" alt="image-20210324215238987" style="zoom: 50%;">
+
+<p>因此需要根据calibration曲线进行校对。根据calibration curve, 曲线越陡，calibrated得到年份误差越小，反之越大（见图5.10）</p>
+<img src="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210324220636023.png" alt="image-20210324220636023" style="zoom: 67%;">
+
+
+
+<p>两个online program可以用来计算</p>
+<blockquote>
+<p>(IntCal: <a target="_blank" rel="noopener" href="http://calib.qub.ac.uk/calib/">http://calib.qub.ac.uk/calib/</a>; Stuiver et al., 2013) and OxCal (Oxford Radiocarbon Accelerator Unit:<br><a target="_blank" rel="noopener" href="http://c14.arch.ox.ac.uk/">http://c14.arch.ox.ac.uk/</a>)</p>
+</blockquote>
+<h2 id="Wiggle-match-及Bayesian-based-statistical-method"><a href="#Wiggle-match-及Bayesian-based-statistical-method" class="headerlink" title="Wiggle match 及Bayesian-based statistical method"></a>Wiggle match 及Bayesian-based statistical method</h2><p>如果多个样本的时间间隔如果已知，人们会用这些时间间隔和校准曲线互相比较，以此精准匹配样本的诞生年代。这一过程也被称作“波动匹配”（wiggle-matching），其准确度比对样本单独测算的准确度要高。</p>
+<img src="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/image-20210326083433744.png" alt="image-20210326083433744" style="zoom:67%;">
+
+<h2 id="为啥C14定年可以追溯到6-7万年以前"><a href="#为啥C14定年可以追溯到6-7万年以前" class="headerlink" title="为啥C14定年可以追溯到6-7万年以前"></a>为啥C14定年可以追溯到6-7万年以前</h2><blockquote>
+<p>即使是最老的树也只有几千年 (such as the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bristlecone_pine">Bristlecone Pines</a> in the western U.S.A.)。可是发表的C14数据可以追述到几万年？理论上根据C14的半衰期5730年左右，可以定年尺度为半衰期的10倍，即5-6万年左右。</p>
+</blockquote>
+<ul>
+<li>树轮的宽度每年都是不一样的，根据树轮的宽度信息，可以见一个地区死去的树木和或者的数目进行对比，从而拼凑出更长的C14数据。Intcal 曲线的前1.4万年左右是依据这种方法得到的</li>
+</ul>
+<blockquote>
+<p>To extend this method further we must use the fact that tree ring widths vary from year to year with changing weather patterns. By using these widths, it is possible to compare the tree rings in a dead tree to those in a tree that is still growing in the same region. By using dead trees of different but overlapping ages, you can build up a library of tree rings of different calendar ages. This has now been done for <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bristlecone_pine">Bristlecone Pines</a> in the U.S.A and waterlogged Oaks in Ireland and Germany, and Kauri in New Zealand to provide records extending back over the last 14,000 years.</p>
+</blockquote>
+<p>此后的时间，不一定是根据树轮，而是各种各种沉积物中的C14含量进行，然后根据不同C14和独立的定年样品对比，从而沿伸到过去5-6万年之后。</p>
+<blockquote>
+<p>Beyond the limit of continuous dendrochronological series, calibrations have been based on matched<br>uranium-series (U-series: section 5.3.4) and radiocarbon dates on fossil corals (Fairbanks et al., 2005), radiocarbondated organic material from laminated (i.e. annually accum ulating) marine sediments, and synchronized palaeo - climatic signatures in ice cores and U-series dated cave speleothems (Hughen et al., 2006; Weninger &amp; Jöris, 2008).</p>
+</blockquote>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://c14.arch.ox.ac.uk/dating.html">https://c14.arch.ox.ac.uk/dating.html</a></li>
+<li>Book: Reconstructing Quaternary Environments 5.2-5.3章节</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83/" rel="tag"># 第四纪环境</a>
+              <a href="/tags/%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/" rel="tag"># 书籍笔记</a>
+          </div>
+    
+        
+
+    
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0_%E7%AC%AC%E4%B8%80%E7%AB%A0/" rel="prev" title="第四纪环境重构_笔记_第一章">
+      <i class="fa fa-chevron-left"></i> 第四纪环境重构_笔记_第一章
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3/" rel="next" title="Matlab_微分方程">
+      Matlab_微分方程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E5%9B%BE%E6%95%B4%E7%90%86%E4%BA%86%E6%89%80%E6%9C%89%E7%9A%84%E7%AC%AC%E5%9B%9B%E7%BA%AA%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">下图整理了所有的第四纪定年方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E7%A1%AE%E5%BA%A6%EF%BC%88accurate%EF%BC%89%E5%92%8C%E7%B2%BE%E7%A1%AE%E5%BA%A6%EF%BC%88precise%EF%BC%89%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">正确度（accurate）和精确度（precise）的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E8%A1%B0%E6%9C%9F%E5%92%8C%E8%A1%B0%E5%8F%98%E5%B8%B8%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.</span> <span class="nav-text">半衰期和衰变常数的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C14-%E5%AE%9A%E5%B9%B4"><span class="nav-number"></span> <span class="nav-text">C14 定年</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C14%E5%AE%9A%E5%B9%B4%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">C14定年原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E8%A1%B0%E6%9C%9F%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">半衰期问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C14%E5%B9%B4%E9%BE%84%E7%9A%84%E6%A0%A1%E5%AF%B9%EF%BC%88IntCal-calibration-curve"><span class="nav-number">3.</span> <span class="nav-text">C14年龄的校对（IntCal calibration curve)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wiggle-match-%E5%8F%8ABayesian-based-statistical-method"><span class="nav-number">4.</span> <span class="nav-text">Wiggle match 及Bayesian-based statistical method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E5%95%A5C14%E5%AE%9A%E5%B9%B4%E5%8F%AF%E4%BB%A5%E8%BF%BD%E6%BA%AF%E5%88%B06-7%E4%B8%87%E5%B9%B4%E4%BB%A5%E5%89%8D"><span class="nav-number">5.</span> <span class="nav-text">为啥C14定年可以追溯到6-7万年以前</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">参考文献：</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JackZheng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackZheng</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">61k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">56 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
