@@ -20,17 +20,17 @@
     var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="w我的目标就是能使用hysplit模拟Be10&#x2F;Be7，结合python的包使用 有个pysplit的python包   总结： 测试1: 区域的release 但是释放速率不变   测试2：区域的release 但释放速率改变   测试3：区域的release但释放速率改变，且包含不同的时间     测试1 区域的release 但释放速率不变黑点表示释放的点，浓度值表示采样的区域。">
+  <meta name="description" content="w我的目标就是能使用hysplit模拟Be10&#x2F;Be7，结合python的包使用 有个pysplit的python包   总结： 测试1: 区域的release 但是释放速率不变 （完成）  测试2：区域的release 但释放速率改变  （完成）  测试3：区域的release但释放速率改变，且包含不同的时间   测试1 区域的release 但释放速率不变黑点表示释放的点，浓度值表示采样的区">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hysplit_测试1">
 <meta property="og:url" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/index.html">
 <meta property="og:site_name" content="JackZHENG_blog">
-<meta property="og:description" content="w我的目标就是能使用hysplit模拟Be10&#x2F;Be7，结合python的包使用 有个pysplit的python包   总结： 测试1: 区域的release 但是释放速率不变   测试2：区域的release 但释放速率改变   测试3：区域的release但释放速率改变，且包含不同的时间     测试1 区域的release 但释放速率不变黑点表示释放的点，浓度值表示采样的区域。">
+<meta property="og:description" content="w我的目标就是能使用hysplit模拟Be10&#x2F;Be7，结合python的包使用 有个pysplit的python包   总结： 测试1: 区域的release 但是释放速率不变 （完成）  测试2：区域的release 但释放速率改变  （完成）  测试3：区域的release但释放速率改变，且包含不同的时间   测试1 区域的release 但释放速率不变黑点表示释放的点，浓度值表示采样的区">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/image-20210407185811783.png">
 <meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/etime000.png">
 <meta property="article:published_time" content="2021-04-07T10:54:09.000Z">
-<meta property="article:modified_time" content="2021-04-08T03:09:11.329Z">
+<meta property="article:modified_time" content="2021-04-09T07:31:50.096Z">
 <meta property="article:author" content="JackZheng">
 <meta property="article:tag" content="Hysplit">
 <meta name="twitter:card" content="summary">
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 11:09:11" itemprop="dateModified" datetime="2021-04-08T11:09:11+08:00">2021-04-08</time>
+                <time title="Modified: 2021-04-09 15:31:50" itemprop="dateModified" datetime="2021-04-09T15:31:50+08:00">2021-04-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,14 +246,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>1.1k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
     
         </div>
@@ -270,15 +270,13 @@
 <p>有个pysplit的python包 </p>
 </blockquote>
 <h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><ul>
-<li><p>测试1: 区域的release 但是释放速率不变 </p>
+<li><p>测试1: 区域的release 但是释放速率不变 （完成）</p>
 </li>
-<li><p>测试2：区域的release 但释放速率改变 </p>
+<li><p>测试2：区域的release 但释放速率改变  （完成）</p>
 </li>
 <li><p>测试3：区域的release但释放速率改变，且包含不同的时间</p>
 </li>
 </ul>
-<blockquote>
-</blockquote>
 <h2 id="测试1-区域的release-但释放速率不变"><a href="#测试1-区域的release-但释放速率不变" class="headerlink" title="测试1 区域的release 但释放速率不变"></a>测试1 区域的release 但释放速率不变</h2><p>黑点表示释放的点，浓度值表示采样的区域。</p>
 <img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/image-20210407185811783.png" alt="image-20210407185811783" style="zoom:50%;">
 
@@ -294,7 +292,7 @@
 <ul>
 <li>区域面积的release。对control文件进行如下修改，可以将（经纬度和高度放到text文件中进行读取），注意trajectory的数量要和经纬度等数量要一致</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;1184                   &quot;&gt;&gt;CONTROL # trajectory数量</span><br><span class="line">cat &quot;$DATA/traj.txt&quot;         &gt;&gt;CONTROL  # (e.g.,  39.90  -84.22 10.0) </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;1184                   &quot;&gt;&gt;CONTROL # trajectory数量</span><br><span class="line">cat &quot;$DATA/traj.txt&quot;         &gt;&gt;CONTROL  # (e.g.,  39.90  -84.22 10.0) </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 也可以使用三个trajectory定义区域</span></span><br><span class="line">echo &quot;3                   &quot; &gt;&gt;CONTROL</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个是区域的释放</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 前两行代表左下和右上</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 第三行代表间隔</span></span><br><span class="line">echo &quot;38.00 -84.00 600.0  &quot; &gt;&gt;CONTROL</span><br><span class="line">echo &quot;44.00 -74.00 600.0  &quot; &gt;&gt;CONTROL</span><br><span class="line">echo &quot;39.00 -83.00 600.0  &quot; &gt;&gt;CONTROL</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>同一纬度，不同高度代表release 的方位，这个方法就可以解决release的高度问题，注意这样子算两个trajectory （control file），比如写成以下形式，release的范围就是这个点的[100 5000]之间。</p>
@@ -308,12 +306,24 @@
 <img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/etime000.png" alt="img" style="zoom:50%;">
 
 <p>所有的source必须要有相同的时间间隔。</p>
-<h2 id="测试3：区域的release但释放速率改变，且包含不同的时间"><a href="#测试3：区域的release但释放速率改变，且包含不同的时间" class="headerlink" title="测试3：区域的release但释放速率改变，且包含不同的时间"></a>测试3：区域的release但释放速率改变，且包含不同的时间</h2><p>思路：</p>
+<h2 id="测试3：区域的release但释放速率改变，且包含不同的时间-（多个文件的测试）"><a href="#测试3：区域的release但释放速率改变，且包含不同的时间-（多个文件的测试）" class="headerlink" title="测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）"></a>测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）</h2><p>思路：</p>
 <ul>
 <li><p>天气的数据是每个月存储的，那么一个月的最后几天怎么办？多个天气数据的输入？</p>
 </li>
 <li><p>每个事件段模拟的结果，会作为下个事件段的边界条件进行</p>
 </li>
+</ul>
+<blockquote>
+<p>根据我的需求，直接按照cycle来进行，particle dump feature来连贯进行。</p>
+<p>使用EFILE 文件。如果这个文件存在，他就会替换在control的设置。</p>
+</blockquote>
+<p>如果一个文件的relasing时间过去了，会自动读取下一个releasing</p>
+<blockquote>
+<p>One way to incorporate a time varying emission rate into the existing model structure is to use the particle dump feature to restart the model each time with a new emission rate. Another option is to assign the name of a temporal emission input file to the “EFILE” variable in the setup.cfg namelist file. </p>
+<p>If the EFILE is present, the first emission record’s values replace the emission values set in the control file. Once the model computation time has passed the emission period defined on the first emission record, the emission data from the second record are loaded and the calculation continues with the new emission data. The format of the emission file is given below: </p>
+</blockquote>
+<ul>
+<li></li>
 </ul>
 <p>粒子释放的问题，</p>
 <p>使用particle release计算concentration distribution，需要释放非常多的粒子，否则无法真是反应浓度</p>
@@ -405,7 +415,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%951-%E5%8C%BA%E5%9F%9F%E7%9A%84release-%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E4%B8%8D%E5%8F%98"><span class="nav-number">1.1.</span> <span class="nav-text">测试1 区域的release 但释放速率不变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%952-%E5%8C%BA%E5%9F%9F%E7%9A%84release-%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E6%94%B9%E5%8F%98"><span class="nav-number">1.2.</span> <span class="nav-text">测试2 区域的release 但释放速率改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%953%EF%BC%9A%E5%8C%BA%E5%9F%9F%E7%9A%84release%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E6%94%B9%E5%8F%98%EF%BC%8C%E4%B8%94%E5%8C%85%E5%90%AB%E4%B8%8D%E5%90%8C%E7%9A%84%E6%97%B6%E9%97%B4"><span class="nav-number">1.3.</span> <span class="nav-text">测试3：区域的release但释放速率改变，且包含不同的时间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%951-%E5%8C%BA%E5%9F%9F%E7%9A%84release-%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E4%B8%8D%E5%8F%98"><span class="nav-number">1.1.</span> <span class="nav-text">测试1 区域的release 但释放速率不变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%952-%E5%8C%BA%E5%9F%9F%E7%9A%84release-%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E6%94%B9%E5%8F%98"><span class="nav-number">1.2.</span> <span class="nav-text">测试2 区域的release 但释放速率改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%953%EF%BC%9A%E5%8C%BA%E5%9F%9F%E7%9A%84release%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E6%94%B9%E5%8F%98%EF%BC%8C%E4%B8%94%E5%8C%85%E5%90%AB%E4%B8%8D%E5%90%8C%E7%9A%84%E6%97%B6%E9%97%B4-%EF%BC%88%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%B5%8B%E8%AF%95%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -419,7 +429,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -432,7 +442,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -468,12 +478,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">62k</span>
+    <span title="Symbols count total">79k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">57 mins.</span>
+    <span title="Reading time total">1:12</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>

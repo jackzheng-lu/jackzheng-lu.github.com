@@ -189,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +203,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">shell_grep_sed函数</a>
+            <a href="/2021/04/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/" class="post-title-link" itemprop="url">python_虚拟环境创建</a>
         </h2>
     
         <div class="post-meta">
@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
     
-              <time title="Created: 2021-04-08 16:17:34 / Modified: 16:30:25" itemprop="dateCreated datePublished" datetime="2021-04-08T16:17:34+08:00">2021-04-08</time>
+              <time title="Created: 2021-04-12 10:36:42 / Modified: 13:32:43" itemprop="dateCreated datePublished" datetime="2021-04-12T10:36:42+08:00">2021-04-12</time>
             </span>
     
           <br>
@@ -223,7 +223,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>601</span>
+              <span>779</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -243,35 +243,40 @@
     
       
           <blockquote>
-<p>遇到特殊符号时，使用反斜杠“\”</p>
+<p>为了学习pytorch，接触到虚拟环境这个概念。</p>
+<p>目的：将不同的python安装在不同的虚拟环境，能维持原生python不受函数包安装移除污染。例如将pytorch安装在虚拟环境中。</p>
 </blockquote>
-<h1 id="grep函数"><a href="#grep函数" class="headerlink" title="grep函数"></a>grep函数</h1><p>grep，可以匹配正则来搜索文件中的信息。貌似是个命令，直接在prompt里面输入</p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-grep.html">https://www.runoob.com/linux/linux-comm-grep.html</a></p>
-<p>实例</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 当前文件夹找到符号条件的文件名</span></span><br><span class="line">result=$(ls | grep &quot;.md&quot;)</span><br></pre></td></tr></table></figure>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>在虚拟环境里，各种软件包的版本，都由你来指定。它们和系统默认Python环境是相互隔离的，因此互不干扰。</p>
+<img src="/2021/04/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/64542-4e9d1b7b08a5100e.jpg" alt="img" style="zoom: 33%;">
 
 
 
-<h1 id="sed-函数"><a href="#sed-函数" class="headerlink" title="sed 函数"></a>sed 函数</h1><p>sed，sed 可以直接修改文件的内容，要注意使用，因为我们不想修改重要信息</p>
-<p>注意，sed 会根据脚本命令来处理文本文件中的数据，这些命令要么从命令行中输入，要么存储在一个文本文件中，此命令执行数据的顺序如下：</p>
-<ol>
-<li>每次仅读取一行内容；</li>
-<li>根据提供的规则命令匹配并修改数据。注意，sed 默认不会直接修改源文件数据，而是会将数据复制到缓冲区中，修改也仅限于缓冲区中的数据；</li>
-<li>将执行结果输出。</li>
-</ol>
-<img src="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/image-20210408162947813.png" class title="image-20210408162947813">
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建pytorch为库的名字</span></span><br><span class="line">conda create -n pytorch python=3.8</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 激活虚拟库</span></span><br><span class="line">conda activate pytorch</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 额外学习，如何看conda环境还有python的版本，输入</span></span><br><span class="line">conda info --envs</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
 
 
 
-<p>实例</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /^categories/为正则匹配，c为替换行，c后面的语句为替换语句，<span class="string">&quot;<span class="variable">$&#123;file&#125;</span>&quot;</span>为替换的文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -i 选项可以直接修改文件内容，没有-i的话，只输出，但不修改源文件</span></span><br><span class="line">sed -i &quot;/^categories/c categories: [\&#x27;编程语言学习\&#x27;]&quot; &quot;$&#123;file&#125;&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="如何在jupyter内部调用"><a href="#如何在jupyter内部调用" class="headerlink" title="如何在jupyter内部调用"></a>如何在jupyter内部调用</h2><p>为了让Jupyter Notebook支持虚拟运行环境，需要在Anaconda里安装一个插件。(实测在jupyter打开的时候也能安装成功，关键是要将jupyter重开下)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install nb_conda</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>重开jupyter后，看到了不同的虚拟环境的python选项，但是还无法看到pytorch的环境。(果然单看一个教程不一定能解决我的问题)。Google之后发现，原来还要在虚拟环境中安装ipykernel。在prompt中输入如下指令：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda activate torch</span><br><span class="line">conda install ipykernel</span><br><span class="line">conda deactivate</span><br></pre></td></tr></table></figure>
+
+<p>ok，重新启动jupyter就可以看到conda的虚拟环境了。</p>
+<img src="/2021/04/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/image-20210412110641580.png" alt="image-20210412110641580" style="zoom:50%;">
 
 
+
+<h2 id="额外内容"><a href="#额外内容" class="headerlink" title="额外内容"></a>额外内容</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看已经安装的包</span> </span><br><span class="line">pip list </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装第三方包</span></span><br><span class="line">pip install 包的名字（如matplotlib等）</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 相关的知识链接：</span></span><br><span class="line">https://zhuanlan.zhihu.com/p/164666990</span><br></pre></td></tr></table></figure>
 
 
 
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/4028.html">http://c.biancheng.net/view/4028.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/afea092dda1d">如何在Jupyter Notebook中使用Python虚拟环境？</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33296651/article/details/95316784">jupyter找不到conda的虚拟环境</a></li>
 </ul>
 
       
@@ -293,7 +298,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -307,7 +312,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">python_正则表达式</a>
+            <a href="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">机器学习入门概率</a>
         </h2>
     
         <div class="post-meta">
@@ -318,16 +323,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
     
-              <time title="Created: 2021-04-08 12:14:59 / Modified: 16:13:33" itemprop="dateCreated datePublished" datetime="2021-04-08T12:14:59+08:00">2021-04-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
+              <time title="Created: 2021-04-12 08:13:46 / Modified: 08:56:41" itemprop="dateCreated datePublished" datetime="2021-04-12T08:13:46+08:00">2021-04-12</time>
             </span>
     
           <br>
@@ -336,7 +332,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>858</span>
+              <span>280</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -355,115 +351,16 @@
     <div class="post-body" itemprop="articleBody">
     
       
-          <p>开头使用如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>总结</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># ^ 匹配字符串的开始。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># $ 匹配字符串的结尾。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \b 匹配一个单词的边界。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \d 匹配任意数字。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \D 匹配任意非数字字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x? 匹配一个可选的 x 字符 (换言之，它匹配 1 次或者 0 次 x 字符)。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x* 匹配0次或者多次 x 字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x+ 匹配1次或者多次 x 字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x&#123;n,m&#125; 匹配 x 字符，至少 n 次，至多 m 次。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># (a|b|c) 要么匹配 a，要么匹配 b，要么匹配 c。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># (x) 一般情况下表示一个记忆组 (remembered group)。你可以利用 re.search 函数返回对象的 groups() 函数获取它的值。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 正则表达式中的点号通常意味着 “匹配任意单字符”</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="部分实例：-注意举一反三"><a href="#部分实例：-注意举一反三" class="headerlink" title="部分实例：(注意举一反三)"></a>部分实例：(注意举一反三)</h1><ul>
-<li>提取小数：</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string=&quot;A1.45，b5，6.45，8.82&quot;</span><br><span class="line">print re.findall(r&quot;\d+\.?\d*&quot;,string)</span><br><span class="line"><span class="meta">#</span><span class="bash"> [<span class="string">&#x27;1.45&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;6.45&#x27;</span>, <span class="string">&#x27;8.82&#x27;</span>]</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>匹配包含指定字符串开头的，例如提取loss开头的字符串：</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tensorflow:Final best valid 0 loss=0.20478513836860657 norm_loss=0.767241849151384 roc=0.8262403011322021 pr=0.39401692152023315 calibration=0.9863265752792358 rate=0.0</span><br><span class="line"></span><br><span class="line">pattern = re.compile(r&#x27;(?:loss=)\d+\.?\d*&#x27;)</span><br><span class="line">pattern.findall(string)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> [<span class="string">&#x27;loss=0.20478513836860657&#x27;</span>, <span class="string">&#x27;loss=0.767241849151384&#x27;</span>]</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010412858/article/details/83062200">python正则表达式从字符串中提取数字</a></li>
-<li></li>
-</ul>
-<ul>
-<li></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/" class="post-title-link" itemprop="url">hysplit_test2</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-    
-              <time title="Created: 2021-04-08 10:48:09 / Modified: 11:32:33" itemprop="dateCreated datePublished" datetime="2021-04-08T10:48:09+08:00">2021-04-08</time>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>199</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <ul>
-<li>测试1 批量进行气象数据的修改</li>
-</ul>
-<p>根据教程中的介绍，貌似气象数据可以裁剪，为局部区域进行运行。因为这只是运移模型？</p>
-<p>在下载的文件中，有个现成的软件可以进行气象数据的裁剪</p>
-<p>the utility program “xtrct_grid” in the \metdata subdirectory.</p>
-<p>注意，文件夹的输入是C:\Users\zmjhh\Desktop\NCEP197611\，不要忘记最后要有个斜线<code>\</code>。</p>
+          <p>j</p>
+<p>j机器学习的课程：</p>
+<p>2020年李宏毅的机器学习课程（bili官网）</p>
+<blockquote>
+<p>带有数据和ppt</p>
+</blockquote>
+<p>课程视频： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av94519857">https://www.bilibili.com/video/av94519857</a></p>
+<p>作业ppt及答案： <a target="_blank" rel="noopener" href="https://github.com/Iallen520/lhy_DL_Hw">https://github.com/Iallen520/lhy_DL_Hw</a></p>
+<p><a target="_blank" rel="noopener" href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html">http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html</a></p>
+<h2 id="Carnegie-Mellon-University-Tom-Mitchell"><a href="#Carnegie-Mellon-University-Tom-Mitchell" class="headerlink" title="Carnegie Mellon University Tom Mitchell"></a>Carnegie Mellon University <a target="_blank" rel="noopener" href="http://www.cs.cmu.edu/~tom">Tom Mitchell</a></h2><p><a target="_blank" rel="noopener" href="http://www.cs.cmu.edu/~tom/10701_sp11/lectures.shtml">http://www.cs.cmu.edu/~tom/10701_sp11/lectures.shtml</a></p>
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li>无</li>
 </ul>
@@ -487,7 +384,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/Untitled/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -501,203 +398,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/08/TrajectoryModel/Untitled/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-    
-              <time title="Created: 2021-04-08 09:46:29 / Modified: 10:41:29" itemprop="dateCreated datePublished" datetime="2021-04-08T09:46:29+08:00">2021-04-08</time>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/">https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/</a></p>
-<p>快速过了一遍常问的问题，将对项目有用的信息做个摘录，直接点感叹号就可以到原网址</p>
-<p>该网址可以多看看</p>
-<h1 id="气象数据类"><a href="#气象数据类" class="headerlink" title="气象数据类"></a>气象数据类</h1><ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/what-archived-data-are-available-on-the-web-to-run-hysplit-with/"><img src="/2021/04/08/TrajectoryModel/Untitled/info2.gif" alt="Click for answer."></a>What archived data are available on the web to run HYSPLIT with?</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/what-data-is-used-to-calculate-the-hysplit-trajectories-and-what-is-the-the-vertical-resolution-of-the-data/"><img src="/2021/04/08/TrajectoryModel/Untitled/info2.gif" alt="Click for answer."></a>What data is used to calculate the trajectories and what is the the vertical resolution of the data? </p>
-<blockquote>
-<p>这主要取决于气象数据</p>
-</blockquote>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-6/"><img src="/2021/04/08/TrajectoryModel/Untitled/info2.gif" alt="Click for answer."></a> However, in one case when I calculated 120-hour backward trajectories from Potsdam, NY at 1800 on April 8, 1999 using both the EDAS and FNL data bases, I found that the EDAS data suggested the air was in the upper midwest 5 days prior, but the FNL put it into northern Quebec. Why the difference?</p>
-</li>
-</ul>
-<blockquote>
-<p>结果不同一般是由于气象数据的精度不同。</p>
-<p>关于trajectory的通常步骤，运行一个点相近的不同高度的trajectory（e.g.300m 400m, 500m)，如果结果相似，那么结果比较可靠，如果发散，说明不确定大（not precide）</p>
-</blockquote>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/i-will-be-converting-ecmwf-grib-files/"><img src="https://www.arl.noaa.gov/wp_arl/wp-content/uploads/2017/10/info2.gif" alt="Click for answer."></a>I will be converting ECMWF grib files into ARL-packed format for use in calculating backward trajectories in Europe using your HYSPLIT model. What fields do I need to have for HYSPLIT to properly calculate my trajectories?</p>
-<blockquote>
-<p>不推荐自己进行数据的转换，需要一定的工作量，否则看介绍</p>
-</blockquote>
-</li>
-</ul>
-<p>When I set up a matrix run and have the heights specified at a certain altitude (using MSL), why do the results show the starting points at different heights instead of at a constant one?</p>
-<p>有些时候Mean Sea Level(MSL) 会低于地面，所以Hyslit会自动校对高度等于地面。<a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc26/">link</a></p>
-<p>重要！</p>
-<p>精度（precision）和准度（accuracy)，Hysplit model 的精度为1%/天，会随着时间的推移而叠加。hysplit的准度问题很大随着时间推移而改变，10天的准度问题会达到15°左右。</p>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/08/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5/" class="post-title-link" itemprop="url">各种数据库链接</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-    
-              <time title="Created: 2021-04-08 08:50:06 / Modified: 09:03:01" itemprop="dateCreated datePublished" datetime="2021-04-08T08:50:06+08:00">2021-04-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">科研相关记录</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>267</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>使用数据库的数据时，要注意对这些数据进行致谢。</p>
-</blockquote>
-<p>这篇文章介绍了一些有用的库</p>
-<p>E. Brattich et al 2020. Advection pathways at the Mt. Cimone WMO-GAW station: Seasonality,<br>trends, and influence on atmospheric composition.</p>
-<ul>
-<li>Atmospheric aerosol 和gass 监测</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="http://ebas.nilu.no/Pages/DataSetList.aspx?key=C0A8801E103546FB9E164ECB4420432C">http://ebas.nilu.no/Pages/DataSetList.aspx?key=C0A8801E103546FB9E164ECB4420432C</a></p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/" class="post-title-link" itemprop="url">hysplit_测试1</a>
+            <a href="/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">python_PyTorch入门教程</a>
         </h2>
     
         <div class="post-meta">
@@ -707,23 +408,700 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
     
-              <time title="Created: 2021-04-07 18:54:09" itemprop="dateCreated datePublished" datetime="2021-04-07T18:54:09+08:00">2021-04-07</time>
+              <time title="Created: 2021-04-11 22:50:17" itemprop="dateCreated datePublished" datetime="2021-04-11T22:50:17+08:00">2021-04-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 11:09:11" itemprop="dateModified" datetime="2021-04-08T11:09:11+08:00">2021-04-08</time>
+                <time title="Modified: 2021-04-12 13:28:19" itemprop="dateModified" datetime="2021-04-12T13:28:19+08:00">2021-04-12</time>
               </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>学习如何入门PyTorch，包括基础原理知识、numpy与PyTorch的区别以及案例研究实例。</p>
+</blockquote>
+<h1 id="PyTorch的概述"><a href="#PyTorch的概述" class="headerlink" title="PyTorch的概述"></a>PyTorch的概述</h1><p>PyTorch是一个基于Python的库，用来提供一个具有灵活性的深度学习开发平台。PyTorch的工作流程非常接近Python的科学计算库——numpy。</p>
+<p>现在你可能会问，为什么我们要用PyTorch来建立深度学习模型呢？主要有三点</p>
+<ul>
+<li><p><strong>易于使用的API</strong>—它就像Python一样简单。</p>
+</li>
+<li><p><strong>Python的支持</strong>—如上所述，PyTorch可以顺利地与Python数据科学栈集成。它非常类似于numpy，甚至注意不到它们的差别。</p>
+</li>
+<li><p><strong>动态计算图</strong>—取代了具有特定功能的预定义图形，PyTorch为我们提供了一个框架，以便可以在运行时构建计算图，甚至在运行时更改它们。在不知道创建神经网络需要多少内存的情况下这非常有价值。</p>
+</li>
+</ul>
+<p>PyTorch的其他一些优点还包括：多gpu支持，自定义数据加载器和简化的预处理器。</p>
+<p>自从2016年1月发布以来，许多研究人员将其作为一种“go-to”库，因为它可以轻松地构建新颖的甚至是极其复杂的图形。虽说如此，PyTorch仍有一段时间没有被大多数数据科学实践者采用，因为它是新的而且处于“正在建设”的状态</p>
+<h1 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h1><p>Google了一下，发现大家都有给pytorch安装虚拟环境，因为有可能跟python原有的包起冲突，这样也方便使用。</p>
+<p>创建虚拟环境代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pytorch为库的名字</span></span><br><span class="line">conda create -n pytorch python=<span class="number">3.8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 额外学习，如何看conda环境还有python的版本，输入</span></span><br><span class="line">conda info --envs</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/">官网下载传送门</a>，要选择合适自己的版本。</p>
+<blockquote>
+<p>CUDA是Compute Unified Device Architecture的缩写。中文叫统一计算架构。是为了让nvidia gpu可以完成通用计算任务的一种集成技术，可以为数据大吞吐量的工作提供很好的加速功能。简单的来讲，就是为了让GPU可以不仅仅工作与自己的一幕三分地，而是利用自身的优势，完成通用计算的任务。主要应用除了日常视频编码解码，游戏等外，可以应用于计算加速方面。</p>
+</blockquote>
+<img src="/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/image-20210411225629962.png" class title="image-20210411225629962">
+
+<p>将官网提供的命令放进去</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=<span class="number">10.2</span> -c pytorch</span><br></pre></td></tr></table></figure>
+
+<p>果然是龟速…..尝试国内镜像下载，使用清华园镜像下载，速度确实会快一点。（以下都是在pythorch的环境下进行）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加清华源的pytorch</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line"></span><br><span class="line">conda install pytorch torchvision cudatoolkit=<span class="number">10.0</span>  <span class="comment"># 删除安装命令最后的 -c pytorch，才会采用清华源安装。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将镜像通道删除</span></span><br><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装完成后测试torch和CUD"><a href="#安装完成后测试torch和CUD" class="headerlink" title="安装完成后测试torch和CUD"></a>安装完成后测试torch和CUD</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#为了确保PyTorch安装正确，我们可以运行示例PyTorch代码来验证安装。这里我们将构造一个随机初始化的张量。</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">x = torch.rand(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line">print(x)</span><br><span class="line"><span class="comment"># The output should be something similar to:</span></span><br><span class="line"><span class="comment"># tensor([[0.2989, 0.2493, 0.2642],</span></span><br><span class="line"><span class="comment">#         [0.9508, 0.4811, 0.1085],</span></span><br><span class="line"><span class="comment">#         [0.5423, 0.3216, 0.3068],</span></span><br><span class="line"><span class="comment">#         [0.8863, 0.8385, 0.5150],</span></span><br><span class="line"><span class="comment">#         [0.8451, 0.4620, 0.6266]])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此外，要检查GPU驱动程序和CUDA是否能够被PyTorch启用和访问，需要运行以下命令以返回CUDA驱动程序是否已启用：</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line"><span class="comment"># the output is: True</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装成功之后就可以来学习pytorch了。</p>
+<p>在深入讨论细节之前，让我们先看看PyTorch的工作流程。</p>
+<p>PyTorch使用了命令式/热切的范例。也就是说，在构建一个图形时，每一行代码都定义了改图的一个组件。我们甚至能在图形构建完成前，独立的对这些组件进行计算。这就是所谓的“逐运行”方法。</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Boys_Wu/article/details/106623192">pytorch加速下载——清华镜像源(conda或者pip版本)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d66319506dd7">PyTorch入门教程</a></li>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python%E5%B8%B8%E7%94%A8%E5%8C%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python%E5%B8%B8%E7%94%A8%E5%8C%85/" class="post-title-link" itemprop="url">python常用包</a>
+        </h2>
+    
+        <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-11 22:48:03" itemprop="dateCreated datePublished" datetime="2021-04-11T22:48:03+08:00">2021-04-11</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>6</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8/" class="post-title-link" itemprop="url">shell_捕获异常</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-11 22:47:22" itemprop="dateCreated datePublished" datetime="2021-04-11T22:47:22+08:00">2021-04-11</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>6</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%88%AA%E5%8F%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%88%AA%E5%8F%96/" class="post-title-link" itemprop="url">shell_字符串的截取</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-10 14:59:17 / Modified: 21:10:57" itemprop="dateCreated datePublished" datetime="2021-04-10T14:59:17+08:00">2021-04-10</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>更多实例看参考文献</p>
+</blockquote>
+<h1 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 左边开始</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;string: start :length&#125;</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 右边开始</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;string: 0-start :length&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">[Neptuneyt]$</span><span class="bash"> net=<span class="string">&quot;www.baidu.com&quot;</span></span></span><br><span class="line"><span class="meta">[Neptuneyt]$</span><span class="bash"> <span class="comment"># 从第4个字符截取到baidu</span></span></span><br><span class="line"><span class="meta">[Neptuneyt]$</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$&#123;net:4:5&#125;</span> <span class="comment">#从第4个字符.开始截取5个字符</span></span></span><br><span class="line">baidu</span><br></pre></td></tr></table></figure>
+
+<h1 id="从指定的字符开始"><a href="#从指定的字符开始" class="headerlink" title="从指定的字符开始"></a>从指定的字符开始</h1><h4 id="1-使用-号截取右边字符"><a href="#1-使用-号截取右边字符" class="headerlink" title="1) 使用 # 号截取右边字符"></a>1) 使用 # 号截取右边字符</h4><p>使用<code>#</code>号可以截取指定字符（或者子字符串）右边的所有字符，具体格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">&#123;string<span class="comment">#*chars&#125;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用-截取左边字符"><a href="#2-使用-截取左边字符" class="headerlink" title="2) 使用 % 截取左边字符"></a>2) 使用 % 截取左边字符</h4><p>使用<code>%</code>号可以截取指定字符（或者子字符串）左边的所有字符，具体格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">&#123;string%chars*&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">使用<span class="comment">#截取</span></span></span><br><span class="line">url=&quot;http://c.biancheng.net/index.html&quot;</span><br><span class="line">echo $&#123;url#*/&#125;    #结果为 /c.biancheng.net/index.html</span><br><span class="line">echo $&#123;url##*/&#125;   #结果为 index.html</span><br><span class="line">str=&quot;---aa+++aa@@@&quot;</span><br><span class="line">echo $&#123;str#*aa&#125;   #结果为 +++aa@@@</span><br><span class="line">echo $&#123;str##*aa&#125;  #结果为 @@@</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">使用%截取</span></span><br><span class="line">url=&quot;http://c.biancheng.net/index.html&quot;</span><br><span class="line">echo $&#123;url%/*&#125;  #结果为 http://c.biancheng.net</span><br><span class="line">echo $&#123;url%%/*&#125;  #结果为 http:</span><br><span class="line">str=&quot;---aa+++aa@@@&quot;</span><br><span class="line">echo $&#123;str%aa*&#125;  #结果为 ---aa+++</span><br><span class="line">echo $&#123;str%%aa*&#125;  #结果为 ---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="汇总表格"><a href="#汇总表格" class="headerlink" title="汇总表格"></a>汇总表格</h1><blockquote>
+<p>注意，这表格最后两行是错的，*应该在char的右边</p>
+</blockquote>
+<img src="/2021/04/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%88%AA%E5%8F%96/image-20210410210100764.png" class title="image-20210410210100764">
+
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42491125/article/details/101368505">https://blog.csdn.net/qq_42491125/article/details/101368505</a></p>
+<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1120.html">http://c.biancheng.net/view/1120.html</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook/" class="post-title-link" itemprop="url">python_jupyternotebook_修改默认路径</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-10 08:52:31" itemprop="dateCreated datePublished" datetime="2021-04-10T08:52:31+08:00">2021-04-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
                 </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-12 11:18:27" itemprop="dateModified" datetime="2021-04-12T11:18:27+08:00">2021-04-12</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>主要包含以下内容：</p>
+<p>[TOC]</p>
+<h2 id="jupyter自动补全功能"><a href="#jupyter自动补全功能" class="headerlink" title="jupyter自动补全功能"></a>jupyter自动补全功能</h2><blockquote>
+<p>我的extension里面已经有了这些选项，所以没有进行额外安装步骤。</p>
+</blockquote>
+<p>Hinterland（代码自动补全）和Variable Inspector（变量检查器）。</p>
+<ul>
+<li>只需在Configurable nbextensions界面Hinterland✔即可，勾选此插件为代码单元格中的每次按键启用“代码自动补全”菜单，有种在pycharm中写代码的感觉了。</li>
+<li>只需在Configurable nbextensions界面Variable Inspector✔即可，显示你在notebook中创建的所有变量的名称、类型、大小、维度、变量等。</li>
+</ul>
+<img src="/2021/04/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook/image-20210412111412802.png" class title="image-20210412111412802">
+
+
+
+<p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wyxxxx_/article/details/107388018">https://blog.csdn.net/wyxxxx_/article/details/107388018</a></p>
+<h2 id="Jupyter-extension消失的问题"><a href="#Jupyter-extension消失的问题" class="headerlink" title="Jupyter extension消失的问题"></a>Jupyter extension消失的问题</h2><p>发现jupyter notebook的extension不见了，直接在anaconda的prompt窗口输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 打开Anaconda Prompt窗口，执行第一个命令，用于安装nbextensions：</span></span><br><span class="line">python -m pip install jupyter_contrib_nbextensions </span><br><span class="line"><span class="meta">#</span><span class="bash"> 再执行第二个命令，用于安装 javascript and css files</span></span><br><span class="line">jupyter contrib nbextension install --user --skip-running-check  </span><br></pre></td></tr></table></figure>
+
+<p>正常情况下应该就看到extension。如果看不到的话具体看参考链接</p>
+<ul>
+<li>参考链接： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3e38964737bc">https://www.jianshu.com/p/3e38964737bc</a></li>
+</ul>
+<h2 id="修改默认路径"><a href="#修改默认路径" class="headerlink" title="修改默认路径"></a>修改默认路径</h2><p>找到以下文件</p>
+<p>Jupyter_notebook_config.py</p>
+<p>然后打开文件，找到以下内容，改成自己想要存储的路径</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.notebook_dir = &#x27;D:\Research\Jupyter Notebook&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>保存关闭文件。此时，若是我们使用的Anaconda Prompt，通过命令jupyter notebook打开的话，已经可以使用了。</p>
+<p>我们还可以通过Anaconda里自带的Jupyter Notebook打开（可以在开始菜单里找到），不过我们还需要修改一些参数。</p>
+<img src="/2021/04/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook/20190613113019560.PNG" alt="在这里插入图片描述" style="zoom:50%;">
+
+<p>在目标中找到%USERPROFILE%，并将它删除，否则打开Jupyter Notebook会一直跳到默认的C盘路径。（提醒：不要将%USERPROFILE%改成其他路径，否则很可能导致闪退现象！而且还有很多文章只更改起始位置，亲测无效！）</p>
+<p>然后在起始位置里，输入自己想存放文件的路径即可。</p>
+<p>==参考文献==：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44799144/article/details/91823079">jupyter路径修改</a></p>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/09/TrajectoryModel/hysplit-trajectory%E6%B5%8B%E8%AF%951/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/09/TrajectoryModel/hysplit-trajectory%E6%B5%8B%E8%AF%951/" class="post-title-link" itemprop="url">hysplit_trajectory测试1</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-09 17:00:37 / Modified: 21:23:58" itemprop="dateCreated datePublished" datetime="2021-04-09T17:00:37+08:00">2021-04-09</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>364</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>关注的点和考虑的问题</p>
+<ul>
+<li><p>是否会跑到平流层上</p>
+</li>
+<li><p>不同的释放高度，会有什么样的不同</p>
+</li>
+<li><p>backforward多久比较合适，是否有一个合理的界定</p>
+</li>
+</ul>
+<p>测试1：backforward trajectory 运行（30天，是否会跑回到12km；不同高度的区别）</p>
+<h2 id="测试1：backforward-trajectory-运行"><a href="#测试1：backforward-trajectory-运行" class="headerlink" title="测试1：backforward trajectory 运行"></a>测试1：backforward trajectory 运行</h2><p>（30天，是否会跑回到12km；不同高度的区别）</p>
+<p>设置3个不同高度（100, 1000, 4000)，以EGRIP ice core的地点为例，从2001年1月到2002年2月份，NCEP reanalysis 数据。</p>
+<h2 id="测试2：-每6个小时开始一个trajectory"><a href="#测试2：-每6个小时开始一个trajectory" class="headerlink" title="测试2： 每6个小时开始一个trajectory"></a>测试2： 每6个小时开始一个trajectory</h2><p>思路：</p>
+<p>一种就是利用循环进行（不知道模型有没有自带的功能，particle有每几个小时出一次图的功能？）</p>
+<p>先将每6个小时的时间做成一个txt文档，然后使用cat功能，每次循环结束读取下一行</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/09/TrajectoryModel/hysplit-%E7%9B%B8%E5%85%B3%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/09/TrajectoryModel/hysplit-%E7%9B%B8%E5%85%B3%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">hysplit_相关背景知识</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-09 14:45:13" itemprop="dateCreated datePublished" datetime="2021-04-09T14:45:13+08:00">2021-04-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-11 17:16:48" itemprop="dateModified" datetime="2021-04-11T17:16:48+08:00">2021-04-11</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>大气扩散模型 Atmospheric dispersion modeling（ADM)</p>
+<blockquote>
+<p>The atmospheric dispersion models are also known as atmospheric diffusion models, air dispersion models, air quality models, and air pollution dispersion models.</p>
+</blockquote>
+<p>跟大气模型的区别？？</p>
+<p>大气层垂直结构大致可分为<a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/wiki/%E5%AF%B9%E6%B5%81%E5%B1%82">对流层 troposphere</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/wiki/%E5%B9%B3%E6%B5%81%E5%B1%82">平流层 stratosphere 18-50km</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/wiki/%E4%B8%AD%E6%B0%A3%E5%B1%A4">中间层 mesosphere 50-80km</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/wiki/%E5%A2%9E%E6%BA%AB%E5%B1%A4">增温层</a>及<a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/wiki/%E5%A4%96%E6%B0%A3%E5%B1%A4">外气层</a>，</p>
+<p>ADM一般只考虑到中间层。</p>
+<p>对流层还有大气边界层，逆温层（1.5km-2km)和自由对流层</p>
+<p>对流层最低一层叫做大气边界层或者行星边界层 <em><a target="_blank" rel="noopener" href="https://en.wikipedia.ahau.cf/wiki/Planetary_boundary_layer">atmospheric boundary layer (ABL)</a></em> or the *<a target="_blank" rel="noopener" href="https://en.wikipedia.ahau.cf/wiki/Planetary_boundary_layer">planetary boundary layer </a>*。是大气层中最接近行星表面的部分（边界层），大约占对流层的10%-20%。由于地表摩擦力，大气边界层中存在湍流，垂直混合强烈，风速、温度和湿度等物理量快速波动。大气边界层之上的部分称“自由大气”，其风速风向近似是行星自转引起的，即地转风（平行于等压线）。</p>
+<p>大气边界层原因</p>
+<p>大气边界层的形成主要是因为地表摩擦力 (surface resistance)的存在。一方面，近表面的空气分子受摩擦而减慢速度，类似静止，这些分子和流动的分子之间不断交换，总效果是减慢了空气流动。另一方面，更重要的是，在地表附近，空气会形成一系列不规则漩涡，变为湍流，从而对空气流动带来巨大阻力</p>
+<p><strong>逆温</strong>（英语：<strong>temperature inversion</strong>）现象是一种<a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/wiki/%E6%B0%A3%E8%B1%A1%E5%AD%B8">气象学</a>的现象，指地面上的温度随着高度越高而增加，与高度越高温度下降的正常现象相反，通常因高压笼罩，不易空气对流所致。因为较高的暖空气覆盖着较低的冷空气，可能会导致空气污染物无法散出，影响当地居民和其他生物的健康，<a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/wiki/1952%E5%B9%B4%E5%80%AB%E6%95%A6%E7%85%99%E9%9C%A7%E4%BA%8B%E4%BB%B6">1952年伦敦烟雾事件</a>即为一著名案例。</p>
+<p>成因</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/w/index.php?title=%E8%BC%BB%E5%B0%84%E9%80%86%E6%BA%AB&action=edit&redlink=1">辐射逆温</a>：最常见于冬天晴朗无风的夜晚。因地表散热快，反而比其上层之气温更低，故形成下冷上热的现象。</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/w/index.php?title=%E5%B1%B1%E5%9C%B0%E9%80%86%E6%BA%AB&action=edit&redlink=1">山地逆温</a>：冬季冷空气重，易沉聚谷底，造成下冷上热的现象。（例子：果树、蔬菜等农作物不栽植于谷底）</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/w/index.php?title=%E6%B2%89%E9%99%8D%E9%80%86%E6%BA%AB&action=edit&redlink=1">沉降逆温</a>：<a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/wiki/%E5%AF%92%E6%B0%94%E6%B5%81">寒流</a>来临时，冷空气潜入暖空气下，造成干燥且多雾天气。</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.ahau.cf/w/index.php?title=%E9%8B%92%E9%9D%A2%E9%80%86%E6%BA%AB&action=edit&redlink=1">锋面逆温</a>：因为锋面而使冷空气在下、热空气在上，导致温度由低处往低高处增加，直到高过热气团后才逐渐降温。</li>
+</ol>
+<p>list of ADM </p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.ahau.cf/wiki/List_of_atmospheric_dispersion_models">https://en.wikipedia.ahau.cf/wiki/List_of_atmospheric_dispersion_models</a></p>
+<p>sigma坐标系</p>
+<p>This coordinate system receives its name from the independent variable sigma  used to represent a scaled pressure level.</p>
+<p>The sigma coordinate system allows sigma-surfaces to follow model terrain; where terrain is sharply sloped, so are the sigma surfaces. </p>
+<p>sigma</p>
+<img src="/2021/04/09/TrajectoryModel/hysplit-%E7%9B%B8%E5%85%B3%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86/image-20210411153009985.png" alt="image-20210411153009985" style="zoom:50%;">
+
+
+
+
+
+<p>hybrid sigma-pressure </p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.ahau.cf/wiki/Atmospheric_dispersion_modeling">https://en.wikipedia.ahau.cf/wiki/Atmospheric_dispersion_modeling</a> </li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">hysplit_安装</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-09 13:27:16 / Modified: 13:37:54" itemprop="dateCreated datePublished" datetime="2021-04-09T13:27:16+08:00">2021-04-09</time>
             </span>
     
           <br>
@@ -752,512 +1130,54 @@
     
       
           <blockquote>
-<p>w我的目标就是能使用hysplit模拟Be10/Be7，结合python的包使用</p>
-<p>有个pysplit的python包 </p>
+<p>总而言之，官网上有很详细的解释，一切以官网为主。这里主要对一些信息做些记录。</p>
+<p>找到的关于安装内容的一些补充信息。</p>
+<p><a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/hysplitusersguide/S000.htm">https://www.ready.noaa.gov/hysplitusersguide/S000.htm</a></p>
 </blockquote>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><ul>
-<li><p>测试1: 区域的release 但是释放速率不变 </p>
+<h1 id="Hysplit-5-安装"><a href="#Hysplit-5-安装" class="headerlink" title="Hysplit 5 安装"></a>Hysplit 5 安装</h1><p>trial版本和register版本没什么不同，register版本可以额外使用预报功能。Hysplit 5 教程使用的是unregister (trial)版本。<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/index.php">Hysplit 安装的网址</a></p>
+<p>需要预安装两个软件：NOAA官网有提供现在的两个软件的<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/HYSPLIT_util.php">下载链接</a></p>
+<ul>
+<li><p>Tcl/TK，打开软件的打开方式。Tk是一開放原始碼的圖形化使用者介面開發工具，提供許多常用的圖形介面元件，具有跨平台、輕量化等特色。官网下载地址：<a target="_blank" rel="noopener" href="https://www.tcl.tk/software/tcltk/download.html">https://www.tcl.tk/software/tcltk/download.html</a></p>
+<blockquote>
+<p>官网上有个叫source file，需要自己结合电脑进行compile。</p>
+</blockquote>
 </li>
-<li><p>测试2：区域的release 但释放速率改变 </p>
-</li>
-<li><p>测试3：区域的release但释放速率改变，且包含不同的时间</p>
+<li><p>Ghostview，成图要用的。</p>
 </li>
 </ul>
 <blockquote>
+<p>两者最好要跟Hysplit安装在同一个drive磁盘中，否则要对Hysplit中的绘图道路进行设置</p>
+<blockquote>
+<p>Installation to directories different from their suggested defaults may require editing the HYSPLIT GUI launch script: \guicode\hysplit.tcl. </p>
 </blockquote>
-<h2 id="测试1-区域的release-但释放速率不变"><a href="#测试1-区域的release-但释放速率不变" class="headerlink" title="测试1 区域的release 但释放速率不变"></a>测试1 区域的release 但释放速率不变</h2><p>黑点表示释放的点，浓度值表示采样的区域。</p>
-<img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/image-20210407185811783.png" alt="image-20210407185811783" style="zoom:50%;">
+</blockquote>
+<p>安装Hysplit 5， 然后修改打开方式为tcl/bin路径下的wish86t.exe文件即可，安装好的使用界面</p>
+<img src="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/image-20210330103724354.png" alt="image-20210330103724354" style="zoom:50%;">
 
-
+<p>忘记了电脑是否安装了Ghostview和Ghostscript，先简单运行个example看看。在concentration栏目下有个quick start可以运行个样例：</p>
+<img src="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/image-20210330105101974.png" alt="image-20210330105101974" style="zoom:50%;">
 
 <blockquote>
-<p>注意浓度的采样和污染物的释放是不同的设置（详情见test-1的脚本）</p>
-<p>两者都是通过同一个程序进行计算的，因此不同的区域设置大小并不会减少运算时间。</p>
-<ul>
-<li>由此来看，浓度值的面积应该跟释放点的面积一致</li>
-</ul>
-<p><strong><em>注意</em></strong>：</p>
-<ul>
-<li>区域面积的release。对control文件进行如下修改，可以将（经纬度和高度放到text文件中进行读取），注意trajectory的数量要和经纬度等数量要一致</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;1184                   &quot;&gt;&gt;CONTROL # trajectory数量</span><br><span class="line">cat &quot;$DATA/traj.txt&quot;         &gt;&gt;CONTROL  # (e.g.,  39.90  -84.22 10.0) </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>同一纬度，不同高度代表release 的方位，这个方法就可以解决release的高度问题，注意这样子算两个trajectory （control file），比如写成以下形式，release的范围就是这个点的[100 5000]之间。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">60	-42.50	100</span><br><span class="line">60	-42.50	5000</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意北纬90°以及东西经180°，0°等这种边界值问题 </p>
-</li>
-</ul>
+<p>ok, 基本上电脑可以运行Hysplit。</p>
+<p>此外还有四种看图方式（python，Google Earth View 等），之后有需要的时候在了解。</p>
 </blockquote>
-<h2 id="测试2-区域的release-但释放速率改变"><a href="#测试2-区域的release-但释放速率改变" class="headerlink" title="测试2 区域的release 但释放速率改变"></a>测试2 区域的release 但释放速率改变</h2><p>下图是教程16.5中的示例，有四行是因为教程中设置了4个污染物。rate 表示释放速率 （可以大于1）。Area 如果为0表示点释放。Heat表明释放时的热量产生（这里为0）。这里面表示一个cycle是12个小时，每个cycle release 的particle是固定，但是cycle的时间长短（duration）是可以改变的。</p>
-<img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/etime000.png" alt="img" style="zoom:50%;">
-
-<p>所有的source必须要有相同的时间间隔。</p>
-<h2 id="测试3：区域的release但释放速率改变，且包含不同的时间"><a href="#测试3：区域的release但释放速率改变，且包含不同的时间" class="headerlink" title="测试3：区域的release但释放速率改变，且包含不同的时间"></a>测试3：区域的release但释放速率改变，且包含不同的时间</h2><p>思路：</p>
+<p>安装的建议：</p>
 <ul>
-<li><p>天气的数据是每个月存储的，那么一个月的最后几天怎么办？多个天气数据的输入？</p>
+<li><p>安装路径推荐默认路径</p>
+<blockquote>
+<blockquote>
+<p>Installing to the default directory will make it easier to use preconfigured input files during the Tutorial as well as running example scripts without editing the directory pointer.</p>
+</blockquote>
+</blockquote>
 </li>
-<li><p>每个事件段模拟的结果，会作为下个事件段的边界条件进行</p>
+<li><p>不要打开多个Hysplit窗口</p>
+</li>
+<li><p>将文件打开方式设为notepad，这样比较好看结果</p>
 </li>
 </ul>
-<p>粒子释放的问题，</p>
-<p>使用particle release计算concentration distribution，需要释放非常多的粒子，否则无法真是反应浓度</p>
-<p>这个时候可以考虑Puff Releases </p>
-<p>在GUI的help中，输入C:/hysplit/html/S441.htm</p>
+<p>更多详细安装建议：<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html">https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html</a></p>
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/" class="post-title-link" itemprop="url">vscode设置</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-    
-              <time title="Created: 2021-04-06 14:20:42 / Modified: 14:27:04" itemprop="dateCreated datePublished" datetime="2021-04-06T14:20:42+08:00">2021-04-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>275</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>打开VSCODE的设置界面（在左下角或者快捷键<code>ctrl + ,</code>）,在右上角打开 <code>settings.json</code>，见图第一个按钮。<br><img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/20201217134709421.png" alt="在这里插入图片描述" style="zoom:50%;"></p>
-<p>如何进行选中颜色变更</p>
-<blockquote>
-<p>注意如果前后有选项的话，要加逗号</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;workbench.colorCustomizations&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;editor.selectionBackground&quot;</span>: <span class="string">&quot;#d1d1c6&quot;</span>,</span><br><span class="line">    <span class="string">&quot;editor.selectionHighlightBackground&quot;</span>: <span class="string">&quot;#c5293e&quot;</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">python_常用快捷键</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-06 13:45:49" itemprop="dateCreated datePublished" datetime="2021-04-06T13:45:49+08:00">2021-04-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 16:13:33" itemprop="dateModified" datetime="2021-04-08T16:13:33+08:00">2021-04-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>488</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <h2 id="1、运行模式"><a href="#1、运行模式" class="headerlink" title="1、运行模式"></a>1、运行模式</h2><p>Jupyter notebook有两种模式：运行模式和编辑模式。<strong>Enter和Esc</strong></p>
-<p>命令模式：单元格边框为蓝色（快捷键需要在命令模式使用）</p>
-<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-049f148e7193e30baf9967d91e2b4449_1440w.jpg" class title="img">
-
-<p>编辑模式：Enter进入单元格 边框为绿色（可以写代码或者markdown文本）</p>
-<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-5f8b2667f08bf4057a199199af028161_1440w.jpg" class title="img">
-
-<p>从编辑模式回到命令模式 按esc 返回。</p>
-<p>Ctrl + /    行注释（可选中多行）</p>
-<blockquote>
-<p>替代操作可以使用三个单引号’’’</p>
-</blockquote>
-<h3 id="命令模式-按键-Esc-开启"><a href="#命令模式-按键-Esc-开启" class="headerlink" title="命令模式 (按键 Esc 开启)"></a>命令模式 (按键 Esc 开启)</h3><ul>
-<li><strong>Enter</strong> : 转入编辑模式</li>
-<li><strong>Shift-Enter</strong> : 运行本单元，选中下个单元</li>
-<li><strong>Ctrl-Enter</strong> : 运行本单元</li>
-<li><strong>Alt-Enter</strong> : 运行本单元，在其下插入新单元</li>
-<li><strong>Y</strong> : 单元转入代码状态</li>
-<li><strong>M</strong> :单元转入markdown状态</li>
-</ul>
-<p>单元格（cell）</p>
-<ul>
-<li><strong>A</strong> : 在上方插入新单元</li>
-<li><strong>B</strong> : 在下方插入新单元</li>
-<li><strong>D,D</strong> : 删除选中的单元</li>
-</ul>
-<h2 id="将ipynb文件转换为py文件"><a href="#将ipynb文件转换为py文件" class="headerlink" title="将ipynb文件转换为py文件"></a>将ipynb文件转换为py文件</h2><ul>
-<li><ul>
-<li>在xxx.ipynb所在目录下，打开终端，并输入命令：</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　　　　　　　 jupyter nbconvert --to script xxx.ipynb</span><br><span class="line">　　　　　　　　其中xxx.ipynb是要转换文件的名字，转换后在该目录下出现xxx.py文件。</span><br></pre></td></tr></table></figure>
-
-
-
-<p>python常用库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sui776265233/p/9759303.html">jupyter notebook常用快捷键</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%A6%82%E8%BF%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">shell_概述</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-05 14:35:13" itemprop="dateCreated datePublished" datetime="2021-04-05T14:35:13+08:00">2021-04-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 16:38:45" itemprop="dateModified" datetime="2021-04-08T16:38:45+08:00">2021-04-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>566</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <h2 id="Shell脚本概述"><a href="#Shell脚本概述" class="headerlink" title="Shell脚本概述"></a>Shell脚本概述</h2><p><code>#!</code> 解释器声明，是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即用哪一种 Shell<br>例如 <code>#!/bin/sh</code>，shell 脚本通常以此开头，用来告诉系统 <code>/bin/sh</code> 是用来执行该文件的程序。</p>
-<blockquote>
-<p>小马的笔记也做的很好</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="http://masikkk.com/article/Linux-Shell/">http://masikkk.com/article/Linux-Shell/</a></p>
-<blockquote>
-<p>非常详细的shell教程,里面有很多实例</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2991.html">http://c.biancheng.net/view/2991.html</a></p>
-<p>shell中的一些特殊符号</p>
-<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/69966.htm">https://www.jb51.net/article/69966.htm</a></p>
-<p>**| 管道 (pipeline)<br>**pipeline 是 UNIX 系统，基础且重要的观念。连结上个指令的标准输出，做为下个指令的标准输入。<br>who | wc -l<br>善用这个观念，对精简 script 有相当的帮助。</p>
-<p>字符串的截取等<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42491125/article/details/101368505">https://blog.csdn.net/qq_42491125/article/details/101368505</a></p>
-<p>基本格式</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">[Neptuneyt]$</span><span class="bash"> net=<span class="string">&quot;www.baidu.com&quot;</span></span></span><br><span class="line"><span class="meta">[Neptuneyt]$</span><span class="bash"> <span class="comment"># 从第4个字符截取到baidu</span></span></span><br><span class="line"><span class="meta">[Neptuneyt]$</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$&#123;net:4:5&#125;</span> <span class="comment">#从第4个字符.开始截取5个字符</span></span></span><br><span class="line">baidu</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">shell_正则表达式</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-04 13:54:06" itemprop="dateCreated datePublished" datetime="2021-04-04T13:54:06+08:00">2021-04-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 18:34:14" itemprop="dateModified" datetime="2021-04-08T18:34:14+08:00">2021-04-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>127</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>shell脚本的正则表达式，要好好学习下</p>
-<p>可以匹配sed和grep的命令来做</p>
-</blockquote>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>结合实例加深理解</p>
-<h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h2><img src="/2021/04/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816" class title="这里写图片描述">
-
-<h2 id="数量限定符"><a href="#数量限定符" class="headerlink" title="数量限定符"></a>数量限定符</h2><img src="/2021/04/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105209231" class title="这里写图片描述">
-
-
-
-
-
-<h2 id="位置限定符"><a href="#位置限定符" class="headerlink" title="位置限定符"></a>位置限定符</h2><img src="/2021/04/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105543523" class title="这里写图片描述">
-
-
-
-
-
-
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_38121874/article/details/78476492">https://blog.csdn.net/m0_38121874/article/details/78476492</a></li>
 </ul>
 
       
@@ -1277,7 +1197,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1343,7 +1263,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1356,7 +1276,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1392,12 +1312,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">62k</span>
+    <span title="Symbols count total">79k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">57 mins.</span>
+    <span title="Reading time total">1:12</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>

@@ -27,13 +27,11 @@
 <meta property="og:site_name" content="JackZHENG_blog">
 <meta property="og:description" content="Hysplit常用代码解析 对于function，只要输入函数名称，就会出来相关的设定。比如   总是要记得备份，尤其是模拟不同时段的运移模型时候 16.2 Restarting the Model from PARDUMP Therefore, go to the \hysplit\working directory and first make a copy of PARDUMP (to PA">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/04/TrajectoryModel/hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/image-20210405163720358.png">
 <meta property="article:published_time" content="2021-04-04T01:54:10.000Z">
-<meta property="article:modified_time" content="2021-04-07T02:35:18.306Z">
+<meta property="article:modified_time" content="2021-04-11T02:54:45.512Z">
 <meta property="article:author" content="JackZheng">
 <meta property="article:tag" content="Hysplit">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/04/04/TrajectoryModel/hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/image-20210405163720358.png">
 
 <link rel="canonical" href="http://jackzheng-lu.github.io/2021/04/04/TrajectoryModel/hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/">
 
@@ -227,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-07 10:35:18" itemprop="dateModified" datetime="2021-04-07T10:35:18+08:00">2021-04-07</time>
+                <time title="Modified: 2021-04-11 10:54:45" itemprop="dateModified" datetime="2021-04-11T10:54:45+08:00">2021-04-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,14 +243,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>2.9k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>3 mins.</span>
+              <span>2 mins.</span>
             </span>
     
         </div>
@@ -277,17 +275,19 @@
 <p>echo &gt;&gt; file # 追加内容</p>
 </blockquote>
 <p>先check ASCDATA.CFG是否存在，如果没有创建个</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if [ ! -f ASCDATA.CFG ]; then</span><br><span class="line">   echo &quot;-90.0  -180.0&quot;     &gt;ASCDATA.CFG </span><br><span class="line">   echo &quot;1.0     1.0&quot;      &gt;&gt;ASCDATA.CFG</span><br><span class="line">   echo &quot;180     360&quot;      &gt;&gt;ASCDATA.CFG</span><br><span class="line">   echo &quot;2&quot;                &gt;&gt;ASCDATA.CFG</span><br><span class="line">   echo &quot;0.2&quot;              &gt;&gt;ASCDATA.CFG</span><br><span class="line">   echo &quot;&#x27;$MDL/bdyfiles/&#x27;&quot; &gt;&gt;ASCDATA.CFG</span><br><span class="line">fi</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个<span class="built_in">echo</span>表示在prompt中显示运行的文件名</span></span><br><span class="line">echo &quot;### $0 ###&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<p>再创建control文件，可以创建的control.base或者control.head，然后再之后进行赋予到运行的Control文件中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$syr $smo $sda $shr    &quot; &gt;CONTROL.head</span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL.head</span><br><span class="line">echo &quot;$olat $olon $olvl      &quot;&gt;&gt;CONTROL.head</span><br><span class="line">echo &quot;$run                   &quot;&gt;&gt;CONTROL.head</span><br><span class="line"></span><br><span class="line">echo &quot;$ztop                  &quot; &gt;CONTROL.tail</span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL.tail</span><br><span class="line">echo &quot;$MET/                  &quot;&gt;&gt;CONTROL.tail</span><br><span class="line">echo &quot;captex2_wrf27uw.bin    &quot;&gt;&gt;CONTROL.tail</span><br><span class="line">echo &quot;$OUT/                  &quot;&gt;&gt;CONTROL.tail</span><br><span class="line"></span><br><span class="line">cp    CONTROL.head        CONTROL</span><br><span class="line">echo &quot;0&quot;                &gt;&gt;CONTROL</span><br><span class="line">cat   CONTROL.tail      &gt;&gt;CONTROL</span><br><span class="line">echo &quot;tdump_data&quot;       &gt;&gt;CONTROL</span><br><span class="line">echo &quot;tdump_data&quot;        &gt;traj_files.txt</span><br></pre></td></tr></table></figure>
+
 
 <p>修改默认的setup的</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;&amp;SETUP              &quot;  &gt;SETUP.CFG</span><br><span class="line"><span class="meta">#</span><span class="bash"> ....</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改参数</span></span><br><span class="line">echo &quot;numpar=1,           &quot; &gt;&gt;SETUP.CFG  # 修改relised particle 为1</span><br><span class="line"><span class="meta">#</span><span class="bash">....</span></span><br><span class="line">echo &quot;/                   &quot; &gt;&gt;SETUP.CFG</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
 
+
+<p>区域的释放可以这样设置，（多个区域貌似不行？）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
@@ -300,22 +300,18 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/hyts_std</span>    </span><br></pre></td></tr></table></figure>
 
 <p>运行frequency </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> tfreq.bin为output file name, INFILE为input file name</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/trajfreq -ftfreq.bin -g1.0 -iINFILE -r0 -s0:99999</span> </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 绘制相应的等线图</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/concplot -m0 -k1 -z80 -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -itfreq.bin</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 绘制相应的等线图</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/concplot -m0 -k1 -z80 -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -itfreq.bin</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
 <p>多图的方法。有些.exe可以看操作，直接在prompt里面输入exe相关文件名即可。</p>
 <p>注意，操作和file没有空格，比如说，-itdump_wrf27表示-i 和文件tdump_wrf27。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">法一：直接将output name写出来</span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/trajplot -itdump_wrf27+tdump_narr -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -v0</span></span><br><span class="line"></span><br><span class="line">法二：将output name放到一个traj_files.txt文件中进行</span><br><span class="line">echo &quot;tdump_divg&quot;       &gt;&gt;traj_files.txt</span><br><span class="line">echo &quot;tdump_fwrd&quot;       &gt;&gt;traj_files.txt</span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/trajplot -z30 -i+traj_files.txt -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -v0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> f(0)表示all frame one file, f(1)表示one frame one file</span></span><br><span class="line"><span class="meta"> $</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/concplot -icdump -f1 -z50 -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">法一：直接将output name写出来</span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/trajplot -itdump_wrf27+tdump_narr -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -v0</span></span><br><span class="line"></span><br><span class="line">法二：将output name放到一个traj_files.txt文件中进行</span><br><span class="line">echo &quot;tdump_divg&quot;       &gt;&gt;traj_files.txt</span><br><span class="line">echo &quot;tdump_fwrd&quot;       &gt;&gt;traj_files.txt</span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/trajplot -z30 -i+traj_files.txt -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -v0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> f(0)表示all frame one file, f(1)表示one frame one file</span></span><br><span class="line"><span class="meta"> $</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/concplot -icdump -f1 -z50 -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap</span></span><br></pre></td></tr></table></figure>
 
 
 
 <p>类似正则匹配的形式</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ls fdump???????? &gt;INFILE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 多个输出，linux接受这种写法，<span class="variable">$&#123;num&#125;</span></span></span><br><span class="line">ps2pdf concplot.ps 7_5_conc_part_$&#123;num&#125;.pdf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 逗号表示换行的意思, <span class="built_in">read</span> 表示读取输入</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个可以做到暂停的效果,然后看下输入</span></span><br><span class="line">echo &quot;Enter to continue ...&quot;; read x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ls fdump???????? &gt;INFILE</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 多个输出，linux接受这种写法，<span class="variable">$&#123;num&#125;</span></span></span><br><span class="line">ps2pdf concplot.ps 7_5_conc_part_$&#123;num&#125;.pdf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 逗号表示换行的意思, <span class="built_in">read</span> 表示读取输入</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个可以做到暂停的效果,然后看下输入</span></span><br><span class="line">echo &quot;Enter to continue ...&quot;; read x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
@@ -323,9 +319,7 @@
 <blockquote>
 <p> 具体的参数设定，可以cd到相应的exe文件夹中，然后在prompt窗口中，输入相应的exe名字，会有相关详细介绍。</p>
 </blockquote>
-<h2 id><a href="#" class="headerlink" title></a></h2><h2 id="concplot"><a href="#concplot" class="headerlink" title="concplot"></a>concplot</h2><img src="/2021/04/04/TrajectoryModel/hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/image-20210405163720358.png" class title="image-20210405163720358">
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<h2 id><a href="#" class="headerlink" title></a></h2><h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li>无</li>
 </ul>
 
@@ -411,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">Hysplit常用代码解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concplot"><span class="nav-number">1.2.</span> <span class="nav-text">concplot</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">Hysplit常用代码解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -425,7 +419,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -438,7 +432,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -474,12 +468,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">62k</span>
+    <span title="Symbols count total">79k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">57 mins.</span>
+    <span title="Reading time total">1:12</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>

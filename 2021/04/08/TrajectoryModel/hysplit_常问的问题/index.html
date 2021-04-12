@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="https:&#x2F;&#x2F;www.arl.noaa.gov&#x2F;hysplit&#x2F;hysplit-frequently-asked-questions-faqs&#x2F; 快速过了一遍常问的问题，将对项目有用的信息做个摘录，直接点感叹号就可以到原网址 该网址可以多看看 https:&#x2F;&#x2F;www.arl.noaa.gov&#x2F;hysplit&#x2F;hysplit-frequently-asked-questions-faqs&#x2F;faq-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hysplit_常问的问题">
+<meta property="og:url" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="JackZHENG_blog">
+<meta property="og:description" content="https:&#x2F;&#x2F;www.arl.noaa.gov&#x2F;hysplit&#x2F;hysplit-frequently-asked-questions-faqs&#x2F; 快速过了一遍常问的问题，将对项目有用的信息做个摘录，直接点感叹号就可以到原网址 该网址可以多看看 https:&#x2F;&#x2F;www.arl.noaa.gov&#x2F;hysplit&#x2F;hysplit-frequently-asked-questions-faqs&#x2F;faq-">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="https://www.arl.noaa.gov/wp_arl/wp-content/uploads/2017/10/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+<meta property="article:published_time" content="2021-04-08T02:48:09.000Z">
+<meta property="article:modified_time" content="2021-04-11T07:55:19.360Z">
+<meta property="article:author" content="JackZheng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif">
+
+<link rel="canonical" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>hysplit_常问的问题 | JackZHENG_blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JackZHENG_blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hysplit_常问的问题
+        </h1>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-08 10:48:09" itemprop="dateCreated datePublished" datetime="2021-04-08T10:48:09+08:00">2021-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-11 15:55:19" itemprop="dateModified" datetime="2021-04-11T15:55:19+08:00">2021-04-11</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+        <p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/">https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/</a></p>
+<p>快速过了一遍常问的问题，将对项目有用的信息做个摘录，直接点感叹号就可以到原网址</p>
+<p>该网址可以多看看</p>
+<p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc9/">https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc9/</a></p>
+<p>重要！</p>
+<blockquote>
+<p>对于很小的气象数据改动，trajectory的结果出现很大的不确定性时，需要注意解释</p>
+<p>精度（precision）和准度（accuracy)，Hysplit model 的精度为1%/天，会随着时间的推移而叠加。hysplit的准度问题很大随着时间推移而改变，10天的准度问题会达到15°左右。</p>
+</blockquote>
+<h1 id="气象数据类"><a href="#气象数据类" class="headerlink" title="气象数据类"></a>气象数据类</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/what-archived-data-are-available-on-the-web-to-run-hysplit-with/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>What archived data are available on the web to run HYSPLIT with?</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/what-data-is-used-to-calculate-the-hysplit-trajectories-and-what-is-the-the-vertical-resolution-of-the-data/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>What data is used to calculate the trajectories and what is the the vertical resolution of the data? </p>
+<blockquote>
+<p>这主要取决于气象数据</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-6/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> However, in one case when I calculated 120-hour backward trajectories from Potsdam, NY at 1800 on April 8, 1999 using both the EDAS and FNL data bases, I found that the EDAS data suggested the air was in the upper midwest 5 days prior, but the FNL put it into northern Quebec. Why the difference?</p>
+</li>
+</ul>
+<blockquote>
+<p>结果不同一般是由于气象数据的精度不同。</p>
+<p>关于trajectory的通常步骤，运行一个点相近的不同高度的trajectory（e.g.300m 400m, 500m)，如果结果相似，那么结果比较可靠，如果发散，说明不确定大（not precide）</p>
+</blockquote>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/i-will-be-converting-ecmwf-grib-files/"><img src="https://www.arl.noaa.gov/wp_arl/wp-content/uploads/2017/10/info2.gif" alt="Click for answer."></a>I will be converting ECMWF grib files into ARL-packed format for use in calculating backward trajectories in Europe using your HYSPLIT model. What fields do I need to have for HYSPLIT to properly calculate my trajectories?</p>
+<blockquote>
+<p>不推荐自己进行数据的转换，需要一定的工作量，否则看介绍</p>
+</blockquote>
+</li>
+</ul>
+<p>When I set up a matrix run and have the heights specified at a certain altitude (using MSL), why do the results show the starting points at different heights instead of at a constant one?</p>
+<p>有些时候Mean Sea Level(MSL) 会低于地面，所以Hysplit会自动校对高度等于地面。<a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc26/">link</a></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/backward-trajectories-starting-at-a-rural-east-coast-site/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>When I get backward trajectories starting at a rural East Coast site in NJ, which starting height(s) do you suggest is (are) appropriate? The terrain of the site is flat and near sea level. I am also wondering how long of a trajectory duration is recommended.</li>
+</ul>
+<blockquote>
+<p>如果是想知道地面的空气来源，则是贴近地面，如果想知道水汽，则是高于云层的高度。一般选取两到三个高度进行测试，一般来讲对于48小时内的trajectory精度还是OK的，对于更长时间尺度的问题，主要是用于聚类分析来分析这个情况</p>
+</blockquote>
+<h1 id="模型设置"><a href="#模型设置" class="headerlink" title="模型设置"></a>模型设置</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/if-i-choose-agl/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> If I choose AGL for the start height, does that mean that for the entire model run the computed heights are relative to the ground? I’m concerned about this because of the terrain in the mountains. I don’t want values to be “underground.”</p>
+<blockquote>
+<p>AGL的设定，仅用于最开始模型的运行。气体的垂直运动不会造成气体低于地面</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/which-value-should-i-input-as-the-start-height/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>Which value should I input as the start height (MAGL)? What does “above model ground level” mean?</p>
+<blockquote>
+<p>地形（terrain）取决于输入的气象数据。如果气象数据精度高，地形的精度也就很高。低精度的数据会平滑掉一些地貌（高山和谷底）。</p>
+<blockquote>
+<p>The best we can do is to look at the surface pressure and the mean sea-level pressure at the starting location and estimate the height above sea level of the model terrain at your location.</p>
+</blockquote>
+<p>根据mean sea-level pressure (MSLP) 和采样点的the surface pressure (PRSS)的差别，估算地形高度。一个简单的近似，1mb=10m。比如：</p>
+<blockquote>
+<p>35.66N, -82.38W; 1030mb MSLP and 939 mb PRSS taking the difference gives 91mb. A quick estimate is to assume a hydrostatic atmosphere, or approximately 10 meters per mb. This gives 910 MASL, which is what the model sees as the terrain height. </p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h1 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h1><h2 id="TRAJECTORY"><a href="#TRAJECTORY" class="headerlink" title="TRAJECTORY"></a>TRAJECTORY</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg13/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>How does HYSPLIT consider the vertical coordinate. If a trajectory meets the surface how does HYSPLIT work? Does it reflect, or use another method to solve it?</p>
+<blockquote>
+<p>如果到了boundary，继续运行。（很显然这不是我们想要看到的结果）在dispersion 模式下，particle会反弹。</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg25/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>Is the effect of the boundary layer considered when the model computes the trajectory?</p>
+<blockquote>
+<p>并没有考虑到热力运动，只有在dispersion的模式下才有考虑。</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg5/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>When I ran a forward trajectory from a location on a previously computed backward trajectory, I did not return to the starting location of my backward trajectory. Why?</p>
+<blockquote>
+<p>误差问题，开始0.1°的偏差，10天后的偏差回达到15°。</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg39/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> Why are there small differences in my trajectories when I run more than one at a time versus running just one trajectory?</p>
+<blockquote>
+<p>模型并没有使用全部的气象数据，而是使用部分的气象数据sub-grid data，根据开始的地点设定数据的中心。当trajectory运行到气象数据的边界时，模型会重新定义中心，并重新计算。因此，使用多个开始的点和一个开始的点时，所用的气象数据会有所不同的。垂直运动的计算考虑了这一因素。因此结果会有些许不同。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="CONCENTRATION"><a href="#CONCENTRATION" class="headerlink" title="CONCENTRATION"></a>CONCENTRATION</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg4/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>How is concentration defined in HYSPLIT and how does it relate to the radiation units of Bacquerel?</p>
+<blockquote>
+<p>输入的单位时mass/每小时，这个mass由用户自己决定，最后的结果是mass/m3，如果定义是Bq/小时，那最后的结果就是Bq/m3。</p>
+</blockquote>
+</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+      <footer class="post-footer">
+    
+        
+
+    
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/08/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5/" rel="prev" title="各种数据库链接">
+      <i class="fa fa-chevron-left"></i> 各种数据库链接
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/" rel="next" title="hysplit_test2">
+      hysplit_test2 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">气象数据类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">模型设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">结果分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TRAJECTORY"><span class="nav-number">3.1.</span> <span class="nav-text">TRAJECTORY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CONCENTRATION"><span class="nav-number">3.2.</span> <span class="nav-text">CONCENTRATION</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JackZheng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackZheng</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">79k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:12</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

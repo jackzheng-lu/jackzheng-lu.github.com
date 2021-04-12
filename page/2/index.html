@@ -189,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/04/TrajectoryModel/hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +203,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/04/TrajectoryModel/hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">hysplit常用代码解析</a>
+            <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E5%8F%98%E9%87%8F/" class="post-title-link" itemprop="url">shell_变量</a>
         </h2>
     
         <div class="post-meta">
@@ -213,14 +213,230 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
     
-              <time title="Created: 2021-04-04 09:54:10" itemprop="dateCreated datePublished" datetime="2021-04-04T09:54:10+08:00">2021-04-04</time>
+              <time title="Created: 2021-04-08 19:09:18" itemprop="dateCreated datePublished" datetime="2021-04-08T19:09:18+08:00">2021-04-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-07 10:35:18" itemprop="dateModified" datetime="2021-04-07T10:35:18+08:00">2021-04-07</time>
+                <time title="Modified: 2021-04-10 20:56:19" itemprop="dateModified" datetime="2021-04-10T20:56:19+08:00">2021-04-10</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>200</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <h2 id="删除字母"><a href="#删除字母" class="headerlink" title="删除字母"></a>删除字母</h2><p>这个方法利用tr -c删除补集的功能，如有其他字符泽不能用这个方法</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bigwood99/article/details/105227113">https://blog.csdn.net/bigwood99/article/details/105227113</a></p>
+<p>方法1：</p>
+<p>echo “a1b2c3d4f5” | tr -d ‘a-z’</p>
+<p>方法2：</p>
+<p>echo “a1b2c3d4f5” | sed ‘s/[a-z]*//g’</p>
+<p>方法3：</p>
+<p>echo “a1b2c3d4f5” | tr -d -c ‘[0-9]’</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">shell_grep_sed函数</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-08 16:17:34" itemprop="dateCreated datePublished" datetime="2021-04-08T16:17:34+08:00">2021-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-10 20:45:32" itemprop="dateModified" datetime="2021-04-10T20:45:32+08:00">2021-04-10</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>遇到特殊符号时，使用反斜杠“\”</p>
+<p>注意这些都是字符匹配？？</p>
+</blockquote>
+<h1 id="grep函数"><a href="#grep函数" class="headerlink" title="grep函数"></a>grep函数</h1><p>grep，可以匹配正则来搜索文件中的信息。貌似是个命令，直接在prompt里面输入</p>
+<blockquote>
+<p>由于可以搜索文件的信息，因此最好不要单用grep在目录下搜索，速度非常慢</p>
+<p>如果要用grep在文件夹搜索，应结合ls 使用</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-grep.html">https://www.runoob.com/linux/linux-comm-grep.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/linux/grep.html">http://c.biancheng.net/linux/grep.html</a></p>
+<p>实例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 当前文件夹找到符号条件的文件名</span></span><br><span class="line">result=$(ls | grep &quot;.md&quot;)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 另外一种方法</span></span><br><span class="line">x=$(find -name &#x27;shell*.md&#x27;| tr -d &quot;[\.\/]&quot;)</span><br><span class="line">注意find跟grep不大一样</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 反向查找。通过<span class="string">&quot;-v&quot;</span>参数可以打印出不符合条件行的内容。查找文件名中包含 <span class="built_in">test</span> 的文件中不包含<span class="built_in">test</span> 的行，此时，使用的命令为：</span></span><br><span class="line">grep -v test *test*</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">遍历目录下的文件名</span><br><span class="line">for file in `ls /bin`; do                                                                           </span><br><span class="line">    echo $&#123;file&#125;                                                                                      </span><br><span class="line">done  </span><br></pre></td></tr></table></figure>
+
+
+
+<p><a target="_blank" rel="noopener" href="https://linux.cn/article-6941-1.html">https://linux.cn/article-6941-1.html</a></p>
+<p>grep的或匹配，和匹配</p>
+<h1 id="sed-函数"><a href="#sed-函数" class="headerlink" title="sed 函数"></a>sed 函数</h1><p>==sed默认不修改源文件内容==，可以直接修改文件的内容（-i），</p>
+<p>注意，sed 会根据脚本命令来处理文本文件中的数据，这些命令要么从命令行中输入，要么存储在一个文本文件中，此命令执行数据的顺序如下：</p>
+<ol>
+<li><p>每次仅读取一行内容；</p>
+</li>
+<li><p>根据提供的规则命令匹配并修改数据。注意，sed 默认不会直接修改源文件数据，而是会将数据复制到缓冲区中，修改也仅限于缓冲区中的数据；</p>
+</li>
+<li><p>将执行结果输出。</p>
+<blockquote>
+<p>要注意使用，因为我们不想修改重要信息</p>
+</blockquote>
+</li>
+</ol>
+<img src="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/image-20210408162947813.png" class title="image-20210408162947813">
+
+
+
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /^categories/为正则匹配，c为替换行，c后面的语句为替换语句，<span class="string">&quot;<span class="variable">$&#123;file&#125;</span>&quot;</span>为替换的文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -i 选项可以直接修改文件内容，没有-i的话，只输出，但不修改源文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> \为对特殊符号进行转义</span></span><br><span class="line">sed -i &quot;/^categories/c categories: [\&#x27;编程语言学习\&#x27;]&quot; &quot;$&#123;file&#125;&quot;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 去除前后空格</span></span><br><span class="line">[root@linux ~]# echo &#x27; A BC &#x27; | sed -e &#x27;s/^[ ]*//g&#x27; | sed -e &#x27;s/[ ]*$//g&#x27;</span><br><span class="line">A BC</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sweeter2/article/details/50876810">https://blog.csdn.net/sweeter2/article/details/50876810</a></p>
+<h1 id="拓展："><a href="#拓展：" class="headerlink" title="拓展："></a>拓展：</h1><h2 id="find-函数"><a href="#find-函数" class="headerlink" title="find 函数"></a>find 函数</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Sunny_Future/article/details/80321478">https://blog.csdn.net/Sunny_Future/article/details/80321478</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_xuanshuang/article/details/107453783">https://blog.csdn.net/qq_xuanshuang/article/details/107453783</a></p>
+<p>ls 匹配</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaochi/p/12846696.html">https://www.cnblogs.com/zhaochi/p/12846696.html</a></p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/4028.html">http://c.biancheng.net/view/4028.html</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">python_正则表达式</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-08 12:14:59" itemprop="dateCreated datePublished" datetime="2021-04-08T12:14:59+08:00">2021-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-10 15:35:27" itemprop="dateModified" datetime="2021-04-10T15:35:27+08:00">2021-04-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -228,7 +444,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
                 </span>
             </span>
     
@@ -238,7 +454,246 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>2.9k</span>
+              <span>858</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>开头使用如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>总结</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># ^ 匹配字符串的开始。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># $ 匹配字符串的结尾。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \b 匹配一个单词的边界。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \d 匹配任意数字。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \D 匹配任意非数字字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x? 匹配一个可选的 x 字符 (换言之，它匹配 1 次或者 0 次 x 字符)。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x* 匹配0次或者多次 x 字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x+ 匹配1次或者多次 x 字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x&#123;n,m&#125; 匹配 x 字符，至少 n 次，至多 m 次。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># (a|b|c) 要么匹配 a，要么匹配 b，要么匹配 c。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># (x) 一般情况下表示一个记忆组 (remembered group)。你可以利用 re.search 函数返回对象的 groups() 函数获取它的值。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 正则表达式中的点号通常意味着 “匹配任意单字符”</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="部分实例：-注意举一反三"><a href="#部分实例：-注意举一反三" class="headerlink" title="部分实例：(注意举一反三)"></a>部分实例：(注意举一反三)</h1><ul>
+<li>提取小数：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string=&quot;A1.45，b5，6.45，8.82&quot;</span><br><span class="line">print re.findall(r&quot;\d+\.?\d*&quot;,string)</span><br><span class="line"><span class="meta">#</span><span class="bash"> [<span class="string">&#x27;1.45&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;6.45&#x27;</span>, <span class="string">&#x27;8.82&#x27;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>匹配包含指定字符串开头的，例如提取loss开头的字符串：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tensorflow:Final best valid 0 loss=0.20478513836860657 norm_loss=0.767241849151384 roc=0.8262403011322021 pr=0.39401692152023315 calibration=0.9863265752792358 rate=0.0</span><br><span class="line"></span><br><span class="line">pattern = re.compile(r&#x27;(?:loss=)\d+\.?\d*&#x27;)</span><br><span class="line">pattern.findall(string)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> [<span class="string">&#x27;loss=0.20478513836860657&#x27;</span>, <span class="string">&#x27;loss=0.767241849151384&#x27;</span>]</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010412858/article/details/83062200">python正则表达式从字符串中提取数字</a></li>
+<li></li>
+</ul>
+<ul>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/" class="post-title-link" itemprop="url">hysplit_test2</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-08 10:48:09" itemprop="dateCreated datePublished" datetime="2021-04-08T10:48:09+08:00">2021-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-11 09:41:44" itemprop="dateModified" datetime="2021-04-11T09:41:44+08:00">2021-04-11</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>892</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <ul>
+<li><p>测试1 批量进行气象数据缩小 （完成）</p>
+</li>
+<li><p>测试2 在stratosphere的粒子运动（最高30km）</p>
+<blockquote>
+<p>气象数据的最高高度为30km，如果直接设置30km会报错，可以设置为29.9km</p>
+</blockquote>
+</li>
+<li><p>测试3 时间连接问题（完成）</p>
+</li>
+<li><p>问题4 粒子问题？（貌似有粒子的上限，以及如何对粒子释放做出修改）</p>
+</li>
+</ul>
+<h2 id="测试1-批量进行气象数据缩小"><a href="#测试1-批量进行气象数据缩小" class="headerlink" title="测试1  批量进行气象数据缩小"></a>测试1  批量进行气象数据缩小</h2><p>根据教程中的介绍，貌似气象数据可以裁剪，为局部区域进行运行。因为这只是运移模型？</p>
+<p>在下载的文件中，有个现成的软件可以进行气象数据的裁剪</p>
+<blockquote>
+<p>搜索 “xtrct_grid.exe，注意，文件夹的输入是C:\Users\zmjhh\Desktop\NCEP197611\，不要忘记最后要有个斜线<code>\</code>。</p>
+</blockquote>
+<blockquote>
+<p># 思路 (使用shell文件完成)</p>
+<p># &gt; 每次创建一个新的txt文件，将信息存入其中</p>
+<p># &gt; 然后重定向输入到exe的应用程序中去 （重定行功能）</p>
+<p># &gt; 最后将输出进行重命名 (mv函数)</p>
+</blockquote>
+<h2 id="测试2-在stratosphere的粒子运动（最高30km）"><a href="#测试2-在stratosphere的粒子运动（最高30km）" class="headerlink" title="测试2 在stratosphere的粒子运动（最高30km）"></a>测试2 在stratosphere的粒子运动（最高30km）</h2><p>运行基本ok，气象数据的最高高度为30km，如果直接设置30km有可能会报错，可以设置为29.9km。</p>
+<img src="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210409152543732.png" alt="image-20210409152543732" style="zoom: 50%;">
+
+
+
+<h2 id="测试3-时间连接问题"><a href="#测试3-时间连接问题" class="headerlink" title="测试3 时间连接问题"></a>测试3 时间连接问题</h2><p>由于运行是一个cycle一个cycle进行的，所以有两种方法</p>
+<ul>
+<li>可以运行到每月的月底，然后重开一个cycle</li>
+<li>或者更简单的，直接把所有的气象数据放进去运行（推荐）</li>
+</ul>
+<p>测试后发现只要如下设置即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这些气象数据信息最好一起</span><br><span class="line">  echo &quot;2                      &quot;&gt;&gt;CONTROL #数量</span><br><span class="line">  echo &quot;$DATA/                  &quot;&gt;&gt;CONTROL #文件位置1</span><br><span class="line">  echo &quot;$&#123;data&#125;                  &quot;&gt;&gt;CONTROL # 数据1</span><br><span class="line">  echo &quot;$DATA/                  &quot;&gt;&gt;CONTROL #文件位置2</span><br><span class="line">  echo &quot;$&#123;data2&#125;                  &quot;&gt;&gt;CONTROL # 数据2</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>高度问题</p>
+<p>这是一个三十天的back-trajectory的模拟。</p>
+<p>从这个图上可以看出几个问题</p>
+<p>trajectory几乎是沿着地面的，说明这个时候应该已经结束了，需要额外结束</p>
+<img src="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210411093407709.png" alt="image-20210411093407709" style="zoom:50%;">
+
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">hysplit_常问的问题</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-08 10:48:09" itemprop="dateCreated datePublished" datetime="2021-04-08T10:48:09+08:00">2021-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-11 15:55:19" itemprop="dateModified" datetime="2021-04-11T15:55:19+08:00">2021-04-11</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -257,954 +712,92 @@
     <div class="post-body" itemprop="articleBody">
     
       
-          <h1 id="Hysplit常用代码解析"><a href="#Hysplit常用代码解析" class="headerlink" title="Hysplit常用代码解析"></a>Hysplit常用代码解析</h1><blockquote>
-<p>对于function，只要输入函数名称，就会出来相关的设定。比如</p>
-</blockquote>
+          <p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/">https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/</a></p>
+<p>快速过了一遍常问的问题，将对项目有用的信息做个摘录，直接点感叹号就可以到原网址</p>
+<p>该网址可以多看看</p>
+<p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc9/">https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc9/</a></p>
+<p>重要！</p>
 <blockquote>
-<p>总是要记得备份，尤其是模拟不同时段的运移模型时候</p>
-<p>16.2 Restarting the Model from PARDUMP</p>
-<p>Therefore, go to the <em>\hysplit\working</em> directory and first make a copy of <em>PARDUMP</em> (to <em>PARDUMP1412</em>) that was created at the end of the last simulation to avoid having to rerun the example in case you make a mistake and then rename the file <em>PARDUMP</em> to <strong><em>PARINIT\</em></strong>. Then save the changes and run the model.</p>
+<p>对于很小的气象数据改动，trajectory的结果出现很大的不确定性时，需要注意解释</p>
+<p>精度（precision）和准度（accuracy)，Hysplit model 的精度为1%/天，会随着时间的推移而叠加。hysplit的准度问题很大随着时间推移而改变，10天的准度问题会达到15°左右。</p>
 </blockquote>
-<blockquote>
-<p>echo &gt; file # 会覆盖原来的文件信息</p>
-<p>echo &gt;&gt; file # 追加内容</p>
-</blockquote>
-<p>先check ASCDATA.CFG是否存在，如果没有创建个</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if [ ! -f ASCDATA.CFG ]; then</span><br><span class="line">   echo &quot;-90.0  -180.0&quot;     &gt;ASCDATA.CFG </span><br><span class="line">   echo &quot;1.0     1.0&quot;      &gt;&gt;ASCDATA.CFG</span><br><span class="line">   echo &quot;180     360&quot;      &gt;&gt;ASCDATA.CFG</span><br><span class="line">   echo &quot;2&quot;                &gt;&gt;ASCDATA.CFG</span><br><span class="line">   echo &quot;0.2&quot;              &gt;&gt;ASCDATA.CFG</span><br><span class="line">   echo &quot;&#x27;$MDL/bdyfiles/&#x27;&quot; &gt;&gt;ASCDATA.CFG</span><br><span class="line">fi</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个<span class="built_in">echo</span>表示在prompt中显示运行的文件名</span></span><br><span class="line">echo &quot;### $0 ###&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>再创建control文件，可以创建的control.base或者control.head，然后再之后进行赋予到运行的Control文件中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$syr $smo $sda $shr    &quot; &gt;CONTROL.head</span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL.head</span><br><span class="line">echo &quot;$olat $olon $olvl      &quot;&gt;&gt;CONTROL.head</span><br><span class="line">echo &quot;$run                   &quot;&gt;&gt;CONTROL.head</span><br><span class="line"></span><br><span class="line">echo &quot;$ztop                  &quot; &gt;CONTROL.tail</span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL.tail</span><br><span class="line">echo &quot;$MET/                  &quot;&gt;&gt;CONTROL.tail</span><br><span class="line">echo &quot;captex2_wrf27uw.bin    &quot;&gt;&gt;CONTROL.tail</span><br><span class="line">echo &quot;$OUT/                  &quot;&gt;&gt;CONTROL.tail</span><br><span class="line"></span><br><span class="line">cp    CONTROL.head        CONTROL</span><br><span class="line">echo &quot;0&quot;                &gt;&gt;CONTROL</span><br><span class="line">cat   CONTROL.tail      &gt;&gt;CONTROL</span><br><span class="line">echo &quot;tdump_data&quot;       &gt;&gt;CONTROL</span><br><span class="line">echo &quot;tdump_data&quot;        &gt;traj_files.txt</span><br></pre></td></tr></table></figure>
-
-<p>修改默认的setup的</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;&amp;SETUP              &quot;  &gt;SETUP.CFG</span><br><span class="line"><span class="meta">#</span><span class="bash"> ....</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改参数</span></span><br><span class="line">echo &quot;numpar=1,           &quot; &gt;&gt;SETUP.CFG  # 修改relised particle 为1</span><br><span class="line"><span class="meta">#</span><span class="bash">....</span></span><br><span class="line">echo &quot;/                   &quot; &gt;&gt;SETUP.CFG</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<p>一般都要先将要创建的文件删除，避免之后创建的时候出问题</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -f traj_files.txt</span><br><span class="line">rm -f tdump_data tdump_isob tdump_isen tdump_dens tdump_sigma tdump_divg</span><br><span class="line"><span class="meta">#</span><span class="bash"> 采用默认setup文件</span></span><br><span class="line">rm -f SETUP.CFG</span><br></pre></td></tr></table></figure>
-
-<p>运行hysplit模型，hyst_std前面表示模型存储路径</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/hyts_std</span>    </span><br></pre></td></tr></table></figure>
-
-<p>运行frequency </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> tfreq.bin为output file name, INFILE为input file name</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/trajfreq -ftfreq.bin -g1.0 -iINFILE -r0 -s0:99999</span> </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 绘制相应的等线图</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/concplot -m0 -k1 -z80 -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -itfreq.bin</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>多图的方法。有些.exe可以看操作，直接在prompt里面输入exe相关文件名即可。</p>
-<p>注意，操作和file没有空格，比如说，-itdump_wrf27表示-i 和文件tdump_wrf27。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">法一：直接将output name写出来</span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/trajplot -itdump_wrf27+tdump_narr -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -v0</span></span><br><span class="line"></span><br><span class="line">法二：将output name放到一个traj_files.txt文件中进行</span><br><span class="line">echo &quot;tdump_divg&quot;       &gt;&gt;traj_files.txt</span><br><span class="line">echo &quot;tdump_fwrd&quot;       &gt;&gt;traj_files.txt</span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/trajplot -z30 -i+traj_files.txt -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -v0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> f(0)表示all frame one file, f(1)表示one frame one file</span></span><br><span class="line"><span class="meta"> $</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/concplot -icdump -f1 -z50 -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>类似正则匹配的形式</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ls fdump???????? &gt;INFILE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 多个输出，linux接受这种写法，<span class="variable">$&#123;num&#125;</span></span></span><br><span class="line">ps2pdf concplot.ps 7_5_conc_part_$&#123;num&#125;.pdf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 逗号表示换行的意思, <span class="built_in">read</span> 表示读取输入</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个可以做到暂停的效果,然后看下输入</span></span><br><span class="line">echo &quot;Enter to continue ...&quot;; read x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>Hysplit里面有不同的现成的plot设置（e.g., concplot，output的形式为concplot.ps)，可以很快的check结果。</p>
-<blockquote>
-<p> 具体的参数设定，可以cd到相应的exe文件夹中，然后在prompt窗口中，输入相应的exe名字，会有相关详细介绍。</p>
-</blockquote>
-<h2 id><a href="#" class="headerlink" title></a></h2><h2 id="concplot"><a href="#concplot" class="headerlink" title="concplot"></a>concplot</h2><img src="/2021/04/04/TrajectoryModel/hysplit%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/image-20210405163720358.png" class title="image-20210405163720358">
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/04/TrajectoryModel/hysplit_%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/04/TrajectoryModel/hysplit_%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">Hysplit_设置文件</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-04 09:20:43" itemprop="dateCreated datePublished" datetime="2021-04-04T09:20:43+08:00">2021-04-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-07 22:49:00" itemprop="dateModified" datetime="2021-04-07T22:49:00+08:00">2021-04-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>9.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>9 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Hysplit有几个关键文件Ascadata，control和setup.cfg，跟模型运行有关。</p>
-<ul>
-<li><p>message 文件，看diagnostic message file，看concentration simulation的具体信息，也会有一些诊断信息如果模型没有正常运行</p>
+<h1 id="气象数据类"><a href="#气象数据类" class="headerlink" title="气象数据类"></a>气象数据类</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/what-archived-data-are-available-on-the-web-to-run-hysplit-with/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>What archived data are available on the web to run HYSPLIT with?</p>
 </li>
-<li><p>有些.exe可以看操作，直接在prompt里面输入exe相关文件名即可</p>
-</li>
-</ul>
-<h1 id="运行文件的设定"><a href="#运行文件的设定" class="headerlink" title="运行文件的设定"></a>运行文件的设定</h1><p>主要是Ascdata.data，Control.cfg文件。Set.cfg有默认设置，也可以根据需要进行设定。</p>
-<h2 id="ASCDATA-DATA"><a href="#ASCDATA-DATA" class="headerlink" title="ASCDATA.DATA"></a>ASCDATA.DATA</h2><p>有关地形，土地使用的详情</p>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/what-data-is-used-to-calculate-the-hysplit-trajectories-and-what-is-the-the-vertical-resolution-of-the-data/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>What data is used to calculate the trajectories and what is the the vertical resolution of the data? </p>
 <blockquote>
-<p><em>bdyfiles</em> - This directory contains an ASCII version of gridded land use, roughness length, and terrain data. </p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-90.0   -180.0  lat/lon of lower left corner   </span><br><span class="line">1.0     1.0     lat/lon spacing in degrees    </span><br><span class="line">180     360     lat/lon number of data points  (e.g., 如果spacing是0.5 0.5的话，则number为[360 720])</span><br><span class="line">2               default land use category  陆地使用情况   </span><br><span class="line">0.2             default roughness length (m)   </span><br><span class="line">&#x27;c:\hysplit\bdyfiles\&#x27;  directory of files     </span><br></pre></td></tr></table></figure>
-
-<h2 id="Control-文件"><a href="#Control-文件" class="headerlink" title="Control 文件"></a>Control 文件</h2><p>属于设定文件，一定要按照参数顺序来。以下是关于trajectory计算的control设定</p>
-<blockquote>
-<p>详情见hysplit_user_guide.pdf的Initial CONTROL File Section。</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">83 9 28 13  					# 开始时间 yr,month,day,hour,(min,optional)</span><br><span class="line">1                      			# number of the starting points</span><br><span class="line">38.665 -71.370 216.4			# 开始地点1 (可以输入多个,可选项为发散的速率和面积）</span><br><span class="line">....							# 开始地点2 (可以输入多个)</span><br><span class="line">....							# ...</span><br><span class="line">-68                  			# 运行时间，负数表示backforwar</span><br><span class="line">0                      		 	# 垂直运移选项(0,默认使用气象数据中的垂直速度)</span><br><span class="line"><span class="meta">#</span><span class="bash"> (0:data 1:isob 2:isen 3:dens 4:sigma 5:diverg 6:msl2agl 7:average 8:damped)</span></span><br><span class="line">10000.0                  		# 默认最高大气高度(10km)</span><br><span class="line">1                      			# number of input data grid ??</span><br><span class="line">c:/hysplit/Tutorial/captex/     # 气象数据所在位置     </span><br><span class="line">captex2_wrf27uw.bin             # 气象数据</span><br><span class="line">c:/hysplit/working/             # 输出数据文件位置</span><br><span class="line">tdump_back      			    # 输出文件名</span><br></pre></td></tr></table></figure>
-
-<p>如果是关于particle csoncentrations的计算，还需要设定particle的相关信息。其他的是跟trajectory信息一样的，输出信息那项要增添particled的相关信息。这个可以结合Hysplit GUI了解相关输入，在concentration&gt; setup run&gt;  pollutent, depostion and grids setup&gt;点species 1 了解详情。</p>
-<p>particle </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$syr $smo $sda $shr    &quot; &gt;CONTROL</span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL</span><br><span class="line">echo &quot;$olat $olon $lvl1      &quot;&gt;&gt;CONTROL</span><br><span class="line">echo &quot;$run                   &quot;&gt;&gt;CONTROL</span><br><span class="line">echo &quot;0                      &quot;&gt;&gt;CONTROL</span><br><span class="line">echo &quot;$ztop                  &quot;&gt;&gt;CONTROL</span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL</span><br><span class="line">echo &quot;$MET/                  &quot;&gt;&gt;CONTROL</span><br><span class="line">echo &quot;$data                  &quot;&gt;&gt;CONTROL</span><br><span class="line"><span class="meta">#</span><span class="bash"> 以上是trajectory的基本信息数据，到气象数据输入停止</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Definition of pollutent group</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> 这是污染物扩散的设置</span></span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL # number of group</span><br><span class="line">echo &quot;TEST                   &quot;&gt;&gt;CONTROL # identification </span><br><span class="line">echo &quot;1.0                    &quot;&gt;&gt;CONTROL # essmion rate 扩散的速度</span><br><span class="line">echo &quot;1.0                    &quot;&gt;&gt;CONTROL # hours of emission  扩散的时间</span><br><span class="line">echo &quot;00 00 00 00 00         &quot;&gt;&gt;CONTROL # 开始扩散的时间</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> definition of concentration grid</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> 这是计算浓度设置</span></span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL # number of girds，不同的grid的设定，会有不同的输出</span><br><span class="line">echo &quot;0.0 0.0                &quot;&gt;&gt;CONTROL # 经纬度中心，如果设置为[0,0]，则默认为污染源位置为中心</span><br><span class="line">echo &quot;0.05 0.05              &quot;&gt;&gt;CONTROL # 经纬度的间隔，default[1,1], (这个间隔越小，则需要的release的particles就越多，否则最后计算的concentration就不准确）</span><br><span class="line">echo &quot;30.0 30.0              &quot;&gt;&gt;CONTROL # 经纬度的选择范围,中心左右各一半，default[180,360],</span><br><span class="line">echo &quot;$OUT/                  &quot;&gt;&gt;CONTROL # concentration的结果文件夹</span><br><span class="line">echo &quot;cdump                  &quot;&gt;&gt;CONTROL # concentration的文件</span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL  # 高度的分层，(e.g.,2,Boundary layer/平流层)number of vertical levels</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个计算的平均高度</span></span><br><span class="line">echo &quot;100                    &quot;&gt;&gt;CONTROL  # （m，e.g., 高度分层为2层的话，这里就写3000 10000），AGL,height of levels，平均的高度</span><br><span class="line">echo &quot;00 00 00 00 00         &quot;&gt;&gt;CONTROL  # 采样开始时间(yr,month,day,hour,min)</span><br><span class="line">echo &quot;00 00 00 00 00         &quot;&gt;&gt;CONTROL  # 采样停止时间(yr,month,day,hour,min)</span><br><span class="line"><span class="meta">#</span><span class="bash">这个表示每多久进行取样一次（e.g. 01 03 00, 表示每3小时进行取样一次）</span></span><br><span class="line">echo &quot;00 12 00               &quot;&gt;&gt;CONTROL  # concentration average, </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> definition of deposition grid</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这是污染物运移的设定</span></span><br><span class="line">echo &quot;1                      &quot;&gt;&gt;CONTROL # 可以有多个污染物的设定</span><br><span class="line">echo &quot;0.0 0.0 0.0            &quot;&gt;&gt;CONTROL # 直径(um)，密度(g/cc)，形状（shape），三个参数有一个为0，则污染物会被设定为气体，污染物为例子的话，这三个参数一定要大于0</span><br><span class="line"></span><br><span class="line">echo &quot;0.0 0.0 0.0 0.0 0.0    &quot;&gt;&gt;CONTROL # 沉降速度(m/s)，污染物重量（g/mol),Surface Reactivity Ratio, Diffusivity Ratio, Effective Henry&#x27;s Constant </span><br><span class="line">echo &quot;0.0 0.0 0.0            &quot;&gt;&gt;CONTROL</span><br><span class="line">echo &quot;0.0                    &quot;&gt;&gt;CONTROL # decay time </span><br><span class="line">echo &quot;0.0                    &quot;&gt;&gt;CONTROL</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="Setup-cfg"><a href="#Setup-cfg" class="headerlink" title="Setup.cfg"></a>Setup.cfg</h2><p>模型的设定文件，不是必须的，如果没有设定值的话，Hysplit会导入默认的值</p>
-<blockquote>
-<p>在hysplit_user_guide文件中，有个section，Advanced / Configuration Setup / Variables Not Set in the GUI，里面有关于Setup.cfg文件的具体设置。</p>
-</blockquote>
-<p>在GUI的advance setting中，也可以调用帮助文档，查看详情，以下setup.cfg设置就是从GUI里复制出来的</p>
-<blockquote>
-<p>1    CAPEMIN=-1 -1 no convection; -2 Grell convection scheme; -3 extreme convection; &gt;0 enhanced vertical mixing when CAPE exceeds this value (J/kg)<br>2    CMASS=0 compute grid concentrations (0) or grid mass (1)<br>3    CMTFN=’ ‘ center-of-mass trajectory output file name<br>4    CONAGE=24 particle to or from puff conversions at conage (hours)<br>5    CPACK=1 binary concentration packing 0:none 1:nonzero 2:points 3:polar<br>6    DELT=0.0 integration time step (0=autoset GT-0=constant LT-0=minimum)<br>7    DXF=1.0 horizontal X-grid adjustment factor for ensemble<br>8    DYF=1.0 horizontal Y-grid adjustment factor for ensemble<br>9    DZF=0.01 vertical (0.01 ~ 250m) factor for ensemble<br>10    EFILE=’ ‘ temporal emission file name   #时间变化的变量名<br>11    FRHMAX=3.0 maximum value for the horizontal rounding parameter<br>12    FRHS=1.00 standard horizontal puff rounding fraction for merge<br>13    FRME=0.10 mass rounding fraction for enhanced merging<br>14    FRMR=0.0 mass removal fraction during enhanced merging<br>15    FRTS=0.10 temporal puff rounding fraction<br>16    FRVS=0.01 vertical puff rounding fraction<br>17    GEMAGE=48 particle or puff transfer to the global model after gemage (hours)<br>18    HSCALE=10800.0 horizontal Lagrangian time scale (sec)<br>19    ICHEM=0 chemistry conversion modules 0:none 1:matrix 2:convert 3:dust …<br>20    IDSP=1 particle dispersion scheme 1:HYSPLIT 2:STILT<br>21    INITD=0 initial distribution, particle, puff, or combination<br>22    IVMAX=20 number of variables written to PARTICLE_STILT.DAT. Must equal the number of variables listed for variable VARSIWANT<br>23    K10M=1 use surface 10m winds / 2m temperature (1) or skip (0)<br>24    KAGL=1 trajectory output heights are written as AGL (1) or as MSL (0)<br>25    KBLS=1 boundary layer stability derived from 1:fluxes 2:wind_temperature<br>26    KBLT=2 boundary layer turbulence parameterizations 1:Beljaars 2:Kanthar 3:TKE 4:Measured 5:Hanna<br>27    KDEF=0 horizontal turbulence 0=vertical 1=deformation<br>28    KHINP=0 when non-zero sets the age (h) for particles read from PINPF<br>29    KHMAX=9999 maximum duration (h) for a particle or trajectory   # 最大的滞留时间？<br>30    KMIXD=0 mixed layer obtained from 0:input 1:temperature 2:TKE 3:modified Richardson #<br>31    KMIX0=150 minimum mixing depth<br>32    KMSL=0 starting heights default to AGL=0 or MSL=1<br>33    KPUFF=0 horizontal puff dispersion linear (0) or empirical (1) growth<br>34    KRAND=2 method to calculate random number  1=precalculated 2=calculated in pardsp 3=none 4=random initial seed number and calculatd in pardsp<br>35    KRND=6 enhanced merge interval (hours)<br>36    KSPL=1 standard splitting interval (hours)<br>37    KWET=0 precipitation from an external file<br>38    KZMIX=0 vertical mixing adjustments: 0=none 1=PBL-average 2=scale_TVMIX<br>39    MAXDIM=1 maximum number of pollutants to carry on one particle<br>40    MAXPAR=10000 maximum number of particles carried in simulation<br>41    MESSG=’MESSAGE’ diagnostic message file base name<br>42    MGMIN=10 minimum meteorological subgrid size<br>43    MHRS=9999 trajectory restart duration limit (hours) </p>
-<p>44    NBPTYP=1 number of redistributed particle size bins per pollutant type  # 给不同size的粒子标记<br>45    NINIT=1 particle initialization (0-none; 1-once; 2-add; 3-replace)  % 开始的particle数据<br>46    NCYCL=0 pardump output cycle time  #output的次数？<br>47    NDUMP=0 dump particles to/from file 0-none or nhrs-output interval  # 出结果文件的时间间隔</p>
-<p>48    NSTR=0 trajectory restart time interval in hours<br>49    NTURB=0 Turbulence flag 0-on; 1-off<br>50    NUMPAR=2500 number of puffs or particles to released per cycle  # 默认释放particled的数量<br>51    NVER=0 trajectory vertical split number<br>52    P10F=1.0 dust threshold velocity sensitivity factor<br>53    PINBC=’ ‘ particle input file name  for time-varying boundary conditions </p>
-<p>54    PINPF=’ ‘ particle input file name  for initialization or boundary conditions  # 初始/边界条件的particle文件<br>55    POUTF=’ ‘ particle output file name  # 结果文件<br>56    QCYCLE=0.0 optional cycling of emissions (hours)<br>57    RHB=80 is the RH defining the base of a cloud<br>58    RHT=60 is the RH defining the top of a cloud<br>59    SEED=-1 set the seed for the random number generator. (v988 and higher)<br>60    SPLITF=1.0 automatic size adjustment (horizontal splitting<br>61    TKERD=0.18 unstable turbulent kinetic energy ratio = w’2/(u’2+v’2)<br>62    TKERN=0.18 stable turbulent kinetic energy ratio<br>63    TLFRAC=0.1 The fraction of the Lagrangian vertical time scale used to calculate the dispersion time step in the STILT dispersion scheme.<br>64    TM_PRES=0 trajectory diagnostic output pressure variable marker flag<br>65    TM_TPOT=0 trajectory diagnostic output potential temperature<br>66    TM_TAMB=0 trajectory diagnostic output ambient temperature<br>67    TM_RAIN=0 trajectory diagnostic output rainfall rate<br>68    TM_MIXD=0 trajectory diagnostic output mixed layer depth<br>69    TM_TERR=0 trajectory diagnostic output terrain height  # 是否显示地形？（设为1显示地形）<br>70    TM_DSWF=0 trajectory diagnostic output downward short-wave flux<br>71    TM_RELH=0 trajectory diagnostic output relative humidity<br>72    TOUT=60 trajectory output interval in minutes<br>73    TRATIO=0.75 advection stability ratio<br>74    TVMIX=1.0 vertical mixing scale factor<br>75    VARSIWANT=’TIME’,’INDX’,’LONG’,’LATI’,’ZAGL’,’SIGW’,’TLGR’,’ZSFC’,’TEMP’,’SAMT’,’FOOT’,’SHTF’,’DMAS’,’DENS’,’RHFR’,’SPHU’,’DSWF’,’WOUT’,’MLHT’,’PRES’ variables written to PARTICLE_STILT.DAT.<br>76    VDIST=’VMSDIST’ diagnostic file vertical mass distribution<br>77    VEGHT=0.5 Height below which particle’s time is spent is tallied to calculate footprint for PARTICLE_STILT.DAT less than or equal to 1.0: fraction of PBL height; greater than 1.0: height AGL (m)<br>78    VINIT=1 initial turbulent velocity. Draw from distribution (1) set to 0 (0)<br>79    VSCALEU=200.0 vertical Lagrangian time scale (sec) for unstable PBL<br>80    VSCALES=5.0 vertical Lagrangian time scale (sec) for stable PBL<br>81    WBWR=0.0 trajectory fixed rise velocity (m/s) required if vertical motion option = 9<br>82    WBWF=0.0 trajectory fixed fall velocity (m/s, &gt;0) required if vertical motion option = 9 or 10<br>83    WBBH=0.0 trajectory height at which vertical velocity switches from rise to fall (m) required if vertical motion option = 9<br>84    WVERT=.FALSE. Vertical interpolation scheme for WRF fields .FALSE.:HYSPLIT scheme .TRUE.:WRF scheme </p>
-</blockquote>
-<h1 id="图像绘制的设定"><a href="#图像绘制的设定" class="headerlink" title="图像绘制的设定"></a>图像绘制的设定</h1><h2 id="concplot"><a href="#concplot" class="headerlink" title="concplot"></a>concplot</h2><p>浓度分布图。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 实例1</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/concplot -ivolcano.bin -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap -s0 -z80 \</span></span><br><span class="line"><span class="bash">                      -c4 -uug -v100+50+20+10</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s0 表示浓度叠加，-z80表示缩放大小，-c4表示浓度显示，-u表示单位，-v表示colorbar的类别</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -j表示加载地理坐标</span></span><br></pre></td></tr></table></figure>
-
-<img src="/2021/04/04/TrajectoryModel/hysplit_%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6/image-20210407104610575.png" alt="image-20210407104610575" style="zoom:50%;">
-
-<h2 id="parxplot"><a href="#parxplot" class="headerlink" title="parxplot"></a>parxplot</h2><p>显示例子的运动。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 实例1</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;MDL&#125;/<span class="built_in">exec</span>/parxplot -iPARDUMP -k1 -z80 -j<span class="variable">$&#123;MDL&#125;</span>/graphics/arlmap</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> PADRUMP是particle的输出，如果要看particle的条件的话，需要额外的在setup中设置particle的输出。例如</span></span><br><span class="line"> echo &quot;&amp;SETUP              &quot;  &gt;SETUP.CFG</span><br><span class="line"> echo &quot;ndump=12,            &quot; &gt;&gt;SETUP.CFG</span><br><span class="line"> echo &quot;ncycl=3,            &quot; &gt;&gt;SETUP.CFG</span><br><span class="line"> echo &quot;pinpf = &#x27;PARINIT&#x27;,  &quot; &gt;&gt;SETUP.CFG</span><br><span class="line"> echo &quot;poutf = &#x27;PARDUMP&#x27;,  &quot; &gt;&gt;SETUP.CFG</span><br><span class="line"> echo &quot;/		              &quot; &gt;&gt;SETUP.CFG</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<img src="/2021/04/04/TrajectoryModel/hysplit_%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6/image-20210405163647013.png" alt="image-20210405163647013" style="zoom:33%;">
-
-
-
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python_%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python_%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">python_快捷键</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-30 21:07:50" itemprop="dateCreated datePublished" datetime="2021-03-30T21:07:50+08:00">2021-03-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 16:13:34" itemprop="dateModified" datetime="2021-04-08T16:13:34+08:00">2021-04-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>2.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>python 我使用的是anacoda的jupyter notebook。</p>
-<blockquote>
-<p>因为anacoda更新出了问题，我卸载了重新安装，结果发现之前装的包都不见了。这里对anaconda的安装做个记录</p>
-</blockquote>
-<h2 id="python-列表，数组，矩阵"><a href="#python-列表，数组，矩阵" class="headerlink" title="python 列表，数组，矩阵"></a>python 列表，数组，矩阵</h2><p>列表可以写成方括号之间的逗号分隔值(项目)列表。 </p>
-<p>列表中的项目不必是相同的类型。一个列表中的项目(元素)可以是数字，字符串，数组，字典等甚至是列表类型。</p>
-<h1 id="Jupyter-extension消失的问题"><a href="#Jupyter-extension消失的问题" class="headerlink" title="Jupyter extension消失的问题"></a>Jupyter extension消失的问题</h1><p>发现jupyter notebook的extension不见了，直接在anaconda的prompt窗口输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 打开Anaconda Prompt窗口，执行第一个命令，用于安装nbextensions：</span></span><br><span class="line">python -m pip install jupyter_contrib_nbextensions </span><br><span class="line"><span class="meta">#</span><span class="bash"> 再执行第二个命令，用于安装 javascript and css files</span></span><br><span class="line">jupyter contrib nbextension install --user --skip-running-check  </span><br></pre></td></tr></table></figure>
-
-<p>正常情况下应该就看到extension。如果看不到的话具体看参考链接</p>
-<ul>
-<li>参考链接： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3e38964737bc">https://www.jianshu.com/p/3e38964737bc</a></li>
-</ul>
-<h1 id="Jupyter-运行py文件"><a href="#Jupyter-运行py文件" class="headerlink" title="Jupyter 运行py文件"></a>Jupyter 运行py文件</h1><p>方法1：直接运行得出结果。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%run xx.py </span><br></pre></td></tr></table></figure>
-
-<p>方法2：(载入代码再点击Run运行，这种方法的好处是可以方便修改代码。)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">%load xx.py </span><br><span class="line"><span class="comment"># 然后将更新信息覆盖文件</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># python文件夹的位置，建议保存为一个新的版本，做好备份</span></span><br><span class="line">mypath =<span class="string">&quot;C:/Users/zmjhh/Desktop/HYSPLIT/test.txt&quot;</span> </span><br><span class="line"><span class="comment"># 这里将新的内容覆盖到原来</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(mypath,<span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> x</span><br><span class="line">  x.write(<span class="string">&quot;This is a boy&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>说明：Jupyter Notebook中以%开头的代码为魔法函数。其中：</p>
-<ul>
-<li>%run 调用外部python脚本</li>
-<li>%load 加载本地文件</li>
-</ul>
-<h2 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h2><blockquote>
-<p>注意，要是路径上有空格，则加双引号，如下</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%run <span class="string">&quot;D:/OneDrive_LU/OneDrive - Lund University/ChromeTest.py&quot;</span></span><br><span class="line"><span class="comment">#或者也可以这么写</span></span><br><span class="line">path1=<span class="string">&quot;D:/OneDrive_LU/OneDrive - Lund University/ChromeTest.py&quot;</span></span><br><span class="line">%run <span class="string">&quot;$path1&quot;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p> 注意，这里跟Shell文件一个区别，就是shell文件中推荐加<code>&#123;&#125;</code>，但是在python中，加了<code>&#123;&#125;</code>就不能正确读取路劲了。</p>
-</blockquote>
-<h1 id="Permission-denied-问题"><a href="#Permission-denied-问题" class="headerlink" title="Permission denied 问题"></a>Permission denied 问题</h1><p>如下代码会出现permission denied的情况</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">filename=<span class="string">&#x27;C:/Users/zmjhh/Desktop/HYSPLIT&#x27;</span></span><br><span class="line">urllib.request.urlretrieve(link, filename)</span><br></pre></td></tr></table></figure>
-
-<p>应该确定文件类型，如test.zip等，正确如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">filename=<span class="string">&#x27;C:/Users/zmjhh/Desktop/HYSPLIT/test.zip&#x27;</span></span><br><span class="line">urllib.request.urlretrieve(link, filename)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>python 的路径含空格等特殊符号</p>
-<p>基本跟shell一致，使用告诉系统’&#39;不是转义字符，’\‘就起这种作用，现给出一个示例。</p>
-<h2 id="并集问题"><a href="#并集问题" class="headerlink" title="并集问题"></a>并集问题</h2><p>&amp; 和 and 都能表示并集，但是两者又不一样</p>
-<p>首先 &amp; 是位运算符，and 是逻辑运算符</p>
-<p>首先 &amp; 是位运算符，and 是逻辑运算符</p>
-<p>举例1: 设a和b是两个整数，a=1，b=2</p>
-<p>a&amp;b     分析：a以二进制表示就是01，b以二进制表示就是10，故&amp;的运算结果就是00，即十进制的0</p>
-<p>a and b    分析：1是真，2也是真，故a and b是真</p>
-<p>又如：2&amp;3     即10&amp;11，结果就是10 即十进制的2</p>
-<pre><code>        0 and 2   即0是假，2是真，结果就是假
-</code></pre>
-<p>a,b分别是整数1和2，以二进制表示分别为：01，10。&amp;运算结果的二进制为：00，即十进制的 0（按位逻辑运算）。再如 ：2&amp;3，二进制表示为 10&amp;11，所以结果是 10，即十进制的 2。1 是真，2是真（整数0是否），所以 1 and 2 是真， 0 and 2 是否。</p>
-<h2 id="解压和压缩的格式"><a href="#解压和压缩的格式" class="headerlink" title="解压和压缩的格式"></a>解压和压缩的格式</h2><h2 id="的格式理解"><a href="#的格式理解" class="headerlink" title="%的格式理解"></a>%的格式理解</h2><blockquote>
-<p> 在看别人代码的时候看到这种用法，学习下</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34199405/article/details/93068576">https://blog.csdn.net/weixin_34199405/article/details/93068576</a></p>
-<p>直接看代码理解</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"></span><br><span class="line">a &#x3D; &quot;wry&quot;</span><br><span class="line">b &#x3D; &quot;zjl&quot;</span><br><span class="line">c &#x3D; &quot;xxx&quot;</span><br><span class="line">print &quot;a&#x3D;%s, b&#x3D;%s, c &#x3D; %s&quot; %(a,b,c) # %s 字符串 (采用str()的显示)</span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a&#x3D;wry, b&#x3D;zjl, c &#x3D; xxx</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/" class="post-title-link" itemprop="url">python_爬虫批量下载</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-30 21:07:50" itemprop="dateCreated datePublished" datetime="2021-03-30T21:07:50+08:00">2021-03-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 16:13:34" itemprop="dateModified" datetime="2021-04-08T16:13:34+08:00">2021-04-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>方法2、如果遇到提取中文的问题，可以加上 <code>encoding=&#39;utf-8&#39;</code>来解决。</p>
-<p>扩展学习selenium包，关于HTML的消息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><blockquote>
-<p>包括<code>selenium</code>，<code>urllib</code>和chromedriver。</p>
-</blockquote>
-<p><code>urllib</code>是Python自带的标准库，无需安装，直接可以用。</p>
-<p>需要安装的包selenium，直接prompt输入（<a target="_blank" rel="noopener" href="https://selenium-python-zh.readthedocs.io/en/latest/waits.html">selenium官网教程，非常有用</a>）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install selenium</span><br></pre></td></tr></table></figure>
-
-<p>也需要下载个chromedriver ，结合自己的chrome的版本，版本序号不一定是要一致的，找不到一致的就找相近的，使用mirror的链接下载：<a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/chromedriver">http://npm.taobao.org/mirrors/chromedriver</a></p>
-<p>下载完成后，直接拖到anaconda下面的文件夹中</p>
-<img src="/2021/03/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210402215942210.png" alt="image-20210402215942210" style="zoom:50%;">
-
-<p>然后在anaconda的prompt窗口输入<code>chromedriver</code>，出现这样子的界面就成功了</p>
-<img src="/2021/03/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210402220243916.png" alt="image-20210402220243916" style="zoom:50%;">
-
-<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>网上找到的自动下载的基本思路</p>
-<ol>
-<li>要利用headers拉动请求，模拟成浏览器去访问网站，跳过最简单的反爬虫机制。(我这步跳过)</li>
-<li>获取网页内容，保存在一个字符串content中。</li>
-<li>构造正则表达式，从content中匹配关键词pattern获取下载链接。需要注意的是，网页中的关键词出现了两遍（如下图），所以我们要利用set()函数清除重复元素。</li>
-<li>第三步是遍历set之后的结果，下载链接。</li>
-<li>设置time.sleep(t)，无sleep间隔的话，网站认定这种行为是攻击，所以我们隔一段时间下载一个，反反爬虫。</li>
-</ol>
-<p>碰到按钮的网页，找到要按的按钮，然后使用click()功能，例如</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#读取网页内容</span></span><br><span class="line">url=driver.current_url</span><br><span class="line">opener = urllib.request.build_opener()</span><br><span class="line">content = opener.<span class="built_in">open</span>(url).read().decode(<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#通过正则选取内容</span></span><br><span class="line">pattern=<span class="string">&#x27;/extractout/user/extract_\d\d\d\d\d.zip&#x27;</span></span><br><span class="line">raw_hrefs = re.findall(pattern, content, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">t=<span class="number">0</span></span><br><span class="line"><span class="comment"># 因为loading需要时间，ru</span></span><br><span class="line"><span class="keyword">while</span> raw_hrefs==[]:</span><br><span class="line">    time.sleep(<span class="number">10</span>) <span class="comment"># 再等10秒</span></span><br><span class="line">    t=t+<span class="number">10</span></span><br><span class="line">    <span class="comment">#更新网页内容</span></span><br><span class="line">    url=driver.current_url</span><br><span class="line">    content=driver.page_source</span><br><span class="line">    raw_hrefs = re.findall(pattern, content, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> raw_hrefs!=[]: <span class="comment"># 已经loading完成，可以下载</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> t&gt;=<span class="number">30</span>:</span><br><span class="line">        print(<span class="string">&#x27;something is wrong here, 30 seconds past&#x27;</span>)</span><br><span class="line">        <span class="built_in">input</span>() <span class="comment"># 停止程序运行的一种方式，输入字母,停下程序</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">link=<span class="string">&#x27;https://www.ready.noaa.gov&#x27;</span>+raw_hrefs[<span class="number">0</span>]</span><br><span class="line">path1=<span class="string">&#x27;C:/Users/zmjhh/Desktop/HYSPLIT/&#x27;</span></span><br><span class="line">filename=<span class="string">&#x27;NCEP&#x27;</span>+ yr</span><br><span class="line">print(<span class="string">&#x27;start downing the &#x27;</span>+ filename)</span><br><span class="line"><span class="comment"># 应该确定文件类型，如test.zip等</span></span><br><span class="line"><span class="comment"># 如果只给个文件，会出现permission denied的情况</span></span><br><span class="line">urllib.request.urlretrieve(link, path1+ filename+<span class="string">&#x27;.zip&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;downloading finished for &#x27;</span>+ filename)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h1 id="扩展功能"><a href="#扩展功能" class="headerlink" title="扩展功能"></a>扩展功能</h1><p>##下载速度和时间的扩展</p>
-<blockquote>
-<p>我想大概知道一个下载速度和时间，代码参考如下，亲测可用，保存为.py文件，然后调用即可。</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30362083/article/details/95301602">https://blog.csdn.net/weixin_30362083/article/details/95301602</a></p>
-<h2 id="等待时间"><a href="#等待时间" class="headerlink" title="等待时间"></a>等待时间</h2><p>使用的是WebDriverWait</p>
-<p>看<a target="_blank" rel="noopener" href="https://selenium-python-zh.readthedocs.io/en/latest/waits.html%E5%BE%97%E5%88%B0%E6%9B%B4%E5%A4%9A%E7%9A%84%E4%BF%A1%E6%81%AF">https://selenium-python-zh.readthedocs.io/en/latest/waits.html得到更多的信息</a></p>
-<p>进阶；<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fcc-123/p/10942883.html">https://www.cnblogs.com/fcc-123/p/10942883.html</a></p>
-<p>获取超链接元素后，</p>
-<p>通过<code>download_link.get_attribute(&#39;href&#39;)</code>来获得其元素</p>
-<p>自动刷新</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43858148/article/details/84727756?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control">https://blog.csdn.net/weixin_43858148/article/details/84727756?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control</a></p>
-<h1 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h1><h3 id="Python正则表达式："><a href="#Python正则表达式：" class="headerlink" title="Python正则表达式："></a>Python正则表达式：</h3><p>. 匹配任意1个字符（除了\n）</p>
-<p>[ ] 匹配[ ]中列举的字符</p>
-<p>\d 匹配数字，即0-9</p>
-<p>\D 匹配非数字，即不是数字</p>
-<p>\s 匹配空白，即 空格，tab键</p>
-<p>\S 匹配非空白</p>
-<p>\w 匹配非特殊字符，即a-z、A-Z、0-9、_、汉字</p>
-<p>\W 匹配特殊字符，即非字母、非数字、非汉字、非_</p>
-<h3 id="python字符串前缀的知识："><a href="#python字符串前缀的知识：" class="headerlink" title="python字符串前缀的知识："></a>python字符串前缀的知识：</h3><p>1、在字符串前加上r或R表示该字符串是非转义的原始字符串。</p>
-<blockquote>
-<p>这个对路径这种斜杆比较有用</p>
-</blockquote>
-<p>2、在字符串前加上u或U表示该字符串是unicode字符串</p>
-<h1 id="补充阅读"><a href="#补充阅读" class="headerlink" title="补充阅读"></a>补充阅读</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cfbdacbeac6e">基础篇-Python的urllib库</a></li>
-</ul>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/65474873">https://zhuanlan.zhihu.com/p/65474873</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/NCL_%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/30/TrajectoryModel/NCL_%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/" class="post-title-link" itemprop="url">NCL_气象数据下载</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-30 09:20:43" itemprop="dateCreated datePublished" datetime="2021-03-30T09:20:43+08:00">2021-03-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-07 21:54:10" itemprop="dateModified" datetime="2021-04-07T21:54:10+08:00">2021-04-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>662</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>没想到这个批量下载的操作捣鼓了半天，这里做个记录</p>
-</blockquote>
-<h1 id="RDA网址气象数据下载"><a href="#RDA网址气象数据下载" class="headerlink" title="RDA网址气象数据下载"></a>RDA网址气象数据下载</h1><h2 id="wget-批量下载"><a href="#wget-批量下载" class="headerlink" title="wget 批量下载"></a>wget 批量下载</h2><p>我使用的是wget的windows脚本</p>
-<img src="/2021/03/30/TrajectoryModel/NCL_%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/image-20210330192358221.png" class title="image-20210330192358221">
-
-<p>wget 是Linux常用的下载工具，可以通过HTTP和FTP协议（两种最广泛的互联网协议）从因特网中检索并获取文件。windows下载见项目主页：<a href="https://link.zhihu.com/?target=https://eternallybored.org/misc/wget/">Windows binaries of GNU Wget</a></p>
-<blockquote>
-<p>注意要将wget文件添加到系统环境，之后还要重启cmd。</p>
-</blockquote>
-<p>最后在cmd中运行RDA网址提供的脚本即可，不需要做改动（除了把密码填上去之外）</p>
-<h3 id="python批量下载"><a href="#python批量下载" class="headerlink" title="python批量下载"></a>python批量下载</h3><p>关于python的代码下载，需要注意的是RDA网址给的是python2的版本，需要结合python3进行适当调整。 </p>
-<blockquote>
-<p>修改后貌似还是不能下载数据，日后有时间再研究，目前发现的问题是抬头需要如下修改: </p>
-</blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">import urllib.request</span><br><span class="line">import http.cookiejar</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>另一个气象数据下载地址<a target="_blank" rel="noopener" href="https://cds.climate.copernicus.eu/toolbox/doc/api.html"><strong>Climate Data Store</strong>(CDS)</a></p>
-<blockquote>
-<p>我使用API下载</p>
-<p>The <strong>Climate Data Store Application Program Interface</strong> (CDS API) is a service providing programmatic access to CDS data. </p>
-</blockquote>
-<p>先根据教程安装CDS API (<a target="_blank" rel="noopener" href="https://cds.climate.copernicus.eu/api-how-to">https://cds.climate.copernicus.eu/api-how-to</a>)</p>
-<blockquote>
-<p>每次下载都要同意<strong>Terms of Use</strong>后才能成功下载。使用anaconda/cmd调用python文件，要先加python</p>
-</blockquote>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">HySPLIT_教程</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-30 09:20:43" itemprop="dateCreated datePublished" datetime="2021-03-30T09:20:43+08:00">2021-03-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 10:21:54" itemprop="dateModified" datetime="2021-04-08T10:21:54+08:00">2021-04-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>8.3k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>8 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>依据最新的Hysplit 5以及更新的2020年4月份的tutorial（教程）整理的以下内容</p>
-<p>blibli上面有官网英语教程</p>
-<p>有个<a target="_blank" rel="noopener" href="https://hysplitbbs.arl.noaa.gov/viewforum.php?f=10&sid=2a13ba958cd9c4800bada947085476c3">Hysplit论坛</a>上面可以问问题，也可以看下别人是否有相同的问题。</p>
-<p>文件详情也可以看hysplit_user_guide（网上可以下载到pdf的版本），有对相关文件（如CONTROL file）进行详细说明。</p>
-</blockquote>
-<p>在GUI的advance setting中，也可以调用帮助文档，查看详情。</p>
-<p>在官网的<a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/">frequent asked question</a>里面也有些有用信息</p>
-<p>多看看官网上面的信息，有很多现成的东西可以直接用。</p>
-<blockquote>
-<p><strong>captex2_wrf27uw.bin</strong>和<strong>captex2_wrf27mc.bin</strong>并没有在tutoril的文件中，可以在<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/html/meteo_data.html">Tutorial Meteorological Data</a>数据右键复制链接下载。</p>
-</blockquote>
-<p>如何对shell文件进行check</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Enter to continue ...&quot;; read x</span><br></pre></td></tr></table></figure>
-
-<p>1°大约是100km，不过这也要看纬度</p>
-<blockquote>
-<p>我最后是学习hysplit bash的文件。主要是之后方便对大型数据进行操作，也顺便学习了linux的相关操作，学习性价比高。</p>
-</blockquote>
-<h1 id="Hysplit-前言"><a href="#Hysplit-前言" class="headerlink" title="Hysplit 前言"></a>Hysplit 前言</h1><p>安装的一些信息</p>
-<p><a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/hysplitusersguide/S000.htm">https://www.ready.noaa.gov/hysplitusersguide/S000.htm</a></p>
-<h1 id="Hysplit-5-安装须知"><a href="#Hysplit-5-安装须知" class="headerlink" title="Hysplit 5 安装须知"></a>Hysplit 5 安装须知</h1><p>trial版本和register版本没什么不同，register版本可以额外使用预报功能。Hysplit 5 教程使用的是unregister (trial)版本。</p>
-<p>Hysplit 安装的网址[]</p>
-<p>需要预安装两个软件：</p>
-<ul>
-<li><p>Tcl/TK，打开软件的打开方式。Tk是一開放原始碼的圖形化使用者介面開發工具，提供許多常用的圖形介面元件，具有跨平台、輕量化等特色。官网下载地址：<a target="_blank" rel="noopener" href="https://www.tcl.tk/software/tcltk/download.html">https://www.tcl.tk/software/tcltk/download.html</a></p>
-<blockquote>
-<p>官网上有个叫source file，需要自己结合电脑进行compile。</p>
+<p>这主要取决于气象数据</p>
 </blockquote>
 </li>
-<li><p>Ghostview，成图要用的。</p>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-6/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> However, in one case when I calculated 120-hour backward trajectories from Potsdam, NY at 1800 on April 8, 1999 using both the EDAS and FNL data bases, I found that the EDAS data suggested the air was in the upper midwest 5 days prior, but the FNL put it into northern Quebec. Why the difference?</p>
 </li>
 </ul>
 <blockquote>
-<p>两者最好要跟Hysplit安装在同一个drive磁盘中，否则要对Hysplit中的绘图道路进行设置</p>
-<blockquote>
-<p>Installation to directories different from their suggested defaults may require editing the HYSPLIT GUI launch script: \guicode\hysplit.tcl. </p>
+<p>结果不同一般是由于气象数据的精度不同。</p>
+<p>关于trajectory的通常步骤，运行一个点相近的不同高度的trajectory（e.g.300m 400m, 500m)，如果结果相似，那么结果比较可靠，如果发散，说明不确定大（not precide）</p>
 </blockquote>
-<p>NOAA官网有提供现在的两个软件的<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/HYSPLIT_util.php">下载链接</a></p>
-</blockquote>
-<p>安装Hysplit 5， 然后修改打开方式为tcl/bin路径下的wish86t.exe文件即可，安装好的使用界面</p>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330103724354.png" alt="image-20210330103724354" style="zoom:50%;">
-
-<p>忘记了电脑是否安装了Ghostview和Ghostscript，先简单运行个example看看。在concentration栏目下有个quick start可以运行个样例：</p>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330105101974.png" alt="image-20210330105101974" style="zoom:50%;">
-
-<blockquote>
-<p>ok, 基本上电脑可以运行Hysplit。</p>
-<p>此外还有四种看图方式（python，Google Earth View 等），之后有需要的时候在了解。</p>
-</blockquote>
-<p>安装的建议：</p>
 <ul>
-<li><p>安装路径推荐默认路径</p>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/i-will-be-converting-ecmwf-grib-files/"><img src="https://www.arl.noaa.gov/wp_arl/wp-content/uploads/2017/10/info2.gif" alt="Click for answer."></a>I will be converting ECMWF grib files into ARL-packed format for use in calculating backward trajectories in Europe using your HYSPLIT model. What fields do I need to have for HYSPLIT to properly calculate my trajectories?</p>
 <blockquote>
+<p>不推荐自己进行数据的转换，需要一定的工作量，否则看介绍</p>
+</blockquote>
+</li>
+</ul>
+<p>When I set up a matrix run and have the heights specified at a certain altitude (using MSL), why do the results show the starting points at different heights instead of at a constant one?</p>
+<p>有些时候Mean Sea Level(MSL) 会低于地面，所以Hysplit会自动校对高度等于地面。<a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc26/">link</a></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/backward-trajectories-starting-at-a-rural-east-coast-site/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>When I get backward trajectories starting at a rural East Coast site in NJ, which starting height(s) do you suggest is (are) appropriate? The terrain of the site is flat and near sea level. I am also wondering how long of a trajectory duration is recommended.</li>
+</ul>
 <blockquote>
-<p>  Installing to the default directory will make it easier to use preconfigured input files during the Tutorial as well as running example scripts without editing the directory pointer.</p>
+<p>如果是想知道地面的空气来源，则是贴近地面，如果想知道水汽，则是高于云层的高度。一般选取两到三个高度进行测试，一般来讲对于48小时内的trajectory精度还是OK的，对于更长时间尺度的问题，主要是用于聚类分析来分析这个情况</p>
+</blockquote>
+<h1 id="模型设置"><a href="#模型设置" class="headerlink" title="模型设置"></a>模型设置</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/if-i-choose-agl/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> If I choose AGL for the start height, does that mean that for the entire model run the computed heights are relative to the ground? I’m concerned about this because of the terrain in the mountains. I don’t want values to be “underground.”</p>
+<blockquote>
+<p>AGL的设定，仅用于最开始模型的运行。气体的垂直运动不会造成气体低于地面</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/which-value-should-i-input-as-the-start-height/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>Which value should I input as the start height (MAGL)? What does “above model ground level” mean?</p>
+<blockquote>
+<p>地形（terrain）取决于输入的气象数据。如果气象数据精度高，地形的精度也就很高。低精度的数据会平滑掉一些地貌（高山和谷底）。</p>
+<blockquote>
+<p>The best we can do is to look at the surface pressure and the mean sea-level pressure at the starting location and estimate the height above sea level of the model terrain at your location.</p>
+</blockquote>
+<p>根据mean sea-level pressure (MSLP) 和采样点的the surface pressure (PRSS)的差别，估算地形高度。一个简单的近似，1mb=10m。比如：</p>
+<blockquote>
+<p>35.66N, -82.38W; 1030mb MSLP and 939 mb PRSS taking the difference gives 91mb. A quick estimate is to assume a hydrostatic atmosphere, or approximately 10 meters per mb. This gives 910 MASL, which is what the model sees as the terrain height. </p>
 </blockquote>
 </blockquote>
 </li>
-<li><p>不要打开多个Hysplit窗口</p>
+</ul>
+<h1 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h1><h2 id="TRAJECTORY"><a href="#TRAJECTORY" class="headerlink" title="TRAJECTORY"></a>TRAJECTORY</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg13/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>How does HYSPLIT consider the vertical coordinate. If a trajectory meets the surface how does HYSPLIT work? Does it reflect, or use another method to solve it?</p>
+<blockquote>
+<p>如果到了boundary，继续运行。（很显然这不是我们想要看到的结果）在dispersion 模式下，particle会反弹。</p>
+</blockquote>
 </li>
-<li><p>将文件打开方式设为notepad，这样比较好看结果</p>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg25/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>Is the effect of the boundary layer considered when the model computes the trajectory?</p>
+<blockquote>
+<p>并没有考虑到热力运动，只有在dispersion的模式下才有考虑。</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg5/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>When I ran a forward trajectory from a location on a previously computed backward trajectory, I did not return to the starting location of my backward trajectory. Why?</p>
+<blockquote>
+<p>误差问题，开始0.1°的偏差，10天后的偏差回达到15°。</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg39/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> Why are there small differences in my trajectories when I run more than one at a time versus running just one trajectory?</p>
+<blockquote>
+<p>模型并没有使用全部的气象数据，而是使用部分的气象数据sub-grid data，根据开始的地点设定数据的中心。当trajectory运行到气象数据的边界时，模型会重新定义中心，并重新计算。因此，使用多个开始的点和一个开始的点时，所用的气象数据会有所不同的。垂直运动的计算考虑了这一因素。因此结果会有些许不同。</p>
+</blockquote>
 </li>
 </ul>
-<p>更多详细安装建议：<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html">https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html</a></p>
+<h2 id="CONCENTRATION"><a href="#CONCENTRATION" class="headerlink" title="CONCENTRATION"></a>CONCENTRATION</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg4/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>How is concentration defined in HYSPLIT and how does it relate to the radiation units of Bacquerel?</p>
 <blockquote>
-<p>可以使用cmd 调用batch文件进行，可以达到类似windows GUI操作的效果。通过batch代码可以实现批量操作的效果。</p>
-<p>注意路径问题，我的tutorial安装在D盘，Hysplit是安装在C盘。然后我下载的是19年的tutorial材料（因为20年的下载速度太慢），所以内部的.sh脚本的搜索是Hysplit4，需要修改为对应的Hysplit才能成功运行。</p>
+<p>输入的单位时mass/每小时，这个mass由用户自己决定，最后的结果是mass/m3，如果定义是Bq/小时，那最后的结果就是Bq/m3。</p>
 </blockquote>
-<p>将代码保存下来，先保存到txt文档中，然后改后缀名为.bat文件。</p>
-<blockquote>
-<p>.bat</p>
-</blockquote>
-<h1 id="Hysplit-trajectory-concentrations-运行实例"><a href="#Hysplit-trajectory-concentrations-运行实例" class="headerlink" title="Hysplit trajectory/concentrations 运行实例"></a>Hysplit trajectory/concentrations 运行实例</h1><p>运行主要包括三个步骤</p>
-<ol>
-<li>先在<code>setup run</code>设定运行设置包括（开始时间，开始地点，运移时间，垂直运移方法，气象数据等）</li>
-</ol>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330111215556.png" alt="image-20210330111215556" style="zoom:50%;">
-
-<ol start="2">
-<li>然后点<code>run model</code>运行模型</li>
-<li>最后在<code>display</code>里面设置成图。注意Hysplit5增加了python成图的一个选项。</li>
-</ol>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210330111734050.png" alt="image-20210330111734050" style="zoom:50%;">
-
-
-
-<p>接下来是Hysplit的运行</p>
-<p>这里主要是使用官网提供的shell/bash文件，GUI界面的操作仅了解下就好。</p>
-<blockquote>
-<p> 前期准备，因为我用的是windows系统（后期会改用linux)，所以我想在windows系统上运行bash文件。我使用Anaconda</p>
-</blockquote>
-<p>在anaconda中执行以下命令即可（要先activation 想用的环境）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install m2-base</span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>  将教程的shell脚本中，画图的部分改为如下，这样可以成功绘制出图片</p>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">法1：这样可以成功显示图片</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> gswin64 trajplot.ps</span> </span><br><span class="line">法2： 这样可以保存图片（推荐）</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> ps2pdf trajplot.ps 4_4_traj_mixd_1.pdf</span></span><br></pre></td></tr></table></figure>
-
-<p>  接下来，每个章节不再细分，只记录重点</p>
-</blockquote>
-<h1 id="4-Trajectory-的计算"><a href="#4-Trajectory-的计算" class="headerlink" title="4. Trajectory 的计算"></a>4. Trajectory 的计算</h1><p>高度的设置，这样做的目的是为了节省计算时间。如果trajectory超过这一个界限高度会被反弹回来。另一种做法就是设置阈值，只有当达到这一高度的时候才进行计算。</p>
-<blockquote>
-<p>4.2 The default internal scaling height is set to 25 km. This value is used in conjunction with the default model top setting (10 km for most PBL applications) in the <em>CONTROL</em> file which sets the vertical limit of the internal meteorological grid.Trajectories will terminate when they reach this level and mass particles will reflect back into the domain. </p>
-<p>A secondary use of the model top parameter in the <em>CONTROL</em> file is to set the model’s internal scaling height to a different value but only if the entry exceeds 25 km.</p>
-</blockquote>
-<blockquote>
-<p>4.3  The PBL height can be estimated assuming that in a standard atmosphere the height changes by about 9 m per hPa. In this case the estimated pressure for HPBL=1222 would be about 852 hPa (988-1222/9).</p>
-<p>At this point all we need to know is the Height of the Planetary Boundary Layer (<strong>HPBL</strong>) which is shown to be <strong>1222</strong> meters (<strong>AGL</strong>). &gt; 可是页面显示PBLH?</p>
-<p>Both turbulent kinetic energy (<strong>TKEN</strong>) and the specific humidity (<strong>SPHU</strong>) drop sharply at the first level above the boundary layer (843 hPa), while the potential temperature (<strong>TPOT</strong>) starts to increase at that level.  &gt;可以通过其他参数也来判断PBL</p>
-</blockquote>
-<p>不同的时间精度（time step）会导致不同的结果。不能过分解释一个trajectory，而是要是结合多个来判断。单一的trajectory也不能反应一些情况的真实情况，如污染物的扩散。</p>
-<p>分开运行，一起绘制</p>
-<p>4.5 发现测试误差，forward和backward的结果造成的误差大概为水平4km，垂直40m左右。</p>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/terr005.png" alt="img" style="zoom: 50%;">
-
-<p>4.6 从图可以看出气象数据可能是造成的trajectory model 误差的主要来源</p>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/terr006.png" class title="img">
-
-
-
-<h1 id="5-Trajectory-options"><a href="#5-Trajectory-options" class="headerlink" title="5 Trajectory options"></a>5 <strong>Trajectory options</strong></h1><p> 5.1 纵向运动</p>
-<p>一般气象数据包含了纵向运动的数据（pressure units)，hysplit根据这些数据进行计算。如果气象数据没有这些信息，hysplit会通过一些假设进行计算（近似计算）。</p>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/vert004.png" class title="img">
-
-<p>使用的6种vertical运动的方法计算的trajectories，只有data/divg这两种方法结果还比较ok。</p>
-<blockquote>
-<ul>
-<li>data - uses the vertical velocity field in the meteorological data file （推荐）</li>
-<li>isob - isobaric maintains the trajectory on a constant pressure surface</li>
-<li>isen - isentropic maintains the trajectory on surfaces of constant potential temperature</li>
-<li>dens - trajectories stay on constant density surfaces</li>
-<li>sigma - vertical motion is zero and the trajectory stays on the same internal sigma</li>
-<li>divg - the vertical motion is computed by vertical integration of the velocity divergence （默认）</li>
-</ul>
-</blockquote>
-<p>注意，默认使用的是divg方法如果气象数据中没有垂直运动的数据。其他的方法只有在特定的时候使用。</p>
-<p>每一种方法都有各自的缺点，正常情况下，如果有气象数据，就应该使用。</p>
-<blockquote>
-<p>Each of the computational approaches has its own limitations, isentropic in diabatic conditions (through clouds), isobaric over large terrain variations, and the divergence is sensitive to small differences in velocity gradients. Even the data method can become unreliable when meteorological grid sizes decrease but the data time interval remains unchanged, resulting in under-sampling a field that may change direction multiple times between output intervals。</p>
-</blockquote>
-<p>5.2 还可以通过看气象数据的pressure（一般850mb)来解释结果。</p>
-<p>5.3 地形的影响</p>
-<p>以下exercise表明（红色和蓝色表明forward 和backward trajectory)，back-trajectory 对地形判断的存在误差，因为无法判断路径何时收到地形的影响。</p>
-<blockquote>
-<p>In this particular case the backward trajectory is not reversible because there is no way for the backward model calculation to know which point along the forward calculation first intersected the terrain.</p>
-</blockquote>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tisob008.png" class title="img">
-
-
-
-<h2 id="5-4-初始条件的影响"><a href="#5-4-初始条件的影响" class="headerlink" title="5.4 初始条件的影响"></a>5.4 初始条件的影响</h2><img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tensem004.png" class title="img">
-
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/tensem003.png" class title="img">
-
-<p>backforward，初始位置稍微不同，会产生不同的结果。主要是由于backward在一个不稳定的区域，稍微不同一点的位置会有很大差别的结果。forward结果相对一致。</p>
-<blockquote>
-<p>The difference between the forward and backward results show a dramatic difference in the “trajectory dispersion”, the forward trajectory results are quite constrained while the backward pattern is quite disperse. This is consistent with the weather pattern associated with release #2, where the tracer flowed along the northern side of a high pressure system. The backward equivalent starts in a divergent region where small changes in position resulted in very different trajectories.</p>
-</blockquote>
-<h1 id="6-Trajectory-statistics"><a href="#6-Trajectory-statistics" class="headerlink" title="6 Trajectory statistics"></a>6 <strong>Trajectory statistics</strong></h1><h2 id="6-1-Frequency的计算"><a href="#6-1-Frequency的计算" class="headerlink" title="6.1 Frequency的计算"></a>6.1 Frequency的计算</h2><p>所谓的百分比，表示的是网格中经过的trajectory的数量除以总的trajecory的数量。default setting是考虑所有高度。但是也有选项能将一些特定高度的trajectories去除。</p>
-<blockquote>
-<p> The trajectory frequency (F) is just the sum of the number of trajectories (T) that passed through each (i,j) grid cell divided by the total number (N) of trajectories analyzed:</p>
-<ul>
-<li>Fi,j = 100 Σ Ti,j / N</li>
-</ul>
-</blockquote>
-<p>还可以计算residence time weighted frequency，根据trajectory在网格grid中的时间确定。</p>
-<blockquote>
-<p>For instance, counting a trajectory more than once in a grid cell because multiple points along the trajectory may stay within the same grid cell is a residence time weighted frequency. This type of particle trajectory analysis is the basis of the concentration calculation.</p>
-</blockquote>
- <img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/freq010.png" class title="img">
-
-
-
-
-
-<h2 id="6-2-Cluster-Analysis（主成分分析法）"><a href="#6-2-Cluster-Analysis（主成分分析法）" class="headerlink" title="6.2 Cluster  Analysis（主成分分析法）"></a>6.2 Cluster  Analysis（主成分分析法）</h2><p>同一组的轨迹距离最短，不同组的轨迹最长。</p>
-<blockquote>
-<p>Differences between trajectories within a cluster are minimized while differences between clusters are maximized. </p>
-<p>Computationally, trajectories are combined until the total variance of the individual trajectories about their cluster mean starts to increase.</p>
-</blockquote>
-<p>cluster的选取是根据<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/images/clus004.png">Total Spatial Variance</a> (TSV) ，总空间方差。cluster 5 到cluster 4时TSV出现明显的改变，因此选择cluster 5，否则给TSV设置个阈值，当高于20%或者30%的时候选取。</p>
-<blockquote>
-<p>In this particular case there is a large jump in TSV when going from 5 to 4 clusters, suggesting that perhaps 5 clusters would be an appropriate solution. Another possibility is to use an objective percentage change criterion of either 20% or 30%.</p>
-</blockquote>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/clus004.png" class title="img">
-
-
-
-<h2 id="6-4-Source-Geolocation"><a href="#6-4-Source-Geolocation" class="headerlink" title="6.4 Source Geolocation"></a>6.4 Source Geolocation</h2><p>hysplit 还提供了一种source geolocation计算，通过计算back trajectorys，然后结合frequency study 来推断污染源的。</p>
-<h1 id="7-Air-Concentration-Calculations-（重点）"><a href="#7-Air-Concentration-Calculations-（重点）" class="headerlink" title="7. Air Concentration Calculations （重点）"></a>7. <strong>Air Concentration Calculations</strong> （重点）</h1><p>Cocentrations和trajectory的重要区别，主要是air concentration 还考虑了turbulent influence</p>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/cbase003.png" alt="img" style="zoom:50%;">
-
-<blockquote>
-<p>The results shown here illustrate the first step in changing the configuration of the test case simulation to match the details of the CAPTEX experiment. In the test calculation, one unit of mass was divided over 2500 pollutant particles released over a one hour duration. The concentration pattern represents the average particle mass in each grid cell divided by the cell volume. For instance, if one particle (mass = 1/2500) were contained in a grid cell of volume 5x5x1 km (2.5E+10 m3), then the air concentration would be about 1E-14 units m-3, a number comparable to the lower end of the range shown in the calculations.</p>
-</blockquote>
-<p>concentration的计算跟我们如何设置concentration grid有关，例如，设置grid的高度为影响particle的高度</p>
-<p>partcile 的设置，release的particle越多，对模拟的效果越好，但是需要的运行时间也就越多</p>
-<h1 id="14-火山爆发模拟"><a href="#14-火山爆发模拟" class="headerlink" title="14. 火山爆发模拟"></a>14. 火山爆发模拟</h1><p>输入两个统一纬度的不同的高度，这样表明source的input</p>
-<blockquote>
-<p>Open the <a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/images/volc002.png">starting locations</a> menu and note how the two locations are identical in horizontal position (63.63N 19.62W) but with different height. The model interprets this as a vertical line source and will distribute particles uniformly through the layer 100 to 6000 meters AGL.</p>
-</blockquote>
-<p>运行了一个时段（e.g., 12小时之后），继续上一次的运行的结果（作为边界条件），同时对setup/control等文件进行修改都是可能的。</p>
-<p>模型结果要跟实测进行对比。因为火山灰可以反射阳光，所以可以利用卫星观测的产品作为观测结果。</p>
-<h1 id="额外内容"><a href="#额外内容" class="headerlink" title="额外内容"></a>额外内容</h1><h1 id="MSL和AGL的区别"><a href="#MSL和AGL的区别" class="headerlink" title="MSL和AGL的区别"></a>MSL和AGL的区别</h1><p>MSL为 Median sea level，高于海平面的高度。比较适用于航天器，飞行高度不随地面高度而变。</p>
-<p>AGL (above ground level)，高于地面的高度</p>
-<h2 id="使用Hysplit-python-插件"><a href="#使用Hysplit-python-插件" class="headerlink" title="使用Hysplit python 插件"></a>使用Hysplit python 插件</h2><p>使用Hysplit python 插件，在C：/hysplit/python文件夹中有详细的介绍文件（如我的情况就是install_win10.txt)，按照上面的步骤安装相关的文件包。</p>
-<blockquote>
-<p>我安装时出现了个错误，进行hysplitplot验证的时候弹出error。还好网上有<a target="_blank" rel="noopener" href="https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=2175">前人的经验</a>，是文件”pkgs_win10.txt”里面少了个跟pands相关的链接，在该文件中添加链接：<a target="_blank" rel="noopener" href="https://repo.anaconda.com/pkgs/main/win-64/pandas-1.0.1-py37h47e9c7a_0.conda%E3%80%82%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E5%8D%B3%E5%8F%AF%E3%80%82">https://repo.anaconda.com/pkgs/main/win-64/pandas-1.0.1-py37h47e9c7a_0.conda。重新安装即可。</a></p>
-<p>在hysplitplot/test，运行pytest，成功pass(出现如下界面)，</p>
-</blockquote>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/image-20210403162223986.png" alt="image-20210403162223986" style="zoom: 33%;">
-
-<p>要使用是，应将库换为hysplit，在prompt中输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate hysplite</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>捣鼓了半天，感觉没什么用，就是能用python成图罢了，但是我更偏向于拿到数据自己画图。这个最多是能快速check下结果罢了。总结就是鸡肋，食之无味。</p>
-</blockquote>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
+</li>
 </ul>
 
       
@@ -1226,7 +819,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/30/TrajectoryModel/hysplit-%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1240,270 +833,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/30/TrajectoryModel/hysplit-%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/" class="post-title-link" itemprop="url">HSPLIT_教程</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-30 09:20:43" itemprop="dateCreated datePublished" datetime="2021-03-30T09:20:43+08:00">2021-03-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-04 09:45:23" itemprop="dateModified" datetime="2021-04-04T09:45:23+08:00">2021-04-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-</blockquote>
-<blockquote>
-<p> PC版本hysplit的GUI里面虽然有显示气象格式转换的选项，但是并不能使用(官网教程也有说明：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ct411J7vE?p=3">https://www.bilibili.com/video/BV1ct411J7vE?p=3</a>)</p>
-</blockquote>
-<p>Hysplit官方推荐不要自己</p>
-<p>hysplit 提供了fortran的脚本进行气象数据的转换。</p>
-<blockquote>
-<p>使用vs code 对Fortran脚本进行调试</p>
-</blockquote>
-<p>如何使用vs code 进行Fortran开发，这里不做赘述，直接贴我参考的链接：</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/98e16631c852">https://www.jianshu.com/p/98e16631c852</a></p>
-<blockquote>
-<p>注意launch.json，tasks.json 是启动调试的关键，调试时是用GDB执行*.exe文件。所以需要先编译，才能调试。</p>
-</blockquote>
-<p>Google发现了一个参考样例（ERA5 reanalysis)，详情见<a target="_blank" rel="noopener" href="https://github.com/amcz/hysplit_metdata">amcz Github 页面</a>。</p>
-<p>需要先设定API （见另一博客：NCL_气象数据下载）</p>
-<p>先运行example文档，看下是否能用。试着先运行下example_small_area的脚本，下载的数据会小点。（速度比较ok，基本保持在1M/s左右）</p>
-<blockquote>
-<p> 注意，<code>.sh</code>后缀是shell的脚本（一般为linux)。windows上cmd是不能运行的，须使用Git进行运行。</p>
-</blockquote>
-<blockquote>
-<p>并不很好的运行</p>
-</blockquote>
-<blockquote>
-<p>Originally,  other conversion programs, that rely upon the subroutines in the<br>hysplit library, were in the source directory, however these have been<br>moved to the legacy subdirectory, including the sample program<br>dat2arl.f.  </p>
-</blockquote>
-<p>这里有一个最后的办法下载数据</p>
-<p><a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/ready2-bin/extract/results.pl?proc=28270">https://www.ready.noaa.gov/ready2-bin/extract/results.pl?proc=28270</a></p>
-<p>beautiful soup ()</p>
-<blockquote>
-<p>官网介绍： <strong>Beautiful Soup</strong> 是一个可以从 <strong>HTML</strong> 或 <strong>XML</strong> 文件中提取数据的 <strong>Python</strong> 库.它能够通过你喜欢的转换器实现惯用的文档导航,查找,修改文档的方式.<strong>Beautiful Soup</strong> 会帮你节省数小时甚至数天的工作时间.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2b783f7914c6">https://www.jianshu.com/p/2b783f7914c6</a></p>
-<p>获取当前网页的链接</p>
-<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/162915.htm">https://www.jb51.net/article/162915.htm</a></p>
-<p>找到填空项，填写</p>
-<p><a target="_blank" rel="noopener" href="https://my.oschina.net/u/3314358/blog/1834873">https://my.oschina.net/u/3314358/blog/1834873</a></p>
-<p>下拉项</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Claire_chen_jia/article/details/106523131">https://blog.csdn.net/Claire_chen_jia/article/details/106523131</a></p>
-<p>定位的几种方式</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/minieye/p/5803640.html">https://www.cnblogs.com/minieye/p/5803640.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/81ce4bf0d0c0">https://www.jianshu.com/p/81ce4bf0d0c0</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/c-x-a/p/9195644.html">https://www.cnblogs.com/c-x-a/p/9195644.html</a></p>
-<p>xpath定位（webdriver定位方式是遍历，所以速度没有xpath的快）</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sss650216/article/details/88946305">https://blog.csdn.net/sss650216/article/details/88946305</a></p>
-<p>有用的xpath的例子</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014663232/article/details/103462652">https://blog.csdn.net/u014663232/article/details/103462652</a></p>
-<p>python 爬虫的几种方法：</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/47035491">https://zhuanlan.zhihu.com/p/47035491</a></p>
-<p>自动下载文件</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62876301">https://zhuanlan.zhihu.com/p/62876301</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_19408603/article/details/77413914">https://blog.csdn.net/qq_19408603/article/details/77413914</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/65474873">https://zhuanlan.zhihu.com/p/65474873</a></p>
-<h2 id="气象数据"><a href="#气象数据" class="headerlink" title="气象数据"></a>气象数据</h2><h3 id="下载资源"><a href="#下载资源" class="headerlink" title="下载资源"></a>下载资源</h3><blockquote>
-<p>由于网速（？）问题，GUI和bash中的FTP下载都不能成功</p>
-</blockquote>
-<p>必须包含的几个变量</p>
-<blockquote>
-<p>Data may be obtained from any source, however there are certain minimum data requirements to run the model: surface pressure or terrain height, u-v wind components, temperature, and moisture (RELH or SPHU). In addition, precipitation is required for wet removal calculations. Not required, but certainly necessary to improve vertical mixing calculations, would be some measure of low-level stability. This may take the form of a near-surface wind and temperature or the fluxes of heat and momentum. </p>
-</blockquote>
-<h3 id="气象数据的转换"><a href="#气象数据的转换" class="headerlink" title="气象数据的转换"></a>气象数据的转换</h3><p>需要对下载的气象数据做一个转换。</p>
-<blockquote>
-<p>相当麻烦</p>
-</blockquote>
-<p>Hysplit官网上有个ready网页，可以从那里提取需要的数据。但是需要每次人为的按钮选择。可以写个python的爬虫脚本进行自动下载。</p>
-<blockquote>
-<p>我是通过Python脚本自动下载。网速可能会受限。（国内早上貌似下载速度快）</p>
-<p>主要注意的一点是，这里的空间范围是[-180 180]。但是由于NCEP的数据范围是[0 357.5]，实际对应的应该是[-180 177.5]。要注意空间范围的取值，否则最后下载的数据不正确。</p>
-<p>可以根据最后的下载页面进行check，提取的面积是否是正确的。</p>
-</blockquote>
-<img src="/2021/03/30/TrajectoryModel/hysplit-%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/image-20210403142729475.png" alt="image-20210403142729475" style="zoom:50%;">
-
-
-
-
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E8%AF%BB%E5%8F%96%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%87%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E8%AF%BB%E5%8F%96%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">matlab_读取不同的文件</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-29 10:04:15" itemprop="dateCreated datePublished" datetime="2021-03-29T10:04:15+08:00">2021-03-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 16:13:32" itemprop="dateModified" datetime="2021-04-08T16:13:32+08:00">2021-04-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>306</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42272539/article/details/93714169?utm_medium=distribute.pc_relevant.none-task-blog-searchFromBaidu-7.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-searchFromBaidu-7.control">https://blog.csdn.net/qq_42272539/article/details/93714169?utm_medium=distribute.pc_relevant.none-task-blog-searchFromBaidu-7.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-searchFromBaidu-7.control</a></p>
-<h1 id="Matlab文件夹、文件、读取操作（汇总）"><a href="#Matlab文件夹、文件、读取操作（汇总）" class="headerlink" title="Matlab文件夹、文件、读取操作（汇总）"></a>Matlab文件夹、文件、读取操作（汇总）</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a56de74054e2">https://www.jianshu.com/p/a56de74054e2</a></p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/27/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/27/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">气旋及反气旋</a>
+            <a href="/2021/04/08/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5/" class="post-title-link" itemprop="url">各种数据库链接</a>
         </h2>
     
         <div class="post-meta">
@@ -1514,7 +844,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
     
-              <time title="Created: 2021-03-27 09:27:52 / Modified: 09:55:26" itemprop="dateCreated datePublished" datetime="2021-03-27T09:27:52+08:00">2021-03-27</time>
+              <time title="Created: 2021-04-08 08:50:06 / Modified: 09:03:01" itemprop="dateCreated datePublished" datetime="2021-04-08T08:50:06+08:00">2021-04-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1522,7 +852,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">气象学基础</span></a>
+                  <a href="/categories/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">科研相关记录</span></a>
                 </span>
             </span>
     
@@ -1532,7 +862,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>331</span>
+              <span>267</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1551,15 +881,15 @@
     <div class="post-body" itemprop="articleBody">
     
       
-          <p>q气旋反气旋</p>
-<p>气旋统一</p>
-<img src="/2021/03/27/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/shutterstock-392275552.jpg" alt="A diagram showing the difference between a cyclone and an anticyclone. " style="zoom:50%;">
-
-
-
-<p>在近地面，反气旋在北半球作顺时针旋转（clockwise)，在南半球做逆时针旋转(anti-clockwise)。</p>
-<p>反气旋对应的是高压（空气下降），无云少降水（下沉气流不容易形成水汽）；气旋对应的是低压（空气上升），多云多降水（上升气流，遇冷形成雨滴）</p>
-<p>年代际变化(decadal variations)，指的是十年以上的尺度。<br>年际变化 (inter-annual variations)，准两年振荡（2-3年周期）、5-8年周期都是很常用的。提问者熟悉的那个ENSO就是2-8年的年际变化。<br>年内变化 （seasonal variations)，如干湿季、四季都属于这个范畴。<br>更低的还有季节内变化，月变化，准两周，等等等等，天气预报常用的尺度。</p>
+          <blockquote>
+<p>使用数据库的数据时，要注意对这些数据进行致谢。</p>
+</blockquote>
+<p>这篇文章介绍了一些有用的库</p>
+<p>E. Brattich et al 2020. Advection pathways at the Mt. Cimone WMO-GAW station: Seasonality,<br>trends, and influence on atmospheric composition.</p>
+<ul>
+<li>Atmospheric aerosol 和gass 监测</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://ebas.nilu.no/Pages/DataSetList.aspx?key=C0A8801E103546FB9E164ECB4420432C">http://ebas.nilu.no/Pages/DataSetList.aspx?key=C0A8801E103546FB9E164ECB4420432C</a></p>
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li>无</li>
 </ul>
@@ -1583,7 +913,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/25/%E4%B8%AA%E4%BA%BA%E7%A0%94%E7%A9%B6%E4%BB%8B%E7%BB%8D/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1597,7 +927,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/25/%E4%B8%AA%E4%BA%BA%E7%A0%94%E7%A9%B6%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">个人研究介绍</a>
+            <a href="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/" class="post-title-link" itemprop="url">hysplit_测试1</a>
         </h2>
     
         <div class="post-meta">
@@ -1607,15 +937,24 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
     
-              <time title="Created: 2021-03-25 21:41:30" itemprop="dateCreated datePublished" datetime="2021-03-25T21:41:30+08:00">2021-03-25</time>
+              <time title="Created: 2021-04-07 18:54:09" itemprop="dateCreated datePublished" datetime="2021-04-07T18:54:09+08:00">2021-04-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 12:53:10" itemprop="dateModified" datetime="2021-04-08T12:53:10+08:00">2021-04-08</time>
+                <time title="Modified: 2021-04-09 15:31:50" itemprop="dateModified" datetime="2021-04-09T15:31:50+08:00">2021-04-09</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
+                </span>
+            </span>
     
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -1623,7 +962,156 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>6</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>w我的目标就是能使用hysplit模拟Be10/Be7，结合python的包使用</p>
+<p>有个pysplit的python包 </p>
+</blockquote>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><ul>
+<li><p>测试1: 区域的release 但是释放速率不变 （完成）</p>
+</li>
+<li><p>测试2：区域的release 但释放速率改变  （完成）</p>
+</li>
+<li><p>测试3：区域的release但释放速率改变，且包含不同的时间</p>
+</li>
+</ul>
+<h2 id="测试1-区域的release-但释放速率不变"><a href="#测试1-区域的release-但释放速率不变" class="headerlink" title="测试1 区域的release 但释放速率不变"></a>测试1 区域的release 但释放速率不变</h2><p>黑点表示释放的点，浓度值表示采样的区域。</p>
+<img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/image-20210407185811783.png" alt="image-20210407185811783" style="zoom:50%;">
+
+
+
+<blockquote>
+<p>注意浓度的采样和污染物的释放是不同的设置（详情见test-1的脚本）</p>
+<p>两者都是通过同一个程序进行计算的，因此不同的区域设置大小并不会减少运算时间。</p>
+<ul>
+<li>由此来看，浓度值的面积应该跟释放点的面积一致</li>
+</ul>
+<p><strong><em>注意</em></strong>：</p>
+<ul>
+<li>区域面积的release。对control文件进行如下修改，可以将（经纬度和高度放到text文件中进行读取），注意trajectory的数量要和经纬度等数量要一致</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;1184                   &quot;&gt;&gt;CONTROL # trajectory数量</span><br><span class="line">cat &quot;$DATA/traj.txt&quot;         &gt;&gt;CONTROL  # (e.g.,  39.90  -84.22 10.0) </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 也可以使用三个trajectory定义区域</span></span><br><span class="line">echo &quot;3                   &quot; &gt;&gt;CONTROL</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个是区域的释放</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 前两行代表左下和右上</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 第三行代表间隔</span></span><br><span class="line">echo &quot;38.00 -84.00 600.0  &quot; &gt;&gt;CONTROL</span><br><span class="line">echo &quot;44.00 -74.00 600.0  &quot; &gt;&gt;CONTROL</span><br><span class="line">echo &quot;39.00 -83.00 600.0  &quot; &gt;&gt;CONTROL</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>同一纬度，不同高度代表release 的方位，这个方法就可以解决release的高度问题，注意这样子算两个trajectory （control file），比如写成以下形式，release的范围就是这个点的[100 5000]之间。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">60	-42.50	100</span><br><span class="line">60	-42.50	5000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意北纬90°以及东西经180°，0°等这种边界值问题 </p>
+</li>
+</ul>
+</blockquote>
+<h2 id="测试2-区域的release-但释放速率改变"><a href="#测试2-区域的release-但释放速率改变" class="headerlink" title="测试2 区域的release 但释放速率改变"></a>测试2 区域的release 但释放速率改变</h2><p>下图是教程16.5中的示例，有四行是因为教程中设置了4个污染物。rate 表示释放速率 （可以大于1）。Area 如果为0表示点释放。Heat表明释放时的热量产生（这里为0）。这里面表示一个cycle是12个小时，每个cycle release 的particle是固定，但是cycle的时间长短（duration）是可以改变的。</p>
+<img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/etime000.png" alt="img" style="zoom:50%;">
+
+<p>所有的source必须要有相同的时间间隔。</p>
+<h2 id="测试3：区域的release但释放速率改变，且包含不同的时间-（多个文件的测试）"><a href="#测试3：区域的release但释放速率改变，且包含不同的时间-（多个文件的测试）" class="headerlink" title="测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）"></a>测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）</h2><p>思路：</p>
+<ul>
+<li><p>天气的数据是每个月存储的，那么一个月的最后几天怎么办？多个天气数据的输入？</p>
+</li>
+<li><p>每个事件段模拟的结果，会作为下个事件段的边界条件进行</p>
+</li>
+</ul>
+<blockquote>
+<p>根据我的需求，直接按照cycle来进行，particle dump feature来连贯进行。</p>
+<p>使用EFILE 文件。如果这个文件存在，他就会替换在control的设置。</p>
+</blockquote>
+<p>如果一个文件的relasing时间过去了，会自动读取下一个releasing</p>
+<blockquote>
+<p>One way to incorporate a time varying emission rate into the existing model structure is to use the particle dump feature to restart the model each time with a new emission rate. Another option is to assign the name of a temporal emission input file to the “EFILE” variable in the setup.cfg namelist file. </p>
+<p>If the EFILE is present, the first emission record’s values replace the emission values set in the control file. Once the model computation time has passed the emission period defined on the first emission record, the emission data from the second record are loaded and the calculation continues with the new emission data. The format of the emission file is given below: </p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p>粒子释放的问题，</p>
+<p>使用particle release计算concentration distribution，需要释放非常多的粒子，否则无法真是反应浓度</p>
+<p>这个时候可以考虑Puff Releases </p>
+<p>在GUI的help中，输入C:/hysplit/html/S441.htm</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/" class="post-title-link" itemprop="url">vscode设置</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-06 14:20:42 / Modified: 14:27:04" itemprop="dateCreated datePublished" datetime="2021-04-06T14:20:42+08:00">2021-04-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>275</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1642,7 +1130,266 @@
     <div class="post-body" itemprop="articleBody">
     
       
-          <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+          <p>打开VSCODE的设置界面（在左下角或者快捷键<code>ctrl + ,</code>）,在右上角打开 <code>settings.json</code>，见图第一个按钮。<br><img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/20201217134709421.png" alt="在这里插入图片描述" style="zoom:50%;"></p>
+<p>如何进行选中颜色变更</p>
+<blockquote>
+<p>注意如果前后有选项的话，要加逗号</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;workbench.colorCustomizations&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;editor.selectionBackground&quot;</span>: <span class="string">&quot;#d1d1c6&quot;</span>,</span><br><span class="line">    <span class="string">&quot;editor.selectionHighlightBackground&quot;</span>: <span class="string">&quot;#c5293e&quot;</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">python_常用快捷键</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-06 13:45:49" itemprop="dateCreated datePublished" datetime="2021-04-06T13:45:49+08:00">2021-04-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-12 14:17:41" itemprop="dateModified" datetime="2021-04-12T14:17:41+08:00">2021-04-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>557</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <h2 id="1、运行模式"><a href="#1、运行模式" class="headerlink" title="1、运行模式"></a>1、运行模式</h2><p>Jupyter notebook有两种模式：运行模式和编辑模式。<strong>Enter和Esc</strong></p>
+<p>命令模式：单元格边框为蓝色（快捷键需要在命令模式使用）</p>
+<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-049f148e7193e30baf9967d91e2b4449_1440w.jpg" class title="img">
+
+<p>编辑模式：Enter进入单元格 边框为绿色（可以写代码或者markdown文本）</p>
+<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-5f8b2667f08bf4057a199199af028161_1440w.jpg" class title="img">
+
+<p>从编辑模式回到命令模式 按esc 返回。</p>
+<p>Ctrl + /    行注释（可选中多行）</p>
+<blockquote>
+<p>替代操作可以使用三个单引号’’’</p>
+</blockquote>
+<h3 id="命令模式-按键-Esc-开启"><a href="#命令模式-按键-Esc-开启" class="headerlink" title="命令模式 (按键 Esc 开启)"></a>命令模式 (按键 Esc 开启)</h3><ul>
+<li><strong>Enter</strong> : 转入编辑模式</li>
+<li><strong>Shift-Enter</strong> : 运行本单元，选中下个单元</li>
+<li><strong>Ctrl-Enter</strong> : 运行本单元</li>
+<li><strong>Alt-Enter</strong> : 运行本单元，在其下插入新单元</li>
+<li><strong>Y</strong> : 单元转入代码状态</li>
+<li><strong>M</strong> :单元转入markdown状态</li>
+</ul>
+<p>单元格（cell）</p>
+<ul>
+<li><strong>A</strong> : 在上方插入新单元</li>
+<li><strong>B</strong> : 在下方插入新单元</li>
+<li><strong>D,D</strong> : 删除选中的单元</li>
+</ul>
+<h2 id="将ipynb文件转换为py文件"><a href="#将ipynb文件转换为py文件" class="headerlink" title="将ipynb文件转换为py文件"></a>将ipynb文件转换为py文件</h2><ul>
+<li><ul>
+<li>在xxx.ipynb所在目录下，打开终端，并输入命令：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　　　　　　　 jupyter nbconvert --to script xxx.ipynb</span><br><span class="line">　　　　　　　　其中xxx.ipynb是要转换文件的名字，转换后在该目录下出现xxx.py文件。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>python常用库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> np  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">实例</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用numpy.random模块来生成随机数组</span></span><br><span class="line">import numpy as np</span><br><span class="line">np.random.rand(10)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sui776265233/p/9759303.html">jupyter notebook常用快捷键</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">shell_概述</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-05 14:35:13" itemprop="dateCreated datePublished" datetime="2021-04-05T14:35:13+08:00">2021-04-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-10 20:48:26" itemprop="dateModified" datetime="2021-04-10T20:48:26+08:00">2021-04-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>513</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>shell脚本主要对文件以及模型结果进行搜索和处理</p>
+<p>shell跟python一样，选择[0:6]，表示6个，1-6。</p>
+</blockquote>
+<h2 id="Shell脚本概述"><a href="#Shell脚本概述" class="headerlink" title="Shell脚本概述"></a>Shell脚本概述</h2><p><code>#!</code> 解释器声明，是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即用哪一种 Shell<br>例如 <code>#!/bin/sh</code>，shell 脚本通常以此开头，用来告诉系统 <code>/bin/sh</code> 是用来执行该文件的程序。</p>
+<blockquote>
+<p>小马的笔记也做的很好</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="http://masikkk.com/article/Linux-Shell/">http://masikkk.com/article/Linux-Shell/</a></p>
+<blockquote>
+<p>非常详细的shell教程,里面有很多实例</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2991.html">http://c.biancheng.net/view/2991.html</a></p>
+<p>shell中的一些特殊符号</p>
+<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/69966.htm">https://www.jb51.net/article/69966.htm</a></p>
+<p>**| 管道 (pipeline)<br>**pipeline 是 UNIX 系统，基础且重要的观念。连结上个指令的标准输出，做为下个指令的标准输入。<br>who | wc -l<br>善用这个观念，对精简 script 有相当的帮助</p>
+<p>。</p>
+<p>Linux shell：rename命令批量重命名文件</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44498318/article/details/109311521">https://blog.csdn.net/weixin_44498318/article/details/109311521</a></p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li>无</li>
 </ul>
 
@@ -1663,7 +1410,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1729,7 +1476,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1742,7 +1489,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1778,12 +1525,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">62k</span>
+    <span title="Symbols count total">79k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">57 mins.</span>
+    <span title="Reading time total">1:12</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
