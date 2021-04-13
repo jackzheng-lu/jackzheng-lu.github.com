@@ -189,6 +189,129 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">hysplit_安装</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-09 13:27:16 / Modified: 13:37:54" itemprop="dateCreated datePublished" datetime="2021-04-09T13:27:16+08:00">2021-04-09</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>总而言之，官网上有很详细的解释，一切以官网为主。这里主要对一些信息做些记录。</p>
+<p>找到的关于安装内容的一些补充信息。</p>
+<p><a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/hysplitusersguide/S000.htm">https://www.ready.noaa.gov/hysplitusersguide/S000.htm</a></p>
+</blockquote>
+<h1 id="Hysplit-5-安装"><a href="#Hysplit-5-安装" class="headerlink" title="Hysplit 5 安装"></a>Hysplit 5 安装</h1><p>trial版本和register版本没什么不同，register版本可以额外使用预报功能。Hysplit 5 教程使用的是unregister (trial)版本。<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/index.php">Hysplit 安装的网址</a></p>
+<p>需要预安装两个软件：NOAA官网有提供现在的两个软件的<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/HYSPLIT_util.php">下载链接</a></p>
+<ul>
+<li><p>Tcl/TK，打开软件的打开方式。Tk是一開放原始碼的圖形化使用者介面開發工具，提供許多常用的圖形介面元件，具有跨平台、輕量化等特色。官网下载地址：<a target="_blank" rel="noopener" href="https://www.tcl.tk/software/tcltk/download.html">https://www.tcl.tk/software/tcltk/download.html</a></p>
+<blockquote>
+<p>官网上有个叫source file，需要自己结合电脑进行compile。</p>
+</blockquote>
+</li>
+<li><p>Ghostview，成图要用的。</p>
+</li>
+</ul>
+<blockquote>
+<p>两者最好要跟Hysplit安装在同一个drive磁盘中，否则要对Hysplit中的绘图道路进行设置</p>
+<blockquote>
+<p>Installation to directories different from their suggested defaults may require editing the HYSPLIT GUI launch script: \guicode\hysplit.tcl. </p>
+</blockquote>
+</blockquote>
+<p>安装Hysplit 5， 然后修改打开方式为tcl/bin路径下的wish86t.exe文件即可，安装好的使用界面</p>
+<img src="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/image-20210330103724354.png" alt="image-20210330103724354" style="zoom:50%;">
+
+<p>忘记了电脑是否安装了Ghostview和Ghostscript，先简单运行个example看看。在concentration栏目下有个quick start可以运行个样例：</p>
+<img src="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/image-20210330105101974.png" alt="image-20210330105101974" style="zoom:50%;">
+
+<blockquote>
+<p>ok, 基本上电脑可以运行Hysplit。</p>
+<p>此外还有四种看图方式（python，Google Earth View 等），之后有需要的时候在了解。</p>
+</blockquote>
+<p>安装的建议：</p>
+<ul>
+<li><p>安装路径推荐默认路径</p>
+<blockquote>
+<blockquote>
+<p>Installing to the default directory will make it easier to use preconfigured input files during the Tutorial as well as running example scripts without editing the directory pointer.</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>不要打开多个Hysplit窗口</p>
+</li>
+<li><p>将文件打开方式设为notepad，这样比较好看结果</p>
+</li>
+</ul>
+<p>更多详细安装建议：<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html">https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html</a></p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1164,7 +1287,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1178,7 +1301,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">python_常用快捷键</a>
+            <a href="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">python_jupyternotebook常用快捷键</a>
         </h2>
     
         <div class="post-meta">
@@ -1195,7 +1318,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-12 14:17:41" itemprop="dateModified" datetime="2021-04-12T14:17:41+08:00">2021-04-12</time>
+                <time title="Modified: 2021-04-12 21:38:06" itemprop="dateModified" datetime="2021-04-12T21:38:06+08:00">2021-04-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1213,145 +1336,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>557</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <h2 id="1、运行模式"><a href="#1、运行模式" class="headerlink" title="1、运行模式"></a>1、运行模式</h2><p>Jupyter notebook有两种模式：运行模式和编辑模式。<strong>Enter和Esc</strong></p>
-<p>命令模式：单元格边框为蓝色（快捷键需要在命令模式使用）</p>
-<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-049f148e7193e30baf9967d91e2b4449_1440w.jpg" class title="img">
-
-<p>编辑模式：Enter进入单元格 边框为绿色（可以写代码或者markdown文本）</p>
-<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-5f8b2667f08bf4057a199199af028161_1440w.jpg" class title="img">
-
-<p>从编辑模式回到命令模式 按esc 返回。</p>
-<p>Ctrl + /    行注释（可选中多行）</p>
-<blockquote>
-<p>替代操作可以使用三个单引号’’’</p>
-</blockquote>
-<h3 id="命令模式-按键-Esc-开启"><a href="#命令模式-按键-Esc-开启" class="headerlink" title="命令模式 (按键 Esc 开启)"></a>命令模式 (按键 Esc 开启)</h3><ul>
-<li><strong>Enter</strong> : 转入编辑模式</li>
-<li><strong>Shift-Enter</strong> : 运行本单元，选中下个单元</li>
-<li><strong>Ctrl-Enter</strong> : 运行本单元</li>
-<li><strong>Alt-Enter</strong> : 运行本单元，在其下插入新单元</li>
-<li><strong>Y</strong> : 单元转入代码状态</li>
-<li><strong>M</strong> :单元转入markdown状态</li>
-</ul>
-<p>单元格（cell）</p>
-<ul>
-<li><strong>A</strong> : 在上方插入新单元</li>
-<li><strong>B</strong> : 在下方插入新单元</li>
-<li><strong>D,D</strong> : 删除选中的单元</li>
-</ul>
-<h2 id="将ipynb文件转换为py文件"><a href="#将ipynb文件转换为py文件" class="headerlink" title="将ipynb文件转换为py文件"></a>将ipynb文件转换为py文件</h2><ul>
-<li><ul>
-<li>在xxx.ipynb所在目录下，打开终端，并输入命令：</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　　　　　　　 jupyter nbconvert --to script xxx.ipynb</span><br><span class="line">　　　　　　　　其中xxx.ipynb是要转换文件的名字，转换后在该目录下出现xxx.py文件。</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>python常用库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> np  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">实例</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用numpy.random模块来生成随机数组</span></span><br><span class="line">import numpy as np</span><br><span class="line">np.random.rand(10)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sui776265233/p/9759303.html">jupyter notebook常用快捷键</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%A6%82%E8%BF%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">shell_概述</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-05 14:35:13" itemprop="dateCreated datePublished" datetime="2021-04-05T14:35:13+08:00">2021-04-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-10 20:48:26" itemprop="dateModified" datetime="2021-04-10T20:48:26+08:00">2021-04-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>513</span>
+              <span>584</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1371,26 +1356,55 @@
     
       
           <blockquote>
-<p>shell脚本主要对文件以及模型结果进行搜索和处理</p>
-<p>shell跟python一样，选择[0:6]，表示6个，1-6。</p>
+<p>在jupyter里面具有help选项卡，里面有快捷键的完整信息</p>
 </blockquote>
-<h2 id="Shell脚本概述"><a href="#Shell脚本概述" class="headerlink" title="Shell脚本概述"></a>Shell脚本概述</h2><p><code>#!</code> 解释器声明，是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即用哪一种 Shell<br>例如 <code>#!/bin/sh</code>，shell 脚本通常以此开头，用来告诉系统 <code>/bin/sh</code> 是用来执行该文件的程序。</p>
+<h2 id="1、运行模式"><a href="#1、运行模式" class="headerlink" title="1、运行模式"></a>1、运行模式</h2><p>Jupyter notebook有两种模式：运行模式和编辑模式。<strong>Enter和Esc</strong></p>
+<p>命令模式：单元格边框为蓝色（快捷键需要在命令模式使用）</p>
+<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-5f8b2667f08bf4057a199199af028161_1440w.jpg" class title="v2-5f8b2667f08bf4057a199199af028161_1440w">
+
+<p>编辑模式：Enter进入单元格 边框为绿色（可以写代码或者markdown文本）</p>
+<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-049f148e7193e30baf9967d91e2b4449_1440w.jpg" class title="v2-049f148e7193e30baf9967d91e2b4449_1440w">
+
+<p>从编辑模式回到命令模式 按esc 返回。</p>
 <blockquote>
-<p>小马的笔记也做的很好</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="http://masikkk.com/article/Linux-Shell/">http://masikkk.com/article/Linux-Shell/</a></p>
+<h3 id="命令模式-按键-Esc-开启"><a href="#命令模式-按键-Esc-开启" class="headerlink" title="命令模式 (按键 Esc 开启)"></a>命令模式 (按键 Esc 开启)</h3><ul>
+<li><strong>Enter</strong> : 转入编辑模式</li>
+<li><strong>Shift-Enter</strong> : 运行本单元，选中下个单元</li>
+<li><strong>Ctrl-Enter</strong> : 运行本单元</li>
+<li><strong>Alt-Enter</strong> : 运行本单元，在其下插入新单元</li>
+<li><strong>Y</strong> : 单元转入代码状态</li>
+<li><strong>M</strong> :单元转入markdown状态</li>
+</ul>
+<p>单元格（cell）</p>
+<ul>
+<li><strong>A</strong> : 在上方插入新单元</li>
+<li><strong>B</strong> : 在下方插入新单元</li>
+<li><strong>D,D</strong> : 删除选中的单元</li>
+</ul>
+<p>Ctrl + /    行注释（可选中多行）。</p>
 <blockquote>
-<p>非常详细的shell教程,里面有很多实例</p>
+<p>替代操作可以使用三个单引号’’’</p>
+<p>这个快捷键操作也可用于vscode的其他语言。</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2991.html">http://c.biancheng.net/view/2991.html</a></p>
-<p>shell中的一些特殊符号</p>
-<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/69966.htm">https://www.jb51.net/article/69966.htm</a></p>
-<p>**| 管道 (pipeline)<br>**pipeline 是 UNIX 系统，基础且重要的观念。连结上个指令的标准输出，做为下个指令的标准输入。<br>who | wc -l<br>善用这个观念，对精简 script 有相当的帮助</p>
-<p>。</p>
-<p>Linux shell：rename命令批量重命名文件</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44498318/article/details/109311521">https://blog.csdn.net/weixin_44498318/article/details/109311521</a></p>
+<h2 id="将ipynb文件转换为py文件"><a href="#将ipynb文件转换为py文件" class="headerlink" title="将ipynb文件转换为py文件"></a>将ipynb文件转换为py文件</h2><ul>
+<li><ul>
+<li>在xxx.ipynb所在目录下，打开终端，并输入命令：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　　　　　　　 jupyter nbconvert --to script xxx.ipynb</span><br><span class="line">　　　　　　　　其中xxx.ipynb是要转换文件的名字，转换后在该目录下出现xxx.py文件。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">实例</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用numpy.random模块来生成随机数组</span></span><br><span class="line">import numpy as np</span><br><span class="line">np.random.rand(10)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sui776265233/p/9759303.html">jupyter notebook常用快捷键</a></li>
 </ul>
 
       
@@ -1476,7 +1490,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1525,12 +1539,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">79k</span>
+    <span title="Symbols count total">81k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:12</span>
+    <span title="Reading time total">1:14</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>

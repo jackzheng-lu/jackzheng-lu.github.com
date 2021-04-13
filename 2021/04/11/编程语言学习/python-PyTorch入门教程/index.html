@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/image-20210411225629962.png">
 <meta property="article:published_time" content="2021-04-11T14:50:17.000Z">
-<meta property="article:modified_time" content="2021-04-12T05:28:19.607Z">
+<meta property="article:modified_time" content="2021-04-12T14:01:28.684Z">
 <meta property="article:author" content="JackZheng">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/04/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/image-20210411225629962.png">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-12 13:28:19" itemprop="dateModified" datetime="2021-04-12T13:28:19+08:00">2021-04-12</time>
+                <time title="Modified: 2021-04-12 22:01:28" itemprop="dateModified" datetime="2021-04-12T22:01:28+08:00">2021-04-12</time>
               </span>
     
           <br>
@@ -235,7 +235,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>2.1k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -269,6 +269,8 @@
 </ul>
 <p>PyTorch的其他一些优点还包括：多gpu支持，自定义数据加载器和简化的预处理器。</p>
 <p>自从2016年1月发布以来，许多研究人员将其作为一种“go-to”库，因为它可以轻松地构建新颖的甚至是极其复杂的图形。虽说如此，PyTorch仍有一段时间没有被大多数数据科学实践者采用，因为它是新的而且处于“正在建设”的状态</p>
+<h1 id="pytorch和tensorflow的区别"><a href="#pytorch和tensorflow的区别" class="headerlink" title="pytorch和tensorflow的区别"></a>pytorch和tensorflow的区别</h1><p>TensorFlow 是谷歌的开发者创造的一款开源的深度学习框架。PyTorch 是最新的深度学习框架之一，由 Facebook 的团队开发，并于 2017 年在 GitHub 上开源。</p>
+<p>PyTorch 和 TensorFlow 的关键差异是它们执行代码的方式。这两个框架都基于基础数据类型张量（tensor）而工作。</p>
 <h1 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h1><p>Google了一下，发现大家都有给pytorch安装虚拟环境，因为有可能跟python原有的包起冲突，这样也方便使用。</p>
 <p>创建虚拟环境代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pytorch为库的名字</span></span><br><span class="line">conda create -n pytorch python=<span class="number">3.8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 额外学习，如何看conda环境还有python的版本，输入</span></span><br><span class="line">conda info --envs</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
@@ -290,12 +292,19 @@
 
 
 <p>安装成功之后就可以来学习pytorch了。</p>
-<p>在深入讨论细节之前，让我们先看看PyTorch的工作流程。</p>
+<h1 id="pytorch-的一些基本概念"><a href="#pytorch-的一些基本概念" class="headerlink" title="pytorch 的一些基本概念"></a>pytorch 的一些基本概念</h1><p>在深入讨论细节之前，让我们先看看PyTorch的工作流程。</p>
 <p>PyTorch使用了命令式/热切的范例。也就是说，在构建一个图形时，每一行代码都定义了改图的一个组件。我们甚至能在图形构建完成前，独立的对这些组件进行计算。这就是所谓的“逐运行”方法。</p>
+<p><strong>PyTorch张量(tensor)</strong></p>
+<p>张量只是多维数组。PyTorch中的张量类似于numpy的ndarrays，另外，张量也可以在GPU上使用。PyTorch支持各种类型的张量。</p>
+<h4 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h4><p>与numpy一样，科学计算库非常重要的一点是能够实现高效的数学功能。而PyTorch提供了一个类似的借口，可以使用200个以上的数学运算。</p>
+<h4 id="Autograd模块"><a href="#Autograd模块" class="headerlink" title="Autograd模块"></a>Autograd模块</h4><p>PyTorch使用了一种叫做自动微分的技术。也就是说，它会有一个记录我们所有执行操作的记录器，之后再回放记录来计算我们的梯度。这一技术在构建神经网络时尤其有效，因为我们可以通过计算前路参数的微分来节省时间。</p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>最后需通过几个实例学习，来更加了解pytorch. </p>
+<p>我们使用<a href="https://link.zhihu.com/?target=https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a>作为数据集，包含了10个类别60000张图片，每张图片的大小为32x32，其中训练图片50000张，测试图片10000张。</p>
+<p>torchvision中已经打包好了这个数据集，我们不用自己下载，直接如下调用就可以了。</p>
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Boys_Wu/article/details/106623192">pytorch加速下载——清华镜像源(conda或者pip版本)</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d66319506dd7">PyTorch入门教程</a></li>
-<li></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80733307">TensorFlow与PyTorch之争，哪个框架最适合深度学习</a></li>
 </ul>
 
     </div>
@@ -377,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">PyTorch的概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">PyTorch安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E6%B5%8B%E8%AF%95torch%E5%92%8CCUD"><span class="nav-number">2.1.</span> <span class="nav-text">安装完成后测试torch和CUD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">PyTorch的概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch%E5%92%8Ctensorflow%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">pytorch和tensorflow的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">PyTorch安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E6%B5%8B%E8%AF%95torch%E5%92%8CCUD"><span class="nav-number">3.1.</span> <span class="nav-text">安装完成后测试torch和CUD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">4.</span> <span class="nav-text">pytorch 的一些基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">数学运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Autograd%E6%A8%A1%E5%9D%97"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">Autograd模块</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -391,7 +400,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -440,12 +449,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">79k</span>
+    <span title="Symbols count total">81k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:12</span>
+    <span title="Reading time total">1:14</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
