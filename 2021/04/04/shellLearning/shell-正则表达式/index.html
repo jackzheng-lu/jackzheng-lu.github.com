@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"b0fa02bb56320ebafd7c3b7a1abe0367","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"eee0de363005d1454615a59d0caaa505","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="z总结：  要记得区分字符串和字符的正则 有些函数只能用基本正则(e.g., grep)，有些则可以用扩展正则（e.g. egrep)  这里也有个体会，要自己尝试和整理学习资料，网上的资料都是结合每个人的特点写的，不一定适合自己。 比如第一个参考文献根本没有将正则和grep讲清楚，让我非常混乱。  我的实例 我在实际应用上发现自己对正则的理解还是不够  12345678910# 在文件中找到m">
@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="JackZHENG_blog">
 <meta property="og:description" content="z总结：  要记得区分字符串和字符的正则 有些函数只能用基本正则(e.g., grep)，有些则可以用扩展正则（e.g. egrep)  这里也有个体会，要自己尝试和整理学习资料，网上的资料都是结合每个人的特点写的，不一定适合自己。 比如第一个参考文献根本没有将正则和grep讲清楚，让我非常混乱。  我的实例 我在实际应用上发现自己对正则的理解还是不够  12345678910# 在文件中找到m">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://jackzheng-lu.github.io/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png">
-<meta property="og:image" content="http://jackzheng-lu.github.io/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105209231.png">
-<meta property="og:image" content="http://jackzheng-lu.github.io/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105543523.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105209231.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105543523.png">
 <meta property="article:published_time" content="2021-04-04T05:54:06.000Z">
 <meta property="article:modified_time" content="2021-04-15T01:13:19.351Z">
 <meta property="article:author" content="JackZheng">
 <meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jackzheng-lu.github.io/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png">
 
 <link rel="canonical" href="http://jackzheng-lu.github.io/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
@@ -294,15 +294,15 @@
 <h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h2><blockquote>
 <p>跟单个字符有关</p>
 </blockquote>
-<img src="/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png" class title="这里写图片描述">
+<img src="/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png" class title="这里写图片描述">
 
-<h2 id="数量限定符"><a href="#数量限定符" class="headerlink" title="数量限定符"></a>数量限定符</h2><img src="/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105209231.png" class title="这里写图片描述">
+<h2 id="数量限定符"><a href="#数量限定符" class="headerlink" title="数量限定符"></a>数量限定符</h2><img src="/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105209231.png" class title="这里写图片描述">
 
 
 <h2 id="位置限定符"><a href="#位置限定符" class="headerlink" title="位置限定符"></a>位置限定符</h2><blockquote>
 <p>跟字符串有关</p>
 </blockquote>
-<img src="/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105543523.png" class title="这里写图片描述">
+<img src="/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105543523.png" class title="这里写图片描述">
 
 
 
@@ -420,7 +420,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -469,12 +469,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">113k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:43</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
