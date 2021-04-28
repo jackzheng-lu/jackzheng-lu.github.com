@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"b0fa02bb56320ebafd7c3b7a1abe0367","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="要是遇到更复杂的情况可以先看看以下一些资料 （selenium官网教程，非常有用） https:&#x2F;&#x2F;www.cnblogs.com&#x2F;luozx207&#x2F;p&#x2F;9003214.html  详细：https:&#x2F;&#x2F;www.jb51.net&#x2F;article&#x2F;178283.htm 前期准备 包括selenium，urllib和chromedriver。  urllib是Python自带的标准库，无需安装，直接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python_爬虫批量下载">
+<meta property="og:url" content="http://jackzheng-lu.github.io/2021/03/30/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/index.html">
+<meta property="og:site_name" content="JackZHENG_blog">
+<meta property="og:description" content="要是遇到更复杂的情况可以先看看以下一些资料 （selenium官网教程，非常有用） https:&#x2F;&#x2F;www.cnblogs.com&#x2F;luozx207&#x2F;p&#x2F;9003214.html  详细：https:&#x2F;&#x2F;www.jb51.net&#x2F;article&#x2F;178283.htm 前期准备 包括selenium，urllib和chromedriver。  urllib是Python自带的标准库，无需安装，直接">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jackzheng-lu.github.io/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210402215942210.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210402220243916.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210417141906139.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210417142441422.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210417151616577.png">
+<meta property="article:published_time" content="2021-03-30T13:07:50.000Z">
+<meta property="article:modified_time" content="2021-04-26T23:17:00.889Z">
+<meta property="article:author" content="JackZheng">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210402215942210.png">
+
+<link rel="canonical" href="http://jackzheng-lu.github.io/2021/03/30/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>python_爬虫批量下载 | JackZHENG_blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JackZHENG_blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/30/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python_爬虫批量下载
+        </h1>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-30 21:07:50" itemprop="dateCreated datePublished" datetime="2021-03-30T21:07:50+08:00">2021-03-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-27 07:17:00" itemprop="dateModified" datetime="2021-04-27T07:17:00+08:00">2021-04-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+        <blockquote>
+<p>要是遇到更复杂的情况可以先看看以下一些资料</p>
+<p>（<a target="_blank" rel="noopener" href="https://selenium-python-zh.readthedocs.io/en/latest/waits.html">selenium官网教程，非常有用</a>）</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/luozx207/p/9003214.html">https://www.cnblogs.com/luozx207/p/9003214.html</a></p>
+</blockquote>
+<p>详细：<a target="_blank" rel="noopener" href="https://www.jb51.net/article/178283.htm">https://www.jb51.net/article/178283.htm</a></p>
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><blockquote>
+<p>包括<code>selenium</code>，<code>urllib</code>和chromedriver。</p>
+</blockquote>
+<p><code>urllib</code>是Python自带的标准库，无需安装，直接可以用。</p>
+<p>selenium包需要安装，直接prompt输入（<a target="_blank" rel="noopener" href="https://selenium-python-zh.readthedocs.io/en/latest/waits.html">selenium官网教程，非常有用</a>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install selenium</span><br></pre></td></tr></table></figure>
+
+<p>同时下载chromedriver，结合自己的chrome的版本，版本序号不一定要一致的，找不到一致的就找相近的，使用mirror的链接下载：<a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/chromedriver">http://npm.taobao.org/mirrors/chromedriver</a></p>
+<p>下载完成后，直接解压到anaconda下面的文件夹中</p>
+<img src="/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210402215942210.png" alt="image-20210402215942210" style="zoom:50%;">
+
+<p>然后在anaconda的prompt窗口输入<code>chromedriver</code>，出现这样子的界面表明安装成功。</p>
+<img src="/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210402220243916.png" alt="image-20210402220243916" style="zoom:50%;">
+
+<h1 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h1><p>网上找到的自动下载的基本思路</p>
+<ol>
+<li>要利用headers拉动请求，模拟成浏览器去访问网站，跳过最简单的反爬虫机制。(我这步跳过)</li>
+<li>获取网页内容，保存在一个字符串content中。</li>
+<li>构造正则表达式，从content中匹配关键词pattern获取下载链接。需要注意的是，网页中的关键词出现了两遍（如下图），所以我们要利用set()函数清除重复元素。</li>
+<li>第三步是遍历set之后的结果，下载链接。</li>
+<li>设置time.sleep(t)，无sleep间隔的话，网站认定这种行为是攻击，所以我们隔一段时间下载一个，反反爬虫。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#读取网页内容</span></span><br><span class="line">url=driver.current_url</span><br><span class="line">opener = urllib.request.build_opener()</span><br><span class="line">content = opener.<span class="built_in">open</span>(url).read().decode(<span class="string">&#x27;utf8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="下拉选项"><a href="#下拉选项" class="headerlink" title="下拉选项"></a>下拉选项</h3><img src="/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210417141906139.png" alt="image-20210417141906139" style="zoom:50%;">
+
+<p>如果要下拉选择某一个值，使用select功能,示例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> Select</span><br><span class="line"><span class="comment"># 法一：使用xpath进行选择</span></span><br><span class="line">s1=Select(driver.find_element_by_xpath(<span class="string">&#x27;//form[@action=&quot;/ready2-in/extract/extractfile.pl&quot;]/select&#x27;</span>))</span><br><span class="line"><span class="comment"># 法二：直接使用属性name的值</span></span><br><span class="line">s1=Select(driver.find_element_by_name(<span class="string">&#x27;metdata&#x27;</span>))  </span><br><span class="line"></span><br><span class="line">s1.select_by_value(<span class="string">&#x27;GDAS1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="点的选项"><a href="#点的选项" class="headerlink" title="点的选项"></a>点的选项</h3><img src="/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210417142441422.png" alt="image-20210417142441422" style="zoom:50%;">
+
+<p>选择不同的标识，其实只要定位到那个表示，然后click()就可以了。</p>
+<img src="/pythonLearning/python_%E7%88%AC%E8%99%AB%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/image-20210417151616577.png" class title="image-20210417151616577">
+
+<p>我需要选择time，只能通过value值来确定，可以这么做</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s2=driver.find_element_by_css_selector(<span class="string">&quot;input[value=&#x27;2&#x27;&quot;</span>)</span><br><span class="line">s2.click()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="填空的选择"><a href="#填空的选择" class="headerlink" title="填空的选择"></a>填空的选择</h2><p>定位到位置，然后send_keys就可以达到目的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_name(<span class="string">&quot;latL&quot;</span>).clear()</span><br><span class="line">driver.find_element_by_name(<span class="string">&quot;latL&quot;</span>).send_keys(<span class="string">&quot;-90&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="按钮的操作"><a href="#按钮的操作" class="headerlink" title="按钮的操作"></a>按钮的操作</h2><p>碰到按钮的网页，只要定位到要按的按钮，然后使用click()功能，例如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s2.click()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="超链接下载"><a href="#超链接下载" class="headerlink" title="超链接下载"></a>超链接下载</h2><p>获取超链接元素后，通过<code>download_link.get_attribute(&#39;href&#39;)</code>来获得其下载元素</p>
+<h1 id="扩展功能"><a href="#扩展功能" class="headerlink" title="扩展功能"></a>扩展功能</h1><p>##下载速度和时间的扩展</p>
+<blockquote>
+<p>我想大概知道一个下载速度和时间，代码参考如下，亲测可用，保存为.py文件，然后调用即可。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30362083/article/details/95301602">https://blog.csdn.net/weixin_30362083/article/details/95301602</a></p>
+<h2 id="等待时间"><a href="#等待时间" class="headerlink" title="等待时间"></a>等待时间</h2><p>使用的是WebDriverWait</p>
+<p>看<a target="_blank" rel="noopener" href="https://selenium-python-zh.readthedocs.io/en/latest/waits.html%E5%BE%97%E5%88%B0%E6%9B%B4%E5%A4%9A%E7%9A%84%E4%BF%A1%E6%81%AF">https://selenium-python-zh.readthedocs.io/en/latest/waits.html得到更多的信息</a></p>
+<p>进阶；<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fcc-123/p/10942883.html">https://www.cnblogs.com/fcc-123/p/10942883.html</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#读取网页内容</span></span><br><span class="line">url=driver.current_url</span><br><span class="line">opener = urllib.request.build_opener()</span><br><span class="line">content = opener.<span class="built_in">open</span>(url).read().decode(<span class="string">&#x27;utf8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>自动刷新</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43858148/article/details/84727756?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control">https://blog.csdn.net/weixin_43858148/article/details/84727756?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 应该确定文件类型，如test.zip等</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果只给个文件，会出现permission denied的情况</span></span><br><span class="line">urllib.request.urlretrieve(link, path1+ filename+&#x27;.zip&#x27;)</span><br><span class="line">print(&#x27;downloading finished for &#x27;+ filename)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="调用迅雷下载"><a href="#调用迅雷下载" class="headerlink" title="调用迅雷下载"></a>调用迅雷下载</h2><blockquote>
+<p>调用request下载，速度太慢了，因此修改代码，可以调用迅雷下载。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> win32com.client <span class="keyword">import</span> Dispatch</span><br><span class="line"></span><br><span class="line">thunder = Dispatch(<span class="string">&#x27;ThunderAgent.Agent.1&#x27;</span>)</span><br><span class="line">url = <span class="string">&quot;ftp://ygdy8:ygdy8@yg39.dydytt.net:3010&quot;</span> \</span><br><span class="line">      <span class="string">&quot;/阳光电影www.ygdy8.com.追龙番外之十亿探长&quot;</span> \</span><br><span class="line">      <span class="string">&quot;.HD.1080p.国语中字.mkv&quot;</span></span><br><span class="line">filename = <span class="string">&quot;追龙番外之十亿探长.mkv&quot;</span></span><br><span class="line">thunder.AddTask(url, filename, <span class="string">r&quot;C:\迅雷下载&quot;</span>)</span><br><span class="line">thunder.CommitTasks()</span><br><span class="line">print(<span class="string">&quot;任务已建立，开始下载：&#123;&#125;....&quot;</span>.<span class="built_in">format</span>(filename))</span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考链接：<a target="_blank" rel="noopener" href="https://www.jb51.net/article/178283.htm">https://www.jb51.net/article/178283.htm</a></p>
+<h1 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h1><h3 id="python字符串前缀的知识："><a href="#python字符串前缀的知识：" class="headerlink" title="python字符串前缀的知识："></a>python字符串前缀的知识：</h3><p>1、在字符串前加上r或R表示该字符串是非转义的原始字符串。</p>
+<blockquote>
+<p>这个对路径这种斜杆比较有用</p>
+</blockquote>
+<p>2、在字符串前加上u或U表示该字符串是unicode字符串</p>
+<p>如果遇到提取中文的问题，可以加上 <code>encoding=&#39;utf-8&#39;</code>来解决。</p>
+<h2 id="补充阅读"><a href="#补充阅读" class="headerlink" title="补充阅读"></a>补充阅读</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cfbdacbeac6e">基础篇-Python的urllib库</a></li>
+</ul>
+<p>beautiful soup ()</p>
+<blockquote>
+<p>官网介绍： <strong>Beautiful Soup</strong> 是一个可以从 <strong>HTML</strong> 或 <strong>XML</strong> 文件中提取数据的 <strong>Python</strong> 库.它能够通过你喜欢的转换器实现惯用的文档导航,查找,修改文档的方式.<strong>Beautiful Soup</strong> 会帮你节省数小时甚至数天的工作时间.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2b783f7914c6">https://www.jianshu.com/p/2b783f7914c6</a></p>
+<p>获取当前网页的链接</p>
+<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/162915.htm">https://www.jb51.net/article/162915.htm</a></p>
+<p>找到填空项，填写</p>
+<p><a target="_blank" rel="noopener" href="https://my.oschina.net/u/3314358/blog/1834873">https://my.oschina.net/u/3314358/blog/1834873</a></p>
+<p>下拉项</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Claire_chen_jia/article/details/106523131">https://blog.csdn.net/Claire_chen_jia/article/details/106523131</a></p>
+<p>定位的几种方式</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/minieye/p/5803640.html">https://www.cnblogs.com/minieye/p/5803640.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/81ce4bf0d0c0">https://www.jianshu.com/p/81ce4bf0d0c0</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/c-x-a/p/9195644.html">https://www.cnblogs.com/c-x-a/p/9195644.html</a></p>
+<p>xpath定位（webdriver定位方式是遍历，所以速度没有xpath的快）</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sss650216/article/details/88946305">https://blog.csdn.net/sss650216/article/details/88946305</a></p>
+<p>有用的xpath的例子</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014663232/article/details/103462652">https://blog.csdn.net/u014663232/article/details/103462652</a></p>
+<p>python 爬虫的几种方法：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/47035491">https://zhuanlan.zhihu.com/p/47035491</a></p>
+<p>自动下载文件</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62876301">https://zhuanlan.zhihu.com/p/62876301</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_19408603/article/details/77413914">https://blog.csdn.net/qq_19408603/article/details/77413914</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/65474873">https://zhuanlan.zhihu.com/p/65474873</a></p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/65474873">https://zhuanlan.zhihu.com/p/65474873</a></li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+    
+        
+
+    
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/30/TrajectoryModel/hysplit-%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/" rel="prev" title="HSPLIT_教程">
+      <i class="fa fa-chevron-left"></i> HSPLIT_教程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/30/pythonLearning/python_%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="next" title="python_快捷键">
+      python_快捷键 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">基本思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E6%8B%89%E9%80%89%E9%A1%B9"><span class="nav-number">2.0.1.</span> <span class="nav-text">下拉选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E7%9A%84%E9%80%89%E9%A1%B9"><span class="nav-number">2.0.2.</span> <span class="nav-text">点的选项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A1%AB%E7%A9%BA%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">2.1.</span> <span class="nav-text">填空的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E9%92%AE%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.2.</span> <span class="nav-text">按钮的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.3.</span> <span class="nav-text">超链接下载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">扩展功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%97%B6%E9%97%B4"><span class="nav-number">3.1.</span> <span class="nav-text">等待时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD"><span class="nav-number">3.2.</span> <span class="nav-text">调用迅雷下载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="nav-number">4.</span> <span class="nav-text">补充知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E7%BC%80%E7%9A%84%E7%9F%A5%E8%AF%86%EF%BC%9A"><span class="nav-number">4.0.1.</span> <span class="nav-text">python字符串前缀的知识：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E9%98%85%E8%AF%BB"><span class="nav-number">4.1.</span> <span class="nav-text">补充阅读</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JackZheng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackZheng</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">120k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:49</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

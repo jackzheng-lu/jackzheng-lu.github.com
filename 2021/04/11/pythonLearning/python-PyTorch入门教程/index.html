@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"b0fa02bb56320ebafd7c3b7a1abe0367","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习如何入门PyTorch，包括基础原理知识、numpy与PyTorch的区别以及案例研究实例。  PyTorch的概述PyTorch是一个基于Python的库，用来提供一个具有灵活性的深度学习开发平台。PyTorch的工作流程非常接近Python的科学计算库——numpy。 现在你可能会问，为什么我们要用PyTorch来建立深度学习模型呢？主要有三点  易于使用的API—它就像Python一样">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python_PyTorch入门教程">
+<meta property="og:url" content="http://jackzheng-lu.github.io/2021/04/11/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="JackZHENG_blog">
+<meta property="og:description" content="学习如何入门PyTorch，包括基础原理知识、numpy与PyTorch的区别以及案例研究实例。  PyTorch的概述PyTorch是一个基于Python的库，用来提供一个具有灵活性的深度学习开发平台。PyTorch的工作流程非常接近Python的科学计算库——numpy。 现在你可能会问，为什么我们要用PyTorch来建立深度学习模型呢？主要有三点  易于使用的API—它就像Python一样">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jackzheng-lu.github.io/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/image-20210411225629962.png">
+<meta property="article:published_time" content="2021-04-11T14:50:17.000Z">
+<meta property="article:modified_time" content="2021-04-18T12:08:09.600Z">
+<meta property="article:author" content="JackZheng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/image-20210411225629962.png">
+
+<link rel="canonical" href="http://jackzheng-lu.github.io/2021/04/11/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>python_PyTorch入门教程 | JackZHENG_blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JackZHENG_blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python_PyTorch入门教程
+        </h1>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-11 22:50:17" itemprop="dateCreated datePublished" datetime="2021-04-11T22:50:17+08:00">2021-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-18 20:08:09" itemprop="dateModified" datetime="2021-04-18T20:08:09+08:00">2021-04-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+        <blockquote>
+<p>学习如何入门PyTorch，包括基础原理知识、numpy与PyTorch的区别以及案例研究实例。</p>
+</blockquote>
+<h1 id="PyTorch的概述"><a href="#PyTorch的概述" class="headerlink" title="PyTorch的概述"></a>PyTorch的概述</h1><p>PyTorch是一个基于Python的库，用来提供一个具有灵活性的深度学习开发平台。PyTorch的工作流程非常接近Python的科学计算库——numpy。</p>
+<p>现在你可能会问，为什么我们要用PyTorch来建立深度学习模型呢？主要有三点</p>
+<ul>
+<li><p><strong>易于使用的API</strong>—它就像Python一样简单。</p>
+</li>
+<li><p><strong>Python的支持</strong>—如上所述，PyTorch可以顺利地与Python数据科学栈集成。它非常类似于numpy，甚至注意不到它们的差别。</p>
+</li>
+<li><p><strong>动态计算图</strong>—取代了具有特定功能的预定义图形，PyTorch为我们提供了一个框架，以便可以在运行时构建计算图，甚至在运行时更改它们。在不知道创建神经网络需要多少内存的情况下这非常有价值。</p>
+</li>
+</ul>
+<p>PyTorch的其他一些优点还包括：多gpu支持，自定义数据加载器和简化的预处理器。</p>
+<p>自从2016年1月发布以来，许多研究人员将其作为一种“go-to”库，因为它可以轻松地构建新颖的甚至是极其复杂的图形。虽说如此，PyTorch仍有一段时间没有被大多数数据科学实践者采用，因为它是新的而且处于“正在建设”的状态</p>
+<h1 id="pytorch和tensorflow的区别"><a href="#pytorch和tensorflow的区别" class="headerlink" title="pytorch和tensorflow的区别"></a>pytorch和tensorflow的区别</h1><p>TensorFlow 是谷歌的开发者创造的一款开源的深度学习框架。PyTorch 是最新的深度学习框架之一，由 Facebook 的团队开发，并于 2017 年在 GitHub 上开源。</p>
+<p>PyTorch 和 TensorFlow 的关键差异是它们执行代码的方式。这两个框架都基于基础数据类型张量（tensor）而工作。</p>
+<h1 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h1><p>Google了一下，发现大家都有给pytorch安装虚拟环境，因为有可能跟python原有的包起冲突，这样也方便使用。</p>
+<p>创建虚拟环境代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pytorch为库的名字</span></span><br><span class="line">conda create -n pytorch python=<span class="number">3.8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 额外学习，如何看conda环境还有python的版本，输入</span></span><br><span class="line">conda info --envs</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/">官网下载传送门</a>，要选择合适自己的版本。</p>
+<blockquote>
+<p>CUDA是Compute Unified Device Architecture的缩写。中文叫统一计算架构。是为了让nvidia gpu可以完成通用计算任务的一种集成技术，可以为数据大吞吐量的工作提供很好的加速功能。简单的来讲，就是为了让GPU可以不仅仅工作与自己的一幕三分地，而是利用自身的优势，完成通用计算的任务。主要应用除了日常视频编码解码，游戏等外，可以应用于计算加速方面。</p>
+</blockquote>
+<img src="/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/image-20210411225629962.png" class title="image-20210411225629962">
+
+<p>将官网提供的命令放进去</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=<span class="number">10.2</span> -c pytorch</span><br></pre></td></tr></table></figure>
+
+<p>果然是龟速…..尝试国内镜像下载，使用清华园镜像下载，速度确实会快一点。（以下都是在pythorch的环境下进行）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加清华源的pytorch</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line"></span><br><span class="line">conda install pytorch torchvision cudatoolkit=<span class="number">10.0</span>  <span class="comment"># 删除安装命令最后的 -c pytorch，才会采用清华源安装。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将镜像通道删除</span></span><br><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装完成后测试torch和CUD"><a href="#安装完成后测试torch和CUD" class="headerlink" title="安装完成后测试torch和CUD"></a>安装完成后测试torch和CUD</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#为了确保PyTorch安装正确，我们可以运行示例PyTorch代码来验证安装。这里我们将构造一个随机初始化的张量。</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">x = torch.rand(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line">print(x)</span><br><span class="line"><span class="comment"># The output should be something similar to:</span></span><br><span class="line"><span class="comment"># tensor([[0.2989, 0.2493, 0.2642],</span></span><br><span class="line"><span class="comment">#         [0.9508, 0.4811, 0.1085],</span></span><br><span class="line"><span class="comment">#         [0.5423, 0.3216, 0.3068],</span></span><br><span class="line"><span class="comment">#         [0.8863, 0.8385, 0.5150],</span></span><br><span class="line"><span class="comment">#         [0.8451, 0.4620, 0.6266]])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此外，要检查GPU驱动程序和CUDA是否能够被PyTorch启用和访问，需要运行以下命令以返回CUDA驱动程序是否已启用：</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line"><span class="comment"># the output is: True</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装成功之后就可以来学习pytorch了。</p>
+<h1 id="pytorch-的一些基本概念"><a href="#pytorch-的一些基本概念" class="headerlink" title="pytorch 的一些基本概念"></a>pytorch 的一些基本概念</h1><p>在深入讨论细节之前，让我们先看看PyTorch的工作流程。</p>
+<p>PyTorch使用了命令式/热切的范例。也就是说，在构建一个图形时，每一行代码都定义了改图的一个组件。我们甚至能在图形构建完成前，独立的对这些组件进行计算。这就是所谓的“逐运行”方法。</p>
+<p><strong>PyTorch张量(tensor)</strong></p>
+<p>张量只是多维数组。PyTorch中的张量类似于numpy的ndarrays，另外，张量也可以在GPU上使用。PyTorch支持各种类型的张量。</p>
+<h4 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h4><p>与numpy一样，科学计算库非常重要的一点是能够实现高效的数学功能。而PyTorch提供了一个类似的借口，可以使用200个以上的数学运算。</p>
+<h4 id="Autograd模块"><a href="#Autograd模块" class="headerlink" title="Autograd模块"></a>Autograd模块</h4><p>PyTorch使用了一种叫做自动微分的技术。也就是说，它会有一个记录我们所有执行操作的记录器，之后再回放记录来计算我们的梯度。这一技术在构建神经网络时尤其有效，因为我们可以通过计算前路参数的微分来节省时间。</p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>最后需通过几个实例学习，来更加了解pytorch. </p>
+<p>我们使用<a href="https://link.zhihu.com/?target=https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a>作为数据集，包含了10个类别60000张图片，每张图片的大小为32x32，其中训练图片50000张，测试图片10000张。</p>
+<p>torchvision中已经打包好了这个数据集，我们不用自己下载，直接如下调用就可以了。</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Boys_Wu/article/details/106623192">pytorch加速下载——清华镜像源(conda或者pip版本)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d66319506dd7">PyTorch入门教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80733307">TensorFlow与PyTorch之争，哪个框架最适合深度学习</a></li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+      <footer class="post-footer">
+    
+        
+
+    
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/11/pythonLearning/python%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%90%9C%E9%9B%86/" rel="prev" title="python学习资源搜集">
+      <i class="fa fa-chevron-left"></i> python学习资源搜集
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/" rel="next" title="机器学习李宏毅课程">
+      机器学习李宏毅课程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">PyTorch的概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch%E5%92%8Ctensorflow%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">pytorch和tensorflow的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">PyTorch安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E6%B5%8B%E8%AF%95torch%E5%92%8CCUD"><span class="nav-number">3.1.</span> <span class="nav-text">安装完成后测试torch和CUD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">4.</span> <span class="nav-text">pytorch 的一些基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">数学运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Autograd%E6%A8%A1%E5%9D%97"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">Autograd模块</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JackZheng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackZheng</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">120k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:49</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

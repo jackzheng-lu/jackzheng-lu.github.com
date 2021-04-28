@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"b0fa02bb56320ebafd7c3b7a1abe0367","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="z总结：  要记得区分字符串和字符的正则 有些函数只能用基本正则(e.g., grep)，有些则可以用扩展正则（e.g. egrep)  这里也有个体会，要自己尝试和整理学习资料，网上的资料都是结合每个人的特点写的，不一定适合自己。 比如第一个参考文献根本没有将正则和grep讲清楚，让我非常混乱。  我的实例 我在实际应用上发现自己对正则的理解还是不够  12345678910# 在文件中找到m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell_正则表达式">
+<meta property="og:url" content="http://jackzheng-lu.github.io/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:site_name" content="JackZHENG_blog">
+<meta property="og:description" content="z总结：  要记得区分字符串和字符的正则 有些函数只能用基本正则(e.g., grep)，有些则可以用扩展正则（e.g. egrep)  这里也有个体会，要自己尝试和整理学习资料，网上的资料都是结合每个人的特点写的，不一定适合自己。 比如第一个参考文献根本没有将正则和grep讲清楚，让我非常混乱。  我的实例 我在实际应用上发现自己对正则的理解还是不够  12345678910# 在文件中找到m">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jackzheng-lu.github.io/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105209231.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105543523.png">
+<meta property="article:published_time" content="2021-04-04T05:54:06.000Z">
+<meta property="article:modified_time" content="2021-04-15T01:13:19.351Z">
+<meta property="article:author" content="JackZheng">
+<meta property="article:tag" content="shell">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png">
+
+<link rel="canonical" href="http://jackzheng-lu.github.io/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>shell_正则表达式 | JackZHENG_blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JackZHENG_blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/04/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          shell_正则表达式
+        </h1>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-04 13:54:06" itemprop="dateCreated datePublished" datetime="2021-04-04T13:54:06+08:00">2021-04-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-15 09:13:19" itemprop="dateModified" datetime="2021-04-15T09:13:19+08:00">2021-04-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell/" itemprop="url" rel="index"><span itemprop="name">shell</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+        <blockquote>
+<p>z总结：</p>
+<ul>
+<li>要记得区分字符串和字符的正则</li>
+<li>有些函数只能用基本正则(e.g., grep)，有些则可以用扩展正则（e.g. egrep)</li>
+</ul>
+<p>这里也有个体会，要自己尝试和整理学习资料，网上的资料都是结合每个人的特点写的，不一定适合自己。</p>
+<p>比如第一个参考文献根本没有将正则和grep讲清楚，让我非常混乱。</p>
+</blockquote>
+<h2 id="我的实例"><a href="#我的实例" class="headerlink" title="我的实例"></a>我的实例</h2><blockquote>
+<p>我在实际应用上发现自己对正则的理解还是不够</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在文件中找到matlab/Matlab开头的文件</span></span><br><span class="line">ls | grep &#x27;^[mM]&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果不要m/M开头的。注意这个折腾了好久才搞清楚。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [^]这种形式只是表示字符罢了，要结合字符串的形式来弄</span></span><br><span class="line">ls | grep &#x27;^[^mM]&#x27;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更进一步的例子</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 匹配一个由一个小写字母和一位数字组成的字符串，比如<span class="string">&quot;z2&quot;</span>、<span class="string">&quot;t6&quot;</span>或<span class="string">&quot;g7&quot;</span>，但不是<span class="string">&quot;ab2&quot;</span>、<span class="string">&quot;r2d3&quot;</span> 或<span class="string">&quot;b52&quot;</span>的话，用这个模式：</span></span><br><span class="line">^[a-z][0-9]$</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="基本正则表达式和扩展正则表达式"><a href="#基本正则表达式和扩展正则表达式" class="headerlink" title="基本正则表达式和扩展正则表达式"></a>基本正则表达式和扩展正则表达式</h2><p>两者的区别，更多的是元字符的区别。</p>
+<ul>
+<li>基础正则中==<code>^$.*[]</code>==是元字符</li>
+<li>扩展正则中: ==<code> ^$.*[]+()&#123;&#125;?|</code>==都是元字符，比基础正则多出了<code>+()&#123;&#125;?|</code></li>
+</ul>
+<blockquote>
+<p>最后要注意的一点，只有在用反斜杠进行转义的情况下，字符“（”、“）”、“{”和“}”才会在扩展正则表达式中被当作元字符处理，而在基本正则表达式中，任何元字符前面加上反斜杠反而会使其被当作普通字符来处理。</p>
+</blockquote>
+<h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h2><blockquote>
+<p>跟单个字符有关</p>
+</blockquote>
+<img src="/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108104843816.png" class title="这里写图片描述">
+
+<h2 id="数量限定符"><a href="#数量限定符" class="headerlink" title="数量限定符"></a>数量限定符</h2><img src="/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105209231.png" class title="这里写图片描述">
+
+
+<h2 id="位置限定符"><a href="#位置限定符" class="headerlink" title="位置限定符"></a>位置限定符</h2><blockquote>
+<p>跟字符串有关</p>
+</blockquote>
+<img src="/shellLearning/shell-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/20171108105543523.png" class title="这里写图片描述">
+
+
+
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><p>其他一些稍微复杂的字符，如标点符号和白字符（空格、制表符等）都用反斜杠()打头。制表符的转义序列是 <strong>\t</strong>。所以如果我们要检测一个字符串是否以制表符开头，可以用这个模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\t </span><br></pre></td></tr></table></figure>
+
+<p>类似的，用\n表示”新行”，\r表示回车。其他的特殊符号，可以用在前面加上反斜杠，如反斜杠本身用\表示，句号.用.表示，以此类推。</p>
+<h2 id="初级实例"><a href="#初级实例" class="headerlink" title="初级实例"></a>初级实例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 符号 &#123;n,m&#125; 和 +</span></span><br><span class="line">grep &quot;ro\&#123;1,\&#125;t&quot; user    //找1次以及1次以上的o</span><br><span class="line">egrep &quot;ro&#123;1,&#125;t&quot; user   //效果同上，扩展正则，网友提议，官方修改添加的</span><br><span class="line">egrep &quot;ro+t&quot; user     //效果同上，最精简</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">符号 ？ 和 &#123;n，m&#125; 和 &#123;n&#125;</span></span><br><span class="line">grep &quot;roo\&#123;0,1\&#125;t&quot; user   //第二个o要出现0~1次</span><br><span class="line">egrep &quot;roo&#123;0,1&#125;t&quot; user  //效果同上</span><br><span class="line">egrep &quot;roo?t&quot; user   //效果同上，最精简</span><br><span class="line">grep &quot;ro\&#123;2\&#125;t&quot; user    //找o出现2次的</span><br><span class="line">egrep &quot;ro&#123;2&#125;t&quot; user    //效果同上</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 符号 | 和 （） 和 \b</span></span><br><span class="line"> egrep &quot; ^ root | ^ bin&quot; user   //找root或者以bin开头的行</span><br><span class="line"> egrep &quot;^(root|bin)&quot; user   //效果同上</span><br><span class="line"> egrep &quot;\bthe\b&quot; abc    	//找the，\b:前后不允许出现数字，字母，下划线</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash"> 在正则表达式中，我们通常用尖括号表示一个“词”，通过使用`\&lt;`和`\&gt;`来准确匹配到这个词。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 例如下面，可以精确匹配到bin，而不是sbin这种</span></span><br><span class="line">grep &#x27;\&lt;bin\&gt;&#x27; /etc/passwd --color</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="高级实例"><a href="#高级实例" class="headerlink" title="高级实例"></a>高级实例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 替换使用 | 字符来允许在两个或多个替换选项之间进行选择。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 该表达式匹配Chapter和Section+数字</span></span><br><span class="line">/^Chapter|Section [1-9][0-9]&#123;0,1&#125;$/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">如果要匹配chaper数字和section数字这种</span></span><br><span class="line">/^(Chapter|Section) [1-9][0-9]&#123;0,1&#125;$/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_38121874/article/details/78476492">https://blog.csdn.net/m0_38121874/article/details/78476492</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/abcnull/article/details/103951287">https://blog.csdn.net/abcnull/article/details/103951287</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-rule.html">https://www.runoob.com/regexp/regexp-rule.html</a></li>
+<li><a target="_blank" rel="noopener" href="http://c.runoob.com/front-end/854">正则表达式生产式</a></li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/shell/" rel="tag"># shell</a>
+          </div>
+    
+        
+
+    
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/04/TrajectoryModel/hysplit_%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="prev" title="Hysplit_设置文件">
+      <i class="fa fa-chevron-left"></i> Hysplit_设置文件
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/05/shellLearning/shell-%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%BD%91%E5%9D%80/" rel="next" title="shell_一些有用的学习网址">
+      shell_一些有用的学习网址 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">我的实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E6%89%A9%E5%B1%95%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">基本正则表达式和扩展正则表达式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number"></span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">字符类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E9%87%8F%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">数量限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E7%BD%AE%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">3.</span> <span class="nav-text">位置限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="nav-number">4.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E7%BA%A7%E5%AE%9E%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">初级实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E5%AE%9E%E4%BE%8B"><span class="nav-number">6.</span> <span class="nav-text">高级实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">参考文献：</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JackZheng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JackZheng</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">120k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:49</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

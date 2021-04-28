@@ -17,23 +17,28 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"b0fa02bb56320ebafd7c3b7a1abe0367","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="测试1 批量进行气象数据缩小 （完成）  测试2 在stratosphere的粒子运动（最高30km）  气象数据的最高高度为30km，如果直接设置30km会报错，可以设置为29.9km   测试3 时间连接问题（完成）  问题4 粒子问题？（貌似有粒子的上限，以及如何对粒子释放做出修改）   测试1  批量进行气象数据缩小根据教程中的介绍，貌似气象数据可以裁剪，为局部区域进行运行。因为这只是运">
+  <meta name="description" content="项目记录 创新点：  研究SPE的Be7运移  已经可以进行全球的模拟，但是得使用GRAD 1°的数据，NCEP数据有问题  如何实现全球范围的释放 含有Be10特性的模拟问题 实现1个月的模拟 解决NCEP的问题 Sulfate 模块运行问题（可能要看下源程序；进行修改添加）  发现问题，使用GADS的时候，并不能读取source文件，提示source point 不再gird上，无输出结果。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hysplit_test2">
+<meta property="og:title" content="hysplit_conc测试">
 <meta property="og:url" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/index.html">
 <meta property="og:site_name" content="JackZHENG_blog">
-<meta property="og:description" content="测试1 批量进行气象数据缩小 （完成）  测试2 在stratosphere的粒子运动（最高30km）  气象数据的最高高度为30km，如果直接设置30km会报错，可以设置为29.9km   测试3 时间连接问题（完成）  问题4 粒子问题？（貌似有粒子的上限，以及如何对粒子释放做出修改）   测试1  批量进行气象数据缩小根据教程中的介绍，貌似气象数据可以裁剪，为局部区域进行运行。因为这只是运">
+<meta property="og:description" content="项目记录 创新点：  研究SPE的Be7运移  已经可以进行全球的模拟，但是得使用GRAD 1°的数据，NCEP数据有问题  如何实现全球范围的释放 含有Be10特性的模拟问题 实现1个月的模拟 解决NCEP的问题 Sulfate 模块运行问题（可能要看下源程序；进行修改添加）  发现问题，使用GADS的时候，并不能读取source文件，提示source point 不再gird上，无输出结果。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210409152543732.png">
-<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210411093407709.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418124600938.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418131422441.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418164440182.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418151037390.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418162026572.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210409152543732.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210411093407709.png">
 <meta property="article:published_time" content="2021-04-08T02:48:09.000Z">
-<meta property="article:modified_time" content="2021-04-11T01:41:44.275Z">
+<meta property="article:modified_time" content="2021-04-19T00:17:20.952Z">
 <meta property="article:author" content="JackZheng">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210409152543732.png">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418124600938.png">
 
 <link rel="canonical" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/">
 
@@ -48,7 +53,7 @@
   };
 </script>
 
-  <title>hysplit_test2 | JackZHENG_blog</title>
+  <title>hysplit_conc测试 | JackZHENG_blog</title>
   
 
 
@@ -156,21 +161,18 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
+  <div class="search-input-container"></div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
 </div>
 
+      
     </div>
   </div>
 
@@ -210,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hysplit_test2
+          hysplit_conc测试
         </h1>
     
         <div class="post-meta">
@@ -227,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-11 09:41:44" itemprop="dateModified" datetime="2021-04-11T09:41:44+08:00">2021-04-11</time>
+                <time title="Modified: 2021-04-19 08:17:20" itemprop="dateModified" datetime="2021-04-19T08:17:20+08:00">2021-04-19</time>
               </span>
     
           <br>
@@ -236,14 +238,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>892</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
     
         </div>
@@ -255,7 +257,76 @@
     <div class="post-body" itemprop="articleBody">
     
       
-        <ul>
+        <p>项目记录</p>
+<p>创新点：</p>
+<ul>
+<li>研究SPE的Be7运移</li>
+</ul>
+<p>已经可以进行全球的模拟，但是得使用GRAD 1°的数据，NCEP数据有问题</p>
+<ul>
+<li>如何实现全球范围的释放</li>
+<li>含有Be10特性的模拟问题</li>
+<li>实现1个月的模拟</li>
+<li>解决NCEP的问题</li>
+<li>Sulfate 模块运行问题（可能要看下源程序；进行修改添加）</li>
+</ul>
+<p>发现问题，使用GADS的时候，并不能读取source文件，提示source point 不再gird上，无输出结果。</p>
+<blockquote>
+<p>发现如果不在control的文件里设置emission，就不会有值。这很奇怪，因为我用NCAR的数据还好好的</p>
+<p>一种解决方法就是：在emission里面，把时间设置为数值，就能解决。（不过仍然不知道为啥有这问题）</p>
+</blockquote>
+<p>(Yaqiang Wang et al 2011 ER),设置为每6小时到GEM中去，一共1600,000个particles</p>
+<p>面积</p>
+<h1 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h1><p>以后control，setup等的内部选项只增不减，并添加上简要的解释。方便于我修改参数。</p>
+<p>每6小时的trajectory，可以在setup.cfg中设定NSTR=6。也可以多条/多时间的变化（看user-guide）。</p>
+<p>总是要记得备份，尤其是模拟不同时段的运移模型时候</p>
+<p>注意在运行SPE事件的时候，采样浓度要多层次level，因为高浓度的Be10并不会降下来。计算的浓度时根据设定来的</p>
+<blockquote>
+<p>这也是为啥有时候会出现无浓度的情况，因为设置不对。</p>
+<p>同时也要注意，GEM和Hysplit有各自浓度的设定。</p>
+</blockquote>
+<p>由于source点比较稀疏，可以设置release的面积</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="program-exception-access-violation的问题"><a href="#program-exception-access-violation的问题" class="headerlink" title="program exception-access violation的问题"></a>program exception-access violation的问题</h2><p>运行Hysplit出现的program exception-access violation的问题。我在运行30天的back-trajectory或者大面积的forward的时候，都出现了这个<code>program exception-access violation</code>的问题。Google之后发现Fortran出现这个一般都是数组越界。因为hysplit为了增加计算时间默认了mgmin为10°，我猜测这个容易造成越界问题。</p>
+<p>解决方法是</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MGMIN=40</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果想要全球尺度的，可以改为999。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 但是如果多点的话，不推荐这样做，因为极大增加了运算时间。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>详细的可以看看user-guide里面介绍的sub-grid size。对于长时间尺度的运移，MGMIN太小的话，有可能造成不同时间的sub-gird在空间上没有重叠。</p>
+</blockquote>
+<h2 id="NCEP-terrain-height的问题"><a href="#NCEP-terrain-height的问题" class="headerlink" title="NCEP terrain height的问题"></a>NCEP terrain height的问题</h2><p>我跑了NCEP的30天的back-trajectory，发现里面的地形出现了负数（一般在海洋地区）。查资料发现，原来NCEP本身是不提供地形资料的。地形资料是通过如下方法计算的:</p>
+<blockquote>
+<p>The terrain is estimated using the hypsometric equation. However, to calculate its trajectory model uses a sigma terrain following vertical coordinate that has been remapped internally from the vertical coordinate of the meteorological dataset. In that way we make sure that the trajectories do not go below the surface as defined in the original meteorological dataset.</p>
+</blockquote>
+<p>参考链接: <a target="_blank" rel="noopener" href="https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=1068">https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=1068</a></p>
+<h2 id="NCEP-height-inversion问题"><a href="#NCEP-height-inversion问题" class="headerlink" title="NCEP height inversion问题"></a>NCEP height inversion问题</h2><p>使用NCEP198401数据（1984年1月份）运行GEM模型的时候，提示在北纬83度？和73？的位置高度逆转。</p>
+<img src="/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418124600938.png" alt="image-20210418124600938" style="zoom:50%;">
+
+<p>我重新下载了GRAD的1°数据，可以正常运行Hysplit-GEM模式。</p>
+<p>我又重新尝试了NCEP201807的数据，发现也可以正常运行Hysplit-GEM模式。</p>
+<blockquote>
+<p>所以是之前NCEP数据的问题?</p>
+</blockquote>
+<p>我重新运行了下NCEP198401数据，提示了不同的错误点</p>
+<img src="/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418131422441.png" alt="image-20210418131422441" style="zoom:50%;">
+
+<p>测试了198107数据，提示了不同的错误点</p>
+<img src="/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418164440182.png" alt="image-20210418164440182" style="zoom:50%;">
+
+<blockquote>
+<p>我大概明白了，有可能因为model通过pressure height计算这个高度，导致的问题。</p>
+<p>虽然NCEP没提供地形数据，但不可能是地形的问题，因为两个高度都是在一个点上。</p>
+</blockquote>
+<p>有时候还会又其他的提示，比如如下的提示，???</p>
+<img src="/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418151037390.png" alt="image-20210418151037390" style="zoom:50%;">
+
+<p>这个时候看message文件，发现数据成这样子了</p>
+<img src="/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210418162026572.png" alt="image-20210418162026572" style="zoom:50%;">
+
+<blockquote>
+<p>这个应该是程序运行的问题，导致数据出错了</p>
+</blockquote>
+<h2 id="particle-模式"><a href="#particle-模式" class="headerlink" title="particle 模式"></a>particle 模式</h2><p>particle模式跑到后面会越来越慢，因为</p>
+<ul>
 <li><p>测试1 批量进行气象数据缩小 （完成）</p>
 </li>
 <li><p>测试2 在stratosphere的粒子运动（最高30km）</p>
@@ -280,7 +351,7 @@
 <p># &gt; 最后将输出进行重命名 (mv函数)</p>
 </blockquote>
 <h2 id="测试2-在stratosphere的粒子运动（最高30km）"><a href="#测试2-在stratosphere的粒子运动（最高30km）" class="headerlink" title="测试2 在stratosphere的粒子运动（最高30km）"></a>测试2 在stratosphere的粒子运动（最高30km）</h2><p>运行基本ok，气象数据的最高高度为30km，如果直接设置30km有可能会报错，可以设置为29.9km。</p>
-<img src="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210409152543732.png" alt="image-20210409152543732" style="zoom: 50%;">
+<img src="/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210409152543732.png" alt="image-20210409152543732" style="zoom: 50%;">
 
 
 
@@ -298,11 +369,12 @@
 
 
 
-<p>高度问题</p>
-<p>这是一个三十天的back-trajectory的模拟。</p>
-<p>从这个图上可以看出几个问题</p>
-<p>trajectory几乎是沿着地面的，说明这个时候应该已经结束了，需要额外结束</p>
-<img src="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210411093407709.png" alt="image-20210411093407709" style="zoom:50%;">
+<h2 id="高度问题"><a href="#高度问题" class="headerlink" title="高度问题"></a>高度问题</h2><p>这是一个三十天的back-trajectory的模拟。我选择的高度是500米，从这个图上可以看出几个问题，trajectory几乎是沿着地面的运动的，收到地形的影响挺大的。</p>
+<ul>
+<li>这个高度的运移说明不确定性很大。</li>
+<li>三十天的结果并不一定是可靠的，有可能是模型硬算的一个结果。</li>
+</ul>
+<img src="/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210411093407709.png" alt="image-20210411093407709" style="zoom:50%;">
 
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li>无</li>
@@ -326,7 +398,7 @@
       <i class="fa fa-chevron-left"></i> hysplit_常问的问题
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="next" title="python_正则表达式">
+    <a href="/2021/04/08/pythonLearning/python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="next" title="python_正则表达式">
       python_正则表达式 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -387,7 +459,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%951-%E6%89%B9%E9%87%8F%E8%BF%9B%E8%A1%8C%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%BC%A9%E5%B0%8F"><span class="nav-number">1.</span> <span class="nav-text">测试1  批量进行气象数据缩小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%952-%E5%9C%A8stratosphere%E7%9A%84%E7%B2%92%E5%AD%90%E8%BF%90%E5%8A%A8%EF%BC%88%E6%9C%80%E9%AB%9830km%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">测试2 在stratosphere的粒子运动（最高30km）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%953-%E6%97%B6%E9%97%B4%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">测试3 时间连接问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">参考文献：</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%8F%E9%AA%8C"><span class="nav-number">1.</span> <span class="nav-text">经验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#program-exception-access-violation%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">program exception-access violation的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NCEP-terrain-height%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">NCEP terrain height的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NCEP-height-inversion%E9%97%AE%E9%A2%98"><span class="nav-number">2.3.</span> <span class="nav-text">NCEP height inversion问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#particle-%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">particle 模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%951-%E6%89%B9%E9%87%8F%E8%BF%9B%E8%A1%8C%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%BC%A9%E5%B0%8F"><span class="nav-number">2.5.</span> <span class="nav-text">测试1  批量进行气象数据缩小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%952-%E5%9C%A8stratosphere%E7%9A%84%E7%B2%92%E5%AD%90%E8%BF%90%E5%8A%A8%EF%BC%88%E6%9C%80%E9%AB%9830km%EF%BC%89"><span class="nav-number">2.6.</span> <span class="nav-text">测试2 在stratosphere的粒子运动（最高30km）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%953-%E6%97%B6%E9%97%B4%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.</span> <span class="nav-text">测试3 时间连接问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="nav-number">2.8.</span> <span class="nav-text">高度问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -401,14 +473,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -450,12 +522,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">120k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:14</span>
+    <span title="Reading time total">1:49</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -497,7 +569,10 @@
 
 
   
-<script src="/js/local-search.js"></script>
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
 
 
 

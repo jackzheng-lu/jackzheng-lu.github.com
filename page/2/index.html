@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"b0fa02bb56320ebafd7c3b7a1abe0367","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -149,21 +149,18 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
+  <div class="search-input-container"></div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
 </div>
 
+      
     </div>
   </div>
 
@@ -189,7 +186,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/14/shellLearning/shell-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +200,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">hysplit_安装</a>
+            <a href="/2021/04/14/shellLearning/shell-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">shell_常用代码记录</a>
         </h2>
     
         <div class="post-meta">
@@ -212,9 +209,83 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
     
-              <time title="Created: 2021-04-09 13:27:16 / Modified: 13:37:54" itemprop="dateCreated datePublished" datetime="2021-04-09T13:27:16+08:00">2021-04-09</time>
+              <time title="Created: 2021-04-14 10:44:32" itemprop="dateCreated datePublished" datetime="2021-04-14T10:44:32+08:00">2021-04-14</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>6</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/14/pythonLearning/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/14/pythonLearning/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-14 08:21:43" itemprop="dateCreated datePublished" datetime="2021-04-14T08:21:43+08:00">2021-04-14</time>
             </span>
     
           <br>
@@ -243,54 +314,40 @@
     
       
           <blockquote>
-<p>总而言之，官网上有很详细的解释，一切以官网为主。这里主要对一些信息做些记录。</p>
-<p>找到的关于安装内容的一些补充信息。</p>
-<p><a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/hysplitusersguide/S000.htm">https://www.ready.noaa.gov/hysplitusersguide/S000.htm</a></p>
+<p>为了学习pytorch，接触到虚拟环境这个概念。</p>
+<p>目的：将不同的python安装在不同的虚拟环境，能维持原生python不受函数包安装移除污染。例如将pytorch安装在虚拟环境中。</p>
 </blockquote>
-<h1 id="Hysplit-5-安装"><a href="#Hysplit-5-安装" class="headerlink" title="Hysplit 5 安装"></a>Hysplit 5 安装</h1><p>trial版本和register版本没什么不同，register版本可以额外使用预报功能。Hysplit 5 教程使用的是unregister (trial)版本。<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/index.php">Hysplit 安装的网址</a></p>
-<p>需要预安装两个软件：NOAA官网有提供现在的两个软件的<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/HYSPLIT_util.php">下载链接</a></p>
-<ul>
-<li><p>Tcl/TK，打开软件的打开方式。Tk是一開放原始碼的圖形化使用者介面開發工具，提供許多常用的圖形介面元件，具有跨平台、輕量化等特色。官网下载地址：<a target="_blank" rel="noopener" href="https://www.tcl.tk/software/tcltk/download.html">https://www.tcl.tk/software/tcltk/download.html</a></p>
-<blockquote>
-<p>官网上有个叫source file，需要自己结合电脑进行compile。</p>
-</blockquote>
-</li>
-<li><p>Ghostview，成图要用的。</p>
-</li>
-</ul>
-<blockquote>
-<p>两者最好要跟Hysplit安装在同一个drive磁盘中，否则要对Hysplit中的绘图道路进行设置</p>
-<blockquote>
-<p>Installation to directories different from their suggested defaults may require editing the HYSPLIT GUI launch script: \guicode\hysplit.tcl. </p>
-</blockquote>
-</blockquote>
-<p>安装Hysplit 5， 然后修改打开方式为tcl/bin路径下的wish86t.exe文件即可，安装好的使用界面</p>
-<img src="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/image-20210330103724354.png" alt="image-20210330103724354" style="zoom:50%;">
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>在虚拟环境里，各种软件包的版本，都由你来指定。它们和系统默认Python环境是相互隔离的，因此互不干扰。</p>
+<img src="/pythonLearning/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/64542-4e9d1b7b08a5100e.jpg" alt="img" style="zoom: 33%;">
 
-<p>忘记了电脑是否安装了Ghostview和Ghostscript，先简单运行个example看看。在concentration栏目下有个quick start可以运行个样例：</p>
-<img src="/2021/04/09/TrajectoryModel/hysplit-%E5%AE%89%E8%A3%85/image-20210330105101974.png" alt="image-20210330105101974" style="zoom:50%;">
+
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建pytorch为库的名字</span></span><br><span class="line">conda create -n pytorch python=3.8</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 激活虚拟库</span></span><br><span class="line">conda activate pytorch</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 额外学习，如何看conda环境还有python的版本，输入</span></span><br><span class="line">conda info --envs</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="如何在jupyter内部调用"><a href="#如何在jupyter内部调用" class="headerlink" title="如何在jupyter内部调用"></a>如何在jupyter内部调用</h2><p>为了让Jupyter Notebook支持虚拟运行环境，需要在Anaconda里安装一个插件。(实测在jupyter打开的时候也能安装成功，关键是要将jupyter重开下)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install nb_conda</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>ok, 基本上电脑可以运行Hysplit。</p>
-<p>此外还有四种看图方式（python，Google Earth View 等），之后有需要的时候在了解。</p>
+<p>重开jupyter后，看到了不同的虚拟环境的python选项，但是还无法看到pytorch的环境。(果然单看一个教程不一定能解决我的问题)。Google之后发现，原来还要在虚拟环境中安装ipykernel。在prompt中输入如下指令：</p>
 </blockquote>
-<p>安装的建议：</p>
-<ul>
-<li><p>安装路径推荐默认路径</p>
-<blockquote>
-<blockquote>
-<p>Installing to the default directory will make it easier to use preconfigured input files during the Tutorial as well as running example scripts without editing the directory pointer.</p>
-</blockquote>
-</blockquote>
-</li>
-<li><p>不要打开多个Hysplit窗口</p>
-</li>
-<li><p>将文件打开方式设为notepad，这样比较好看结果</p>
-</li>
-</ul>
-<p>更多详细安装建议：<a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html">https://www.ready.noaa.gov/documents/Tutorial/html/install_win.html</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">conda activate torch</span><br><span class="line">conda install ipykernel</span><br><span class="line">conda deactivate</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果需要删除</span></span><br><span class="line">删除环境：</span><br><span class="line">conda remove -n your_env_name(虚拟环境名称) --all</span><br><span class="line"></span><br><span class="line">删除虚拟环境中的包：</span><br><span class="line">conda remove --name $your_env_name  $package_name（包名） </span><br></pre></td></tr></table></figure>
+
+<p>ok，重新启动jupyter就可以看到conda的虚拟环境了。</p>
+<img src="/pythonLearning/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/image-20210412110641580.png" alt="image-20210412110641580" style="zoom:50%;">
+
+
+
+<h2 id="额外内容pip-conda常用命令"><a href="#额外内容pip-conda常用命令" class="headerlink" title="额外内容pip/conda常用命令"></a>额外内容pip/conda常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看已经安装的包</span> </span><br><span class="line">pip list </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装第三方包（版本的话使用==）</span></span><br><span class="line">pip install robotframework==2.8.7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 相关的知识链接：</span></span><br><span class="line">https://zhuanlan.zhihu.com/p/164666990</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> conda常用命令</span></span><br><span class="line">conda list：查看安装了哪些包。</span><br><span class="line">conda install package_name(包名)：安装包</span><br><span class="line">conda env list 或 conda info -e：查看当前存在哪些虚拟环境</span><br><span class="line">conda update conda：检查更新当前conda</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/afea092dda1d">如何在Jupyter Notebook中使用Python虚拟环境？</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33296651/article/details/95316784">jupyter找不到conda的虚拟环境</a></li>
 </ul>
 
       
@@ -312,7 +369,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E5%8F%98%E9%87%8F/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/13/pythonLearning/python-matplotlib%E7%94%BB%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -326,7 +383,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-%E5%8F%98%E9%87%8F/" class="post-title-link" itemprop="url">shell_变量</a>
+            <a href="/2021/04/13/pythonLearning/python-matplotlib%E7%94%BB%E5%9B%BE/" class="post-title-link" itemprop="url">python_matplotlib画图</a>
         </h2>
     
         <div class="post-meta">
@@ -336,105 +393,28 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
     
-              <time title="Created: 2021-04-08 19:09:18" itemprop="dateCreated datePublished" datetime="2021-04-08T19:09:18+08:00">2021-04-08</time>
+              <time title="Created: 2021-04-13 20:14:56" itemprop="dateCreated datePublished" datetime="2021-04-13T20:14:56+08:00">2021-04-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-10 20:56:19" itemprop="dateModified" datetime="2021-04-10T20:56:19+08:00">2021-04-10</time>
+                <time title="Modified: 2021-04-18 20:09:27" itemprop="dateModified" datetime="2021-04-18T20:09:27+08:00">2021-04-18</time>
               </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>200</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <h2 id="删除字母"><a href="#删除字母" class="headerlink" title="删除字母"></a>删除字母</h2><p>这个方法利用tr -c删除补集的功能，如有其他字符泽不能用这个方法</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bigwood99/article/details/105227113">https://blog.csdn.net/bigwood99/article/details/105227113</a></p>
-<p>方法1：</p>
-<p>echo “a1b2c3d4f5” | tr -d ‘a-z’</p>
-<p>方法2：</p>
-<p>echo “a1b2c3d4f5” | sed ‘s/[a-z]*//g’</p>
-<p>方法3：</p>
-<p>echo “a1b2c3d4f5” | tr -d -c ‘[0-9]’</p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">shell_grep_sed函数</a>
-        </h2>
-    
-        <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+                <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-08 16:17:34" itemprop="dateCreated datePublished" datetime="2021-04-08T16:17:34+08:00">2021-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-10 20:45:32" itemprop="dateModified" datetime="2021-04-10T20:45:32+08:00">2021-04-10</time>
-              </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
     
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -442,7 +422,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>1.4k</span>
+              <span>897</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -462,168 +442,33 @@
     
       
           <blockquote>
-<p>遇到特殊符号时，使用反斜杠“\”</p>
-<p>注意这些都是字符匹配？？</p>
+<p>待补充完善，看参考文献</p>
 </blockquote>
-<h1 id="grep函数"><a href="#grep函数" class="headerlink" title="grep函数"></a>grep函数</h1><p>grep，可以匹配正则来搜索文件中的信息。貌似是个命令，直接在prompt里面输入</p>
-<blockquote>
-<p>由于可以搜索文件的信息，因此最好不要单用grep在目录下搜索，速度非常慢</p>
-<p>如果要用grep在文件夹搜索，应结合ls 使用</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-grep.html">https://www.runoob.com/linux/linux-comm-grep.html</a></p>
-<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/linux/grep.html">http://c.biancheng.net/linux/grep.html</a></p>
-<p>实例</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 当前文件夹找到符号条件的文件名</span></span><br><span class="line">result=$(ls | grep &quot;.md&quot;)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 另外一种方法</span></span><br><span class="line">x=$(find -name &#x27;shell*.md&#x27;| tr -d &quot;[\.\/]&quot;)</span><br><span class="line">注意find跟grep不大一样</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 反向查找。通过<span class="string">&quot;-v&quot;</span>参数可以打印出不符合条件行的内容。查找文件名中包含 <span class="built_in">test</span> 的文件中不包含<span class="built_in">test</span> 的行，此时，使用的命令为：</span></span><br><span class="line">grep -v test *test*</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">遍历目录下的文件名</span><br><span class="line">for file in `ls /bin`; do                                                                           </span><br><span class="line">    echo $&#123;file&#125;                                                                                      </span><br><span class="line">done  </span><br></pre></td></tr></table></figure>
+<p>其他的一些画图方法</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3bb2cc453df1">https://www.jianshu.com/p/3bb2cc453df1</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotbli.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统一设置</span></span><br><span class="line">plt.plot(x,x,x,x*<span class="number">2</span>,x,x/<span class="number">2</span>,linewidth=<span class="number">3</span>,color=<span class="string">&#x27;blue&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 参数连用需要对不同的线进行分别设置</span></span><br><span class="line">plt.plot(x,x,<span class="string">&#x27;r:v&#x27;</span>,x,x*<span class="number">2</span>,<span class="string">&#x27;b--h&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<p><a target="_blank" rel="noopener" href="https://linux.cn/article-6941-1.html">https://linux.cn/article-6941-1.html</a></p>
-<p>grep的或匹配，和匹配</p>
-<h1 id="sed-函数"><a href="#sed-函数" class="headerlink" title="sed 函数"></a>sed 函数</h1><p>==sed默认不修改源文件内容==，可以直接修改文件的内容（-i），</p>
-<p>注意，sed 会根据脚本命令来处理文本文件中的数据，这些命令要么从命令行中输入，要么存储在一个文本文件中，此命令执行数据的顺序如下：</p>
-<ol>
-<li><p>每次仅读取一行内容；</p>
-</li>
-<li><p>根据提供的规则命令匹配并修改数据。注意，sed 默认不会直接修改源文件数据，而是会将数据复制到缓冲区中，修改也仅限于缓冲区中的数据；</p>
-</li>
-<li><p>将执行结果输出。</p>
-<blockquote>
-<p>要注意使用，因为我们不想修改重要信息</p>
-</blockquote>
-</li>
-</ol>
-<img src="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell-grep-sed%E5%87%BD%E6%95%B0/image-20210408162947813.png" class title="image-20210408162947813">
+<p>常用线条属性的修改</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#颜色的修改,透明度，填充颜色，线性</span></span><br><span class="line">plt.plot(x,y,color=<span class="string">&#x27;c&#x27;</span>,alpha=<span class="number">0.3</span>,facecolor=<span class="string">&#x27;red&#x27;</span>,ls=<span class="string">&#x27;:&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#线宽，点形，点形大小</span></span><br><span class="line">plt.plot(x,y,lw=<span class="number">1.5</span>,marker=<span class="string">&#x27;s&#x27;</span>,markersize=<span class="number">60</span>,</span><br><span class="line">         </span><br><span class="line"><span class="comment"># xticks函数设置坐标轴刻度和标签</span></span><br><span class="line">plt.xticks([<span class="number">0</span>,np.pi/<span class="number">2</span>,np.pi,<span class="number">3</span>*np.pi/<span class="number">2</span>,<span class="number">2</span>*np.pi],[<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;π/2&#x27;</span>,<span class="string">&#x27;π&#x27;</span>,<span class="string">&#x27;3π/2&#x27;</span>,<span class="string">&#x27;2π&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<p>常用线性属性</p>
+<img src="/pythonLearning/python-matplotlib%E7%94%BB%E5%9B%BE/xianxing.png" class title="img">
+
+<p>常用标点属性</p>
+<img src="/pythonLearning/python-matplotlib%E7%94%BB%E5%9B%BE/image-20210413202652650.png" alt="image-20210413202652650" style="zoom:50%;">
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取figure对象（画布对象）</span></span><br><span class="line"><span class="comment"># 设置画布的背景色</span></span><br><span class="line">figure = plt.figure(facecolor=<span class="string">&#x27;cyan&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置坐标系的背景色</span></span><br><span class="line">axes = plt.subplot(<span class="number">111</span>,facecolor=<span class="string">&#x27;blue&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置线条的颜色</span></span><br><span class="line">axes.plot(x,x,x,x*<span class="number">2</span>,color=<span class="string">&#x27;yellow&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /^categories/为正则匹配，c为替换行，c后面的语句为替换语句，<span class="string">&quot;<span class="variable">$&#123;file&#125;</span>&quot;</span>为替换的文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -i 选项可以直接修改文件内容，没有-i的话，只输出，但不修改源文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> \为对特殊符号进行转义</span></span><br><span class="line">sed -i &quot;/^categories/c categories: [\&#x27;编程语言学习\&#x27;]&quot; &quot;$&#123;file&#125;&quot;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 去除前后空格</span></span><br><span class="line">[root@linux ~]# echo &#x27; A BC &#x27; | sed -e &#x27;s/^[ ]*//g&#x27; | sed -e &#x27;s/[ ]*$//g&#x27;</span><br><span class="line">A BC</span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sweeter2/article/details/50876810">https://blog.csdn.net/sweeter2/article/details/50876810</a></p>
-<h1 id="拓展："><a href="#拓展：" class="headerlink" title="拓展："></a>拓展：</h1><h2 id="find-函数"><a href="#find-函数" class="headerlink" title="find 函数"></a>find 函数</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Sunny_Future/article/details/80321478">https://blog.csdn.net/Sunny_Future/article/details/80321478</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_xuanshuang/article/details/107453783">https://blog.csdn.net/qq_xuanshuang/article/details/107453783</a></p>
-<p>ls 匹配</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaochi/p/12846696.html">https://www.cnblogs.com/zhaochi/p/12846696.html</a></p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/4028.html">http://c.biancheng.net/view/4028.html</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">python_正则表达式</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-08 12:14:59" itemprop="dateCreated datePublished" datetime="2021-04-08T12:14:59+08:00">2021-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-10 15:35:27" itemprop="dateModified" datetime="2021-04-10T15:35:27+08:00">2021-04-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>858</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>开头使用如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>总结</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># ^ 匹配字符串的开始。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># $ 匹配字符串的结尾。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \b 匹配一个单词的边界。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \d 匹配任意数字。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># \D 匹配任意非数字字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x? 匹配一个可选的 x 字符 (换言之，它匹配 1 次或者 0 次 x 字符)。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x* 匹配0次或者多次 x 字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x+ 匹配1次或者多次 x 字符。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># x&#123;n,m&#125; 匹配 x 字符，至少 n 次，至多 m 次。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># (a|b|c) 要么匹配 a，要么匹配 b，要么匹配 c。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># (x) 一般情况下表示一个记忆组 (remembered group)。你可以利用 re.search 函数返回对象的 groups() 函数获取它的值。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 正则表达式中的点号通常意味着 “匹配任意单字符”</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="部分实例：-注意举一反三"><a href="#部分实例：-注意举一反三" class="headerlink" title="部分实例：(注意举一反三)"></a>部分实例：(注意举一反三)</h1><ul>
-<li>提取小数：</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string=&quot;A1.45，b5，6.45，8.82&quot;</span><br><span class="line">print re.findall(r&quot;\d+\.?\d*&quot;,string)</span><br><span class="line"><span class="meta">#</span><span class="bash"> [<span class="string">&#x27;1.45&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;6.45&#x27;</span>, <span class="string">&#x27;8.82&#x27;</span>]</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>匹配包含指定字符串开头的，例如提取loss开头的字符串：</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tensorflow:Final best valid 0 loss=0.20478513836860657 norm_loss=0.767241849151384 roc=0.8262403011322021 pr=0.39401692152023315 calibration=0.9863265752792358 rate=0.0</span><br><span class="line"></span><br><span class="line">pattern = re.compile(r&#x27;(?:loss=)\d+\.?\d*&#x27;)</span><br><span class="line">pattern.findall(string)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> [<span class="string">&#x27;loss=0.20478513836860657&#x27;</span>, <span class="string">&#x27;loss=0.767241849151384&#x27;</span>]</span></span><br></pre></td></tr></table></figure>
-
-
+<h2 id="保存图像模板"><a href="#保存图像模板" class="headerlink" title="保存图像模板"></a>保存图像模板</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dpi设置像素大小</span></span><br><span class="line">figure.savefig(<span class="string">&#x27;18011.png&#x27;</span>,dpi=<span class="number">50</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010412858/article/details/83062200">python正则表达式从字符串中提取数字</a></li>
-<li></li>
-</ul>
-<ul>
-<li></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42042680/article/details/80738699">https://blog.csdn.net/weixin_42042680/article/details/80738699</a></li>
 </ul>
 
       
@@ -645,7 +490,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B-%E4%BD%9C%E4%B8%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -659,304 +504,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/" class="post-title-link" itemprop="url">hysplit_test2</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-08 10:48:09" itemprop="dateCreated datePublished" datetime="2021-04-08T10:48:09+08:00">2021-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-11 09:41:44" itemprop="dateModified" datetime="2021-04-11T09:41:44+08:00">2021-04-11</time>
-              </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>892</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <ul>
-<li><p>测试1 批量进行气象数据缩小 （完成）</p>
-</li>
-<li><p>测试2 在stratosphere的粒子运动（最高30km）</p>
-<blockquote>
-<p>气象数据的最高高度为30km，如果直接设置30km会报错，可以设置为29.9km</p>
-</blockquote>
-</li>
-<li><p>测试3 时间连接问题（完成）</p>
-</li>
-<li><p>问题4 粒子问题？（貌似有粒子的上限，以及如何对粒子释放做出修改）</p>
-</li>
-</ul>
-<h2 id="测试1-批量进行气象数据缩小"><a href="#测试1-批量进行气象数据缩小" class="headerlink" title="测试1  批量进行气象数据缩小"></a>测试1  批量进行气象数据缩小</h2><p>根据教程中的介绍，貌似气象数据可以裁剪，为局部区域进行运行。因为这只是运移模型？</p>
-<p>在下载的文件中，有个现成的软件可以进行气象数据的裁剪</p>
-<blockquote>
-<p>搜索 “xtrct_grid.exe，注意，文件夹的输入是C:\Users\zmjhh\Desktop\NCEP197611\，不要忘记最后要有个斜线<code>\</code>。</p>
-</blockquote>
-<blockquote>
-<p># 思路 (使用shell文件完成)</p>
-<p># &gt; 每次创建一个新的txt文件，将信息存入其中</p>
-<p># &gt; 然后重定向输入到exe的应用程序中去 （重定行功能）</p>
-<p># &gt; 最后将输出进行重命名 (mv函数)</p>
-</blockquote>
-<h2 id="测试2-在stratosphere的粒子运动（最高30km）"><a href="#测试2-在stratosphere的粒子运动（最高30km）" class="headerlink" title="测试2 在stratosphere的粒子运动（最高30km）"></a>测试2 在stratosphere的粒子运动（最高30km）</h2><p>运行基本ok，气象数据的最高高度为30km，如果直接设置30km有可能会报错，可以设置为29.9km。</p>
-<img src="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210409152543732.png" alt="image-20210409152543732" style="zoom: 50%;">
-
-
-
-<h2 id="测试3-时间连接问题"><a href="#测试3-时间连接问题" class="headerlink" title="测试3 时间连接问题"></a>测试3 时间连接问题</h2><p>由于运行是一个cycle一个cycle进行的，所以有两种方法</p>
-<ul>
-<li>可以运行到每月的月底，然后重开一个cycle</li>
-<li>或者更简单的，直接把所有的气象数据放进去运行（推荐）</li>
-</ul>
-<p>测试后发现只要如下设置即可</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这些气象数据信息最好一起</span><br><span class="line">  echo &quot;2                      &quot;&gt;&gt;CONTROL #数量</span><br><span class="line">  echo &quot;$DATA/                  &quot;&gt;&gt;CONTROL #文件位置1</span><br><span class="line">  echo &quot;$&#123;data&#125;                  &quot;&gt;&gt;CONTROL # 数据1</span><br><span class="line">  echo &quot;$DATA/                  &quot;&gt;&gt;CONTROL #文件位置2</span><br><span class="line">  echo &quot;$&#123;data2&#125;                  &quot;&gt;&gt;CONTROL # 数据2</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<p>高度问题</p>
-<p>这是一个三十天的back-trajectory的模拟。</p>
-<p>从这个图上可以看出几个问题</p>
-<p>trajectory几乎是沿着地面的，说明这个时候应该已经结束了，需要额外结束</p>
-<img src="/2021/04/08/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%952/image-20210411093407709.png" alt="image-20210411093407709" style="zoom:50%;">
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">hysplit_常问的问题</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-08 10:48:09" itemprop="dateCreated datePublished" datetime="2021-04-08T10:48:09+08:00">2021-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-11 15:55:19" itemprop="dateModified" datetime="2021-04-11T15:55:19+08:00">2021-04-11</time>
-              </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>3.3k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>3 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/">https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/</a></p>
-<p>快速过了一遍常问的问题，将对项目有用的信息做个摘录，直接点感叹号就可以到原网址</p>
-<p>该网址可以多看看</p>
-<p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc9/">https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc9/</a></p>
-<p>重要！</p>
-<blockquote>
-<p>对于很小的气象数据改动，trajectory的结果出现很大的不确定性时，需要注意解释</p>
-<p>精度（precision）和准度（accuracy)，Hysplit model 的精度为1%/天，会随着时间的推移而叠加。hysplit的准度问题很大随着时间推移而改变，10天的准度问题会达到15°左右。</p>
-</blockquote>
-<h1 id="气象数据类"><a href="#气象数据类" class="headerlink" title="气象数据类"></a>气象数据类</h1><ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/what-archived-data-are-available-on-the-web-to-run-hysplit-with/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>What archived data are available on the web to run HYSPLIT with?</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/what-data-is-used-to-calculate-the-hysplit-trajectories-and-what-is-the-the-vertical-resolution-of-the-data/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>What data is used to calculate the trajectories and what is the the vertical resolution of the data? </p>
-<blockquote>
-<p>这主要取决于气象数据</p>
-</blockquote>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-6/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> However, in one case when I calculated 120-hour backward trajectories from Potsdam, NY at 1800 on April 8, 1999 using both the EDAS and FNL data bases, I found that the EDAS data suggested the air was in the upper midwest 5 days prior, but the FNL put it into northern Quebec. Why the difference?</p>
-</li>
-</ul>
-<blockquote>
-<p>结果不同一般是由于气象数据的精度不同。</p>
-<p>关于trajectory的通常步骤，运行一个点相近的不同高度的trajectory（e.g.300m 400m, 500m)，如果结果相似，那么结果比较可靠，如果发散，说明不确定大（not precide）</p>
-</blockquote>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/i-will-be-converting-ecmwf-grib-files/"><img src="https://www.arl.noaa.gov/wp_arl/wp-content/uploads/2017/10/info2.gif" alt="Click for answer."></a>I will be converting ECMWF grib files into ARL-packed format for use in calculating backward trajectories in Europe using your HYSPLIT model. What fields do I need to have for HYSPLIT to properly calculate my trajectories?</p>
-<blockquote>
-<p>不推荐自己进行数据的转换，需要一定的工作量，否则看介绍</p>
-</blockquote>
-</li>
-</ul>
-<p>When I set up a matrix run and have the heights specified at a certain altitude (using MSL), why do the results show the starting points at different heights instead of at a constant one?</p>
-<p>有些时候Mean Sea Level(MSL) 会低于地面，所以Hysplit会自动校对高度等于地面。<a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-pc26/">link</a></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/backward-trajectories-starting-at-a-rural-east-coast-site/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>When I get backward trajectories starting at a rural East Coast site in NJ, which starting height(s) do you suggest is (are) appropriate? The terrain of the site is flat and near sea level. I am also wondering how long of a trajectory duration is recommended.</li>
-</ul>
-<blockquote>
-<p>如果是想知道地面的空气来源，则是贴近地面，如果想知道水汽，则是高于云层的高度。一般选取两到三个高度进行测试，一般来讲对于48小时内的trajectory精度还是OK的，对于更长时间尺度的问题，主要是用于聚类分析来分析这个情况</p>
-</blockquote>
-<h1 id="模型设置"><a href="#模型设置" class="headerlink" title="模型设置"></a>模型设置</h1><ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/if-i-choose-agl/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> If I choose AGL for the start height, does that mean that for the entire model run the computed heights are relative to the ground? I’m concerned about this because of the terrain in the mountains. I don’t want values to be “underground.”</p>
-<blockquote>
-<p>AGL的设定，仅用于最开始模型的运行。气体的垂直运动不会造成气体低于地面</p>
-</blockquote>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/which-value-should-i-input-as-the-start-height/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>Which value should I input as the start height (MAGL)? What does “above model ground level” mean?</p>
-<blockquote>
-<p>地形（terrain）取决于输入的气象数据。如果气象数据精度高，地形的精度也就很高。低精度的数据会平滑掉一些地貌（高山和谷底）。</p>
-<blockquote>
-<p>The best we can do is to look at the surface pressure and the mean sea-level pressure at the starting location and estimate the height above sea level of the model terrain at your location.</p>
-</blockquote>
-<p>根据mean sea-level pressure (MSLP) 和采样点的the surface pressure (PRSS)的差别，估算地形高度。一个简单的近似，1mb=10m。比如：</p>
-<blockquote>
-<p>35.66N, -82.38W; 1030mb MSLP and 939 mb PRSS taking the difference gives 91mb. A quick estimate is to assume a hydrostatic atmosphere, or approximately 10 meters per mb. This gives 910 MASL, which is what the model sees as the terrain height. </p>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<h1 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h1><h2 id="TRAJECTORY"><a href="#TRAJECTORY" class="headerlink" title="TRAJECTORY"></a>TRAJECTORY</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg13/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>How does HYSPLIT consider the vertical coordinate. If a trajectory meets the surface how does HYSPLIT work? Does it reflect, or use another method to solve it?</p>
-<blockquote>
-<p>如果到了boundary，继续运行。（很显然这不是我们想要看到的结果）在dispersion 模式下，particle会反弹。</p>
-</blockquote>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg25/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>Is the effect of the boundary layer considered when the model computes the trajectory?</p>
-<blockquote>
-<p>并没有考虑到热力运动，只有在dispersion的模式下才有考虑。</p>
-</blockquote>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg5/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>When I ran a forward trajectory from a location on a previously computed backward trajectory, I did not return to the starting location of my backward trajectory. Why?</p>
-<blockquote>
-<p>误差问题，开始0.1°的偏差，10天后的偏差回达到15°。</p>
-</blockquote>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg39/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a> Why are there small differences in my trajectories when I run more than one at a time versus running just one trajectory?</p>
-<blockquote>
-<p>模型并没有使用全部的气象数据，而是使用部分的气象数据sub-grid data，根据开始的地点设定数据的中心。当trajectory运行到气象数据的边界时，模型会重新定义中心，并重新计算。因此，使用多个开始的点和一个开始的点时，所用的气象数据会有所不同的。垂直运动的计算考虑了这一因素。因此结果会有些许不同。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="CONCENTRATION"><a href="#CONCENTRATION" class="headerlink" title="CONCENTRATION"></a>CONCENTRATION</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.arl.noaa.gov/hysplit/hysplit-frequently-asked-questions-faqs/faq-hg4/"><img src="/2021/04/08/TrajectoryModel/hysplit_%E5%B8%B8%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/info2.gif" alt="Click for answer."></a>How is concentration defined in HYSPLIT and how does it relate to the radiation units of Bacquerel?</p>
-<blockquote>
-<p>输入的单位时mass/每小时，这个mass由用户自己决定，最后的结果是mass/m3，如果定义是Bq/小时，那最后的结果就是Bq/m3。</p>
-</blockquote>
-</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/08/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/08/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5/" class="post-title-link" itemprop="url">各种数据库链接</a>
+            <a href="/2021/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B-%E4%BD%9C%E4%B8%9A/" class="post-title-link" itemprop="url">机器学习李宏毅课程_作业</a>
         </h2>
     
         <div class="post-meta">
@@ -967,16 +515,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
     
-              <time title="Created: 2021-04-08 08:50:06 / Modified: 09:03:01" itemprop="dateCreated datePublished" datetime="2021-04-08T08:50:06+08:00">2021-04-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">科研相关记录</span></a>
-                </span>
+              <time title="Created: 2021-04-13 17:22:17 / Modified: 20:05:21" itemprop="dateCreated datePublished" datetime="2021-04-13T17:22:17+08:00">2021-04-13</time>
             </span>
     
           <br>
@@ -985,7 +524,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>267</span>
+              <span>48</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1004,15 +543,7 @@
     <div class="post-body" itemprop="articleBody">
     
       
-          <blockquote>
-<p>使用数据库的数据时，要注意对这些数据进行致谢。</p>
-</blockquote>
-<p>这篇文章介绍了一些有用的库</p>
-<p>E. Brattich et al 2020. Advection pathways at the Mt. Cimone WMO-GAW station: Seasonality,<br>trends, and influence on atmospheric composition.</p>
-<ul>
-<li>Atmospheric aerosol 和gass 监测</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="http://ebas.nilu.no/Pages/DataSetList.aspx?key=C0A8801E103546FB9E164ECB4420432C">http://ebas.nilu.no/Pages/DataSetList.aspx?key=C0A8801E103546FB9E164ECB4420432C</a></p>
+          <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av96698631/">https://www.bilibili.com/video/av96698631/</a></p>
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li>无</li>
 </ul>
@@ -1036,7 +567,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/13/pythonLearning/python-basicIntroduction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1050,7 +581,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/" class="post-title-link" itemprop="url">hysplit_测试1</a>
+            <a href="/2021/04/13/pythonLearning/python-basicIntroduction/" class="post-title-link" itemprop="url">python_基本教程</a>
         </h2>
     
         <div class="post-meta">
@@ -1060,14 +591,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
     
-              <time title="Created: 2021-04-07 18:54:09" itemprop="dateCreated datePublished" datetime="2021-04-07T18:54:09+08:00">2021-04-07</time>
+              <time title="Created: 2021-04-13 08:09:12" itemprop="dateCreated datePublished" datetime="2021-04-13T08:09:12+08:00">2021-04-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-09 15:31:50" itemprop="dateModified" datetime="2021-04-09T15:31:50+08:00">2021-04-09</time>
+                <time title="Modified: 2021-04-25 19:22:02" itemprop="dateModified" datetime="2021-04-25T19:22:02+08:00">2021-04-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1075,9 +606,553 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TrajectoryModel/" itemprop="url" rel="index"><span itemprop="name">TrajectoryModel</span></a>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
                 </span>
             </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>7.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>7 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>目的简单快速的将python的基本知识做个浏览，并且就记录下自己觉得有用的关键信息。</p>
+<p>更为进阶学习适合结合实例进行更深一步的了解掌握。</p>
+</blockquote>
+<p>你可以在以下链接中下载 Python 的文档，你可以下载 HTML、PDF 和 PostScript 等格式的文档。</p>
+<p>Python文档下载地址：<a target="_blank" rel="noopener" href="https://www.python.org/doc/">https://www.python.org/doc/</a></p>
+<h1 id="python-前言"><a href="#python-前言" class="headerlink" title="python 前言"></a>python 前言</h1><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。</p>
+<p>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p>
+<ul>
+<li><p><strong>Python 是一种解释型语言：</strong> 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。</p>
+<blockquote>
+<p>关于编译的简单理解：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fisherss/p/13905395.html">编译原理入门篇</a></p>
+</blockquote>
+</li>
+<li><p><strong>Python 是交互式语言：</strong> 这意味着，您可以在一个 Python 提示符 <strong>&gt;&gt;&gt;</strong> 后直接执行代码。</p>
+</li>
+<li><p><strong>Python 是面向对象语言:</strong> 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。</p>
+</li>
+<li><p><strong>Python 是初学者的语言：</strong>Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。</p>
+</li>
+</ul>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>程序和可执行文件可以在许多目录，而这些路径很可能不在操作系统提供可执行文件的搜索路径中。path(路径)存储在环境变量中，这是由操作系统维护的一个命名的字符串。这些变量包含可用的命令行解释器和其他程序的信息。</p>
+<p>Unix或Windows中路径变量为PATH（UNIX区分大小写，Windows不区分大小写）。</p>
+<p>在环境变量中添加Python目录， <strong>在命令提示框中(cmd) :</strong> 输入如下后，按下 <strong>Enter</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path&#x3D;%path%;C:\Python </span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong> C:\Python 是Python的安装目录</p>
+<blockquote>
+<p>实际尝试之后发现这个无法永久添加？？？</p>
+</blockquote>
+<h2 id="运行python"><a href="#运行python" class="headerlink" title="运行python"></a>运行python</h2><p>你可以通过命令行窗口进入 Python，并在交互式解释器中开始编写 Python 代码。你可以在 Unix、DOS 或任何其他提供了命令行或者 shell 的系统进行 Python 编码工作。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:&gt;python # Windows/DOS</span><br><span class="line"><span class="meta">#</span><span class="bash"> -v 为输出python版本号</span></span><br></pre></td></tr></table></figure>
+
+<p>在你的应用程序中通过引入解释器可以在命令行中执行Python脚本，如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> python script.py <span class="comment"># Unix/Linux</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="中文编码问题"><a href="#中文编码问题" class="headerlink" title="中文编码问题"></a>中文编码问题</h2><p>Python中默认的编码格式是 ASCII 格式，在没修改编码格式时无法正确打印汉字，所以在读取中文时会报错。<br>解决方法为只要在文件开头加入如下代码即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><em>Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。</em></p>
+</blockquote>
+<h1 id="python-基础语法"><a href="#python-基础语法" class="headerlink" title="python 基础语法"></a>python 基础语法</h1><p>==交互式编程==</p>
+<p>windows上你只需要在命令行中输入 Python 命令即可启动交互式编程,提示窗口如下：</p>
+<p>==脚本式编程==</p>
+<p>通过脚本参数调用解释器开始执行脚本，直到脚本执行完毕。当脚本执行完成后，解释器不再有效。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt; python test.py</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>前提式python已经在环境变量之中。此外还有另外一种执行方式，可以将脚本写成这样子</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/python</span></span><br><span class="line"></span><br><span class="line">print (&quot;Hello, Python!&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这里，假定您的Python解释器在/usr/bin目录中，使用以下命令执行脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> chmod +x test.py     <span class="comment"># 脚本文件添加可执行权限</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./test.py</span></span><br></pre></td></tr></table></figure>
+
+<p>额外说明：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/262456371"> #!/usr/bin/env python 有什么用？</a></p>
+<blockquote>
+<p>无法在我的window系统上做到这项操作，不明白为啥…<br>参考上面文献，使用#!/usr/bin/env python成功，但是要在sh的环境中</p>
+<p><strong>#!/usr/bin/env python</strong>(推荐）: 这种用法是为了防止操作系统用户没有将 python 装在默认的 /usr/bin 路径里。当系统看到这一行的时候，首先会到 env 设置里查找 python 的安装路径，再调用对应路径下的解释器程序完成操作。</p>
+</blockquote>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>在 Python 中，所有标识符可以包括英文、数字以及下划线(_)，但不能以数字开头。</p>
+<p>以下划线开头的标识符是有特殊意义的。以单下划线开头 <strong>_foo</strong> 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 <strong>from xxx import *</strong> 而导入。</p>
+<p>以双下划线开头的 <strong>__foo</strong> 代表类的私有成员，以双下划线开头和结尾的 <strong><strong>foo</strong></strong> 代表 Python 里特殊方法专用的标识，如 <strong><strong>init</strong>()</strong> 代表类的构造函数</p>
+<h2 id="行和缩进"><a href="#行和缩进" class="headerlink" title="行和缩进"></a>行和缩进</h2><p>学习 Python 与其他语言最大的区别就是，Python 的代码块不使用大括号 <strong>{}</strong> 来控制类，函数以及其他逻辑判断。python 最具特色的就是用缩进来写模块。</p>
+<p>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，==这个必须严格执行==。</p>
+<blockquote>
+<p>建议你在每个缩进层次使用 <strong>单个制表符</strong> 或 <strong>两个空格</strong> 或 <strong>四个空格</strong> , 切记不能混用</p>
+</blockquote>
+<h2 id="其他知识"><a href="#其他知识" class="headerlink" title="其他知识"></a>其他知识</h2><h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>可以使用斜杠（ \）将一行的语句分为多行显示。\n表示换行显示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">total = item_one + \</span><br><span class="line">        item_two + \</span><br><span class="line">        item_three</span><br><span class="line"><span class="comment"># 但是包含[],&#123;&#125;或者()的就不需要连接符了</span></span><br><span class="line">days = [<span class="string">&#x27;Monday&#x27;</span>, <span class="string">&#x27;Tuesday&#x27;</span>, <span class="string">&#x27;Wednesday&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;Thursday&#x27;</span>, <span class="string">&#x27;Friday&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h3><p>Python 可以使用引号( <strong>‘</strong> )、双引号( <strong>“</strong> )、三引号( <strong>‘’’</strong> 或 <strong>“””</strong> ) 来表示字符串，引号的开始与结束必须是相同类型的。</p>
+<p>其中三引号可以由多行组成，编写多行文本的快捷语法，常用于文档字符串，在文件的特定地点，被当做注释。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>python中单行注释采用 # 开头==（快捷键ctrl+/)==。python 中多行注释使用三个单引号(‘’’)或三个双引号(“””)。</p>
+<h3 id="同一行显示多条语句"><a href="#同一行显示多条语句" class="headerlink" title="同一行显示多条语句"></a>同一行显示多条语句</h3><p>Python可以在同一行中使用多条语句，语句之间使用分号(;)分割。</p>
+<h1 id="python-变量类型"><a href="#python-变量类型" class="headerlink" title="python 变量类型"></a>python 变量类型</h1><p>Python 定义了一些标准类型，用于存储各种类型的数据。</p>
+<p>Python有五个标准的数据类型：</p>
+<ul>
+<li>Numbers（数字）</li>
+<li>String（字符串）</li>
+<li>List（列表），==[]表示==</li>
+<li>Tuple（元组），==()表示==</li>
+<li>Dictionary（字典）, =={} 表示==</li>
+</ul>
+<h2 id="变量的选取"><a href="#变量的选取" class="headerlink" title="变量的选取"></a>变量的选取</h2><img src="/pythonLearning/python-basicIntroduction/python-string-slice.png" class title="img">
+
+<p>python的下标是==从 0 开始算起==，可以是正数或负数，下标可以为空表示取到头或尾。**[头下标:尾下标]** 获取的子字符串包含头下标的字符，但不包含尾下标的字符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span> = <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> <span class="built_in">str</span>[<span class="number">0</span>]        <span class="comment"># 输出字符串中的第一个字符</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">str</span>[<span class="number">2</span>:<span class="number">5</span>]      <span class="comment"># 输出字符串中第三个至第六个之间的字符串</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">str</span>[<span class="number">2</span>:]       <span class="comment"># 输出从第三个字符开始的字符串</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">str</span> * <span class="number">2</span>       <span class="comment"># 输出字符串两次</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">str</span> + <span class="string">&quot;TEST&quot;</span>  <span class="comment"># 输出连接的字符串</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 list</h2><p>List（列表） 是 Python 中使用最频繁的数据类型。</p>
+<p>列表的更新, append()；删除，del()；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = []          <span class="comment">## 空列表</span></span><br><span class="line"><span class="built_in">list</span>.append(<span class="string">&#x27;Google&#x27;</span>)   <span class="comment">## 使用 append() 添加元素</span></span><br><span class="line"><span class="built_in">list</span>.append(<span class="string">&#x27;Runoob&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="built_in">list</span></span><br><span class="line"><span class="comment"># [&#x27;Google&#x27;, &#x27;Runoob&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p>一些相关运算，仅列出部分可能常用的，<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-lists.html">更多list运算</a></p>
+<table>
+<thead>
+<tr>
+<th>[1, 2, 3] + [4, 5, 6]</th>
+<th>[1, 2, 3, 4, 5, 6]</th>
+<th>组合</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[‘Hi!’] * 4</td>
+<td>[‘Hi!’, ‘Hi!’, ‘Hi!’, ‘Hi!’]</td>
+<td>重复</td>
+</tr>
+<tr>
+<td>3 in [1, 2, 3]</td>
+<td>True</td>
+<td>元素是否存在于列表中</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-list-append.html">list.append(obj)</a> 在列表末尾添加新的对象</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-list-extend.html">list.extend(seq)</a> 在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-list-index.html">list.index(obj)</a> 从列表中找出某个值第一个匹配项的索引位置</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-list-insert.html">list.insert(index, obj)</a> 将对象插入列表</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-list-remove.html">list.remove(obj)</a> 移除列表中某个值的第一个匹配项</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-list-reverse.html">list.reverse()</a> 反向列表中元素</td>
+</tr>
+</tbody></table>
+<h2 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h2><p>也是最常用的数据类型。元组用 () 标识。内部元素用逗号隔开。==元组不能二次赋值，相当于只读列表。==</p>
+<blockquote>
+<p>可以对元组进行操作，但是不能对元组的元素进行操作</p>
+</blockquote>
+<p>与字符串一样，元组之间可以使用 + 号和 * 号进行运算。这就意味着他们可以组合和复制，运算后会生成一个新的元组。</p>
+<h2 id="字典-dictionary"><a href="#字典-dictionary" class="headerlink" title="字典 dictionary"></a>字典 dictionary</h2><p>字典(dictionary)是除列表以外python之中最灵活的内置数据结构类型。列表是有序的对象集合，字典是无序的对象集合。</p>
+<p>两者之间的区别在于：字典当中的元素是通过键key来存取的，而不是通过偏移存取。</p>
+<p>字典用”{ }”标识。字典由==索引(key)==和它对应的==值value==组成。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span> = &#123;&#125;</span><br><span class="line"><span class="built_in">dict</span>[<span class="string">&#x27;one&#x27;</span>] = <span class="string">&quot;This is one&quot;</span></span><br><span class="line"><span class="built_in">dict</span>[<span class="number">2</span>] = <span class="string">&quot;This is two&quot;</span></span><br><span class="line"> </span><br><span class="line">tinydict = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;runoob&#x27;</span>,<span class="string">&#x27;code&#x27;</span>:<span class="number">6734</span>, <span class="string">&#x27;dept&#x27;</span>: <span class="string">&#x27;sales&#x27;</span>&#125;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> <span class="built_in">dict</span>[<span class="string">&#x27;one&#x27;</span>]          <span class="comment"># 输出键为&#x27;one&#x27; 的值</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">dict</span>[<span class="number">2</span>]              <span class="comment"># 输出键为 2 的值</span></span><br><span class="line"><span class="built_in">print</span> tinydict.keys()      <span class="comment"># 输出所有键</span></span><br><span class="line"><span class="built_in">print</span> tinydict.values()    <span class="comment"># 输出所有值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> <span class="built_in">dict</span>[<span class="string">&#x27;name&#x27;</span>]  <span class="comment"># 删除键是&#x27;name&#x27;的条目</span></span><br><span class="line"><span class="built_in">dict</span>.clear()      <span class="comment"># 清空字典所有条目</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>键必须不可变，所以可以用数字，字符串或元组充当，所以用列表就不行</p>
+</blockquote>
+<h1 id="python-运算符"><a href="#python-运算符" class="headerlink" title="python 运算符"></a>python 运算符</h1><blockquote>
+<p>比较特殊的几个运算</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>%</th>
+<th>取模 - 返回除法的余数</th>
+<th>b % a 输出结果 0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>**</td>
+<td>幂 - 返回x的y次幂</td>
+<td>a**b 为10的20次方， 输出结果 100000000000000000000</td>
+</tr>
+<tr>
+<td>//</td>
+<td>取整除 - 返回商的整数部分（<strong>向下取整</strong>）</td>
+<td><code>&gt;&gt;&gt; 9//2 4 &gt;&gt;&gt; -9//2 -5</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>一些写法</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>+=</th>
+<th>加法赋值运算符</th>
+<th>c += a 等效于 c = c + a</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-=</td>
+<td>减法赋值运算符</td>
+<td>c -= a 等效于 c = c - a</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>乘法赋值运算符</td>
+<td>c *= a 等效于 c = c * a</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>除法赋值运算符</td>
+<td>c /= a 等效于 c = c / a</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>取模赋值运算符</td>
+<td>c %= a 等效于 c = c % a</td>
+</tr>
+<tr>
+<td>**=</td>
+<td>幂赋值运算符</td>
+<td>c **= a 等效于 c = c ** a</td>
+</tr>
+<tr>
+<td>//=</td>
+<td>取整除赋值运算符</td>
+<td>c //= a 等效于 c = c // a</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意 &amp;(和)，|(或)，~(取反)等运算符是位运算符(把数字看作二进制来进行计算的)。想起我python考试的时候老师还问过我&amp;和and的区别….<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-operators.html">更多关于位运算符</a></p>
+</blockquote>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><blockquote>
+<p> 这个是我常用的</p>
+</blockquote>
+<p>and (和)， or (或)，not (非)</p>
+<h2 id="成员运算符"><a href="#成员运算符" class="headerlink" title="成员运算符"></a>成员运算符</h2><blockquote>
+<p>又是个有用但是我不熟悉的</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">in</td>
+<td align="left">如果在指定的序列中找到值返回 True，否则返回 False。</td>
+<td align="left">x 在 y 序列中 , 如果 x 在 y 序列中返回 True。</td>
+</tr>
+<tr>
+<td align="left">not in</td>
+<td align="left">如果在指定的序列中没有找到值返回 True，否则返回 False。</td>
+<td align="left">x 不在 y 序列中 , 如果 x 不在 y 序列中返回 True</td>
+</tr>
+</tbody></table>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 20</span><br><span class="line">list = [1, 2, 3, 4, 5 ];</span><br><span class="line"> </span><br><span class="line">if ( a in list ):</span><br><span class="line">   print &quot;1 - 变量 a 在给定的列表中 list 中&quot;</span><br><span class="line"> </span><br><span class="line">if ( b not in list ):</span><br><span class="line">   print &quot;2 - 变量 b 不在给定的列表中 list 中&quot;</span><br><span class="line">else:</span><br><span class="line">   print &quot;2 - 变量 b 在给定的列表中 list 中&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h2><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">is</td>
+<td align="left">is 是判断两个标识符是不是引用自一个对象</td>
+<td align="left"><strong>x is y</strong>, 类似 <strong>id(x) == id(y)</strong> , 如果引用的是同一个对象则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="left">is not</td>
+<td align="left">is not 是判断两个标识符是不是引用自不同对象</td>
+<td align="left"><strong>x is not y</strong> ， 类似 **id(a) != id(b)**。如果引用的不是同一个对象则返回结果 True，否则返回 False。</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># is 与 == 区别：</span></span><br><span class="line"><span class="comment"># is 用于判断两个变量引用对象是否为同一个(同一块内存空间)， == 用于判断引用变量的值是否相等。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = a</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b <span class="keyword">is</span> a </span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b == a</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = a[:]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b <span class="keyword">is</span> a</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b == a</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="python-条件-循环语句"><a href="#python-条件-循环语句" class="headerlink" title="python 条件/循环语句"></a>python 条件/循环语句</h1><h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><p>当if有多个条件时可使用括号来区分判断的先后顺序，括号中的判断优先执行，此外 and 和 or 的优先级低于&gt;（大于）、&lt;（小于）等判断符号，即<code>大于和小于</code>在没有括号的情况下会比<code>与或</code>要优先判断。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 判断条件<span class="number">1</span>:</span><br><span class="line">    执行语句<span class="number">1</span>……</span><br><span class="line"><span class="keyword">elif</span> 判断条件<span class="number">2</span>:</span><br><span class="line">    执行语句<span class="number">2</span>……</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    执行语句<span class="number">4</span>……</span><br></pre></td></tr></table></figure>
+
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><table>
+<thead>
+<tr>
+<th align="left">循环类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-while-loop.html">while 循环</a></td>
+<td align="left">在给定的判断条件为 true 时执行循环体，否则退出循环体。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-for-loop.html">for 循环</a></td>
+<td align="left">重复执行语句</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-nested-loops.html">嵌套循环</a></td>
+<td align="left">你可以在while循环体中嵌套for循环</td>
+</tr>
+</tbody></table>
+<p>循环控制语句可以更改语句执行的顺序。Python支持以下循环控制语句：</p>
+<table>
+<thead>
+<tr>
+<th align="left">控制语句</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-break-statement.html">break 语句</a></td>
+<td align="left">在语句块执行过程中终止循环，并且跳出整个循环</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-continue-statement.html">continue 语句</a></td>
+<td align="left">在语句块执行过程中终止当前循环，跳出该次循环，执行下一次循环。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-pass-statement.html">pass 语句</a></td>
+<td align="left">pass是空语句，是为了保持程序结构的完整性。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>for和while都可以使用else语句</p>
+</blockquote>
+<h1 id="python-日期和时间"><a href="#python-日期和时间" class="headerlink" title="python 日期和时间"></a>python 日期和时间</h1><p>每个时间戳都以自从1970年1月1日午夜（历元）经过了多长时间来表示。</p>
+<blockquote>
+<p>1970年之前的日期就无法以此表示了。太遥远的日期也不行，UNIX和Windows只支持到2038年</p>
+</blockquote>
+<h1 id="python函数"><a href="#python函数" class="headerlink" title="python函数"></a>python函数</h1><ul>
+<li>函数代码块以 <strong>def</strong> 关键词开头，后接函数标识符名称和圆括号**()**。</li>
+<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于定义参数。</li>
+<li>函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。</li>
+<li>函数内容以冒号起始，并且缩进。</li>
+<li><strong>return [表达式]</strong> 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None</li>
+</ul>
+<p>基本写法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functionname</span>(<span class="params"> parameters </span>):</span></span><br><span class="line">   <span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">   function_suite</span><br><span class="line">   <span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<h4 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h4><p>关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。</p>
+<p>使用关键字参数允许函数调用时参数的顺序与声明时不一致，因为 Python 解释器能够用参数名匹配参数值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span>(<span class="params"> name, age </span>):</span></span><br><span class="line">   <span class="string">&quot;打印任何传入的字符串&quot;</span></span><br><span class="line">   <span class="built_in">print</span> <span class="string">&quot;Name: &quot;</span>, name</span><br><span class="line">   <span class="built_in">print</span> <span class="string">&quot;Age &quot;</span>, age</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用printinfo函数</span></span><br><span class="line">printinfo( age=<span class="number">50</span>, name=<span class="string">&quot;miki&quot;</span> )</span><br></pre></td></tr></table></figure>
+
+<h4 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h4><p>你可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，和上述2种参数不同，声明时不会命名。基本语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#基本写法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functionname</span>(<span class="params">[formal_args,] *var_args_tuple </span>):</span></span><br><span class="line">   <span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">   function_suite</span><br><span class="line">   <span class="keyword">return</span> [expression]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span>(<span class="params"> arg1, *vartuple </span>):</span></span><br><span class="line">   <span class="string">&quot;打印任何传入的参数&quot;</span></span><br><span class="line">   <span class="built_in">print</span> <span class="string">&quot;输出: &quot;</span></span><br><span class="line">   <span class="built_in">print</span> arg1</span><br><span class="line">   <span class="keyword">for</span> var <span class="keyword">in</span> vartuple:</span><br><span class="line">      <span class="built_in">print</span> var</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用printinfo 函数</span></span><br><span class="line">printinfo( <span class="number">10</span> )</span><br><span class="line">printinfo( <span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span> )</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这个应该很有用！！！</p>
+<p>加了星号的参数会以元组的形式导入</p>
+</blockquote>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>python 使用 lambda 来创建匿名函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="built_in">sum</span> = <span class="keyword">lambda</span> arg1, arg2: arg1 + arg2</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用sum函数</span></span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;相加后的值为 : &quot;</span>, <span class="built_in">sum</span>( <span class="number">10</span>, <span class="number">20</span> ) <span class="comment"># 30</span></span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;相加后的值为 : &quot;</span>, <span class="built_in">sum</span>( <span class="number">20</span>, <span class="number">20</span> ) <span class="comment"># 40</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="python-模块"><a href="#python-模块" class="headerlink" title="python 模块"></a>python 模块</h1><p>Python 模块(Module)，是一个 Python 文件，以 .py 结尾，包含了 Python 对象定义和Python语句。</p>
+<p>模块让你能够有逻辑地组织你的 Python 代码段。</p>
+<p>把相关的代码分配到一个模块里能让你的代码更好用，更易懂。</p>
+<p>模块能定义函数，类和变量，模块里也能包含可执行的代码。</p>
+<h1 id="python-文件I-O"><a href="#python-文件I-O" class="headerlink" title="python 文件I/O"></a>python 文件I/O</h1><h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><p><strong>input([prompt])</strong> 函数可以接收一个Python表达式作为输入，并将运算结果返回。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python</span><br><span class="line"># -*- coding: UTF-8 -*- </span><br><span class="line"> </span><br><span class="line">str &#x3D; input(&quot;请输入：&quot;)</span><br><span class="line">print &quot;你输入的内容是: &quot;, str</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="read-方法"><a href="#read-方法" class="headerlink" title="read()方法"></a>read()方法</h2><p>read（）方法从一个打开的文件中读取一个字符串。需要重点注意的是，Python字符串可以是二进制数据，而不是仅仅是文字。</p>
+<h2 id="OS模块"><a href="#OS模块" class="headerlink" title="OS模块"></a>OS模块</h2><p>Python的os模块提供了帮你执行文件处理操作的方法，可以重命名和删除文件，创建，删除和更改目录</p>
+<p>要使用这个模块，你必须先导入它，然后才可以调用相关的各种功能。</p>
+<h1 id="python的内置函数"><a href="#python的内置函数" class="headerlink" title="python的内置函数"></a>python的内置函数</h1><p>更多看链接：<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-built-in-functions.html">https://www.runoob.com/python/python-built-in-functions.html</a></p>
+<p><strong>map()</strong> 会根据提供的函数对指定序列做映射。</p>
+<p>第一个参数 function 以参数序列中的每一个元素调用 function 函数，返回包含每次 function 函数返回值的新列表。</p>
+<p>Python3.x 中 input() 函数接受一个标准输入数据，返回为 string 类型。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-tutorial.html">Python 基础教程</a></li>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2210.html">python进阶</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">机器学习入门概率</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-12 08:13:46 / Modified: 08:56:41" itemprop="dateCreated datePublished" datetime="2021-04-12T08:13:46+08:00">2021-04-12</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>280</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>j</p>
+<p>j机器学习的课程：</p>
+<p>2020年李宏毅的机器学习课程（bili官网）</p>
+<blockquote>
+<p>带有数据和ppt</p>
+</blockquote>
+<p>课程视频： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av94519857">https://www.bilibili.com/video/av94519857</a></p>
+<p>作业ppt及答案： <a target="_blank" rel="noopener" href="https://github.com/Iallen520/lhy_DL_Hw">https://github.com/Iallen520/lhy_DL_Hw</a></p>
+<p><a target="_blank" rel="noopener" href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html">http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html</a></p>
+<h2 id="Carnegie-Mellon-University-Tom-Mitchell"><a href="#Carnegie-Mellon-University-Tom-Mitchell" class="headerlink" title="Carnegie Mellon University Tom Mitchell"></a>Carnegie Mellon University <a target="_blank" rel="noopener" href="http://www.cs.cmu.edu/~tom">Tom Mitchell</a></h2><p><a target="_blank" rel="noopener" href="http://www.cs.cmu.edu/~tom/10701_sp11/lectures.shtml">http://www.cs.cmu.edu/~tom/10701_sp11/lectures.shtml</a></p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/" class="post-title-link" itemprop="url">机器学习李宏毅课程</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-12 08:13:46" itemprop="dateCreated datePublished" datetime="2021-04-12T08:13:46+08:00">2021-04-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-26 08:27:24" itemprop="dateModified" datetime="2021-04-26T08:27:24+08:00">2021-04-26</time>
+              </span>
     
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -1104,73 +1179,86 @@
     <div class="post-body" itemprop="articleBody">
     
       
-          <blockquote>
-<p>w我的目标就是能使用hysplit模拟Be10/Be7，结合python的包使用</p>
-<p>有个pysplit的python包 </p>
-</blockquote>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><ul>
-<li><p>测试1: 区域的release 但是释放速率不变 （完成）</p>
-</li>
-<li><p>测试2：区域的release 但释放速率改变  （完成）</p>
-</li>
-<li><p>测试3：区域的release但释放速率改变，且包含不同的时间</p>
-</li>
-</ul>
-<h2 id="测试1-区域的release-但释放速率不变"><a href="#测试1-区域的release-但释放速率不变" class="headerlink" title="测试1 区域的release 但释放速率不变"></a>测试1 区域的release 但释放速率不变</h2><p>黑点表示释放的点，浓度值表示采样的区域。</p>
-<img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/image-20210407185811783.png" alt="image-20210407185811783" style="zoom:50%;">
+          <p>机器学习就是找函数。用机器取找函数来解决问题</p>
+<h1 id="课程的学习图"><a href="#课程的学习图" class="headerlink" title="课程的学习图"></a>课程的学习图</h1><img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210412082711048.png" alt="image-20210412082711048" style="zoom:67%;">
 
 
 
+<p>Explainable AI: 为什么AI会知道猫是猫</p>
+<p>Adversarial Attack</p>
+<p>network compression: 将模型缩小，易于移植</p>
+<p>Transfer Learning: 训练资料和测试资料不一样的时候，怎么办</p>
+<p>meta learning: 机器自己学习如何学习，机器学习的效率并不是很有效率（由于人类找到的方法并不是很有效率）</p>
+<p>Kaggle是一个数据分析的竞赛平台，网址：<a target="_blank" rel="noopener" href="https://www.kaggle.com/">https://www.kaggle.com/</a></p>
+<img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210412084659971.png" class title="image-20210412084659971">
+
+
+
+<p>上传kaggle，5次结果</p>
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>将不同的python安装在不同的虚拟环境，能维持原生python不受函数包安装移除污染。例如将pytorch安装在虚拟环境中。</p>
+<h2 id="回归regression"><a href="#回归regression" class="headerlink" title="回归regression"></a>回归regression</h2><h2 id><a href="#" class="headerlink" title></a></h2><p>线性回归，加上一个regulation项，可以加强对模型的构建</p>
+<p>目的是为了是model对input的noise噪声不是很敏感</p>
+<p>error的来源</p>
+<p>bias和variance，相当于测样中的accuracy (bias) 和precise </p>
+<p>利用train data训练集来训练模型，然后利用test data来测试模型</p>
+<p>多个简单的模型，他们的variance比较小。（受到输入数据的影响小）</p>
+<p>多个复杂的模型，variance大，bias小</p>
+<p>logistic regression </p>
+<p>聚类分析，通俗点讲，就是概率，属于哪一类的概率最大。</p>
+<p>bernuli的交叉熵(cross entropy)</p>
+<p>square error 和 cross entropy的结果（如图），square error 的训练速度会非常慢，出现甚至卡机的现象。</p>
+<img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210425081351421.png" alt="image-20210425081351421" style="zoom:50%;">
+
+
+
+
+
+<p>generative 模型，受数据量的影响少，有先验假设(类似于脑补)，</p>
+<p>discriminative 模型，有先验假设，受数据量</p>
+<p>模型的评估与选择</p>
+<p>错误率： 在m 个样本中有a 个样本分类错误，则错误率E=a/m；</p>
+<p>精度：1-E，即1-错误率。</p>
+<p><strong>过拟合和欠拟合</strong></p>
+<img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210425082157444.png" class title="image-20210425082157444">
+
+<p>欠拟合比较容易克服，例如在决策树学习中扩展分支、在神经网络学习中增加训练轮数等。</p>
+<p>而过拟合则很麻烦．在后面的学习中我们将看到，过拟合是机器学习面临的关键障碍，各类学习算法都必然带有一些针对过拟合的措施；然而必须认识到，过拟合是无法彻底避免的，我们所能做的只是“缓解”，或者说减小其风险．</p>
+<h1 id="评估方法"><a href="#评估方法" class="headerlink" title="评估方法"></a>评估方法</h1><p>需使用一个“测试集”(testing set) 来测试学习器对新样本的判别能力、可解释性等方面的因素，然后以测试集上的＂测试误差”(testing error) 作为泛化误差的近似。测试集（testing set ）和训练集（training set ）</p>
 <blockquote>
-<p>注意浓度的采样和污染物的释放是不同的设置（详情见test-1的脚本）</p>
-<p>两者都是通过同一个程序进行计算的，因此不同的区域设置大小并不会减少运算时间。</p>
-<ul>
-<li>由此来看，浓度值的面积应该跟释放点的面积一致</li>
-</ul>
-<p><strong><em>注意</em></strong>：</p>
-<ul>
-<li>区域面积的release。对control文件进行如下修改，可以将（经纬度和高度放到text文件中进行读取），注意trajectory的数量要和经纬度等数量要一致</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;1184                   &quot;&gt;&gt;CONTROL # trajectory数量</span><br><span class="line">cat &quot;$DATA/traj.txt&quot;         &gt;&gt;CONTROL  # (e.g.,  39.90  -84.22 10.0) </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 也可以使用三个trajectory定义区域</span></span><br><span class="line">echo &quot;3                   &quot; &gt;&gt;CONTROL</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个是区域的释放</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 前两行代表左下和右上</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 第三行代表间隔</span></span><br><span class="line">echo &quot;38.00 -84.00 600.0  &quot; &gt;&gt;CONTROL</span><br><span class="line">echo &quot;44.00 -74.00 600.0  &quot; &gt;&gt;CONTROL</span><br><span class="line">echo &quot;39.00 -83.00 600.0  &quot; &gt;&gt;CONTROL</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>同一纬度，不同高度代表release 的方位，这个方法就可以解决release的高度问题，注意这样子算两个trajectory （control file），比如写成以下形式，release的范围就是这个点的[100 5000]之间。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">60	-42.50	100</span><br><span class="line">60	-42.50	5000</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意北纬90°以及东西经180°，0°等这种边界值问题 </p>
-</li>
-</ul>
+<p>但是，我们希望评估的是全部样本训练出来的模型。</p>
 </blockquote>
-<h2 id="测试2-区域的release-但释放速率改变"><a href="#测试2-区域的release-但释放速率改变" class="headerlink" title="测试2 区域的release 但释放速率改变"></a>测试2 区域的release 但释放速率改变</h2><p>下图是教程16.5中的示例，有四行是因为教程中设置了4个污染物。rate 表示释放速率 （可以大于1）。Area 如果为0表示点释放。Heat表明释放时的热量产生（这里为0）。这里面表示一个cycle是12个小时，每个cycle release 的particle是固定，但是cycle的时间长短（duration）是可以改变的。</p>
-<img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/etime000.png" alt="img" style="zoom:50%;">
-
-<p>所有的source必须要有相同的时间间隔。</p>
-<h2 id="测试3：区域的release但释放速率改变，且包含不同的时间-（多个文件的测试）"><a href="#测试3：区域的release但释放速率改变，且包含不同的时间-（多个文件的测试）" class="headerlink" title="测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）"></a>测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）</h2><p>思路：</p>
-<ul>
-<li><p>天气的数据是每个月存储的，那么一个月的最后几天怎么办？多个天气数据的输入？</p>
-</li>
-<li><p>每个事件段模拟的结果，会作为下个事件段的边界条件进行</p>
-</li>
-</ul>
+<h4 id="留出法-hold-out"><a href="#留出法-hold-out" class="headerlink" title="留出法(hold-out)"></a>留出法(hold-out)</h4><p>因此，单次使用留出法得到的估计结果往往不够稳定可靠，在使用留出法时，一般要采用若干次随机划分、重复进行实验评估后取平均值作为留出法的评估结果。==常见做法是将大约2/3 ~4/5 的样本用于训练，剩余样本用千测试。==</p>
+<h4 id="交叉验证法-cross-validation"><a href="#交叉验证法-cross-validation" class="headerlink" title="交叉验证法(cross validation)"></a>交叉验证法(cross validation)</h4><p>将数据分为k份，k-1份作为训练集，最后一份作为测试集，这样可以做k次验算（k折交叉交叉验算）；同样重复n次，则为n次k折交叉验算。==常见做法：10次10折交叉验证。==</p>
+<h4 id="自助法-bootstrap"><a href="#自助法-bootstrap" class="headerlink" title="自助法( bootstrap)"></a>自助法( bootstrap)</h4><p>给定包含m 个样本的数据集D ，我们对它进行采样产生数据集D’ ：每次随机从D 中挑选一个样本，将其拷贝放入D’ ，然后再将该样本放回初始数据集D 中，使得该样本在下次采样时仍有可能被采到；这个过程重复执行m 次后，我们就得到了包含m个样本的数据集D’ ，这就是自助采样的结果。</p>
+<p>自助法在数据集较小、难以有效划分训练／测试集时很有用；此外，自助法能从初始数据集中产生多个不同的训练集，这对集成学习等方法有很大的好处．然而，自助法产生的数据集改变了初始数据集的分布，这会引入估计偏差。在初始数据足够的情况下，留出法和交叉验证法更有效。</p>
+<h4 id="调参和最终模型"><a href="#调参和最终模型" class="headerlink" title="调参和最终模型"></a>调参和最终模型</h4><p>现实中常用的做法是对每个参数选定一个范围和变化步长，例如在[0,0.2] 范围内以0.05 为步长，则实际要评估的候选参<br>数值有5 个，最终是从这5 个候选值中产生选定值。</p>
+<p>这样选定的参数值往往不是“最佳”值，但这是在计算开销和性能估计之间进行折中的结果，通过这个折中，学习过程才变得可行．</p>
 <blockquote>
-<p>根据我的需求，直接按照cycle来进行，particle dump feature来连贯进行。</p>
-<p>使用EFILE 文件。如果这个文件存在，他就会替换在control的设置。</p>
+<p>我之前也在Be7的模型中使用这种方法。</p>
 </blockquote>
-<p>如果一个文件的relasing时间过去了，会自动读取下一个releasing</p>
+<p>回归任务最常用的性能度量是“均方误差”(mean squared error)</p>
+<p>可以用GPU来加速</p>
+<p>语音/图像上的应用</p>
+<p>sigmoid function </p>
+<p>Sigmoid函数是一个在生物学中常见的S型的函数，也称为S型生长曲线。Sigmoid函数常被用作神经网络的阈值函数，将变量映射到0,1之间。</p>
+<p>深度学习，即有很多hidden layers就是深度学习，至于有多少层算deep，因人而异，</p>
+<img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210425112621871.png" alt="image-20210425112621871" style="zoom:50%;">
+
+
+
+
+
+<p>没有激活函数，后面的权重(w)和bias都会失效</p>
+<p>矩阵运算，GPU可以加速运动</p>
 <blockquote>
-<p>One way to incorporate a time varying emission rate into the existing model structure is to use the particle dump feature to restart the model each time with a new emission rate. Another option is to assign the name of a temporal emission input file to the “EFILE” variable in the setup.cfg namelist file. </p>
-<p>If the EFILE is present, the first emission record’s values replace the emission values set in the control file. Once the model computation time has passed the emission period defined on the first emission record, the emission data from the second record are loaded and the calculation continues with the new emission data. The format of the emission file is given below: </p>
+<p>这在matlab中也有提及</p>
 </blockquote>
-<ul>
-<li></li>
-</ul>
-<p>粒子释放的问题，</p>
-<p>使用particle release计算concentration distribution，需要释放非常多的粒子，否则无法真是反应浓度</p>
-<p>这个时候可以考虑Puff Releases </p>
-<p>在GUI的help中，输入C:/hysplit/html/S441.htm</p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
+<img src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210425151301198.png" alt="image-20210425151301198" style="zoom:50%;">
+
+<p>内部的layers，有多少层</p>
+<p>为什么要深度学习</p>
+<p>深度学习主要包含三个步骤</p>
+<p>back and forward 算法</p>
 
       
     </div>
@@ -1191,7 +1279,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1205,103 +1293,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/" class="post-title-link" itemprop="url">vscode设置</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-    
-              <time title="Created: 2021-04-06 14:20:42 / Modified: 14:27:04" itemprop="dateCreated datePublished" datetime="2021-04-06T14:20:42+08:00">2021-04-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>275</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>打开VSCODE的设置界面（在左下角或者快捷键<code>ctrl + ,</code>）,在右上角打开 <code>settings.json</code>，见图第一个按钮。<br><img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/vscode/20201217134709421.png" alt="在这里插入图片描述" style="zoom:50%;"></p>
-<p>如何进行选中颜色变更</p>
-<blockquote>
-<p>注意如果前后有选项的话，要加逗号</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;workbench.colorCustomizations&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;editor.selectionBackground&quot;</span>: <span class="string">&quot;#d1d1c6&quot;</span>,</span><br><span class="line">    <span class="string">&quot;editor.selectionHighlightBackground&quot;</span>: <span class="string">&quot;#c5293e&quot;</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">python_jupyternotebook常用快捷键</a>
+            <a href="/2021/04/11/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">python_PyTorch入门教程</a>
         </h2>
     
         <div class="post-meta">
@@ -1311,14 +1303,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
     
-              <time title="Created: 2021-04-06 13:45:49" itemprop="dateCreated datePublished" datetime="2021-04-06T13:45:49+08:00">2021-04-06</time>
+              <time title="Created: 2021-04-11 22:50:17" itemprop="dateCreated datePublished" datetime="2021-04-11T22:50:17+08:00">2021-04-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-12 21:38:06" itemprop="dateModified" datetime="2021-04-12T21:38:06+08:00">2021-04-12</time>
+                <time title="Modified: 2021-04-18 20:08:09" itemprop="dateModified" datetime="2021-04-18T20:08:09+08:00">2021-04-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1328,6 +1320,10 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
                 </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
             </span>
     
           <br>
@@ -1336,7 +1332,265 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>584</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>学习如何入门PyTorch，包括基础原理知识、numpy与PyTorch的区别以及案例研究实例。</p>
+</blockquote>
+<h1 id="PyTorch的概述"><a href="#PyTorch的概述" class="headerlink" title="PyTorch的概述"></a>PyTorch的概述</h1><p>PyTorch是一个基于Python的库，用来提供一个具有灵活性的深度学习开发平台。PyTorch的工作流程非常接近Python的科学计算库——numpy。</p>
+<p>现在你可能会问，为什么我们要用PyTorch来建立深度学习模型呢？主要有三点</p>
+<ul>
+<li><p><strong>易于使用的API</strong>—它就像Python一样简单。</p>
+</li>
+<li><p><strong>Python的支持</strong>—如上所述，PyTorch可以顺利地与Python数据科学栈集成。它非常类似于numpy，甚至注意不到它们的差别。</p>
+</li>
+<li><p><strong>动态计算图</strong>—取代了具有特定功能的预定义图形，PyTorch为我们提供了一个框架，以便可以在运行时构建计算图，甚至在运行时更改它们。在不知道创建神经网络需要多少内存的情况下这非常有价值。</p>
+</li>
+</ul>
+<p>PyTorch的其他一些优点还包括：多gpu支持，自定义数据加载器和简化的预处理器。</p>
+<p>自从2016年1月发布以来，许多研究人员将其作为一种“go-to”库，因为它可以轻松地构建新颖的甚至是极其复杂的图形。虽说如此，PyTorch仍有一段时间没有被大多数数据科学实践者采用，因为它是新的而且处于“正在建设”的状态</p>
+<h1 id="pytorch和tensorflow的区别"><a href="#pytorch和tensorflow的区别" class="headerlink" title="pytorch和tensorflow的区别"></a>pytorch和tensorflow的区别</h1><p>TensorFlow 是谷歌的开发者创造的一款开源的深度学习框架。PyTorch 是最新的深度学习框架之一，由 Facebook 的团队开发，并于 2017 年在 GitHub 上开源。</p>
+<p>PyTorch 和 TensorFlow 的关键差异是它们执行代码的方式。这两个框架都基于基础数据类型张量（tensor）而工作。</p>
+<h1 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h1><p>Google了一下，发现大家都有给pytorch安装虚拟环境，因为有可能跟python原有的包起冲突，这样也方便使用。</p>
+<p>创建虚拟环境代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pytorch为库的名字</span></span><br><span class="line">conda create -n pytorch python=<span class="number">3.8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 额外学习，如何看conda环境还有python的版本，输入</span></span><br><span class="line">conda info --envs</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/">官网下载传送门</a>，要选择合适自己的版本。</p>
+<blockquote>
+<p>CUDA是Compute Unified Device Architecture的缩写。中文叫统一计算架构。是为了让nvidia gpu可以完成通用计算任务的一种集成技术，可以为数据大吞吐量的工作提供很好的加速功能。简单的来讲，就是为了让GPU可以不仅仅工作与自己的一幕三分地，而是利用自身的优势，完成通用计算的任务。主要应用除了日常视频编码解码，游戏等外，可以应用于计算加速方面。</p>
+</blockquote>
+<img src="/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/image-20210411225629962.png" class title="image-20210411225629962">
+
+<p>将官网提供的命令放进去</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=<span class="number">10.2</span> -c pytorch</span><br></pre></td></tr></table></figure>
+
+<p>果然是龟速…..尝试国内镜像下载，使用清华园镜像下载，速度确实会快一点。（以下都是在pythorch的环境下进行）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加清华源的pytorch</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line"></span><br><span class="line">conda install pytorch torchvision cudatoolkit=<span class="number">10.0</span>  <span class="comment"># 删除安装命令最后的 -c pytorch，才会采用清华源安装。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将镜像通道删除</span></span><br><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装完成后测试torch和CUD"><a href="#安装完成后测试torch和CUD" class="headerlink" title="安装完成后测试torch和CUD"></a>安装完成后测试torch和CUD</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#为了确保PyTorch安装正确，我们可以运行示例PyTorch代码来验证安装。这里我们将构造一个随机初始化的张量。</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">x = torch.rand(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line">print(x)</span><br><span class="line"><span class="comment"># The output should be something similar to:</span></span><br><span class="line"><span class="comment"># tensor([[0.2989, 0.2493, 0.2642],</span></span><br><span class="line"><span class="comment">#         [0.9508, 0.4811, 0.1085],</span></span><br><span class="line"><span class="comment">#         [0.5423, 0.3216, 0.3068],</span></span><br><span class="line"><span class="comment">#         [0.8863, 0.8385, 0.5150],</span></span><br><span class="line"><span class="comment">#         [0.8451, 0.4620, 0.6266]])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此外，要检查GPU驱动程序和CUDA是否能够被PyTorch启用和访问，需要运行以下命令以返回CUDA驱动程序是否已启用：</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line"><span class="comment"># the output is: True</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装成功之后就可以来学习pytorch了。</p>
+<h1 id="pytorch-的一些基本概念"><a href="#pytorch-的一些基本概念" class="headerlink" title="pytorch 的一些基本概念"></a>pytorch 的一些基本概念</h1><p>在深入讨论细节之前，让我们先看看PyTorch的工作流程。</p>
+<p>PyTorch使用了命令式/热切的范例。也就是说，在构建一个图形时，每一行代码都定义了改图的一个组件。我们甚至能在图形构建完成前，独立的对这些组件进行计算。这就是所谓的“逐运行”方法。</p>
+<p><strong>PyTorch张量(tensor)</strong></p>
+<p>张量只是多维数组。PyTorch中的张量类似于numpy的ndarrays，另外，张量也可以在GPU上使用。PyTorch支持各种类型的张量。</p>
+<h4 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h4><p>与numpy一样，科学计算库非常重要的一点是能够实现高效的数学功能。而PyTorch提供了一个类似的借口，可以使用200个以上的数学运算。</p>
+<h4 id="Autograd模块"><a href="#Autograd模块" class="headerlink" title="Autograd模块"></a>Autograd模块</h4><p>PyTorch使用了一种叫做自动微分的技术。也就是说，它会有一个记录我们所有执行操作的记录器，之后再回放记录来计算我们的梯度。这一技术在构建神经网络时尤其有效，因为我们可以通过计算前路参数的微分来节省时间。</p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>最后需通过几个实例学习，来更加了解pytorch. </p>
+<p>我们使用<a href="https://link.zhihu.com/?target=https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a>作为数据集，包含了10个类别60000张图片，每张图片的大小为32x32，其中训练图片50000张，测试图片10000张。</p>
+<p>torchvision中已经打包好了这个数据集，我们不用自己下载，直接如下调用就可以了。</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Boys_Wu/article/details/106623192">pytorch加速下载——清华镜像源(conda或者pip版本)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d66319506dd7">PyTorch入门教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80733307">TensorFlow与PyTorch之争，哪个框架最适合深度学习</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/pythonLearning/python%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%90%9C%E9%9B%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/11/pythonLearning/python%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%90%9C%E9%9B%86/" class="post-title-link" itemprop="url">python学习资源搜集</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-11 22:48:03" itemprop="dateCreated datePublished" datetime="2021-04-11T22:48:03+08:00">2021-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-27 23:21:04" itemprop="dateModified" datetime="2021-04-27T23:21:04+08:00">2021-04-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>317</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>python 一些有用的教材</p>
+<ul>
+<li>python的主页</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a></p>
+<ul>
+<li><p>python的tutorial，（可以查阅模块的使用方法）</p>
+<p><a target="_blank" rel="noopener" href="https://docs.python.org/3.9/py-modindex.html">https://docs.python.org/3.9/py-modindex.html</a></p>
+</li>
+</ul>
+<p>python常用库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> np  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>type(example)，判断example的类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="literal">None</span>,(),[],]</span><br><span class="line">print(<span class="built_in">len</span>(a))</span><br><span class="line"><span class="comment"># 输出结果为6</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**<span class="number">22</span> % <span class="number">3</span> 表达式输出结果为？** </span><br><span class="line"><span class="comment"># 结果为1，%为取余</span></span><br><span class="line"></span><br><span class="line"><span class="number">9</span>//<span class="number">2</span> 表达式输出结果为？</span><br><span class="line"><span class="comment"># // 用于向下取接近除数的整数。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> x <span class="keyword">or</span> y <span class="keyword">and</span> z:</span><br><span class="line"><span class="comment"># and 具有优先级</span></span><br></pre></td></tr></table></figure>
+
+<p>异常的处理</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/shellLearning/shell-%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/11/shellLearning/shell-%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8/" class="post-title-link" itemprop="url">shell_捕获异常</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-11 22:47:22" itemprop="dateCreated datePublished" datetime="2021-04-11T22:47:22+08:00">2021-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-15 09:09:31" itemprop="dateModified" datetime="2021-04-15T09:09:31+08:00">2021-04-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell/" itemprop="url" rel="index"><span itemprop="name">shell</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>591</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1356,55 +1610,25 @@
     
       
           <blockquote>
-<p>在jupyter里面具有help选项卡，里面有快捷键的完整信息</p>
-</blockquote>
-<h2 id="1、运行模式"><a href="#1、运行模式" class="headerlink" title="1、运行模式"></a>1、运行模式</h2><p>Jupyter notebook有两种模式：运行模式和编辑模式。<strong>Enter和Esc</strong></p>
-<p>命令模式：单元格边框为蓝色（快捷键需要在命令模式使用）</p>
-<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-5f8b2667f08bf4057a199199af028161_1440w.jpg" class title="v2-5f8b2667f08bf4057a199199af028161_1440w">
-
-<p>编辑模式：Enter进入单元格 边框为绿色（可以写代码或者markdown文本）</p>
-<img src="/2021/04/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python-jupyternotebook%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/v2-049f148e7193e30baf9967d91e2b4449_1440w.jpg" class title="v2-049f148e7193e30baf9967d91e2b4449_1440w">
-
-<p>从编辑模式回到命令模式 按esc 返回。</p>
-<blockquote>
-</blockquote>
-<h3 id="命令模式-按键-Esc-开启"><a href="#命令模式-按键-Esc-开启" class="headerlink" title="命令模式 (按键 Esc 开启)"></a>命令模式 (按键 Esc 开启)</h3><ul>
-<li><strong>Enter</strong> : 转入编辑模式</li>
-<li><strong>Shift-Enter</strong> : 运行本单元，选中下个单元</li>
-<li><strong>Ctrl-Enter</strong> : 运行本单元</li>
-<li><strong>Alt-Enter</strong> : 运行本单元，在其下插入新单元</li>
-<li><strong>Y</strong> : 单元转入代码状态</li>
-<li><strong>M</strong> :单元转入markdown状态</li>
-</ul>
-<p>单元格（cell）</p>
+<p>总结：</p>
 <ul>
-<li><strong>A</strong> : 在上方插入新单元</li>
-<li><strong>B</strong> : 在下方插入新单元</li>
-<li><strong>D,D</strong> : 删除选中的单元</li>
+<li>主要使用$?的这个方法就能解决我的问题</li>
+<li>还有其他捕获异常的方法（有遇到再学习）</li>
 </ul>
-<p>Ctrl + /    行注释（可选中多行）。</p>
-<blockquote>
-<p>替代操作可以使用三个单引号’’’</p>
-<p>这个快捷键操作也可用于vscode的其他语言。</p>
 </blockquote>
-<h2 id="将ipynb文件转换为py文件"><a href="#将ipynb文件转换为py文件" class="headerlink" title="将ipynb文件转换为py文件"></a>将ipynb文件转换为py文件</h2><ul>
-<li><ul>
-<li>在xxx.ipynb所在目录下，打开终端，并输入命令：</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　　　　　　　 jupyter nbconvert --to script xxx.ipynb</span><br><span class="line">　　　　　　　　其中xxx.ipynb是要转换文件的名字，转换后在该目录下出现xxx.py文件。</span><br></pre></td></tr></table></figure>
+<p>在shell中，我们往往规定0为正常，一切非0返回值则为不正常。但往往我们在写shell脚本的时候，忽略对于返回值的判断。我们看一个很基本的shell程序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">cd /home/xxxx/</span><br><span class="line">rm -rf *</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">实例</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用numpy.random模块来生成随机数组</span></span><br><span class="line">import numpy as np</span><br><span class="line">np.random.rand(10)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个脚本的意思很简单，就是cd到某一个目录下，然后将该目录下所有的内容都删除。首先，rm这种东西出现在脚本中，就是一个很危险的操作，而这个程序的关键之处还在于，并没有对第一行shell的返回值进行任何的判断，也就是说对于cd那行代码无论执行失败与否，都会去执行下面的那段rm，试想如果在某些情况下cd那段代码失败了之后，会出现多么可怕的后果。所以，我们应该对于cd的代码做返回值的判断。</p>
+</blockquote>
+<p>使用<code>$?</code>判断上一段shell的返回值是否有问题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">cd /home/xxxx/</span><br><span class="line">if [ &quot;$?&quot;= &quot;0&quot; ]; then</span><br><span class="line">   rm -rf *  # 如果正确cd到xxxx文件夹下，删除所有</span><br><span class="line">else</span><br><span class="line">   echo &quot;cannot change directory&quot; 1&gt;&amp;2 # 如果没有cd到特定文件夹下，抛出信息</span><br><span class="line">   exit 1</span><br><span class="line">fi </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果没有问题，$? 为0，如果有问题，$?为其他值。</span></span><br></pre></td></tr></table></figure>
 
 
 
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sui776265233/p/9759303.html">jupyter notebook常用快捷键</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/clam/archive/2012/12/17/2821684.html">如何在shell中处理异常（Part 1）</a></li>
 </ul>
 
       
@@ -1424,7 +1648,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1490,14 +1714,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1539,12 +1763,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">120k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:14</span>
+    <span title="Reading time total">1:49</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -1586,7 +1810,10 @@
 
 
   
-<script src="/js/local-search.js"></script>
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
 
 
 

@@ -17,22 +17,22 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"b0fa02bb56320ebafd7c3b7a1abe0367","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="进行多方搜索，发现我的基本操作没有错误，主要是我拼写错误问题。 这里记录如何在主题下添加各个菜单项  Hexo博客NexT主题下添加分类、标签、关于菜单项 push到git上面的登录问题hexo d 后显示登入界面，由于网速的问题，可能会造成无法成功传输？https:&#x2F;&#x2F;www.itread01.com&#x2F;content&#x2F;1541968100.html 解决方法： Hexo根目录下，找到deplo">
+  <meta name="description" content="进行多方搜索，发现我的基本操作没有错误，主要是我拼写错误问题。 这里记录如何在主题下添加各个菜单项  Hexo博客NexT主题下添加分类、标签、关于菜单项 如何对文章md文件分类https:&#x2F;&#x2F;blog.csdn.net&#x2F;maosidiaoxian&#x2F;article&#x2F;details&#x2F;85220394  该博客是2018年的，文中说的permalink 和 new_post_name的title不对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="md分类以及添加站内搜索功能">
 <meta property="og:url" content="http://jackzheng-lu.github.io/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="JackZHENG_blog">
-<meta property="og:description" content="进行多方搜索，发现我的基本操作没有错误，主要是我拼写错误问题。 这里记录如何在主题下添加各个菜单项  Hexo博客NexT主题下添加分类、标签、关于菜单项 push到git上面的登录问题hexo d 后显示登入界面，由于网速的问题，可能会造成无法成功传输？https:&#x2F;&#x2F;www.itread01.com&#x2F;content&#x2F;1541968100.html 解决方法： Hexo根目录下，找到deplo">
+<meta property="og:description" content="进行多方搜索，发现我的基本操作没有错误，主要是我拼写错误问题。 这里记录如何在主题下添加各个菜单项  Hexo博客NexT主题下添加分类、标签、关于菜单项 如何对文章md文件分类https:&#x2F;&#x2F;blog.csdn.net&#x2F;maosidiaoxian&#x2F;article&#x2F;details&#x2F;85220394  该博客是2018年的，文中说的permalink 和 new_post_name的title不对">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/image-20210316104513133.png">
 <meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/image-20210322222714842.png">
 <meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/image-20210322222755691.png">
 <meta property="og:image" content="http://jackzheng-lu.github.io/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/image-20210322222755691.png">
 <meta property="article:published_time" content="2021-03-10T01:53:36.000Z">
-<meta property="article:modified_time" content="2021-03-22T14:33:00.534Z">
+<meta property="article:modified_time" content="2021-04-14T00:15:52.874Z">
 <meta property="article:author" content="JackZheng">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="博客">
@@ -160,21 +160,18 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
+  <div class="search-input-container"></div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
 </div>
 
+      
     </div>
   </div>
 
@@ -231,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-22 22:33:00" itemprop="dateModified" datetime="2021-03-22T22:33:00+08:00">2021-03-22</time>
+                <time title="Modified: 2021-04-14 08:15:52" itemprop="dateModified" datetime="2021-04-14T08:15:52+08:00">2021-04-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +246,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>1.2k</span>
+              <span>844</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -273,11 +270,6 @@
 <p>这里记录如何在主题下添加各个菜单项</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mqdxiaoxiao/article/details/93644533">Hexo博客NexT主题下添加分类、标签、关于菜单项</a></p>
-<h1 id="push到git上面的登录问题"><a href="#push到git上面的登录问题" class="headerlink" title="push到git上面的登录问题"></a>push到git上面的登录问题</h1><p>hexo d 后显示登入界面，由于网速的问题，可能会造成无法成功传输？<a target="_blank" rel="noopener" href="https://www.itread01.com/content/1541968100.html">https://www.itread01.com/content/1541968100.html</a></p>
-<p>解决方法： Hexo根目录下，找到deployment，在repo那边改为https://後加 (Github)<strong>使用者名稱:密碼@</strong> 即可。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https://jackzheng-lu:密码@github.com/jackzheng-lu/jackzheng-lu.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>hexo d 后成功update git pages，但是有可能造成DNS污染(??)，无法登入github网址，需要重新清除缓存</p>
 <h1 id="如何对文章md文件分类"><a href="#如何对文章md文件分类" class="headerlink" title="如何对文章md文件分类"></a>如何对文章md文件分类</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/maosidiaoxian/article/details/85220394">https://blog.csdn.net/maosidiaoxian/article/details/85220394</a></p>
 <blockquote>
 <p>该博客是2018年的，文中说的<code>permalink</code> 和 <code>new_post_name</code>的title不对应问题，会导致生成的html地址变更，但是<strong>貌似在最新Hexo版本中已经得到解决</strong>。</p>
@@ -331,12 +323,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/09/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/Hexo%E5%AD%A6%E4%B9%A0/" rel="prev" title="Hexo学习">
-      <i class="fa fa-chevron-left"></i> Hexo学习
+    <a href="/2021/03/09/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/hexo%E5%AD%A6%E4%B9%A0/" rel="prev" title="hexo学习">
+      <i class="fa fa-chevron-left"></i> hexo学习
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/03/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83_%E9%A3%8E%E6%A0%BC%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/" rel="next" title="编程规范_风格经验学习">
-      编程规范_风格经验学习 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/03/15/shellLearning/shell%E6%95%99%E7%A8%8B/" rel="next" title="Shell教程">
+      Shell教程 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -396,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#push%E5%88%B0git%E4%B8%8A%E9%9D%A2%E7%9A%84%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">push到git上面的登录问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AF%B9%E6%96%87%E7%AB%A0md%E6%96%87%E4%BB%B6%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">如何对文章md文件分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2"><span class="nav-number">3.</span> <span class="nav-text">为博客增加一个站内搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%A1%B5%E9%9D%A2%E6%90%9C%E7%B4%A2%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">其他页面搜索无法显示问题</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AF%B9%E6%96%87%E7%AB%A0md%E6%96%87%E4%BB%B6%E5%88%86%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">如何对文章md文件分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2"><span class="nav-number">2.</span> <span class="nav-text">为博客增加一个站内搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%A1%B5%E9%9D%A2%E6%90%9C%E7%B4%A2%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">其他页面搜索无法显示问题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -410,14 +402,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -459,12 +451,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">120k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:14</span>
+    <span title="Reading time total">1:49</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -506,7 +498,10 @@
 
 
   
-<script src="/js/local-search.js"></script>
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
 
 
 

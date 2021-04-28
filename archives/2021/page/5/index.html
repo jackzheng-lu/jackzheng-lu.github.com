@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"b0fa02bb56320ebafd7c3b7a1abe0367","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -149,21 +149,18 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
+  <div class="search-input-container"></div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
 </div>
 
+      
     </div>
   </div>
 
@@ -192,7 +189,7 @@
     <div class="posts-collapse">
       <div class="collection-title">
         
-        <span class="collection-header">Nice! 59 posts in total. Keep on posting.</span>
+        <span class="collection-header">Nice! 72 posts in total. Keep on posting.</span>
       </div>
 
       
@@ -205,15 +202,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-20T21:35:52+08:00"
-              content="2021-03-20">
-          03-20
+              datetime="2021-03-30T09:20:43+08:00"
+              content="2021-03-30">
+          03-30
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/20/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/%E4%BC%98%E7%A7%80%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">优秀的博客主页学习</span>
+          <a class="post-title-link" href="/2021/03/30/TrajectoryModel/hysplit-%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/" itemprop="url">
+            <span itemprop="name">HSPLIT_教程</span>
           </a>
       </div>
 
@@ -225,15 +222,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-20T15:39:46+08:00"
-              content="2021-03-20">
-          03-20
+              datetime="2021-03-30T09:20:43+08:00"
+              content="2021-03-30">
+          03-30
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/20/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/you-get%E4%B8%8B%E8%BD%BD/" itemprop="url">
-            <span itemprop="name">you-get下载</span>
+          <a class="post-title-link" href="/2021/03/30/TrajectoryModel/hysplit-%E6%95%99%E7%A8%8B/" itemprop="url">
+            <span itemprop="name">HySPLIT_教程</span>
           </a>
       </div>
 
@@ -245,15 +242,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-20T08:52:46+08:00"
-              content="2021-03-20">
-          03-20
+              datetime="2021-03-29T10:04:15+08:00"
+              content="2021-03-29">
+          03-29
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/20/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96-%E5%BE%85%E5%8A%9E/" itemprop="url">
-            <span itemprop="name">博客美化_待办</span>
+          <a class="post-title-link" href="/2021/03/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E8%AF%BB%E5%8F%96%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%87%E4%BB%B6/" itemprop="url">
+            <span itemprop="name">matlab_读取不同的文件</span>
           </a>
       </div>
 
@@ -265,15 +262,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-19T18:20:33+08:00"
-              content="2021-03-19">
-          03-19
+              datetime="2021-03-27T09:27:52+08:00"
+              content="2021-03-27">
+          03-27
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-%E7%BB%98%E5%9B%BE1/" itemprop="url">
-            <span itemprop="name">matlab_常用函数_绘图1</span>
+          <a class="post-title-link" href="/2021/03/27/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%B0%94%E8%B1%A1%E5%AD%A6%E5%9F%BA%E7%A1%80/" itemprop="url">
+            <span itemprop="name">气旋及反气旋</span>
           </a>
       </div>
 
@@ -285,15 +282,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-19T16:27:36+08:00"
-              content="2021-03-19">
-          03-19
+              datetime="2021-03-25T21:41:30+08:00"
+              content="2021-03-25">
+          03-25
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_figure%E7%95%99%E7%99%BD%E9%97%AE%E9%A2%98/" itemprop="url">
-            <span itemprop="name">matlab_figure留白问题</span>
+          <a class="post-title-link" href="/2021/03/25/%E4%B8%AA%E4%BA%BA%E7%A0%94%E7%A9%B6%E4%BB%8B%E7%BB%8D/" itemprop="url">
+            <span itemprop="name">个人研究介绍</span>
           </a>
       </div>
 
@@ -305,15 +302,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-19T15:37:22+08:00"
-              content="2021-03-19">
-          03-19
+              datetime="2021-03-25T15:52:05+08:00"
+              content="2021-03-25">
+          03-25
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B01/" itemprop="url">
-            <span itemprop="name">matlab_常用函数1</span>
+          <a class="post-title-link" href="/2021/03/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3/" itemprop="url">
+            <span itemprop="name">Matlab_微分方程</span>
           </a>
       </div>
 
@@ -325,15 +322,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-19T11:34:58+08:00"
-              content="2021-03-19">
-          03-19
+              datetime="2021-03-23T20:56:50+08:00"
+              content="2021-03-23">
+          03-23
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E6%A8%A1%E6%9D%BF%E8%AE%BE%E5%AE%9A/" itemprop="url">
-            <span itemprop="name">matlab_模板设定</span>
+          <a class="post-title-link" href="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0_%E7%AC%AC%E4%B8%80%E7%AB%A0/" itemprop="url">
+            <span itemprop="name">第四纪环境重构_笔记_第一章</span>
           </a>
       </div>
 
@@ -345,15 +342,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-18T21:40:47+08:00"
-              content="2021-03-18">
-          03-18
+              datetime="2021-03-23T20:56:50+08:00"
+              content="2021-03-23">
+          03-23
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/18/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/milankovitch-cycle/" itemprop="url">
-            <span itemprop="name">milankovitch_cycle</span>
+          <a class="post-title-link" href="/2021/03/23/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AC%AC%E5%9B%9B%E7%BA%AA%E7%8E%AF%E5%A2%83%E9%87%8D%E6%9E%84_%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0_%E5%AE%9A%E5%B9%B4%E6%96%B9%E6%B3%95/" itemprop="url">
+            <span itemprop="name">第四纪环境重构_笔记第五章_定年方法</span>
           </a>
       </div>
 
@@ -365,15 +362,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-16T20:20:15+08:00"
-              content="2021-03-16">
-          03-16
+              datetime="2021-03-23T09:18:05+08:00"
+              content="2021-03-23">
+          03-23
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/16/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/PDF%E8%A7%A3%E9%94%81-%E5%8E%BB%E6%B0%B4%E5%8D%B0/" itemprop="url">
-            <span itemprop="name">PDF解锁_去水印</span>
+          <a class="post-title-link" href="/2021/03/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C1/" itemprop="url">
+            <span itemprop="name">Matlab_个人经验</span>
           </a>
       </div>
 
@@ -385,15 +382,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-03-16T17:08:22+08:00"
-              content="2021-03-16">
-          03-16
+              datetime="2021-03-22T15:21:05+08:00"
+              content="2021-03-22">
+          03-22
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/03/16/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/hexo%E5%BC%95%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/" itemprop="url">
-            <span itemprop="name">hexo引用本地图片无法显示</span>
+          <a class="post-title-link" href="/2021/03/22/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/PDF%E8%A1%A8%E6%A0%BC%E8%AF%BB%E5%8F%96%E9%97%AE%E9%A2%98/" itemprop="url">
+            <span itemprop="name">PDF表格读取问题</span>
           </a>
       </div>
 
@@ -409,7 +406,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2021/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2021/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/2021/page/6/">6</a><a class="extend next" rel="next" href="/archives/2021/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/archives/2021/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2021/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/2021/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/8/">8</a><a class="extend next" rel="next" href="/archives/2021/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -475,14 +472,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -524,12 +521,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">120k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:14</span>
+    <span title="Reading time total">1:49</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -571,7 +568,10 @@
 
 
   
-<script src="/js/local-search.js"></script>
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
 
 
 
