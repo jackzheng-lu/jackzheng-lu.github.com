@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"eee0de363005d1454615a59d0caaa505","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -149,18 +149,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -181,6 +184,665 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E5%B9%B6%E8%A1%8C%E5%8A%A0%E9%80%9F%E8%BF%90%E7%AE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E5%B9%B6%E8%A1%8C%E5%8A%A0%E9%80%9F%E8%BF%90%E7%AE%97/" class="post-title-link" itemprop="url">matlab_并行加速运算</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-25 12:13:20 / Modified: 12:19:25" itemprop="dateCreated datePublished" datetime="2021-04-25T12:13:20+08:00">2021-04-25</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>高性能计算(High Performance Computing，HPC)是计算机科学的一个分支，研究并行算法和开发相关软件，致力于开发高性能计算机。可见并行计算是高性能计算的不可或缺的重要组成部分。</p>
+<p>并行计算（Parallel Computing）是指同时使用多种计算资源解决计算问题的过程，是提高计算机系统计算速度和处理能力的一种有效手段。它的基本思想是用多个处理器来协同求解同一问题，即将被求解的问题分解成若干个部分，各部分均由一个独立的处理机来并行计算。并行计算系统既可以是专门设计的、含有多个处理器的超级计算机，也可以是以某种方式互连的若干台的独立计算机构成的集群。通过并行计算集群完成数据的处理，再将处理的结果返回给用户</p>
+<p>平台是并行计算的载体，它决定着你可以用或只能用什么样的技术来实现并行计算。</p>
+<p>多核和集群技术的发展，使得并行程序的设计成为提高数值计算效率的主流技术之一。常用的小型计算平台大致分为：由多核和多处理器构建的单计算机平台；由多个计算机组成的集群（Cluster）。前者通过共享内存进行数据交互，后者通过网络进行数据通信。</p>
+<p>计算正在从 CPU（中央处理）向 CPU 与 GPU（协同处理）的方向发展。</p>
+<p>GPU最早主要应用在图形计算机领域，近年来，它在通用计算机领域得到了迅猛的发展，使用GPU做并行计算已经变得越来越重要和高效。</p>
+<p>常用的并行计算技术包括多线程技术、基于共享内存的OpenMP技术，基于集群的MPI技术等。但它们都需要用户处理大量与并行计算算法无关的技术细节，且不提供高效的算法库，与数值计算的关联较为松散。</p>
+<h1 id="2-Matlab并行计算初探"><a href="#2-Matlab并行计算初探" class="headerlink" title="2. Matlab并行计算初探"></a>2. Matlab并行计算初探</h1><p>Matlab 并行计算工具箱，使用多核处理器，GPU和计算机集群，解决计算和数据密集型问题。高层次的结构并行for循环，特殊阵列类型和并行数值算法，让你在没有而CUDA或MPI编程基础的条件下并行MATLAB应用程序。您可以使用带有Simulink的工具箱并行运行一个模型的多个仿真。</p>
+<p>该工具箱，通过在本地workers（MATLAB计算引擎）上执行应用程序，来使用多核台式机的全部处理能力。不用改变代码，就可以在计算机集群或网格计算服务（使用MATLAB分布式计算服务器™）上运行相同的应用程序。可以交互地或批处理地运行并行应用程序。</p>
+<p>包含以下特性：</p>
+<ul>
+<li>并行for循环 (parfor)，可以在多个处理器上运行任务并行算法。</li>
+<li>支持CUDA的NVIDIA GPU。</li>
+<li>通过本地workers，充分利用台式机的多核处理器。</li>
+<li>计算机集群和网格计算支持（通过MATLAB分布式计算服务）。</li>
+<li>以交互方式和批量方式执行并行应用程序。</li>
+<li>分布式阵列和SPMD（single-program-multiple-data），用于大型数据集的处理和数据并行算法。</li>
+</ul>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/haoji007/article/details/103409063">https://blog.csdn.net/haoji007/article/details/103409063</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-gpu%E5%8A%A0%E9%80%9F%E8%BF%90%E7%AE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-gpu%E5%8A%A0%E9%80%9F%E8%BF%90%E7%AE%97/" class="post-title-link" itemprop="url">matlab_gpu加速运算</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-25 11:38:52 / Modified: 12:24:22" itemprop="dateCreated datePublished" datetime="2021-04-25T11:38:52+08:00">2021-04-25</time>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>在MATLAB上做GPU计算主要分为三个步骤：数据的初始化、对GPU数据进行操作、把GPU上的数据回传给CPU。</p>
+<blockquote>
+<p>有时候GPU受限于硬件架构，单精度的计算远快于双精度。这时候可以考虑在拷贝的时候顺便转换一下精度：</p>
+</blockquote>
+<h2 id="数据的初始化"><a href="#数据的初始化" class="headerlink" title="数据的初始化"></a>数据的初始化</h2><p>方法1是先在CPU上设置好数据然后拷贝到GPU，使用gpuArray；</p>
+<p>方法2是直接在GPU上初始化数据。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 方法1</span></span><br><span class="line">M = <span class="built_in">magic</span>(N);</span><br><span class="line">G = gpuArray(M);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 方法2</span></span><br><span class="line">A = <span class="built_in">zeros</span>(<span class="number">10</span>, <span class="string">&#x27;gpuArray&#x27;</span>);</span><br><span class="line">r = gpuArray.<span class="built_in">rand</span>(<span class="number">1</span>, <span class="number">100</span>) <span class="comment">% 一行，一百列</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="GPU上的数据回传给CPU"><a href="#GPU上的数据回传给CPU" class="headerlink" title="GPU上的数据回传给CPU"></a>GPU上的数据回传给CPU</h2><p>最后是如何把GPU上的数据回传给CPU:</p>
+<p>B = gather (A);</p>
+<p>其中A是GPU上的数据，B是CPU上的数据。B的内容在回传之后等于A。</p>
+<h2 id="电脑是否可以进行GPU加速"><a href="#电脑是否可以进行GPU加速" class="headerlink" title="电脑是否可以进行GPU加速"></a>电脑是否可以进行GPU加速</h2><p>如何查看电脑是否能用matlab进行GPU进行加速运算，</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpuDevice</span><br></pre></td></tr></table></figure>
+
+<p>MATLAB目前只支持Nvidia的显卡（即前面显示 CUDADevice with properties）。如果你的显卡是AMD的或者是Intel的，就得考虑另寻它路了。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>（1）、将数据从CPU中搬入GPU，函数：<strong>gpuArray</strong>，用法 M = gpuArray(M)；</p>
+<p>（2）、在GPU中计算完成后，将数据搬出到CPU存储，函数：<strong>gather</strong>，用法M=gather(M)。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% GPU计算运算实例1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%</span></span><br><span class="line"><span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span><br><span class="line"><span class="comment">% test1： 使用GPU进行加速</span></span><br><span class="line">clc</span><br><span class="line">M = <span class="built_in">rand</span>(<span class="number">2000</span>,<span class="number">2000</span>);            <span class="comment">% 生成一个随机矩阵</span></span><br><span class="line">tic</span><br><span class="line">[A1,B1] = eig(M);               <span class="comment">% 求该随机矩阵的特征值和特征向量</span></span><br><span class="line">t1=toc</span><br><span class="line"><span class="comment">% 时间为3.69s</span></span><br><span class="line"></span><br><span class="line">tic</span><br><span class="line">M = gpuArray(M);                <span class="comment">% 将数据从CPU中搬到GPU</span></span><br><span class="line">[A2,B2] = eig(M);               <span class="comment">% 求特征值和特征向量</span></span><br><span class="line">A2 = gather(A2);                <span class="comment">% 将数据从GPU中搬到CPU</span></span><br><span class="line">t2 = toc</span><br><span class="line"><span class="comment">% 时间为3s</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 结论：</span></span><br><span class="line"><span class="comment">% 2000x2000的矩阵，两者的时间差别并不是很大，大概0.5s左右</span></span><br><span class="line"><span class="comment">% 第一次使用时，GPU计算的耗时更长，大概4s多</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%</span></span><br><span class="line"><span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span><br><span class="line"><span class="comment">% test2: 将数据转换为单精度的类型，可以提高GPU计算的速度</span></span><br><span class="line">clc</span><br><span class="line">M = <span class="built_in">rand</span>(<span class="number">2000</span>,<span class="number">2000</span>);            <span class="comment">% 生成一个随机矩阵</span></span><br><span class="line">tic</span><br><span class="line">[A1,B1] = eig(M);               <span class="comment">% 求该随机矩阵的特征值和特征向量</span></span><br><span class="line">t1=toc</span><br><span class="line"><span class="comment">% 时间为3.69s</span></span><br><span class="line"></span><br><span class="line">tic</span><br><span class="line">M = gpuArray(single(M));                <span class="comment">% 将数据从CPU中搬到GPU</span></span><br><span class="line">[A2,B2] = eig(M);               <span class="comment">% 求特征值和特征向量</span></span><br><span class="line">A2 = gather(A2);                <span class="comment">% 将数据从GPU中搬到CPU</span></span><br><span class="line">t2 = toc</span><br><span class="line"><span class="comment">% 时间为&lt;2s</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 结论：</span></span><br><span class="line"><span class="comment">% 单精度的GPU运算速度，比双精度的快了将近一倍的时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%</span></span><br><span class="line"><span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span><br><span class="line"><span class="comment">% test3:利用常用的pdist2函数进行测试</span></span><br><span class="line">clc;</span><br><span class="line">A=<span class="built_in">rand</span>(<span class="number">8000</span>,<span class="number">8000</span>);</span><br><span class="line">B=<span class="built_in">rand</span>(<span class="number">8000</span>,<span class="number">8000</span>);</span><br><span class="line"></span><br><span class="line">tic; C = (pdist2((A),(B))); toc </span><br><span class="line"><span class="comment">% 150s</span></span><br><span class="line">tic; D = gather(pdist2(gpuArray(A),gpuArray(B))); toc;</span><br><span class="line"><span class="comment">% 12s</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 结论：</span></span><br><span class="line"><span class="comment">% 可以看出GPU好的话，对于大数据处理来说效果还是很ok的。</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/haoji007/article/details/103409063">https://blog.csdn.net/haoji007/article/details/103409063</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/25/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%B4%AD%E4%B9%B0macbookPro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/25/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%B4%AD%E4%B9%B0macbookPro/" class="post-title-link" itemprop="url">是否需要购买macbookPro</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+    
+              <time title="Created: 2021-04-25 08:06:00 / Modified: 19:26:35" itemprop="dateCreated datePublished" datetime="2021-04-25T08:06:00+08:00">2021-04-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/b/" itemprop="url" rel="index"><span itemprop="name">b</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>358</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>本来是想购买macbook pro，google之后发现M1的生态圈并不是很完善，这里做个记录</p>
+</blockquote>
+<p>苹果公司拥有Rosetta 2-一种用于翻译用于英特尔处理器的代码的工具，以便M1芯片可以理解它。这应该意味着大多数现有的Mac应用程序都可以在新的M1 Mac上运行。</p>
+<p>由于使用了Rosetta 2，因此您熟悉的许多应用程序都可以在M1 Mac上运行-但首次启动它们时将需要20秒的等待时间，因为Rosetta会翻译代码以便它们可以运行。通过Rosetta运行也可能会导致一些延迟-尽管希望它不会引起注意。</p>
+<p>SSD过度写入的问题</p>
+<p>我常用的几个工具：</p>
+<p>everything(一个便捷的搜索工具)”Everything” 是 Windows 上一款搜索引擎，</p>
+<p>onedrive </p>
+<p>matlab</p>
+<p>python/pytorch</p>
+<p>AI/PS等图像视频工具</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/18/pythonLearning/python-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/18/pythonLearning/python-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E4%BE%8B/" class="post-title-link" itemprop="url">python_机器学习实例</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-18 20:10:49" itemprop="dateCreated datePublished" datetime="2021-04-18T20:10:49+08:00">2021-04-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-20 11:41:33" itemprop="dateModified" datetime="2021-04-20T11:41:33+08:00">2021-04-20</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>582</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>pytorch深度学习实践笔记合集</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Y7411d7Ys?p=3">https://www.bilibili.com/video/BV1Y7411d7Ys?p=3</a></p>
+</blockquote>
+<p>线性规划</p>
+<blockquote>
+<p>本质上，感觉是求最优点，以及如何避免局部最优。</p>
+</blockquote>
+<p>分治法：其实就是类似二分法。</p>
+<p>GDA (gradient descent algorithm 梯度下降算法)，核心公式：</p>
+<img src="/2021/04/18/pythonLearning/python-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E4%BE%8B/image-20210418223249138.png" class title="image-20210418223249138">
+
+<blockquote>
+<p>w是权重，cost是针对loss function，求导表示这个loss function对于权重的改变方向，利用这种关系来更新权重值，以达到一个最优化。</p>
+</blockquote>
+<p>实际应用中发现，局部最优点的情况并不是很多，但是鞍点很多情况很多</p>
+<img src="/2021/04/18/pythonLearning/python-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E4%BE%8B/image-20210418223151679.png" alt="image-20210418223151679" style="zoom:50%;">
+
+
+
+<p>可以使用指数加权的方式来平滑cost结果</p>
+<p>如果出现cost的值</p>
+<blockquote>
+<p>matrix cook book</p>
+</blockquote>
+<p>tensor 可以保存数据data和grad梯度</p>
+<img src="/2021/04/18/pythonLearning/python-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E4%BE%8B/image-20210419215630923.png" alt="image-20210419215630923" style="zoom:50%;">
+
+
+
+<p>代码是在构建一个计算图</p>
+<p>tensor在做计算，会做计算图。避免一直使用tensor做计算图。使用其中的值。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比如l是张量tensor,则使用tensor.data</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for x,y in zip(xs,ys):</span><br><span class="line">	y_pred&#x3D;x+y</span><br><span class="line"># 通过zip进行拼装，来进行引用数值</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>一共有四步</p>
+<ol>
+<li>准备数据集</li>
+<li>设计模型 design model using Class </li>
+<li>construct loss and optimizer </li>
+<li>training cycle (forward,backward,update)</li>
+</ol>
+<p>构造模型为类数据</p>
+<p>*表示不知道输入参数的个数</p>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li>无</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/15/TrajectoryModel/hysplit-so2Module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/15/TrajectoryModel/hysplit-so2Module/" class="post-title-link" itemprop="url">hysplit_so2Module</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-15 19:29:20" itemprop="dateCreated datePublished" datetime="2021-04-15T19:29:20+08:00">2021-04-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-28 19:07:52" itemprop="dateModified" datetime="2021-04-28T19:07:52+08:00">2021-04-28</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>z这里主要对SO2的module进行学习</p>
+</blockquote>
+<p>网站上有对计算时间的估算，SO2，1小时间隔，72小时，5000个grid point，大概花费的时间为1小时。</p>
+<p>SO2的模块主要是针对酸雨的，官方建议是直接对源code进行修改：</p>
+<blockquote>
+<p>There are more complex <a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/HYSPLIT_pcchem.php">chemical conversion</a> modules available that work with HYSPLIT. However, these are not routinely used and the recommendation would be to work directly with the source code rather than the pre-compiled PC executables for any customized applications. For example, the sulfate conversion model was developed for <a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/documents/TutorialX/html/so2so4.html">acid rain</a> applications in North America and would require some modification for application to volcanic eruptions.</p>
+</blockquote>
+<p>Control文件范例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 前面的跟标准的都一样</span></span><br><span class="line">03 06 24 00</span><br><span class="line">2</span><br><span class="line">35.0 -95.0 10.0</span><br><span class="line">45.0 -65.0 10.0</span><br><span class="line">72</span><br><span class="line">0</span><br><span class="line">10000.0</span><br><span class="line">1</span><br><span class="line">..\Fixed\</span><br><span class="line">edas2427.bin #气象数据</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">这三项是必须的（但是发散源只要SO2就行）</span></span><br><span class="line">3</span><br><span class="line">SO2</span><br><span class="line">10.0 </span><br><span class="line">0.1</span><br><span class="line">00 00 00 00 00</span><br><span class="line">SO4</span><br><span class="line">10.0         </span><br><span class="line">0.1 </span><br><span class="line">00 00 00 00 00</span><br><span class="line">SO4W</span><br><span class="line">10.0         </span><br><span class="line">0.1   </span><br><span class="line">00 00 00 00 00 </span><br><span class="line"><span class="meta">#</span><span class="bash"> 源头grid的设置</span></span><br><span class="line">2 # 因为写了2，就要有两种设定</span><br><span class="line">40.0 -80.0 </span><br><span class="line">0.30 0.30   </span><br><span class="line">20.0 30.0      </span><br><span class="line">.\                                      </span><br><span class="line">csnap                            </span><br><span class="line">6  </span><br><span class="line">250 500 1000 2000 5000 10000</span><br><span class="line">00 00 00 00 00</span><br><span class="line">00 00 00 00 00</span><br><span class="line">01 999 00</span><br><span class="line"><span class="meta">#</span><span class="bash"> 第二个设定</span></span><br><span class="line">40.0 -80.0 </span><br><span class="line">0.30 0.30   </span><br><span class="line">20.0 30.0        </span><br><span class="line">.\                         </span><br><span class="line">cavrg</span><br><span class="line">1  </span><br><span class="line">250</span><br><span class="line">00 00 00 00 00</span><br><span class="line">00 00 00 00 00</span><br><span class="line">00 01 00</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这是污染物运移的设定</span></span><br><span class="line">3  </span><br><span class="line">0.0 0.0 0.0    </span><br><span class="line">0.0 64.0 0.0 1.9 1.0E+05</span><br><span class="line">0.0 0.0 0.0 </span><br><span class="line">0.0</span><br><span class="line">0.0</span><br><span class="line">0.0 0.0 0.0    </span><br><span class="line">0.0025 96.0 0.0 0.0 0.0</span><br><span class="line">0.0 0.0 0.0 </span><br><span class="line">0.0</span><br><span class="line">0.0</span><br><span class="line">0.0 0.0 0.0    </span><br><span class="line">0.0025 96.0 0.0 0.0 0.0</span><br><span class="line">0.0 0.0 0.0 </span><br><span class="line">0.0</span><br><span class="line">0.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>SETUP.cfg </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">INITD=0 		run in 3D particle mode </span><br><span class="line">KHMAX=9999 		don&#x27;t drop any old particles</span><br><span class="line">NUMPAR=500 		one particle per point if &lt; number grid pts</span><br><span class="line">MAXPAR=350000           max number of particles in simulation</span><br><span class="line">MAXDIM=3  		number of species on one particle</span><br><span class="line">QCYCLE=1.0 		new emission cycle each hour</span><br><span class="line">DELT=0.0 		automatic time step computation</span><br><span class="line">ICHEM=4			forces conc grid = meteo grid # 注意这个！</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="PRCHEM-DAT-file"><a href="#PRCHEM-DAT-file" class="headerlink" title="PRCHEM.DAT file"></a>PRCHEM.DAT file</h1><p>含有一个额外的文件 PRCHEM.DAT file</p>
+<blockquote>
+<p>Contains constants that can be changed to modify the sulfate chemistry conversion rates.</p>
+</blockquote>
+<p>有对一些常数参数提出了建议，注意，不同季节的值不大一样</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">0.90      CRITICAL RELATIVE HUMIDITY                    (RHCRIT)</span><br><span class="line">0.015     DAY SO2-SO4/HR                                (KSO2DY)</span><br><span class="line">0.002     NIGHT SO2-SO4/HR                              (KSO2NT)</span><br><span class="line">0.65      DRY TO WET SO4 CONVERSION FRACTION            (D2WFR)</span><br><span class="line">0.90      HYDROGEN PEROXIDE (PPB)                       (H2O2)</span><br><span class="line">0.90      LIQUID WATER CONTENT (G/M3)                   (LWC)</span><br><span class="line"></span><br><span class="line">Suggested values for other seasons:</span><br><span class="line">	Winter	Spring	Summer	Autumn</span><br><span class="line">RHCRIT	.90	.90	.90	.90</span><br><span class="line">KSO2DY	.008	.020	.035	.015</span><br><span class="line">KSO2NT	.001	.002	.003	.002</span><br><span class="line">D2WFR	.65	.65	.65	.65</span><br><span class="line">H2O2	0.7	1.5	2.0	1.2</span><br><span class="line">LWC		0.2	1.0	2.2	0.8</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>emission inventory </p>
+<p>不支持点源（point grid)，支持面源（area grid)。跟常规的emission文件不一样。emission rate 是乘积因子</p>
+<blockquote>
+<p>The emission duration is the same, but the emission rate is a multiplier to the gridded emission value.  Normally<br>it would be set to 1.0. </p>
+</blockquote>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.ready.noaa.gov/HYSPLIT_pcchem.php">https://www.ready.noaa.gov/HYSPLIT_pcchem.php</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/14/shellLearning/shell-if-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/14/shellLearning/shell-if-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="post-title-link" itemprop="url">shell_if_循环语句</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-04-14 13:38:18" itemprop="dateCreated datePublished" datetime="2021-04-14T13:38:18+08:00">2021-04-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-29 16:26:38" itemprop="dateModified" datetime="2021-04-29T16:26:38+08:00">2021-04-29</time>
+              </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <h1 id="shell-循环语句"><a href="#shell-循环语句" class="headerlink" title="shell 循环语句"></a>shell 循环语句</h1><h2 id="for-do-done"><a href="#for-do-done" class="headerlink" title="for/do/done"></a>for/do/done</h2><p>Shell脚本的for循环结构使用for/do/done。例如：</p>
+<blockquote>
+<p>matlab是for/end，python是for加：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for FRUIT in apple banana pear; do</span><br><span class="line">  echo &quot;I like $FRUIT&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>FRUIT是一个循环变量，第一次循环$FRUIT的取值是apple，第二次取值是banana，第三次取值是pear。</p>
+<p>再比如，要将当前目录下的chap0、chap1、chap2等文件名改为chap0<del>、chap1</del>、chap2<del>等（按惯例，末尾有</del>字符的文件名表示临时文件），这个命令可以这样写：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for FILENAME in chap?; do mv $FILENAME $FILENAME~; done</span><br></pre></td></tr></table></figure>
+
+<p>也可以这样写：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for FILENAME in `ls chap?`; do mv $FILENAME $FILENAME~; done</span><br></pre></td></tr></table></figure>
+
+<h2 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 读取文章filename中的每一行</span> </span><br><span class="line">while read -r line</span><br><span class="line">do</span><br><span class="line"> echo $line</span><br><span class="line">done &lt; filename</span><br></pre></td></tr></table></figure>
+
+<h1 id="shell的if-语句"><a href="#shell的if-语句" class="headerlink" title="shell的if 语句"></a>shell的if 语句</h1><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if [ command ];then</span><br><span class="line">     符合该条件执行的语句</span><br><span class="line">elif [ command ];then</span><br><span class="line">     符合该条件执行的语句</span><br><span class="line">else</span><br><span class="line">     符合该条件执行的语句</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1、[ ]表示条件测试。注意这里的空格很重要。在&#39;[&#39;后面和&#39;]&#39;前面都必须要有空格&#x3D;</span><br><span class="line">3、注意if判断中对于变量的处理，需要加引号，以免一些不必要的错误。没有加双引号会在一些含空格等的字符串变量判断的时候产生错误。</span><br><span class="line">4、判断是不支持浮点值的</span><br><span class="line">5、如果只单独使用&gt;或者&lt;号，系统会认为是输出或者输入重定向，虽然结果显示正确，但是其实是错误的，因此要对这些符号进行转意</span><br><span class="line">6、在默认中，运行if语句中的命令所产生的错误信息仍然出现在脚本的输出结果中</span><br><span class="line">7、使用-z或者-n来检查长度的时候，没有定义的变量也为0</span><br><span class="line">8、空变量和没有初始化的变量可能会对shell脚本测试产生灾难性的影响，因此在不确定变量的内容的时候，在测试号前使用-n或者-z测试一下</span><br><span class="line">9、? 变量包含了之前执行命令的退出状态（最近完成的前台进程）（可以用于检测退出状态）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="一些常用的参数"><a href="#一些常用的参数" class="headerlink" title="一些常用的参数"></a>一些常用的参数</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">常用的：</span><br><span class="line">[ -a FILE ] 如果 FILE 存在则为真。</span><br><span class="line">[ -d FILE ] 如果 FILE 存在且是一个目录则返回为真。</span><br><span class="line">[ -e FILE ] 如果 指定的文件或目录存在时返回为真。</span><br><span class="line">[ -f FILE ] 如果 FILE 存在且是一个普通文件则返回为真。</span><br><span class="line">[ -r FILE ] 如果 FILE 存在且是可读的则返回为真。</span><br><span class="line">[ -w FILE ] 如果 FILE 存在且是可写的则返回为真。（一个目录为了它的内容被访问必然是可执行的）</span><br><span class="line">[ -x FILE ] 如果 FILE 存在且是可执行的则返回为真。</span><br></pre></td></tr></table></figure>
+
+<h2 id="if-高级特性："><a href="#if-高级特性：" class="headerlink" title="if 高级特性："></a>if 高级特性：</h2><p>==双圆括号(( ))：表示数学表达式==<br>在判断命令中，只允许进行简单的算术操作，而双圆括号提供更多的数学符号，而且在双括号里的’&gt;’,’&lt;’号不需要转意。</p>
+<p>==双方括号[[ ]]：表示高级字符串处理函数==<br>双方括号中判断命令使用标准的字符串比较，还可以使用匹配模式，从而定义与字符串相匹配的正则表达式。</p>
+<blockquote>
+<p>双括号的作用：<br>在shell中，[ $a != 1 || $b = 2 ]是不允许出，要用[ $a != 1 ] || [ $b = 2 ]，而双括号就可以解决这个问题的，[[ $a != 1 || $b = 2 ]]。又比如这个[ “$a” -lt “$b” ]，也可以改成双括号的形式((“$a” &lt; “$b”))</p>
+</blockquote>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 正则这里不需要引号</span></span><br><span class="line">doiido=&quot;hero&quot;</span><br><span class="line">if  [[ &quot;$doiido&quot; =~ h* ]];then # 如果要不等号，[[ ! &quot;$doiido&quot; =~ h* ]]，注意空格5个一定要</span><br><span class="line">    echo &quot;hello，hero&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 数值比较</span></span><br><span class="line">if [ &quot;$num&quot; -gt &quot;150&quot; ];then</span><br><span class="line">   echo &quot;$num is biger than 150&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">变量比较</span></span><br><span class="line">if [ &quot;$var1&quot; = &quot;$var2&quot; ]; then</span><br><span class="line">　　echo &#x27;$var1 eq $var2&#x27;</span><br><span class="line">fi</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
+<li> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/kaishirenshi/p/9729800.html">shell中的if语句</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -261,114 +923,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/14/pythonLearning/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/14/pythonLearning/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-14 08:21:43" itemprop="dateCreated datePublished" datetime="2021-04-14T08:21:43+08:00">2021-04-14</time>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>为了学习pytorch，接触到虚拟环境这个概念。</p>
-<p>目的：将不同的python安装在不同的虚拟环境，能维持原生python不受函数包安装移除污染。例如将pytorch安装在虚拟环境中。</p>
-</blockquote>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>在虚拟环境里，各种软件包的版本，都由你来指定。它们和系统默认Python环境是相互隔离的，因此互不干扰。</p>
-<img src="/2021/04/14/pythonLearning/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/64542-4e9d1b7b08a5100e.jpg" alt="img" style="zoom: 33%;">
-
-
-
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建pytorch为库的名字</span></span><br><span class="line">conda create -n pytorch python=3.8</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 激活虚拟库</span></span><br><span class="line">conda activate pytorch</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 额外学习，如何看conda环境还有python的版本，输入</span></span><br><span class="line">conda info --envs</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="如何在jupyter内部调用"><a href="#如何在jupyter内部调用" class="headerlink" title="如何在jupyter内部调用"></a>如何在jupyter内部调用</h2><p>为了让Jupyter Notebook支持虚拟运行环境，需要在Anaconda里安装一个插件。(实测在jupyter打开的时候也能安装成功，关键是要将jupyter重开下)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install nb_conda</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>重开jupyter后，看到了不同的虚拟环境的python选项，但是还无法看到pytorch的环境。(果然单看一个教程不一定能解决我的问题)。Google之后发现，原来还要在虚拟环境中安装ipykernel。在prompt中输入如下指令：</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">conda activate torch</span><br><span class="line">conda install ipykernel</span><br><span class="line">conda deactivate</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果需要删除</span></span><br><span class="line">删除环境：</span><br><span class="line">conda remove -n your_env_name(虚拟环境名称) --all</span><br><span class="line"></span><br><span class="line">删除虚拟环境中的包：</span><br><span class="line">conda remove --name $your_env_name  $package_name（包名） </span><br></pre></td></tr></table></figure>
-
-<p>ok，重新启动jupyter就可以看到conda的虚拟环境了。</p>
-<img src="/2021/04/14/pythonLearning/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/image-20210412110641580.png" alt="image-20210412110641580" style="zoom:50%;">
-
-
-
-<h2 id="额外内容pip-conda常用命令"><a href="#额外内容pip-conda常用命令" class="headerlink" title="额外内容pip/conda常用命令"></a>额外内容pip/conda常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看已经安装的包</span> </span><br><span class="line">pip list </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装第三方包（版本的话使用==）</span></span><br><span class="line">pip install robotframework==2.8.7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 相关的知识链接：</span></span><br><span class="line">https://zhuanlan.zhihu.com/p/164666990</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> conda常用命令</span></span><br><span class="line">conda list：查看安装了哪些包。</span><br><span class="line">conda install package_name(包名)：安装包</span><br><span class="line">conda env list 或 conda info -e：查看当前存在哪些虚拟环境</span><br><span class="line">conda update conda：检查更新当前conda</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/afea092dda1d">如何在Jupyter Notebook中使用Python虚拟环境？</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33296651/article/details/95316784">jupyter找不到conda的虚拟环境</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/13/pythonLearning/python-matplotlib%E7%94%BB%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -400,7 +954,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-18 20:09:27" itemprop="dateModified" datetime="2021-04-18T20:09:27+08:00">2021-04-18</time>
+                <time title="Modified: 2021-04-29 07:52:05" itemprop="dateModified" datetime="2021-04-29T07:52:05+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -447,8 +1001,6 @@
 <p>其他的一些画图方法</p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3bb2cc453df1">https://www.jianshu.com/p/3bb2cc453df1</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotbli.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统一设置</span></span><br><span class="line">plt.plot(x,x,x,x*<span class="number">2</span>,x,x/<span class="number">2</span>,linewidth=<span class="number">3</span>,color=<span class="string">&#x27;blue&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 参数连用需要对不同的线进行分别设置</span></span><br><span class="line">plt.plot(x,x,<span class="string">&#x27;r:v&#x27;</span>,x,x*<span class="number">2</span>,<span class="string">&#x27;b--h&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
 
 <p>常用线条属性的修改</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#颜色的修改,透明度，填充颜色，线性</span></span><br><span class="line">plt.plot(x,y,color=<span class="string">&#x27;c&#x27;</span>,alpha=<span class="number">0.3</span>,facecolor=<span class="string">&#x27;red&#x27;</span>,ls=<span class="string">&#x27;:&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#线宽，点形，点形大小</span></span><br><span class="line">plt.plot(x,y,lw=<span class="number">1.5</span>,marker=<span class="string">&#x27;s&#x27;</span>,markersize=<span class="number">60</span>,</span><br><span class="line">         </span><br><span class="line"><span class="comment"># xticks函数设置坐标轴刻度和标签</span></span><br><span class="line">plt.xticks([<span class="number">0</span>,np.pi/<span class="number">2</span>,np.pi,<span class="number">3</span>*np.pi/<span class="number">2</span>,<span class="number">2</span>*np.pi],[<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;π/2&#x27;</span>,<span class="string">&#x27;π&#x27;</span>,<span class="string">&#x27;3π/2&#x27;</span>,<span class="string">&#x27;2π&#x27;</span>])</span><br></pre></td></tr></table></figure>
@@ -598,7 +1150,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-25 19:22:02" itemprop="dateModified" datetime="2021-04-25T19:22:02+08:00">2021-04-25</time>
+                <time title="Modified: 2021-04-29 07:54:16" itemprop="dateModified" datetime="2021-04-29T07:54:16+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -787,6 +1339,13 @@
 <td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-list-reverse.html">list.reverse()</a> 反向列表中元素</td>
 </tr>
 </tbody></table>
+<p>python 里面的slicing是取头不取尾。</p>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">0</span>:<span class="number">6</span>:<span class="number">2</span>] （表示为<span class="number">0</span>,<span class="number">2</span>,<span class="number">4</span>）</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h2><p>也是最常用的数据类型。元组用 () 标识。内部元素用逗号隔开。==元组不能二次赋值，相当于只读列表。==</p>
 <blockquote>
 <p>可以对元组进行操作，但是不能对元组的元素进行操作</p>
@@ -1029,626 +1588,10 @@
   
   
 
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">机器学习入门概率</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-    
-              <time title="Created: 2021-04-12 08:13:46 / Modified: 08:56:41" itemprop="dateCreated datePublished" datetime="2021-04-12T08:13:46+08:00">2021-04-12</time>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>280</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>j</p>
-<p>j机器学习的课程：</p>
-<p>2020年李宏毅的机器学习课程（bili官网）</p>
-<blockquote>
-<p>带有数据和ppt</p>
-</blockquote>
-<p>课程视频： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av94519857">https://www.bilibili.com/video/av94519857</a></p>
-<p>作业ppt及答案： <a target="_blank" rel="noopener" href="https://github.com/Iallen520/lhy_DL_Hw">https://github.com/Iallen520/lhy_DL_Hw</a></p>
-<p><a target="_blank" rel="noopener" href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html">http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html</a></p>
-<h2 id="Carnegie-Mellon-University-Tom-Mitchell"><a href="#Carnegie-Mellon-University-Tom-Mitchell" class="headerlink" title="Carnegie Mellon University Tom Mitchell"></a>Carnegie Mellon University <a target="_blank" rel="noopener" href="http://www.cs.cmu.edu/~tom">Tom Mitchell</a></h2><p><a target="_blank" rel="noopener" href="http://www.cs.cmu.edu/~tom/10701_sp11/lectures.shtml">http://www.cs.cmu.edu/~tom/10701_sp11/lectures.shtml</a></p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/" class="post-title-link" itemprop="url">机器学习李宏毅课程</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-12 08:13:46" itemprop="dateCreated datePublished" datetime="2021-04-12T08:13:46+08:00">2021-04-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-26 08:27:24" itemprop="dateModified" datetime="2021-04-26T08:27:24+08:00">2021-04-26</time>
-              </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>机器学习就是找函数。用机器取找函数来解决问题</p>
-<h1 id="课程的学习图"><a href="#课程的学习图" class="headerlink" title="课程的学习图"></a>课程的学习图</h1><img src="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210412082711048.png" alt="image-20210412082711048" style="zoom:67%;">
-
-
-
-<p>Explainable AI: 为什么AI会知道猫是猫</p>
-<p>Adversarial Attack</p>
-<p>network compression: 将模型缩小，易于移植</p>
-<p>Transfer Learning: 训练资料和测试资料不一样的时候，怎么办</p>
-<p>meta learning: 机器自己学习如何学习，机器学习的效率并不是很有效率（由于人类找到的方法并不是很有效率）</p>
-<p>Kaggle是一个数据分析的竞赛平台，网址：<a target="_blank" rel="noopener" href="https://www.kaggle.com/">https://www.kaggle.com/</a></p>
-<img src="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210412084659971.png" class title="image-20210412084659971">
-
-
-
-<p>上传kaggle，5次结果</p>
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>将不同的python安装在不同的虚拟环境，能维持原生python不受函数包安装移除污染。例如将pytorch安装在虚拟环境中。</p>
-<h2 id="回归regression"><a href="#回归regression" class="headerlink" title="回归regression"></a>回归regression</h2><h2 id><a href="#" class="headerlink" title></a></h2><p>线性回归，加上一个regulation项，可以加强对模型的构建</p>
-<p>目的是为了是model对input的noise噪声不是很敏感</p>
-<p>error的来源</p>
-<p>bias和variance，相当于测样中的accuracy (bias) 和precise </p>
-<p>利用train data训练集来训练模型，然后利用test data来测试模型</p>
-<p>多个简单的模型，他们的variance比较小。（受到输入数据的影响小）</p>
-<p>多个复杂的模型，variance大，bias小</p>
-<p>logistic regression </p>
-<p>聚类分析，通俗点讲，就是概率，属于哪一类的概率最大。</p>
-<p>bernuli的交叉熵(cross entropy)</p>
-<p>square error 和 cross entropy的结果（如图），square error 的训练速度会非常慢，出现甚至卡机的现象。</p>
-<img src="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210425081351421.png" alt="image-20210425081351421" style="zoom:50%;">
-
-
-
-
-
-<p>generative 模型，受数据量的影响少，有先验假设(类似于脑补)，</p>
-<p>discriminative 模型，有先验假设，受数据量</p>
-<p>模型的评估与选择</p>
-<p>错误率： 在m 个样本中有a 个样本分类错误，则错误率E=a/m；</p>
-<p>精度：1-E，即1-错误率。</p>
-<p><strong>过拟合和欠拟合</strong></p>
-<img src="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210425082157444.png" class title="image-20210425082157444">
-
-<p>欠拟合比较容易克服，例如在决策树学习中扩展分支、在神经网络学习中增加训练轮数等。</p>
-<p>而过拟合则很麻烦．在后面的学习中我们将看到，过拟合是机器学习面临的关键障碍，各类学习算法都必然带有一些针对过拟合的措施；然而必须认识到，过拟合是无法彻底避免的，我们所能做的只是“缓解”，或者说减小其风险．</p>
-<h1 id="评估方法"><a href="#评估方法" class="headerlink" title="评估方法"></a>评估方法</h1><p>需使用一个“测试集”(testing set) 来测试学习器对新样本的判别能力、可解释性等方面的因素，然后以测试集上的＂测试误差”(testing error) 作为泛化误差的近似。测试集（testing set ）和训练集（training set ）</p>
-<blockquote>
-<p>但是，我们希望评估的是全部样本训练出来的模型。</p>
-</blockquote>
-<h4 id="留出法-hold-out"><a href="#留出法-hold-out" class="headerlink" title="留出法(hold-out)"></a>留出法(hold-out)</h4><p>因此，单次使用留出法得到的估计结果往往不够稳定可靠，在使用留出法时，一般要采用若干次随机划分、重复进行实验评估后取平均值作为留出法的评估结果。==常见做法是将大约2/3 ~4/5 的样本用于训练，剩余样本用千测试。==</p>
-<h4 id="交叉验证法-cross-validation"><a href="#交叉验证法-cross-validation" class="headerlink" title="交叉验证法(cross validation)"></a>交叉验证法(cross validation)</h4><p>将数据分为k份，k-1份作为训练集，最后一份作为测试集，这样可以做k次验算（k折交叉交叉验算）；同样重复n次，则为n次k折交叉验算。==常见做法：10次10折交叉验证。==</p>
-<h4 id="自助法-bootstrap"><a href="#自助法-bootstrap" class="headerlink" title="自助法( bootstrap)"></a>自助法( bootstrap)</h4><p>给定包含m 个样本的数据集D ，我们对它进行采样产生数据集D’ ：每次随机从D 中挑选一个样本，将其拷贝放入D’ ，然后再将该样本放回初始数据集D 中，使得该样本在下次采样时仍有可能被采到；这个过程重复执行m 次后，我们就得到了包含m个样本的数据集D’ ，这就是自助采样的结果。</p>
-<p>自助法在数据集较小、难以有效划分训练／测试集时很有用；此外，自助法能从初始数据集中产生多个不同的训练集，这对集成学习等方法有很大的好处．然而，自助法产生的数据集改变了初始数据集的分布，这会引入估计偏差。在初始数据足够的情况下，留出法和交叉验证法更有效。</p>
-<h4 id="调参和最终模型"><a href="#调参和最终模型" class="headerlink" title="调参和最终模型"></a>调参和最终模型</h4><p>现实中常用的做法是对每个参数选定一个范围和变化步长，例如在[0,0.2] 范围内以0.05 为步长，则实际要评估的候选参<br>数值有5 个，最终是从这5 个候选值中产生选定值。</p>
-<p>这样选定的参数值往往不是“最佳”值，但这是在计算开销和性能估计之间进行折中的结果，通过这个折中，学习过程才变得可行．</p>
-<blockquote>
-<p>我之前也在Be7的模型中使用这种方法。</p>
-</blockquote>
-<p>回归任务最常用的性能度量是“均方误差”(mean squared error)</p>
-<p>可以用GPU来加速</p>
-<p>语音/图像上的应用</p>
-<p>sigmoid function </p>
-<p>Sigmoid函数是一个在生物学中常见的S型的函数，也称为S型生长曲线。Sigmoid函数常被用作神经网络的阈值函数，将变量映射到0,1之间。</p>
-<p>深度学习，即有很多hidden layers就是深度学习，至于有多少层算deep，因人而异，</p>
-<img src="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210425112621871.png" alt="image-20210425112621871" style="zoom:50%;">
-
-
-
-
-
-<p>没有激活函数，后面的权重(w)和bias都会失效</p>
-<p>矩阵运算，GPU可以加速运动</p>
-<blockquote>
-<p>这在matlab中也有提及</p>
-</blockquote>
-<img src="/2021/04/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%8E%E5%AE%8F%E6%AF%85%E8%AF%BE%E7%A8%8B/image-20210425151301198.png" alt="image-20210425151301198" style="zoom:50%;">
-
-<p>内部的layers，有多少层</p>
-<p>为什么要深度学习</p>
-<p>深度学习主要包含三个步骤</p>
-<p>back and forward 算法</p>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/11/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">python_PyTorch入门教程</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-11 22:50:17" itemprop="dateCreated datePublished" datetime="2021-04-11T22:50:17+08:00">2021-04-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-18 20:08:09" itemprop="dateModified" datetime="2021-04-18T20:08:09+08:00">2021-04-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>2.7k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>学习如何入门PyTorch，包括基础原理知识、numpy与PyTorch的区别以及案例研究实例。</p>
-</blockquote>
-<h1 id="PyTorch的概述"><a href="#PyTorch的概述" class="headerlink" title="PyTorch的概述"></a>PyTorch的概述</h1><p>PyTorch是一个基于Python的库，用来提供一个具有灵活性的深度学习开发平台。PyTorch的工作流程非常接近Python的科学计算库——numpy。</p>
-<p>现在你可能会问，为什么我们要用PyTorch来建立深度学习模型呢？主要有三点</p>
-<ul>
-<li><p><strong>易于使用的API</strong>—它就像Python一样简单。</p>
-</li>
-<li><p><strong>Python的支持</strong>—如上所述，PyTorch可以顺利地与Python数据科学栈集成。它非常类似于numpy，甚至注意不到它们的差别。</p>
-</li>
-<li><p><strong>动态计算图</strong>—取代了具有特定功能的预定义图形，PyTorch为我们提供了一个框架，以便可以在运行时构建计算图，甚至在运行时更改它们。在不知道创建神经网络需要多少内存的情况下这非常有价值。</p>
-</li>
-</ul>
-<p>PyTorch的其他一些优点还包括：多gpu支持，自定义数据加载器和简化的预处理器。</p>
-<p>自从2016年1月发布以来，许多研究人员将其作为一种“go-to”库，因为它可以轻松地构建新颖的甚至是极其复杂的图形。虽说如此，PyTorch仍有一段时间没有被大多数数据科学实践者采用，因为它是新的而且处于“正在建设”的状态</p>
-<h1 id="pytorch和tensorflow的区别"><a href="#pytorch和tensorflow的区别" class="headerlink" title="pytorch和tensorflow的区别"></a>pytorch和tensorflow的区别</h1><p>TensorFlow 是谷歌的开发者创造的一款开源的深度学习框架。PyTorch 是最新的深度学习框架之一，由 Facebook 的团队开发，并于 2017 年在 GitHub 上开源。</p>
-<p>PyTorch 和 TensorFlow 的关键差异是它们执行代码的方式。这两个框架都基于基础数据类型张量（tensor）而工作。</p>
-<h1 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h1><p>Google了一下，发现大家都有给pytorch安装虚拟环境，因为有可能跟python原有的包起冲突，这样也方便使用。</p>
-<p>创建虚拟环境代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pytorch为库的名字</span></span><br><span class="line">conda create -n pytorch python=<span class="number">3.8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 额外学习，如何看conda环境还有python的版本，输入</span></span><br><span class="line">conda info --envs</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://pytorch.org/">官网下载传送门</a>，要选择合适自己的版本。</p>
-<blockquote>
-<p>CUDA是Compute Unified Device Architecture的缩写。中文叫统一计算架构。是为了让nvidia gpu可以完成通用计算任务的一种集成技术，可以为数据大吞吐量的工作提供很好的加速功能。简单的来讲，就是为了让GPU可以不仅仅工作与自己的一幕三分地，而是利用自身的优势，完成通用计算的任务。主要应用除了日常视频编码解码，游戏等外，可以应用于计算加速方面。</p>
-</blockquote>
-<img src="/2021/04/11/pythonLearning/python-PyTorch%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/image-20210411225629962.png" class title="image-20210411225629962">
-
-<p>将官网提供的命令放进去</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=<span class="number">10.2</span> -c pytorch</span><br></pre></td></tr></table></figure>
-
-<p>果然是龟速…..尝试国内镜像下载，使用清华园镜像下载，速度确实会快一点。（以下都是在pythorch的环境下进行）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加清华源的pytorch</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line"></span><br><span class="line">conda install pytorch torchvision cudatoolkit=<span class="number">10.0</span>  <span class="comment"># 删除安装命令最后的 -c pytorch，才会采用清华源安装。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将镜像通道删除</span></span><br><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装完成后测试torch和CUD"><a href="#安装完成后测试torch和CUD" class="headerlink" title="安装完成后测试torch和CUD"></a>安装完成后测试torch和CUD</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#为了确保PyTorch安装正确，我们可以运行示例PyTorch代码来验证安装。这里我们将构造一个随机初始化的张量。</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">x = torch.rand(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line">print(x)</span><br><span class="line"><span class="comment"># The output should be something similar to:</span></span><br><span class="line"><span class="comment"># tensor([[0.2989, 0.2493, 0.2642],</span></span><br><span class="line"><span class="comment">#         [0.9508, 0.4811, 0.1085],</span></span><br><span class="line"><span class="comment">#         [0.5423, 0.3216, 0.3068],</span></span><br><span class="line"><span class="comment">#         [0.8863, 0.8385, 0.5150],</span></span><br><span class="line"><span class="comment">#         [0.8451, 0.4620, 0.6266]])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此外，要检查GPU驱动程序和CUDA是否能够被PyTorch启用和访问，需要运行以下命令以返回CUDA驱动程序是否已启用：</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line"><span class="comment"># the output is: True</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>安装成功之后就可以来学习pytorch了。</p>
-<h1 id="pytorch-的一些基本概念"><a href="#pytorch-的一些基本概念" class="headerlink" title="pytorch 的一些基本概念"></a>pytorch 的一些基本概念</h1><p>在深入讨论细节之前，让我们先看看PyTorch的工作流程。</p>
-<p>PyTorch使用了命令式/热切的范例。也就是说，在构建一个图形时，每一行代码都定义了改图的一个组件。我们甚至能在图形构建完成前，独立的对这些组件进行计算。这就是所谓的“逐运行”方法。</p>
-<p><strong>PyTorch张量(tensor)</strong></p>
-<p>张量只是多维数组。PyTorch中的张量类似于numpy的ndarrays，另外，张量也可以在GPU上使用。PyTorch支持各种类型的张量。</p>
-<h4 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h4><p>与numpy一样，科学计算库非常重要的一点是能够实现高效的数学功能。而PyTorch提供了一个类似的借口，可以使用200个以上的数学运算。</p>
-<h4 id="Autograd模块"><a href="#Autograd模块" class="headerlink" title="Autograd模块"></a>Autograd模块</h4><p>PyTorch使用了一种叫做自动微分的技术。也就是说，它会有一个记录我们所有执行操作的记录器，之后再回放记录来计算我们的梯度。这一技术在构建神经网络时尤其有效，因为我们可以通过计算前路参数的微分来节省时间。</p>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>最后需通过几个实例学习，来更加了解pytorch. </p>
-<p>我们使用<a href="https://link.zhihu.com/?target=https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a>作为数据集，包含了10个类别60000张图片，每张图片的大小为32x32，其中训练图片50000张，测试图片10000张。</p>
-<p>torchvision中已经打包好了这个数据集，我们不用自己下载，直接如下调用就可以了。</p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Boys_Wu/article/details/106623192">pytorch加速下载——清华镜像源(conda或者pip版本)</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d66319506dd7">PyTorch入门教程</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80733307">TensorFlow与PyTorch之争，哪个框架最适合深度学习</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/pythonLearning/python%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%90%9C%E9%9B%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/11/pythonLearning/python%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%90%9C%E9%9B%86/" class="post-title-link" itemprop="url">python学习资源搜集</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-11 22:48:03" itemprop="dateCreated datePublished" datetime="2021-04-11T22:48:03+08:00">2021-04-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-27 23:21:04" itemprop="dateModified" datetime="2021-04-27T23:21:04+08:00">2021-04-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>317</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>python 一些有用的教材</p>
-<ul>
-<li>python的主页</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a></p>
-<ul>
-<li><p>python的tutorial，（可以查阅模块的使用方法）</p>
-<p><a target="_blank" rel="noopener" href="https://docs.python.org/3.9/py-modindex.html">https://docs.python.org/3.9/py-modindex.html</a></p>
-</li>
-</ul>
-<p>python常用库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> np  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>type(example)，判断example的类型</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="literal">None</span>,(),[],]</span><br><span class="line">print(<span class="built_in">len</span>(a))</span><br><span class="line"><span class="comment"># 输出结果为6</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**<span class="number">22</span> % <span class="number">3</span> 表达式输出结果为？** </span><br><span class="line"><span class="comment"># 结果为1，%为取余</span></span><br><span class="line"></span><br><span class="line"><span class="number">9</span>//<span class="number">2</span> 表达式输出结果为？</span><br><span class="line"><span class="comment"># // 用于向下取接近除数的整数。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> x <span class="keyword">or</span> y <span class="keyword">and</span> z:</span><br><span class="line"><span class="comment"># and 具有优先级</span></span><br></pre></td></tr></table></figure>
-
-<p>异常的处理</p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/11/shellLearning/shell-%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/11/shellLearning/shell-%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8/" class="post-title-link" itemprop="url">shell_捕获异常</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-04-11 22:47:22" itemprop="dateCreated datePublished" datetime="2021-04-11T22:47:22+08:00">2021-04-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-15 09:09:31" itemprop="dateModified" datetime="2021-04-15T09:09:31+08:00">2021-04-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/shell/" itemprop="url" rel="index"><span itemprop="name">shell</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>591</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>总结：</p>
-<ul>
-<li>主要使用$?的这个方法就能解决我的问题</li>
-<li>还有其他捕获异常的方法（有遇到再学习）</li>
-</ul>
-</blockquote>
-<p>在shell中，我们往往规定0为正常，一切非0返回值则为不正常。但往往我们在写shell脚本的时候，忽略对于返回值的判断。我们看一个很基本的shell程序</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">cd /home/xxxx/</span><br><span class="line">rm -rf *</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>这个脚本的意思很简单，就是cd到某一个目录下，然后将该目录下所有的内容都删除。首先，rm这种东西出现在脚本中，就是一个很危险的操作，而这个程序的关键之处还在于，并没有对第一行shell的返回值进行任何的判断，也就是说对于cd那行代码无论执行失败与否，都会去执行下面的那段rm，试想如果在某些情况下cd那段代码失败了之后，会出现多么可怕的后果。所以，我们应该对于cd的代码做返回值的判断。</p>
-</blockquote>
-<p>使用<code>$?</code>判断上一段shell的返回值是否有问题</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">cd /home/xxxx/</span><br><span class="line">if [ &quot;$?&quot;= &quot;0&quot; ]; then</span><br><span class="line">   rm -rf *  # 如果正确cd到xxxx文件夹下，删除所有</span><br><span class="line">else</span><br><span class="line">   echo &quot;cannot change directory&quot; 1&gt;&amp;2 # 如果没有cd到特定文件夹下，抛出信息</span><br><span class="line">   exit 1</span><br><span class="line">fi </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果没有问题，$? 为0，如果有问题，$?为其他值。</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/clam/archive/2012/12/17/2821684.html">如何在shell中处理异常（Part 1）</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1714,7 +1657,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1763,12 +1706,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k</span>
+    <span title="Symbols count total">129k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:57</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -1810,10 +1753,7 @@
 
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
-
+<script src="/js/local-search.js"></script>
 
 
 

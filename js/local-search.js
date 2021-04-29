@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Show search results
+        //这个表示搜到的标题和内容值有不唯一即可
         if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
           let hitCount = indexOfTitle.length + indexOfContent.length;
           // Sort index by position of keyword

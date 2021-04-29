@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"eee0de363005d1454615a59d0caaa505","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -149,18 +149,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -181,6 +184,685 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-%E7%BB%98%E5%9B%BE1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-%E7%BB%98%E5%9B%BE1/" class="post-title-link" itemprop="url">matlab_常用函数_绘图1</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-19 18:20:33" itemprop="dateCreated datePublished" datetime="2021-03-19T18:20:33+08:00">2021-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-14 08:27:48" itemprop="dateModified" datetime="2021-04-14T08:27:48+08:00">2021-04-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab/" itemprop="url" rel="index"><span itemprop="name">matlab</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>2.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>d 最方便的是方法3，默认figure大小为屏幕大小，然后写代码时直接保存</p>
+</blockquote>
+<p>全屏+保存</p>
+<p>set(gcf,’outerposition’,get(0,’ScreenSize’));</p>
+<p>text(-0.1,1.05,[‘script: ‘,pwd,’&#39;,mfilename],’Units’,’normalized’,’Interpreter’,’none’)</p>
+<p>print(gcf,’-djpeg’,’-r150’,’-opengl’,[‘Fig_’,savename,’.jpg’]);</p>
+<p>第二种方式，全屏保存</p>
+<p>% scrsz = get(0,’ScreenSize’);</p>
+<p>% set(gcf,’Position’,scrsz);</p>
+<p>% % print(gcf,’-r300’,’-dpng’,’GRIPNEEM’);</p>
+<p>方法3： </p>
+<p>设置图片的</p>
+<p>保存出图 (注意这种情况下，输出的仍为栅格，不是适量）</p>
+<p>print(gcf,’-djpeg’,’-r150’,’-opengl’,[‘Fig_’,savename,’.jpg’]);</p>
+<p>如果是横向的，事先设定为横向</p>
+<p>orient(gcf,’landscape’) </p>
+<p>如果想要矢量保存图片</p>
+<p>方法1： saveas (gcf,’Fig4’,’pdf’)， 适合小图</p>
+<p>方法2： 适合小图和大图</p>
+<p>set(gcf,’outerposition’,get(0,’ScreenSize’),’Units’,’Inches’)</p>
+<p>pos = get(gcf,’Position’);</p>
+<p>set(gcf,’PaperPositionMode’,’Auto’,’PaperUnits’,’Inches’,’PaperSize’,[pos(3), pos(4)])</p>
+<p>print(gcf,savename,’-dpdf’,’-r0’)</p>
+<p>一些常用的属性值，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348822567">https://zhuanlan.zhihu.com/p/348822567</a></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 定义线型、标记符号、线宽和颜色</span></span><br><span class="line">set(Line1, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C1)</span><br><span class="line">set(Line2, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;o&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C2)</span><br><span class="line">set(Line3, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;^&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C3)</span><br><span class="line">set(Line4, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;v&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C4)</span><br><span class="line">set(Line5, <span class="string">&#x27;LineStyle&#x27;</span>, <span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;Marker&#x27;</span>, <span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">1</span>,  <span class="string">&#x27;Color&#x27;</span>, C5)</span><br><span class="line"><span class="comment">% 坐标区调整</span></span><br><span class="line">set(gca, <span class="string">&#x27;Box&#x27;</span>, <span class="string">&#x27;off&#x27;</span>, ...                                <span class="comment">% 边框</span></span><br><span class="line">         <span class="string">&#x27;XGrid&#x27;</span>, <span class="string">&#x27;off&#x27;</span>, <span class="string">&#x27;YGrid&#x27;</span>, <span class="string">&#x27;on&#x27;</span>, ...               <span class="comment">% 网格</span></span><br><span class="line">         <span class="string">&#x27;TickDir&#x27;</span>, <span class="string">&#x27;out&#x27;</span>, <span class="string">&#x27;TickLength&#x27;</span>, [<span class="number">.01</span> <span class="number">.01</span>], ...   <span class="comment">% 刻度</span></span><br><span class="line">         <span class="string">&#x27;XMinorTick&#x27;</span>, <span class="string">&#x27;off&#x27;</span>, <span class="string">&#x27;YMinorTick&#x27;</span>, <span class="string">&#x27;off&#x27;</span>, ...    <span class="comment">% 小刻度</span></span><br><span class="line">         <span class="string">&#x27;XColor&#x27;</span>, [<span class="number">.1</span> <span class="number">.1</span> <span class="number">.1</span>],  <span class="string">&#x27;YColor&#x27;</span>, [<span class="number">.1</span> <span class="number">.1</span> <span class="number">.1</span>],...  <span class="comment">% 坐标轴颜色</span></span><br><span class="line">         <span class="string">&#x27;XTick&#x27;</span>, <span class="number">0</span>:<span class="number">0.1</span>:<span class="number">1.2</span>,  <span class="string">&#x27;YTick&#x27;</span>, <span class="number">0</span>:<span class="number">0.05</span>:<span class="number">0.5</span>,...     <span class="comment">% 刻度位置、间隔</span></span><br><span class="line">         <span class="string">&#x27;Xlim&#x27;</span> ,[<span class="number">0</span> <span class="number">1.1</span>],<span class="string">&#x27;Ylim&#x27;</span> ,[<span class="number">0.1</span> <span class="number">0.35</span>], ...          <span class="comment">% 坐标轴范围</span></span><br><span class="line">         <span class="string">&#x27;Xticklabel&#x27;</span>,&#123;[<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">1.2</span>]&#125;,...                   <span class="comment">% X坐标轴刻度标签</span></span><br><span class="line">         <span class="string">&#x27;Yticklabel&#x27;</span>,&#123;[<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">0.5</span>]&#125;)                     <span class="comment">% Y坐标轴刻度标签</span></span><br><span class="line"><span class="comment">% X、Y轴标签及Legend</span></span><br><span class="line">hXLabel = xlabel(<span class="string">&#x27;Point spacing (m)&#x27;</span>);</span><br><span class="line">hYLabel = ylabel(<span class="string">&#x27;MAE (m)&#x27;</span>);</span><br><span class="line">hLegend = <span class="built_in">legend</span>([Line1,Line2,Line3,Line4,Line5], ...</span><br><span class="line">                 <span class="string">&#x27;samp1&#x27;</span>, <span class="string">&#x27;samp2&#x27;</span>,<span class="string">&#x27;samp3&#x27;</span>,<span class="string">&#x27;samp4&#x27;</span>,<span class="string">&#x27;samp5&#x27;</span>, ...</span><br><span class="line">                 <span class="string">&#x27;Location&#x27;</span>, <span class="string">&#x27;northwest&#x27;</span>);</span><br><span class="line"><span class="comment">% 刻度标签字体和字号</span></span><br><span class="line">set(gca, <span class="string">&#x27;FontName&#x27;</span>, <span class="string">&#x27;Times&#x27;</span>, <span class="string">&#x27;FontSize&#x27;</span>, <span class="number">9</span>)</span><br><span class="line"><span class="comment">% X、Y轴标签及Legend的字体字号 </span></span><br><span class="line">set([hXLabel, hYLabel,hLegend], <span class="string">&#x27;FontName&#x27;</span>,  <span class="string">&#x27;Helvetica&#x27;</span>)</span><br><span class="line">set([hXLabel, hYLabel,hLegend], <span class="string">&#x27;FontSize&#x27;</span>, <span class="number">10</span>)</span><br><span class="line"><span class="comment">% 背景颜色</span></span><br><span class="line">set(gca,<span class="string">&#x27;Color&#x27;</span>,[<span class="number">1</span> <span class="number">1</span> <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_figure%E7%95%99%E7%99%BD%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_figure%E7%95%99%E7%99%BD%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">matlab_figure留白问题</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-19 16:27:36" itemprop="dateCreated datePublished" datetime="2021-03-19T16:27:36+08:00">2021-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-14 16:09:19" itemprop="dateModified" datetime="2021-04-14T16:09:19+08:00">2021-04-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab/" itemprop="url" rel="index"><span itemprop="name">matlab</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>目的是能一劳永逸的解决matlab画图的留白问题。</p>
+<p>总结： 方法1-3，只适用于单图（结合startup脚本，定位默认设置），方法4可适用于多图等距</p>
+</blockquote>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>figure如同一张画布，axes是坐标轴用来控制所画图的位置和大小。</p>
+<p>关于画布位置的属性主要有：Position; TightInset; OuterPosition。</p>
+<p>下图是三者的关系，OuterPosition是外边框（红色虚线），Position是内边框（绿色实线），TightInset是有效边界（蓝色）与Position之间的部分（理解它才能自定义axes）。</p>
+
+
+
+
+
+
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><h2 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h2><p><strong>LooseInset</strong>, 在Matlab中默认设置为[0.13, 0.11, 0.095, 0.075]，从而为刻度标记留出一定的空间。 便捷的方法时，修改matlab默认的属性值（详情可见博客中的另一文章“matlab_模板设定”）</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(<span class="number">0</span>,<span class="string">&#x27;DefaultAxesLooseInset&#x27;</span>,[<span class="number">0.03</span>,<span class="number">0.03</span>,<span class="number">0.03</span>,<span class="number">0.03</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h2><blockquote>
+<p>效果等于方法1中当 <strong>looseinset</strong> 取值都为0的时候</p>
+</blockquote>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(gca,<span class="string">&#x27;LooseInset&#x27;</span>,get(gca,<span class="string">&#x27;TightInset&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法3-窗口长宽比失衡问题"><a href="#方法3-窗口长宽比失衡问题" class="headerlink" title="方法3 窗口长宽比失衡问题"></a>方法3 窗口长宽比失衡问题</h2><p>有一种可能窗口长宽比失衡的问题 （e.g., 由于设置axis equal），如下图：</p>
+
+
+<p>一种方法是，计算坐标区长度与宽度的比例，通过改变figure窗口尺寸以使坐标区填充画布：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axis tight </span><br><span class="line">pos=get(gcf,<span class="string">&#x27;Position&#x27;</span>); <span class="comment">% 获取窗口尺寸信息</span></span><br><span class="line">pos(<span class="number">3</span>)=pos(<span class="number">4</span>)/<span class="number">3</span>; <span class="comment">% 改变窗口宽度（倍数根据长宽比自己确定）</span></span><br><span class="line">set(gcf,<span class="string">&#x27;Position&#x27;</span>,pos) <span class="comment">% 更新窗口尺寸</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="方法4-针对多图subplot的解决方法"><a href="#方法4-针对多图subplot的解决方法" class="headerlink" title="方法4 针对多图subplot的解决方法"></a>方法4 针对多图subplot的解决方法</h1><blockquote>
+<p>以上的方法对于单一图片比较有效，但是如果有多个图片的话（e.g., subplot)，并不能有效去除空白。进行了google，发现一般都要写个脚本script进行处理。</p>
+<p>我之前在处理相关数据的时候写了一个简单的脚本，放在这里</p>
+</blockquote>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> k==<span class="number">1</span></span><br><span class="line">    pos1=get(fig(<span class="number">1</span>),<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    pos1(<span class="number">1</span>)=<span class="number">0</span>;</span><br><span class="line">    pos1(<span class="number">4</span>)=<span class="number">0.35</span>;</span><br><span class="line">    pos1(<span class="number">3</span>)=<span class="number">0.25</span>;</span><br><span class="line">    set(fig(<span class="number">1</span>),<span class="string">&#x27;position&#x27;</span>,pos1)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    pos=get(fig(k),<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    pos(<span class="number">1</span>)=pos1(<span class="number">1</span>)+<span class="number">0.23</span>*(k<span class="number">-1</span>);</span><br><span class="line">    pos(<span class="number">4</span>)=<span class="number">0.35</span>;</span><br><span class="line">    pos(<span class="number">3</span>)=<span class="number">0.25</span>;</span><br><span class="line">    set(fig(k),<span class="string">&#x27;position&#x27;</span>,pos)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% put the title closer and figure closer</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">j</span>==<span class="number">4</span></span><br><span class="line">    title([<span class="string">&#x27;1998-2018 Madrid &#x27;</span>,name&#123;k&#125;])</span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">j</span>==<span class="number">3</span></span><br><span class="line">    title([<span class="string">&#x27;1984-2018 Vienna &#x27;</span>,name&#123;k&#125;])</span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">j</span>==<span class="number">2</span></span><br><span class="line">    a=title([<span class="string">&#x27;1975-2018 Ljungbyhed &#x27;</span>,name&#123;k&#125;],<span class="string">&#x27;units&#x27;</span>,<span class="string">&#x27;norm&#x27;</span>);</span><br><span class="line">    p=get(a,<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    p(<span class="number">2</span>)=p(<span class="number">2</span>)<span class="number">-0.1</span>;</span><br><span class="line">    set(a,<span class="string">&#x27;position&#x27;</span>,p,<span class="string">&#x27;units&#x27;</span>,<span class="string">&#x27;norm&#x27;</span>);</span><br><span class="line">    pos=get(fig(k),<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    pos(<span class="number">2</span>)=pos(<span class="number">2</span>)+<span class="number">0.07</span>;</span><br><span class="line">    set(fig(k),<span class="string">&#x27;position&#x27;</span>,pos)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    a=title([<span class="string">&#x27;1975-2018 Kiruna &#x27;</span>,name&#123;k&#125;],<span class="string">&#x27;units&#x27;</span>,<span class="string">&#x27;norm&#x27;</span>);</span><br><span class="line">    p=get(a,<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    p(<span class="number">2</span>)=p(<span class="number">2</span>)<span class="number">-0.1</span>;</span><br><span class="line">    set(a,<span class="string">&#x27;position&#x27;</span>,p,<span class="string">&#x27;units&#x27;</span>,<span class="string">&#x27;norm&#x27;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>参考文献：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011650143/article/details/79469991?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242">Matlab绘图去白边技巧(plot 、subplot)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/robot301/article/details/82852006?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.control">MATLAB：通过m文件去除图片空白区域（plot、subplot），设置大小并保存清晰图片</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/131602083">Matlab论文插图消除白边的5种方法</a></p>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab_%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B01/" class="post-title-link" itemprop="url">matlab_常用函数1</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-19 15:37:22" itemprop="dateCreated datePublished" datetime="2021-03-19T15:37:22+08:00">2021-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-14 08:27:48" itemprop="dateModified" datetime="2021-04-14T08:27:48+08:00">2021-04-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab/" itemprop="url" rel="index"><span itemprop="name">matlab</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>69</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>  % strrep函数，e.g. 从f中找到’Time’，替换为date;</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = strrep(f,<span class="string">&#x27;Time&#x27;</span>,date); </span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E6%A8%A1%E6%9D%BF%E8%AE%BE%E5%AE%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab-%E6%A8%A1%E6%9D%BF%E8%AE%BE%E5%AE%9A/" class="post-title-link" itemprop="url">matlab_模板设定</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-19 11:34:58" itemprop="dateCreated datePublished" datetime="2021-03-19T11:34:58+08:00">2021-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-14 08:27:47" itemprop="dateModified" datetime="2021-04-14T08:27:47+08:00">2021-04-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/matlab/" itemprop="url" rel="index"><span itemprop="name">matlab</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <blockquote>
+<p>起因是每当创建新的脚本时，我总要重复输入一些固定的代码，因此想说能不能使用特定的模板；</p>
+<p>一来能省下一定的时间，二来避免敲代码时出现各种各样的格式。</p>
+</blockquote>
+<h1 id="Matlab脚本的模板"><a href="#Matlab脚本的模板" class="headerlink" title="Matlab脚本的模板"></a>Matlab脚本的模板</h1><h2 id="创建一个make-fun函数进行创建模板"><a href="#创建一个make-fun函数进行创建模板" class="headerlink" title="创建一个make_fun函数进行创建模板"></a>创建一个make_fun函数进行创建模板</h2><ol>
+<li><p>Create a script “my_template.m” that has the layout of your code<br>For example:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%   Description: </span></span><br><span class="line"><span class="comment">%   Author: Foo</span></span><br><span class="line"><span class="comment">%   Comment: </span></span><br><span class="line">close all; clear; clc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Create a function “make_fun.m” that utilizes “copyfile” function to copy the template to a new m-file</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[]</span> = <span class="title">make_fun</span><span class="params">(V)</span></span></span><br><span class="line">copyfile(<span class="string">&#x27;my_template.m&#x27;</span>,V)</span><br><span class="line">edit(V)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>From the command line, you can call “make_fun” function to create a new function/script with the name of your choice</p>
+</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make_fun(<span class="string">&#x27;newScript.m&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="一个改进版本的make-fun-script，可以参照该思路进行改进"><a href="#一个改进版本的make-fun-script，可以参照该思路进行改进" class="headerlink" title="一个改进版本的make_fun script，可以参照该思路进行改进"></a>一个改进版本的make_fun script，可以参照该思路进行改进</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[]</span> = <span class="title">make_fun</span><span class="params">(V)</span></span></span><br><span class="line">[status,message,messageid] = copyfile(<span class="string">&#x27;my_template.m&#x27;</span>,V);</span><br><span class="line"><span class="keyword">if</span> (status &gt; <span class="number">0</span>)</span><br><span class="line">    fid  = fopen(V,<span class="string">&#x27;r+&#x27;</span>);</span><br><span class="line">    f=fread(fid,<span class="string">&#x27;*char&#x27;</span>)&#x27;;</span><br><span class="line">    fclose(fid);</span><br><span class="line">    f = strrep(f,<span class="string">&#x27;#my_template#&#x27;</span>,strrep(V,<span class="string">&#x27;.m&#x27;</span>,<span class="string">&#x27;&#x27;</span>));</span><br><span class="line">    f = strrep(f,<span class="string">&#x27;#date#&#x27;</span>,date);</span><br><span class="line">    fid  = fopen(V,<span class="string">&#x27;w+&#x27;</span>);</span><br><span class="line">    fprintf(fid,<span class="string">&#x27;%s&#x27;</span>,f);</span><br><span class="line">    fclose(fid);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">edit(V)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>#号之间的为可修改字段</p>
+</blockquote>
+<h1 id="Matlab默认属性设置"><a href="#Matlab默认属性设置" class="headerlink" title="Matlab默认属性设置"></a>Matlab默认属性设置</h1><p>（对图片绘制特别有效）</p>
+<blockquote>
+<p>可以创建个startup函数，里面可以修改Matlab的默认属性，这样每次启动Matlab，就会读取startup函数里面提前设定好属性值。（不过这样刚开始启动Matlab的时候，可能会有点时间）</p>
+</blockquote>
+<p>下面是我常用的属性设置，主要是利用Matlab绘制图片</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">startup</span></span></span><br><span class="line"><span class="comment">% change the defaut setting</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% ^^^ setting the plot ^^^</span></span><br><span class="line">set(groot,<span class="string">&#x27;DefaultLegendAutoUpdate&#x27;</span>,<span class="string">&#x27;off&#x27;</span>,<span class="string">&#x27;DefaultLegendorientation&#x27;</span>,<span class="string">&#x27;horizontal&#x27;</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;DefaultLegendbox&#x27;</span>,<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;defaultLineLineWidth&#x27;</span>,<span class="number">1.5</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;DefaultAxesFontsize&#x27;</span>,<span class="number">16</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;DefaultTextfontsize&#x27;</span>,<span class="number">16</span>,<span class="string">&#x27;DefaultTextUnits&#x27;</span>,<span class="string">&#x27;normalized&#x27;</span>)</span><br><span class="line">set(groot,<span class="string">&#x27;DefaultAxesFontweight&#x27;</span>,<span class="string">&#x27;bold&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">% ^^^ setting the figure ^^^</span></span><br><span class="line"><span class="comment">% make the figure size as window size</span></span><br><span class="line">set(groot, <span class="string">&#x27;defaultFigureUnits&#x27;</span>,<span class="string">&#x27;normalized&#x27;</span>,<span class="string">&#x27;defaultfigureposition&#x27;</span>,[<span class="number">0</span> <span class="number">0.05</span> <span class="number">1</span> <span class="number">0.85</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/18/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/milankovitch-cycle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/18/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/milankovitch-cycle/" class="post-title-link" itemprop="url">milankovitch_cycle</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-18 21:40:47" itemprop="dateCreated datePublished" datetime="2021-03-18T21:40:47+08:00">2021-03-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-24 22:12:19" itemprop="dateModified" datetime="2021-03-24T22:12:19+08:00">2021-03-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">文献阅读笔记</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>833</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <p>m问题： 米兰科维奇(Milankovitch cycle)如何影响地球气候</p>
+<p>The concept of the Milankovich cycles was developed in the 1930s by the Serbian mathematician Milutin Milankovitch. They take account of three variations in the orbit of the earth around the sun.</p>
+<p>米蘭科維奇循環（Milankovitch cycles）是塞爾維亞的地球物理学家兼天文學家米盧廷·米蘭科維奇的气候变化理论。米蘭科維奇计算了过去数百万年地球的離心率、轉軸傾角和軌道的進動的变化，发现了这些参数与地球上氣候模式，尤其是冰川期的关系。</p>
+<h3 id="轨道偏心率-Eccentricity"><a href="#轨道偏心率-Eccentricity" class="headerlink" title="轨道偏心率(Eccentricity)"></a>轨道偏心率(Eccentricity)</h3><p>偏心率是指地球轨道的形状偏离一个完美的圆的程度。地球绕太阳公转的轨道不是完美的圆形。随着时间的推移，在木星和土星这两颗太阳系最大的气态巨行星的引力作用下，地球轨道的形状从近乎圆形变为略椭圆形，Milanković的研究表明表明轨道变化的周期约100,000年。</p>
+<p><img src="http://img.cwtea.net/20201219/2b38c674202537a2afdbd7245bbd4490.gif" alt="img"></p>
+<h3 id="地轴倾角-Obliquity"><a href="#地轴倾角-Obliquity" class="headerlink" title="地轴倾角(Obliquity)"></a>地轴倾角(Obliquity)</h3><p>地球的旋转轴在绕太阳运行时倾斜的角度称为倾角，该倾角的存在导致了中低纬度的四季变化。在过去的一百万年里，它垂直于地球轨道平面的角度在22.1到24.5度之间变化。地球的轴向倾斜角越大，我们的季节就会越极端，夏季愈热，冬季愈冷。较大的倾斜角度有利于冰川和冰原的融化和撤退。这些影响在全球范围内并不是一致的：高纬度地区比赤道附近地区受到的太阳总辐射的变化更大。</p>
+<img src="/2021/03/18/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/milankovitch-cycle/f9ac5671949a392e04826080657c9dee.gif" class title="img">
+
+<h3 id="地轴进动-Precession"><a href="#地轴进动-Precession" class="headerlink" title="地轴进动(Precession)"></a>地轴进动(Precession)</h3><p>当地球旋转时，它的轴心会轻微摆动，就像一个稍稍偏离旋转中心的玩具陀螺。这种由于太阳和月球的引力导致旋转轴相对于恒星固定位置摆动的趋势被称为地轴进动，地球地轴进动方向自东向西。轴向进动的周期约为25771.5年。</p>
+<img src="/2021/03/18/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/milankovitch-cycle/247afae62f4ef20de095809a7795ee96.gif" class title="img">
+
+
+
+<blockquote>
+</blockquote>
+<p>地球的轨道参数会影响地球受到太阳的辐射量，从而影响地球环境。</p>
+<p>需要注意的是，该影响还未真正的被理解</p>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/16/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/PDF%E8%A7%A3%E9%94%81-%E5%8E%BB%E6%B0%B4%E5%8D%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackZheng">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JackZHENG_blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/16/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/PDF%E8%A7%A3%E9%94%81-%E5%8E%BB%E6%B0%B4%E5%8D%B0/" class="post-title-link" itemprop="url">PDF解锁_去水印</a>
+        </h2>
+    
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+    
+              <time title="Created: 2021-03-16 20:20:15" itemprop="dateCreated datePublished" datetime="2021-03-16T20:20:15+08:00">2021-03-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-22 15:22:51" itemprop="dateModified" datetime="2021-03-22T15:22:51+08:00">2021-03-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a>
+                </span>
+            </span>
+    
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数: </span>
+              <span>384</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时间 &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+          <h1 id="PDF密码解决"><a href="#PDF密码解决" class="headerlink" title="PDF密码解决"></a>PDF密码解决</h1><blockquote>
+<p>PDF解锁，网上有在线解锁工具，可以解决权限密码（免费用户有次数限制）</p>
+</blockquote>
+<p>PDF密码分两种，用户密码（打开密码）和所有者密码（权限密码）。</p>
+<img src="/2021/03/16/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/PDF%E8%A7%A3%E9%94%81-%E5%8E%BB%E6%B0%B4%E5%8D%B0/v2-e4e9dd053c6368e2ccb4e7f7e3637cdf_720w.jpg" alt="img" style="zoom:50%;">
+
+<p><strong>所有者密码（权限密码）属于君子协定</strong>，其文件<strong>内容并没有加密</strong>，只是PDF标准要求遵守相关权限设定，如不允许打印，修改等等。</p>
+<p><strong>题主所说的不能打印，就是权限密码限制了</strong></p>
+<p>我们可以使用<strong>PDF密码在线破解</strong>工具，移除权限密码</p>
+<p><a href="https://link.zhihu.com/?target=https://xpdf.net/decrypt-pdf">PDF解密_PDF解密软件_PDF密码破解_PDF文件解密 - 超级PDFxpdf.net</a></p>
+<p><strong>用户密码（打开密码）才是真正保护PDF内容的密码</strong>，使用这种密码，内容是加密的，此类密码只能让专业人士来爆破密码，通常视作不可以破解，解密此类PDF必须要知道密码才行</p>
+<h1 id="PDF去水印"><a href="#PDF去水印" class="headerlink" title="PDF去水印"></a>PDF去水印</h1><blockquote>
+<p>正版的pdf软件中就有去水印功能</p>
+</blockquote>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22938994/answer/1688607956">https://www.zhihu.com/question/22938994/answer/1688607956</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -481,7 +1163,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-27 20:58:51" itemprop="dateModified" datetime="2021-04-27T20:58:51+08:00">2021-04-27</time>
+                <time title="Modified: 2021-04-29 17:19:05" itemprop="dateModified" datetime="2021-04-29T17:19:05+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -503,14 +1185,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>5k</span>
+              <span>4.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>5 mins.</span>
+              <span>4 mins.</span>
             </span>
     
         </div>
@@ -654,16 +1336,6 @@
 <p>Linux shell：rename命令批量重命名文件</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44498318/article/details/109311521">https://blog.csdn.net/weixin_44498318/article/details/109311521</a></p>
 <h1 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h1><p>执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：**$n<strong>。</strong>n** 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……</p>
-<h1 id="Shell-基本运算符"><a href="#Shell-基本运算符" class="headerlink" title="Shell 基本运算符"></a>Shell 基本运算符</h1><p>额外链接: <a target="_blank" rel="noopener" href="https://blog.csdn.net/u012229282/article/details/102767383">Linux 下Shell脚本中的加减乘除运算</a></p>
-<p>expr 是一款表达式计算工具，使用它能完成表达式的求值操作。例如，两个数相加(<strong>注意使用的是反引号 \</strong>`** 而不是单引号 *<em>‘***</em>)：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 使用 expr</span></span><br><span class="line">val=`expr 2 + 2`</span><br><span class="line">echo &quot;两数之和为 : $val&quot;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用<span class="built_in">let</span></span></span><br><span class="line">let b=1+1; echo b # b为2</span><br><span class="line">c=5; let c*=5; echo $c # c为25</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用$[]</span></span><br><span class="line">d=$[$c+$b]; echo $d #d 为27</span><br></pre></td></tr></table></figure>
-<p>注意，shell不能做小数运算，需要用到bc或者awk。bc的用法有些电脑没有（比如说我的电脑bc的方法就不行），这里重点记录下awk的用法。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="bash"><span class="built_in">echo</span> `awk -v x=7.1 -v y=5.2 <span class="string">&#x27;BEGIN&#123;printf &quot;%d&quot;,x/y&#125;&#x27;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="shell中特殊符号"><a href="#shell中特殊符号" class="headerlink" title="shell中特殊符号"></a>shell中特殊符号</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xuxm2007/archive/2011/10/20/2218846.html">https://www.cnblogs.com/xuxm2007/archive/2011/10/20/2218846.html</a></p>
 <blockquote>
 <p>因为由于命名问题，我的文件夹中名字中经常会带有特殊符号。shell中对特殊符号的写法，需要加双引号</p>
@@ -786,703 +1458,10 @@
   
   
 
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83_%E9%A3%8E%E6%A0%BC%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83_%E9%A3%8E%E6%A0%BC%E7%BB%8F%E9%AA%8C%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">编程规范_风格经验学习</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-15 11:40:39" itemprop="dateCreated datePublished" datetime="2021-03-15T11:40:39+08:00">2021-03-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-08 16:13:36" itemprop="dateModified" datetime="2021-04-08T16:13:36+08:00">2021-04-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">编程语言学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p><a target="_blank" rel="noopener" href="https://zh-google-styleguide.readthedocs.io/en/latest/google-shell-styleguide/contents/#shell">shell风格指南</a></p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/09abb264ab95">https://www.jianshu.com/p/09abb264ab95</a></p>
-<ul>
-<li>将命令或命令组合设为一个见名知意的别名，在一个Shell环境中可以被多次调用，同时，利于代码的清晰度，也便于代码的阅读。 通常封装在一个库文件中，比如：demo.lib</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> LOCAL=<span class="string">&#x27;local&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> GLOBAL=<span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> OPEN_DEBUG=<span class="string">&#x27;set -x&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> CLOSE_DEBUG=<span class="string">&#x27;set +x&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> GET_IP_FQDN=<span class="string">&#x27;nslookup $&#123;IP_ADDRESS&#125; | tail -n 2 | sed -e &quot;$d&quot; | awk -F[=] &quot;&#123;print \$NF&#125;&quot; | sed -e &quot;s/^\s*//&quot; -e &quot;s/\.</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>将属性键值对，配置在文件中，供Shell读取，以此达到配置与代码的剥离，也避免程序的硬编码，比如：info.conf</li>
-</ul>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">NAME</span>=<span class="string">&quot;Zhou Shengshuai&quot;</span></span><br><span class="line"><span class="attr">COMPANY</span>=<span class="string">&quot;ZSS&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>如何执行lib中的alias呢？ 又如何读取info.conf中的属性值呢？下面的demo.sh一目了然。</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前进程中，Source参数文件demo.lib中的各个命令</span></span><br><span class="line"><span class="built_in">source</span> demo.lib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 全局变量IP_ADDRESS，在当前Shell环境中，可以被demo.lib共享，即：IP_ADDRESS可以在demo.lib被使用</span></span><br><span class="line">GLOBAL IP_ADDRESS=<span class="string">&quot;10.91.86.250&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行当前Shell环境中的命令，即：demo.lib中的GET_IP_FQDN</span></span><br><span class="line">GLOBAL IP_FQDN=`GET_IP_FQDN`</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;IP FQDN: <span class="variable">$&#123;IP_FQDN&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行当前Shell环境中的命令，即：demo.lib中的OPEN_DEBUG</span></span><br><span class="line">OPEN_DEBUG</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前进程中，读取参数文件info.conf中的各个属性值</span></span><br><span class="line">CONF_FILE=<span class="string">&quot;info.conf&quot;</span></span><br><span class="line">[ -e <span class="variable">$&#123;CONF_FILE&#125;</span> ] &amp;&amp; <span class="built_in">source</span> <span class="variable">$&#123;CONF_FILE&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;NAME: <span class="variable">$NAME</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;COMPANY: <span class="variable">$COMPANY</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> test1&#123;</span><br><span class="line">    <span class="comment"># 局部变量，生存周期在函数体内</span></span><br><span class="line">    LOCAL v1=100</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test1</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;local variable: <span class="variable">$v1</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> test2</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment"># 全局变量，生存周期从函数调用开始被Shell环境共享</span></span><br><span class="line">	GLOBAL v2=200</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test2</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;global variable: <span class="variable">$v2</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行当前Shell环境中的命令，即：demo.lib中的CLOSE_DEBUG</span></span><br><span class="line">CLOSE_DEBUG</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将整个EOF&quot;内容段&quot;作为命令输入</span></span><br><span class="line">cat &gt;output.txt &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">md分类以及添加站内搜索功能</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-10 09:53:36" itemprop="dateCreated datePublished" datetime="2021-03-10T09:53:36+08:00">2021-03-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-28 09:49:37" itemprop="dateModified" datetime="2021-04-28T09:49:37+08:00">2021-04-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">博客学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>进行多方搜索，发现我的基本操作没有错误，主要是我拼写错误问题。</p>
-<p>这里记录如何在主题下添加各个菜单项</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mqdxiaoxiao/article/details/93644533">Hexo博客NexT主题下添加分类、标签、关于菜单项</a></p>
-<h1 id="如何对文章md文件分类"><a href="#如何对文章md文件分类" class="headerlink" title="如何对文章md文件分类"></a>如何对文章md文件分类</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/maosidiaoxian/article/details/85220394">https://blog.csdn.net/maosidiaoxian/article/details/85220394</a></p>
-<blockquote>
-<p>该博客是2018年的，文中说的<code>permalink</code> 和 <code>new_post_name</code>的title不对应问题，会导致生成的html地址变更，但是<strong>貌似在最新Hexo版本中已经得到解决</strong>。</p>
-<p>直接将<code>new_post_name</code>修改为想要的结果即可</p>
-</blockquote>
-<blockquote>
-<p>这里，根据时间和分类对文章的md文件进行分类，时间是默认的为年份分类，年份文件夹下，为每个分类的文件夹。</p>
-</blockquote>
-<h1 id="为博客增加一个站内搜索"><a href="#为博客增加一个站内搜索" class="headerlink" title="为博客增加一个站内搜索"></a>为博客增加一个站内搜索</h1><blockquote>
-<p>待办问题：</p>
-<p>-博客搜索貌似是一个“或”的关系；</p>
-<p>-另外我搜索的链接出现不对；</p>
-</blockquote>
-<p>next 官网中有关于这个内置的第三方插件的介绍，需要npm安装，根目录（hexo)配置文件和next主题配置文件的修改</p>
-<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/third-party-services/search-services.html#Local-Search">https://theme-next.js.org/docs/third-party-services/search-services.html#Local-Search</a></p>
-<p>先是安装插件：</p>
-<img src="/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/image-20210316104513133.png" alt="image-20210316104513133" style="zoom:50%;">
-
-<p>然后hexo根目录下设置</p>
-<img src="/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/image-20210322222714842.png" alt="image-20210322222714842" style="zoom:50%;">
-
-<p>最后是next主题下的设置</p>
-<img src="/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/image-20210322222755691.png" alt="image-20210322222755691" style="zoom:50%;">
-
-<p>更为详细的参数介绍，（比较有用的是content，修改为false，则匹配除文章内容以外的所有信息）。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-generator-searchdb">https://github.com/theme-next/hexo-generator-searchdb</a></p>
- <img src="/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/image-20210322222755691.png" alt="image-20210322222755691" style="zoom:50%;">
-
-<h2 id="其他页面搜索无法显示问题"><a href="#其他页面搜索无法显示问题" class="headerlink" title="其他页面搜索无法显示问题"></a>其他页面搜索无法显示问题</h2><blockquote>
-<p>发现一个小问题，如果是在主页进行搜索的话，是没有问题的，但是如果在其他页面（e.g., HTML教程页面搜索matlab常用函数）,则会出现如下链接：</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jackzheng-lu.github.io/2021/03/22/编程语言了解/HTML教程/2021/03/19/matlab学习/matlab-常用函数1/</span><br></pre></td></tr></table></figure>
-
-<p>google搜索发现有可能是我的url和permenant的link没有正确设置</p>
-<blockquote>
-<p>花了一个小时，给博客添加了algolia搜索</p>
-</blockquote>
-<p>首先到官网注册个账号，<a target="_blank" rel="noopener" href="https://www.algolia.com/%E3%80%82">https://www.algolia.com/。</a></p>
-<p>Algolia提供了免费版本，包含5万个查询和1万个记录，基本上只能够一个小博客使用，大型的网站还是用他们的付费版本好一些。</p>
-<p>在环境变量中添加</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名：HEXO_ALGOLIA_INDEXING_KEY</span><br><span class="line">变量值：你的Admin API Key</span><br></pre></td></tr></table></figure>
-
-<img src="/2021/03/10/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/md%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/20191105094018537.png" class title="在这里插入图片描述">
-
-<blockquote>
-<p>温习：环境变量在控制面板\系统和安全\系统，window10更新后，在右侧的相关设置里找到高级系统设置，就可以看到环境变量。</p>
-</blockquote>
-<p>每次更新完都要进行输入</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 前提是我已经将algolia变量放入到系统环境中</span><br><span class="line">hexo algolia</span><br><span class="line"># 如果没有放入到系统环境中，则应该这么做</span><br><span class="line">export HEXO_ALGOLIA_INDEXING_KEY=Admin API Key</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
-
-
-
-<p>不要将admi API在根目录上设置文件保存（不要共享到公共库中）</p>
-<p><strong>注意：</strong><code>Admin API KEY</code>一定不要放在<code>js</code>里，因为这个<code>key</code>是用来上传，删除和操作我们的云端数据的，所以一定要保管好。</p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a target="_blank" rel="noopener" href="https://github.com/oncletom/hexo-algolia">github上的库</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lgyaxx/article/details/70666835">Algolia Search - 使用Javascript实现前端实时搜索</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35479468/article/details/107335663">https://blog.csdn.net/qq_35479468/article/details/107335663</a></p>
-<p><a target="_blank" rel="noopener" href="http://blog.langpz.com/Hexo-Next%E9%9B%86%E6%88%90Algolia%E6%90%9C%E7%B4%A2.html">http://blog.langpz.com/Hexo-Next%E9%9B%86%E6%88%90Algolia%E6%90%9C%E7%B4%A2.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.raycoder.me/p/hugo-search-with-algolia/">https://www.raycoder.me/p/hugo-search-with-algolia/</a></p>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/09/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/hexo%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/09/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/hexo%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">hexo学习</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-09 21:41:05" itemprop="dateCreated datePublished" datetime="2021-03-09T21:41:05+08:00">2021-03-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-14 08:25:00" itemprop="dateModified" datetime="2021-04-14T08:25:00+08:00">2021-04-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">博客学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>757</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p> 更为详细的教程见<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官网教程</a>，这里对我用到的一些点进行整理</p>
-</blockquote>
-<h2 id="Hexo-主题的修改"><a href="#Hexo-主题的修改" class="headerlink" title="Hexo 主题的修改"></a>Hexo 主题的修改</h2><p>hexo 主页显示出tags和categories</p>
-<p>在主题的<em>_config</em>文件中修改 （注意：修改完之后要进行hexo clean）</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Wonz5130/article/details/84666519">https://blog.csdn.net/Wonz5130/article/details/84666519</a></p>
-<h2 id="分类和标签的写法"><a href="#分类和标签的写法" class="headerlink" title="分类和标签的写法"></a>分类和标签的写法</h2><p>分类具有层次性和顺序性，标签没有。</p>
-<blockquote>
-<p>注意空格，如果没有空格，则不能正确显示。 </p>
-<p>如果标签tags后面没有空格，即使categories后面填写正确，也不能正确显示（目测编码有顺序性）。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#两种写法,注意，这样子234是123的子分类</span></span><br><span class="line">categories: [<span class="string">&#x27;123&#x27;</span>,<span class="string">&#x27;234&#x27;</span>]</span><br><span class="line"><span class="comment">#官方推荐写法</span></span><br><span class="line">categories: </span><br><span class="line">- <span class="number">123</span></span><br><span class="line">- <span class="number">234</span></span><br><span class="line"><span class="comment"># 如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</span></span><br><span class="line">categories:</span><br><span class="line">- [Diary, PlayStation]</span><br><span class="line">- [Diary, Games]</span><br><span class="line">- [Life]</span><br><span class="line"><span class="comment">#此时这篇文章同时包括三个分类： PlayStation 和 Games 分别都是父分类 Diary 的子分类，同时 Life 是一个没有子分类的分类。</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板的修改，scaffolds"><a href="#模板的修改，scaffolds" class="headerlink" title="模板的修改，scaffolds"></a>模板的修改，scaffolds</h2><p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
-<h2 id="NEXT-主题，"><a href="#NEXT-主题，" class="headerlink" title="NEXT 主题，"></a>NEXT 主题，</h2><p>有很多插件和布局的修改，在<em>next</em>文件夹下面的<em>_config</em>文件中修改，非常方便</p>
-<h2 id="Hexo常用的几个操作"><a href="#Hexo常用的几个操作" class="headerlink" title="Hexo常用的几个操作"></a>Hexo常用的几个操作</h2><ul>
-<li><p>hexo clean, 清空博客内容，主要是在重新配置根目录<code>_config.yml</code>文件时使用</p>
-</li>
-<li><p>hexo g，生成博客</p>
-</li>
-<li><p>hexo s，打开静态博客</p>
-</li>
-<li><p>hexo debug，可以看出问题所在</p>
-</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/03/03/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/03/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">github博客搭建</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-03-03 21:40:33" itemprop="dateCreated datePublished" datetime="2021-03-03T21:40:33+08:00">2021-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-14 08:15:37" itemprop="dateModified" datetime="2021-04-14T08:15:37+08:00">2021-04-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">博客学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>具体流程可见网址：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shwee/p/11421156.html">https://www.cnblogs.com/shwee/p/11421156.html</a> </p>
-<h2 id="Hexo-的介绍"><a href="#Hexo-的介绍" class="headerlink" title="Hexo 的介绍"></a>Hexo 的介绍</h2><p>具体看<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官网</a></p>
-<h2 id="无法成功更新git-page-（push-到git上"><a href="#无法成功更新git-page-（push-到git上" class="headerlink" title="无法成功更新git page （push 到git上)"></a>无法成功更新git page （push 到git上)</h2><p>有可能是github 网址的setting 中的source 没有选择对的branch，电脑上的更新对应的是master branch，</p>
-<blockquote>
-<p> 注意push 到github上面时，即使<code>deploy done: git</code>，也会存在延时现象（有可能几分钟甚至几小时）</p>
-</blockquote>
-<h1 id="push到git上面的登录问题"><a href="#push到git上面的登录问题" class="headerlink" title="push到git上面的登录问题"></a>push到git上面的登录问题</h1><p>hexo d 后显示登入界面，由于网速的问题，可能会造成无法成功传输？<a target="_blank" rel="noopener" href="https://www.itread01.com/content/1541968100.html">https://www.itread01.com/content/1541968100.html</a></p>
-<p>解决方法： Hexo根目录下，找到deployment，在repo那边改为https://後加 (Github)<strong>使用者名稱:密碼@</strong> 即可。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https://jackzheng-lu:密码@github.com/jackzheng-lu/jackzheng-lu.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>hexo d 后成功update git pages，但是有可能造成DNS污染(??)，无法登入github网址，需要重新清除缓存</p>
-<h2 id="批量修改分类方法"><a href="#批量修改分类方法" class="headerlink" title="批量修改分类方法"></a>批量修改分类方法</h2><p><a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/2019/10/05/5d978431edbfe/">https://www.dazhuanlan.com/2019/10/05/5d978431edbfe/</a></p>
-<blockquote>
-<p>hexo并不存在批量修改分类的功能，但是能通过简单脚本进行快速修改。</p>
-</blockquote>
-<p>基本思路：</p>
-<ul>
-<li>通过shell脚本来写，结合sed命令。关于sed，它全名是stream editor，用程序的方式来编辑文本，基本上就是通过正则表达式来匹配进行替换删除之类的操作。</li>
-<li>找到共通点：标签都是以tags:开头的，分类都是以categories:开头的等等，而且所有要提交的文档都放在了source/_posts目录下</li>
-<li>程序解决思路：通过遍历固定目录下的文件，对每一个文件进行关键字查找匹配，至此大功告成。程序只是将功能实现</li>
-</ul>
-<h2 id="扩展学习："><a href="#扩展学习：" class="headerlink" title="扩展学习："></a>扩展学习：</h2><ul>
-<li>sed命令的使用和介绍，可以参考<a target="_blank" rel="noopener" href="http://coolshell.cn/articles/9104.html">sed 简明教程</a></li>
-<li><a target="_blank" rel="noopener" href="https://zh-google-styleguide.readthedocs.io/en/latest/google-shell-styleguide/contents/#shell">shell风格指南</a></li>
-</ul>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/2019/10/05/5d978431edbfe/">https://www.dazhuanlan.com/2019/10/05/5d978431edbfe/</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/02/24/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/Typora%E7%BC%96%E8%BE%91%E5%99%A8%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/24/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/Typora%E7%BC%96%E8%BE%91%E5%99%A8%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">Typora编辑器介绍及快捷键</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-02-24 08:14:29" itemprop="dateCreated datePublished" datetime="2021-02-24T08:14:29+08:00">2021-02-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-14 08:16:43" itemprop="dateModified" datetime="2021-04-14T08:16:43+08:00">2021-04-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">博客学习</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>890</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <blockquote>
-<p>学习如何使用Hexo搭建个人的静态博客，目录以及链接等，使用的是Typora编辑器，后期还会将博客push到github上</p>
-</blockquote>
-<h1 id="Markdown编辑器Typora"><a href="#Markdown编辑器Typora" class="headerlink" title="Markdown编辑器Typora"></a>Markdown编辑器Typora</h1><p>Hexo是使用md(Markdown)的方式，针对于Markdown的编辑器，这里使用Typora，其他的可以看推荐 <a target="_blank" rel="noopener" href="https://www.v1tx.com/post/best-markdown-editor/">6款好用的Markdown编辑器推荐</a></p>
-<h2 id="Typora-的使用方法"><a href="#Typora-的使用方法" class="headerlink" title="Typora 的使用方法"></a>Typora 的使用方法</h2><p>这是网友总结的<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b30955885e6d">Typora Markdown 手册</a>，非常详细，满足基本需求。另外一个链接，提供了一些</p>
-<p>此外，还有<a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/syntax">官网的指导手册</a>，为英文界面。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">问题：</span><br><span class="line"><span class="bullet">*</span> 如何建立各个md文件之间的联系？或者说资源的引用</span><br><span class="line">应该使用链接的方式：内链和外链（ctrl+click)。内部跳转的方式</span><br><span class="line"><span class="code">	 </span></span><br></pre></td></tr></table></figure>
-
-<p>[Typora常用快捷键] (D:\OneDrive_LU\OneDrive - Lund University\GitHub_blog\MJblog\source_posts\Typora常用快捷键.md)</p>
-<blockquote>
-<p>有很多md编辑器，他们分成两个界面，一个界面是md源代码，另外一个界面实时更新显示其效果，而Typora是浑然一体的，真正所见即所得，就跟在使用word一样方便。</p>
-<p>并且，它可以通过插件免费的将md文件生成pdf（自动生成标签），word，便于笔记的存档和离线交互，完美。</p>
-</blockquote>
-<h2 id="Typora-快捷键修改"><a href="#Typora-快捷键修改" class="headerlink" title="Typora 快捷键修改"></a>Typora 快捷键修改</h2><h4 id="高亮颜色修改"><a href="#高亮颜色修改" class="headerlink" title="高亮颜色修改"></a>高亮颜色修改</h4><p>打开方式：文件 &gt; 偏好设置 &gt; 外观 &gt; 打开主题文件夹 &gt; <em>night.css</em>文件 &gt; Ctrl+F 搜索 mark &gt; 修改喜欢的 background(背景颜色) 和 color(字体颜色) 保存</p>
-<h4 id="快捷键修改"><a href="#快捷键修改" class="headerlink" title="快捷键修改"></a>快捷键修改</h4><p>设置方式：文件 &gt; 偏好设置 &gt; 通用 &gt; 打开高级设置 &gt; 会看到两个json文件，打开其中一个 &gt; 在 “keyBinding” 中添加 “Highlight”:“Ctrl+Shift+H”&gt; 保存 &gt; 另一个json文件也在 “keyBinding” 中添加 “Highlight”:“Ctrl+Shift+H” &gt; 保存</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/December_shi/article/details/108690116">https://blog.csdn.net/December_shi/article/details/108690116</a></p>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
-<li>无</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/02/24/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/Switch%E7%A0%B4%E8%A7%A3%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackZheng">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JackZHENG_blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/24/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/Switch%E7%A0%B4%E8%A7%A3%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">Switch破解记录</a>
-        </h2>
-    
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-    
-              <time title="Created: 2021-02-24 07:24:28" itemprop="dateCreated datePublished" datetime="2021-02-24T07:24:28+08:00">2021-02-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-22 15:26:13" itemprop="dateModified" datetime="2021-03-22T15:26:13+08:00">2021-03-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a>
-                </span>
-            </span>
-    
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数: </span>
-              <span>201</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-          <p>破解版switch区别（目前switch全版本可破）：</p>
-<ul>
-<li>tx软破：需要购买激活码和注入器（某宝有），破解完后为sxos系统</li>
-<li>txpro软破：需要购买激活码和注入器（pro指配带了激活码的注入器），破解完后为sxos系统</li>
-<li>大气层软破：系统免费，安装包和安装教程可以百度下哈设的游戏论坛</li>
-<li>芯片硬破：需要焊接芯片，芯片自带sxos系统的激活码，不需要注入</li>
-</ul>
-<blockquote>
-<p>2018年6月之后的机器不可以软破，因为老任已经将该漏洞填补了</p>
-</blockquote>
-
-      
-    </div>
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1548,7 +1527,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1597,12 +1576,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k</span>
+    <span title="Symbols count total">129k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:57</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -1644,10 +1623,7 @@
 
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
-
+<script src="/js/local-search.js"></script>
 
 
 

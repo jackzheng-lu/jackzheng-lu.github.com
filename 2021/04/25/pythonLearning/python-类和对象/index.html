@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"eee0de363005d1454615a59d0caaa505","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="前言Python 是面向对象的编程语言。 面向对象编程（Object-oriented Programming，简称 OOP），是一种封装代码的方法。比如说，将乱七八糟的数据扔进列表中，这就是一种简单的封装，是数据层面的封装；把常用的代码块打包成一个函数，这也是一种封装，是语句层面的封装。  代码封装，其实就是隐藏实现功能的具体代码，仅留给用户使用的接口，就好像使用计算机，用户只需要使用键盘、鼠标">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="前言Python 是面向对象的编程语言。 面向对象编程（Object-oriented Programming，简称 OOP），是一种封装代码的方法。比如说，将乱七八糟的数据扔进列表中，这就是一种简单的封装，是数据层面的封装；把常用的代码块打包成一个函数，这也是一种封装，是语句层面的封装。  代码封装，其实就是隐藏实现功能的具体代码，仅留给用户使用的接口，就好像使用计算机，用户只需要使用键盘、鼠标">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-25T11:24:28.000Z">
-<meta property="article:modified_time" content="2021-04-25T11:36:08.014Z">
+<meta property="article:modified_time" content="2021-04-28T14:56:42.650Z">
 <meta property="article:author" content="JackZheng">
 <meta name="twitter:card" content="summary">
 
@@ -153,18 +153,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -213,10 +216,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
     
-              <time title="Created: 2021-04-25 19:24:28 / Modified: 19:36:08" itemprop="dateCreated datePublished" datetime="2021-04-25T19:24:28+08:00">2021-04-25</time>
+              <time title="Created: 2021-04-25 19:24:28" itemprop="dateCreated datePublished" datetime="2021-04-25T19:24:28+08:00">2021-04-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-28 22:56:42" itemprop="dateModified" datetime="2021-04-28T22:56:42+08:00">2021-04-28</time>
+              </span>
     
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -224,7 +233,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>1.1k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -255,6 +264,9 @@
 <li>属性：类中的所有变量称为属性。例如，tortoise 这个类中，bodyColor、footNum、weight、hasShell 都是这个类拥有的属性。</li>
 <li>方法：类中的所有函数通常称为方法。不过，和函数所有不同的是，类方法至少要包含一个 self 参数（后续会做详细介绍）。例如，tortoise 类中，crawl()、eat()、sleep()、protect() 都是这个类所拥有的方法，类方法无法单独使用，只能和类的对象一起使用。</li>
 </ul>
+<blockquote>
+<p>这个JavaScript里面的对象是一样的</p>
+</blockquote>
 <h1 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h1><blockquote>
 <p>注意，如果由单词构成类名，建议每个单词的首字母大写，其它字母小写。</p>
 </blockquote>
@@ -263,20 +275,22 @@
 
 
 
-<p>在创建类时，我们可以手动添加一个 <strong>init</strong>() 方法，该方法是一个特殊的类实例方法，称为构造方法（或构造函数）。</p>
+<h2 id="init-函数"><a href="#init-函数" class="headerlink" title="__init__() 函数"></a>__init__() 函数</h2><p>在创建类时，我们可以手动添加一个 <strong>init</strong>() 方法，该方法是一个特殊的类实例方法，称为构造方法（或构造函数）。</p>
+<p>使用 <strong>init</strong>() 函数将值赋给对象属性，或者在创建对象时需要执行的其他操作。</p>
 <p>构造方法用于创建对象时使用，每当创建一个类的实例对象时，<a target="_blank" rel="noopener" href="http://c.biancheng.net/python/">Python</a> 解释器都会自动调用它。<a target="_blank" rel="noopener" href="http://c.biancheng.net/python/">Python</a> 类中，手动添加构造方法的语法格式如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,...</span>):</span></span><br><span class="line">    代码块</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建名为 Person 的类，使用 __init__() 函数为 name 和 age 赋值：</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">    self.name = name</span><br><span class="line">    self.age = age</span><br><span class="line"></span><br><span class="line">p1 = Person(<span class="string">&quot;Bill&quot;</span>, <span class="number">63</span>)</span><br><span class="line"></span><br><span class="line">print(p1.name)</span><br><span class="line">print(p1.age)</span><br></pre></td></tr></table></figure>
 
 
 
-
-
-
-
-
-
+<blockquote>
+<p><strong>注释：</strong>每次使用类创建新对象时，都会<em>自动调用</em> <strong>init</strong>() 函数。</p>
+</blockquote>
+<h2 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h2><p>对象也可以包含方法。对象中的方法是属于该对象的函数。</p>
+<h2 id="self-参数"><a href="#self-参数" class="headerlink" title="self 参数"></a>self 参数</h2><p>self 参数是对类的当前实例的引用，用于访问属于该类的变量。</p>
+<p>它不必被命名为 self，您可以随意调用它，但它必须是类中任意函数的<em>首个参数</em>：</p>
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/4512.html">http://c.biancheng.net/view/4512.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/python/python_classes.asp">https://www.w3school.com.cn/python/python_classes.asp</a></li>
 </ul>
 
     </div>
@@ -358,7 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">定义类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">定义类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#init-%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">__init__() 函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">对象方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#self-%E5%8F%82%E6%95%B0"><span class="nav-number">2.3.</span> <span class="nav-text">self 参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -372,7 +386,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -421,12 +435,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k</span>
+    <span title="Symbols count total">129k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:57</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -468,10 +482,7 @@
 
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
-
+<script src="/js/local-search.js"></script>
 
 
 

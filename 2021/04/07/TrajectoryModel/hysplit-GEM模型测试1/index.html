@@ -17,26 +17,34 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"eee0de363005d1454615a59d0caaa505","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="w我的目标就是能使用hysplit模拟Be10&#x2F;Be7，结合python的包使用 有个pysplit的python包   总结： 测试1: 区域的release 但是释放速率不变 （完成）  测试2：区域的release 但释放速率改变  （完成）  测试3：区域的release但释放速率改变，且包含不同的时间   测试1 区域的release 但释放速率不变黑点表示释放的点，浓度值表示采样的区">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hysplit_conc测试1">
-<meta property="og:url" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/index.html">
+<meta property="og:title" content="hysplit_GEM模型测试1">
+<meta property="og:url" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/index.html">
 <meta property="og:site_name" content="JackZHENG_blog">
 <meta property="og:description" content="w我的目标就是能使用hysplit模拟Be10&#x2F;Be7，结合python的包使用 有个pysplit的python包   总结： 测试1: 区域的release 但是释放速率不变 （完成）  测试2：区域的release 但释放速率改变  （完成）  测试3：区域的release但释放速率改变，且包含不同的时间   测试1 区域的release 但释放速率不变黑点表示释放的点，浓度值表示采样的区">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/image-20210407185811783.png">
-<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/etime000.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210407185811783.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/etime000.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210429110914687.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210429114903601.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210429111516309.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418124600938.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418131422441.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418164440182.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418151037390.png">
+<meta property="og:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418162026572.png">
 <meta property="article:published_time" content="2021-04-07T10:54:09.000Z">
-<meta property="article:modified_time" content="2021-04-27T02:09:10.949Z">
+<meta property="article:modified_time" content="2021-04-29T14:16:01.570Z">
 <meta property="article:author" content="JackZheng">
 <meta property="article:tag" content="Hysplit">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/image-20210407185811783.png">
+<meta name="twitter:image" content="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210407185811783.png">
 
-<link rel="canonical" href="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/">
+<link rel="canonical" href="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/">
 
 
 <script id="page-configurations">
@@ -49,7 +57,7 @@
   };
 </script>
 
-  <title>hysplit_conc测试1 | JackZHENG_blog</title>
+  <title>hysplit_GEM模型测试1 | JackZHENG_blog</title>
   
 
 
@@ -157,18 +165,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -195,7 +206,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/">
+    <link itemprop="mainEntityOfPage" href="http://jackzheng-lu.github.io/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hysplit_conc测试1
+          hysplit_GEM模型测试1
         </h1>
     
         <div class="post-meta">
@@ -225,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-27 10:09:10" itemprop="dateModified" datetime="2021-04-27T10:09:10+08:00">2021-04-27</time>
+                <time title="Modified: 2021-04-29 22:16:01" itemprop="dateModified" datetime="2021-04-29T22:16:01+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,14 +254,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>2k</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>2 mins.</span>
+              <span>4 mins.</span>
             </span>
     
         </div>
@@ -275,7 +286,7 @@
 </li>
 </ul>
 <h2 id="测试1-区域的release-但释放速率不变"><a href="#测试1-区域的release-但释放速率不变" class="headerlink" title="测试1 区域的release 但释放速率不变"></a>测试1 区域的release 但释放速率不变</h2><p>黑点表示释放的点，浓度值表示采样的区域。</p>
-<img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/image-20210407185811783.png" alt="image-20210407185811783" style="zoom:50%;">
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210407185811783.png" alt="image-20210407185811783" style="zoom:50%;">
 
 
 
@@ -300,7 +311,7 @@
 </ul>
 </blockquote>
 <h2 id="测试2-区域的release-但释放速率改变"><a href="#测试2-区域的release-但释放速率改变" class="headerlink" title="测试2 区域的release 但释放速率改变"></a>测试2 区域的release 但释放速率改变</h2><p>下图是教程16.5中的示例，有四行是因为教程中设置了4个污染物。rate 表示释放速率 （可以大于1）。Area 如果为0表示点释放。Heat表明释放时的热量产生（这里为0）。这里面表示一个cycle是12个小时，每个cycle release 的particle是固定，但是cycle的时间长短（duration）是可以改变的。</p>
-<img src="/2021/04/07/TrajectoryModel/hysplit-%E6%B5%8B%E8%AF%951/etime000.png" alt="img" style="zoom:50%;">
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/etime000.png" alt="img" style="zoom:50%;">
 
 <p>所有的source必须要有相同的时间间隔。</p>
 <h2 id="测试3：区域的release但释放速率改变，且包含不同的时间-（多个文件的测试）"><a href="#测试3：区域的release但释放速率改变，且包含不同的时间-（多个文件的测试）" class="headerlink" title="测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）"></a>测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）</h2><p>思路：</p>
@@ -319,13 +330,114 @@
 <p>One way to incorporate a time varying emission rate into the existing model structure is to use the particle dump feature to restart the model each time with a new emission rate. Another option is to assign the name of a temporal emission input file to the “EFILE” variable in the setup.cfg namelist file. </p>
 <p>If the EFILE is present, the first emission record’s values replace the emission values set in the control file. Once the model computation time has passed the emission period defined on the first emission record, the emission data from the second record are loaded and the calculation continues with the new emission data. The format of the emission file is given below: </p>
 </blockquote>
-<ul>
-<li></li>
-</ul>
+<p>添加衰减和SO4的特性</p>
+<blockquote>
+<p> user guide 搜索关键词：Deposition and Decay</p>
+</blockquote>
+<p>长时间尺度的particle age问题</p>
+<blockquote>
+<p> user guide 搜索关键词：KHINP</p>
+</blockquote>
+<p>Particle File Initialization Options</p>
 <p>粒子释放的问题，</p>
 <p>使用particle release计算concentration distribution，需要释放非常多的粒子，否则无法真是反应浓度</p>
 <p>这个时候可以考虑Puff Releases </p>
 <p>在GUI的help中，输入C:/hysplit/html/S441.htm</p>
+<p>GEM模型测试</p>
+<h3 id="29thApril-2021"><a href="#29thApril-2021" class="headerlink" title="29thApril 2021:"></a>29thApril 2021:</h3><p>.如果是mass保留的话，particle应该最后都沉降到地表去了。</p>
+<ul>
+<li><p>猜想1，取值浓度为地表，沉降后没有改变。尝试将浓度的取值范围设为大气层顶部，发现也没有任何区别，后期也是趋于稳定。</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>尝试2，将release的particle提高到10000，而不是原来的2500，看最后的效果。</p>
+</li>
+<li><p>猜想3，浓度计算的问题，后期趋于稳定，</p>
+</li>
+<li><p>猜想4，时间尺度的问题，后期的变化慢（但是南极区域根本就没有，如果持续性输出的话，最后是会充满南极区域的）</p>
+<blockquote>
+<p>进行了验证，确实，后期应该污染物应该运移到南极地区</p>
+</blockquote>
+</li>
+</ul>
+<p>查看了message文件，发现gemout的mass在后期为0。发现重新开始的时候，gemout的mass是为0。</p>
+<p>gem模型，是hysplit模型传递particle给</p>
+<p>基本设置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">脚本： Be10_gem_exp1.sh</span><br><span class="line">开始时间：07年7月1号</span><br><span class="line">污染物释放时间：1小时释放</span><br><span class="line">浓度计算的level：top为20，bottom为19，平均计算</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="质量mass的保留"><a href="#质量mass的保留" class="headerlink" title="质量mass的保留"></a>质量mass的保留</h2><p>下图是不保留质量的浓度</p>
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210429110914687.png" class title="image-20210429110914687">
+
+<p>可以看出来，第2小时之后，浓度就没有任何变化。</p>
+<blockquote>
+<p>可以理解为没有mass，那为啥还有浓度？理解为就没有质量，所以每次计算的都一样？</p>
+<p>答：边界条件，之后的浓度都是边界条件的值。</p>
+</blockquote>
+<p>如果设置为保留质量（即kmass=2），则应该理解为mass在gem模型里面运行。</p>
+<blockquote>
+<p>查看message文件，发现gemout的mass保留了下来。</p>
+</blockquote>
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210429114903601.png" alt="image-20210429114903601" style="zoom: 50%;">
+
+
+
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>使用gemdump作为边界条件，发现重新开始的时候，gemout的mass是为0。</p>
+<blockquote>
+<p>因此使用gemdump作为边界条件，但是没有任何mass的话，浓度就不会有变化。以gemdump作为边界条件运行非常重要，因为有时候有可能会出现死机等情况，我们不希望重头再跑一遍模型。</p>
+</blockquote>
+<p>这点非常奇怪，因为使用hys-std的程序的时候，使用pinif作为初值条件，concentration的结果是正确的（可以参考16_2的结果</p>
+<h4 id="尝试1：-将gemdump的值转入到pinif里面，作为hysplit的初始条件"><a href="#尝试1：-将gemdump的值转入到pinif里面，作为hysplit的初始条件" class="headerlink" title="尝试1： 将gemdump的值转入到pinif里面，作为hysplit的初始条件"></a>尝试1： 将gemdump的值转入到pinif里面，作为hysplit的初始条件</h4><blockquote>
+<p>不可行，模型直接将gemdump认定为错误的输入，跳过。</p>
+<p>但是发现，如果pinit为正确的数值，gemdump作为初值条件可以被模型正确的读取。这说明其实gemdump的结果是正确的，可能是模型的问题，也有可能是我在某一个设定上出了问题…..</p>
+<p>==未解决==</p>
+</blockquote>
+<h4 id="尝试2-曲线救国-：根据尝试1知道，只要每次有输入，就能保证模型的正常运行。"><a href="#尝试2-曲线救国-：根据尝试1知道，只要每次有输入，就能保证模型的正常运行。" class="headerlink" title="尝试2(曲线救国)：根据尝试1知道，只要每次有输入，就能保证模型的正常运行。"></a>尝试2(曲线救国)：根据尝试1知道，只要每次有输入，就能保证模型的正常运行。</h4><p>因此除了第一次以外emission，之后的emission输入都非常的小，这样子就能保证模型的运行。为了降低这个额外输入的影响下，将numpar设为1，释放的时间设为1小时。</p>
+<p>这样子还会有另外一个问题：发现每次运行的结果对应不上，差了一个时间差。</p>
+<blockquote>
+<p>查看message文件之后发现，每次开始运行，只要一开始没有mass的输入，GEM里面的初始mass就为0，直到有来自hysplit的输入，GEM里面的初始mass才会变为正常的mass</p>
+</blockquote>
+<h3 id="另外一个问题"><a href="#另外一个问题" class="headerlink" title="另外一个问题"></a>另外一个问题</h3><p>不同numpar的设定，看不出concentration的区别。==不明白为啥==</p>
+<h2 id="hysplit-gem模式"><a href="#hysplit-gem模式" class="headerlink" title="hysplit-gem模式"></a>hysplit-gem模式</h2><p>虽然还未明白为啥gem在循环开始没有输入的情况下，初值条件mass为0（即使设定好了初值条件），但是这里尝试下是否这种情况会对hysplit-gem模式造成影响。</p>
+<blockquote>
+<p>测试结果发现并不会，只要pdump文件有初始值，就不会有问题。</p>
+</blockquote>
+<h2 id="释放面积的设置"><a href="#释放面积的设置" class="headerlink" title="释放面积的设置"></a>释放面积的设置</h2><p>图1，每个grid的释放面积是1e3m2，图2，每个grid的释放面积是1度左右的面积，1e5*1e5。</p>
+<blockquote>
+<p>结果非常的奇怪，图2的效果并没有如预期变大，之后再测试</p>
+</blockquote>
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210429111516309.png" alt="image-20210429111516309" style="zoom: 50%;">
+
+
+
+<h2 id="NCEP-height-inversion问题"><a href="#NCEP-height-inversion问题" class="headerlink" title="NCEP height inversion问题"></a>NCEP height inversion问题</h2><p>使用NCEP198401数据（1984年1月份）运行GEM模型的时候，提示在北纬83度？和73？的位置高度逆转。</p>
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418124600938.png" alt="image-20210418124600938" style="zoom:50%;">
+
+<p>我重新下载了GRAD的1°数据，可以正常运行Hysplit-GEM模式。</p>
+<p>我又重新尝试了NCEP201807的数据，发现也可以正常运行Hysplit-GEM模式。</p>
+<blockquote>
+<p>所以是之前NCEP数据的问题?</p>
+</blockquote>
+<p>我重新运行了下NCEP198401数据，提示了不同的错误点</p>
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418131422441.png" alt="image-20210418131422441" style="zoom:50%;">
+
+<p>测试了198107数据，提示了不同的错误点</p>
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418164440182.png" alt="image-20210418164440182" style="zoom:50%;">
+
+<blockquote>
+<p>我大概明白了，有可能因为model通过pressure height计算这个高度，导致的问题。</p>
+<p>虽然NCEP没提供地形数据，但不可能是地形的问题，因为两个高度都是在一个点上。</p>
+</blockquote>
+<p>有时候还会又其他的提示，比如如下的提示，???</p>
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418151037390.png" alt="image-20210418151037390" style="zoom:50%;">
+
+<p>这个时候看message文件，发现数据成这样子了</p>
+<img src="/2021/04/07/TrajectoryModel/hysplit-GEM%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%951/image-20210418162026572.png" alt="image-20210418162026572" style="zoom:50%;">
+
+<blockquote>
+<p>这个应该是程序运行的问题，导致数据出错了</p>
+</blockquote>
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ul>
 <li>无</li>
 </ul>
@@ -412,7 +524,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%951-%E5%8C%BA%E5%9F%9F%E7%9A%84release-%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E4%B8%8D%E5%8F%98"><span class="nav-number">1.1.</span> <span class="nav-text">测试1 区域的release 但释放速率不变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%952-%E5%8C%BA%E5%9F%9F%E7%9A%84release-%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E6%94%B9%E5%8F%98"><span class="nav-number">1.2.</span> <span class="nav-text">测试2 区域的release 但释放速率改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%953%EF%BC%9A%E5%8C%BA%E5%9F%9F%E7%9A%84release%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E6%94%B9%E5%8F%98%EF%BC%8C%E4%B8%94%E5%8C%85%E5%90%AB%E4%B8%8D%E5%90%8C%E7%9A%84%E6%97%B6%E9%97%B4-%EF%BC%88%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%B5%8B%E8%AF%95%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%951-%E5%8C%BA%E5%9F%9F%E7%9A%84release-%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E4%B8%8D%E5%8F%98"><span class="nav-number">1.1.</span> <span class="nav-text">测试1 区域的release 但释放速率不变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%952-%E5%8C%BA%E5%9F%9F%E7%9A%84release-%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E6%94%B9%E5%8F%98"><span class="nav-number">1.2.</span> <span class="nav-text">测试2 区域的release 但释放速率改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%953%EF%BC%9A%E5%8C%BA%E5%9F%9F%E7%9A%84release%E4%BD%86%E9%87%8A%E6%94%BE%E9%80%9F%E7%8E%87%E6%94%B9%E5%8F%98%EF%BC%8C%E4%B8%94%E5%8C%85%E5%90%AB%E4%B8%8D%E5%90%8C%E7%9A%84%E6%97%B6%E9%97%B4-%EF%BC%88%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%B5%8B%E8%AF%95%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">测试3：区域的release但释放速率改变，且包含不同的时间 （多个文件的测试）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#29thApril-2021"><span class="nav-number">1.3.1.</span> <span class="nav-text">29thApril 2021:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A8%E9%87%8Fmass%E7%9A%84%E4%BF%9D%E7%95%99"><span class="nav-number">1.4.</span> <span class="nav-text">质量mass的保留</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%9D%E8%AF%951%EF%BC%9A-%E5%B0%86gemdump%E7%9A%84%E5%80%BC%E8%BD%AC%E5%85%A5%E5%88%B0pinif%E9%87%8C%E9%9D%A2%EF%BC%8C%E4%BD%9C%E4%B8%BAhysplit%E7%9A%84%E5%88%9D%E5%A7%8B%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">尝试1： 将gemdump的值转入到pinif里面，作为hysplit的初始条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%9D%E8%AF%952-%E6%9B%B2%E7%BA%BF%E6%95%91%E5%9B%BD-%EF%BC%9A%E6%A0%B9%E6%8D%AE%E5%B0%9D%E8%AF%951%E7%9F%A5%E9%81%93%EF%BC%8C%E5%8F%AA%E8%A6%81%E6%AF%8F%E6%AC%A1%E6%9C%89%E8%BE%93%E5%85%A5%EF%BC%8C%E5%B0%B1%E8%83%BD%E4%BF%9D%E8%AF%81%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AD%A3%E5%B8%B8%E8%BF%90%E8%A1%8C%E3%80%82"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">尝试2(曲线救国)：根据尝试1知道，只要每次有输入，就能保证模型的正常运行。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.2.</span> <span class="nav-text">另外一个问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hysplit-gem%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">hysplit-gem模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8A%E6%94%BE%E9%9D%A2%E7%A7%AF%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.6.</span> <span class="nav-text">释放面积的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NCEP-height-inversion%E9%97%AE%E9%A2%98"><span class="nav-number">1.7.</span> <span class="nav-text">NCEP height inversion问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -426,7 +538,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -475,12 +587,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k</span>
+    <span title="Symbols count total">129k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:57</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -522,10 +634,7 @@
 
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
-
+<script src="/js/local-search.js"></script>
 
 
 

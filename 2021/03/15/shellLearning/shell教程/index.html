@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"T6J7G3EOSM","apiKey":"eee0de363005d1454615a59d0caaa505","indexName":"hexoBlogSearch","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jackzheng-lu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;anliven&#x2F;p&#x2F;6032081.html   shell调试的方法  关于shell概述；常用命令的简介   遇到特殊符号时，使用反斜杠“\” 转义  Shell 概述 shell脚本主要对文件以及模型结果进行搜索和处理 shell跟python一样，选择[0:6]，表示6个，1-6。  Shell脚本概述#! 解释器声明，是一个约定的标记，它告">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;anliven&#x2F;p&#x2F;6032081.html   shell调试的方法  关于shell概述；常用命令的简介   遇到特殊符号时，使用反斜杠“\” 转义  Shell 概述 shell脚本主要对文件以及模型结果进行搜索和处理 shell跟python一样，选择[0:6]，表示6个，1-6。  Shell脚本概述#! 解释器声明，是一个约定的标记，它告">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-15T03:40:39.000Z">
-<meta property="article:modified_time" content="2021-04-27T12:58:51.648Z">
+<meta property="article:modified_time" content="2021-04-29T09:19:05.543Z">
 <meta property="article:author" content="JackZheng">
 <meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
@@ -154,18 +154,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -222,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-27 20:58:51" itemprop="dateModified" datetime="2021-04-27T20:58:51+08:00">2021-04-27</time>
+                <time title="Modified: 2021-04-29 17:19:05" itemprop="dateModified" datetime="2021-04-29T17:19:05+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,14 +247,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数: </span>
-              <span>5k</span>
+              <span>4.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时间 &asymp;</span>
-              <span>5 mins.</span>
+              <span>4 mins.</span>
             </span>
     
         </div>
@@ -395,16 +398,6 @@
 <p>Linux shell：rename命令批量重命名文件</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44498318/article/details/109311521">https://blog.csdn.net/weixin_44498318/article/details/109311521</a></p>
 <h1 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h1><p>执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：**$n<strong>。</strong>n** 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……</p>
-<h1 id="Shell-基本运算符"><a href="#Shell-基本运算符" class="headerlink" title="Shell 基本运算符"></a>Shell 基本运算符</h1><p>额外链接: <a target="_blank" rel="noopener" href="https://blog.csdn.net/u012229282/article/details/102767383">Linux 下Shell脚本中的加减乘除运算</a></p>
-<p>expr 是一款表达式计算工具，使用它能完成表达式的求值操作。例如，两个数相加(<strong>注意使用的是反引号 \</strong>`** 而不是单引号 *<em>‘***</em>)：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 使用 expr</span></span><br><span class="line">val=`expr 2 + 2`</span><br><span class="line">echo &quot;两数之和为 : $val&quot;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用<span class="built_in">let</span></span></span><br><span class="line">let b=1+1; echo b # b为2</span><br><span class="line">c=5; let c*=5; echo $c # c为25</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用$[]</span></span><br><span class="line">d=$[$c+$b]; echo $d #d 为27</span><br></pre></td></tr></table></figure>
-<p>注意，shell不能做小数运算，需要用到bc或者awk。bc的用法有些电脑没有（比如说我的电脑bc的方法就不行），这里重点记录下awk的用法。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="bash"><span class="built_in">echo</span> `awk -v x=7.1 -v y=5.2 <span class="string">&#x27;BEGIN&#123;printf &quot;%d&quot;,x/y&#125;&#x27;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h1 id="shell中特殊符号"><a href="#shell中特殊符号" class="headerlink" title="shell中特殊符号"></a>shell中特殊符号</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xuxm2007/archive/2011/10/20/2218846.html">https://www.cnblogs.com/xuxm2007/archive/2011/10/20/2218846.html</a></p>
 <blockquote>
 <p>因为由于命名问题，我的文件夹中名字中经常会带有特殊符号。shell中对特殊符号的写法，需要加双引号</p>
@@ -500,7 +493,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Shell 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell%E8%84%9A%E6%9C%AC%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">Shell脚本概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%9B%AE%E5%BD%95%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">处理目录的常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B"><span class="nav-number">1.3.</span> <span class="nav-text">Linux 文件内容查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell-%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">1.4.</span> <span class="nav-text">shell 重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E7%AC%A6"><span class="nav-number">1.5.</span> <span class="nav-text">换行符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">1.6.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">1.7.</span> <span class="nav-text">常用操作&#x2F;问题：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell%E8%B7%AF%E5%BE%84%E5%BA%94%E8%AF%A5%E5%8D%95%E7%8B%AC%E5%87%BA%E6%9D%A5"><span class="nav-number">2.</span> <span class="nav-text">shell路径应该单独出来</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E6%AD%A2%E5%BD%93%E5%89%8D%E7%A8%8B%E5%BA%8F%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">终止当前程序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-number">2.2.</span> <span class="nav-text">批量的注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="nav-number">2.3.</span> <span class="nav-text">shell中的一些特殊符号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">传递参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.</span> <span class="nav-text">Shell 基本运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="nav-number">5.</span> <span class="nav-text">shell中特殊符号</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">Shell 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell%E8%84%9A%E6%9C%AC%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">Shell脚本概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%9B%AE%E5%BD%95%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">处理目录的常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B"><span class="nav-number">1.3.</span> <span class="nav-text">Linux 文件内容查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell-%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">1.4.</span> <span class="nav-text">shell 重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E7%AC%A6"><span class="nav-number">1.5.</span> <span class="nav-text">换行符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">1.6.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">1.7.</span> <span class="nav-text">常用操作&#x2F;问题：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell%E8%B7%AF%E5%BE%84%E5%BA%94%E8%AF%A5%E5%8D%95%E7%8B%AC%E5%87%BA%E6%9D%A5"><span class="nav-number">2.</span> <span class="nav-text">shell路径应该单独出来</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E6%AD%A2%E5%BD%93%E5%89%8D%E7%A8%8B%E5%BA%8F%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">终止当前程序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-number">2.2.</span> <span class="nav-text">批量的注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="nav-number">2.3.</span> <span class="nav-text">shell中的一些特殊符号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">传递参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="nav-number">4.</span> <span class="nav-text">shell中特殊符号</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -514,7 +507,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -563,12 +556,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k</span>
+    <span title="Symbols count total">129k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:57</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -610,10 +603,7 @@
 
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
-
+<script src="/js/local-search.js"></script>
 
 
 
